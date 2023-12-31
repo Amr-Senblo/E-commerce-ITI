@@ -13,9 +13,6 @@ import { ProfileComponent } from '../components/profile/profile.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet , FooterComponent],
-
-
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   imports: [
