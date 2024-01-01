@@ -1,5 +1,33 @@
 {
   "categories": [
+      {
+        "id": 1,
+        "name": "SmartPhones",
+        "description": "Smartphones and accessories",
+        "imageCover": "https://example.com/smartphones.jpg",
+        "createdAt": "2022-01-15T12:30:00.000Z",
+        "updatedAt": "2022-01-15T12:30:00.000Z"
+      },
+      {
+        "id": 2,
+        "name": "SmartWatches",
+        "description": "Laptops and accessories",
+        "imageCover": "https://example.com/laptops.jpg",
+        "createdAt": "2022-02-02T10:45:00.000Z",
+        "updatedAt": "2022-02-02T10:45:00.000Z"
+      },
+      {
+        "id": 3,
+        "name": "LapTops",
+        "description": "Cameras and accessories",
+        "imageCover": "https://example.com/cameras.jpg",
+        "createdAt": "2022-03-20T15:00:00.000Z",
+        "updatedAt": "2022-03-20T15:00:00.000Z"
+      }
+  ]
+  ,
+
+  "products": [
     {
       "id": 1,
       "name": "iPhone X",
@@ -580,10 +608,6 @@
         "Ports": "USB-C, HDMI, USB-A"
       }
     }
-  ]
-  ,
-
-  "products": [
   ],
 
   "users": [
