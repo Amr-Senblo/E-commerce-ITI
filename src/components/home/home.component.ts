@@ -1,0 +1,56 @@
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { CarouselComponent } from '../carousel/carousel.component';
+import { CategoriesComponent } from '../categories/categories.component';
+import { customHomeService } from '../../services/customHome.Service';
+import { HttpClientModule } from '@angular/common/http';
+import { IProduct } from '../../models/iproduct';
+import { ProductsArrayComponent } from '../products-array/products-array.component';
+import { Image } from '../../models/image';
+import { ICategory } from '../../models/icategory';
+import { CategoryService } from '../../services/category.service';
+
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css',
+  imports: [CarouselComponent, CategoriesComponent, HttpClientModule, ProductsArrayComponent],
+  providers: [customHomeService, CategoryService]
+})
+export class HomeComponent implements OnInit {
+  images: Image[] = []
+  allCategories: ICategory[] = [];
+  mobileCatg4: IProduct[] = [];
+  smartWatch4: IProduct[] = [];
+  laptops4: IProduct[] = [];
+  constructor(public productService: customHomeService, public categoryServise: CategoryService) { }
+
+  ngOnInit(): void {
+    this.productService.getProduct4(1).subscribe({
+      next: (value) => {
+        this.mobileCatg4 = value;
+      },
+      error: (err) => console.log(err)
+    })
+    this.productService.getProduct4(2).subscribe({
+      next: (value) => {
+        this.smartWatch4 = value;
+      },
+      error: (err) => console.log(err)
+    })
+    this.productService.getProduct4(3).subscribe({
+      next: (value) => {
+        this.laptops4 = value;
+      },
+      error: (err) => console.log(err)
+    })
+    this.categoryServise.getCategories().subscribe({
+      next: (value) => {
+        this.allCategories = value
+        for (let category of this.allCategories)
+          this.images.push({ imgSrc: category.imageCover, imgAlt: category.name })
+      },
+      error: (err) => console.log(err)
+    })
+  }
+}

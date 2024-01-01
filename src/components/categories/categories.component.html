@@ -1,0 +1,10 @@
+<div class="row">
+  @for (category of categories; track category.id) {
+  <a [routerLink]="'/Category/'+category.id"
+    class="col-12 col-md-6 col-lg-4 text-center text-decoration-none catg d-flex align-items-center justify-content-center">
+    <div>
+      {{category.name}}
+    </div>
+  </a>
+  }
+</div>
