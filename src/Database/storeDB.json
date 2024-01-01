@@ -1,0 +1,826 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "SmartPhones",
+      "description": "Smartphones and accessories",
+      "imageCover": "https://example.com/smartphones.jpg",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "SmartWatches",
+      "description": "Laptops and accessories",
+      "imageCover": "https://example.com/laptops.jpg",
+      "createdAt": "2022-02-02T10:45:00.000Z",
+      "updatedAt": "2022-02-02T10:45:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "LapTops",
+      "description": "Cameras and accessories",
+      "imageCover": "https://example.com/cameras.jpg",
+      "createdAt": "2022-03-20T15:00:00.000Z",
+      "updatedAt": "2022-03-20T15:00:00.000Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone X",
+      "description": "High-performance smartphone with advanced features.",
+      "price": 799.99,
+      "quantity": 100,
+      "imageCover": "https://example.com/iphone_x.jpg",
+      "images": [
+        "https://example.com/iphone_x_image1.jpg",
+        "https://example.com/iphone_x_image2.jpg",
+        "https://example.com/iphone_x_image3.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.8,
+      "ratingQuantity": 25,
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Apple A11 Bionic",
+        "RAM": "3GB",
+        "Storage": "64GB",
+        "screenSize": "5.8 inches",
+        "BatteryCapacity": "2716 mAh",
+        "OperatingSystem": "iOS 11",
+        "BiometricAuthentication": "Face ID",
+        "WirelessCharging": "Yes",
+        "Ports": "Lightning"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy Z Fold 2",
+      "description": "Foldable smartphone with a large immersive display.",
+      "price": 1999.99,
+      "quantity": 50,
+      "imageCover": "https://example.com/galaxy_z_fold_2.jpg",
+      "images": [
+        "https://example.com/galaxy_z_fold_2_image1.jpg",
+        "https://example.com/galaxy_z_fold_2_image2.jpg",
+        "https://example.com/galaxy_z_fold_2_image3.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.7,
+      "ratingQuantity": 30,
+      "createdAt": "2022-02-02T10:45:00.000Z",
+      "updatedAt": "2022-02-02T10:45:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Snapdragon 865 Plus",
+        "RAM": "12GB",
+        "Storage": "256GB",
+        "screenSize": "7.6 inches (unfolded)",
+        "BatteryCapacity": "4500 mAh",
+        "OperatingSystem": "Android 10",
+        "BiometricAuthentication": "Side-mounted fingerprint sensor",
+        "WirelessCharging": "Yes",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Google Pixel 6",
+      "description": "Flagship smartphone with top-notch camera capabilities.",
+      "price": 899.99,
+      "quantity": 75,
+      "imageCover": "https://example.com/pixel_6.jpg",
+      "images": [
+        "https://example.com/pixel_6_image1.jpg",
+        "https://example.com/pixel_6_image2.jpg",
+        "https://example.com/pixel_6_image3.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.6,
+      "ratingQuantity": 35,
+      "createdAt": "2022-03-20T15:00:00.000Z",
+      "updatedAt": "2022-03-20T15:00:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Google Tensor",
+        "RAM": "8GB",
+        "Storage": "128GB",
+        "screenSize": "6.4 inches",
+        "BatteryCapacity": "4600 mAh",
+        "OperatingSystem": "Android 12",
+        "BiometricAuthentication": "Under-display fingerprint sensor",
+        "WirelessCharging": "Yes",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 4,
+      "name": "OnePlus 9 Pro",
+      "description": "High-performance smartphone with a focus on speed.",
+      "price": 999.99,
+      "quantity": 40,
+      "imageCover": "https://example.com/oneplus_9_pro.jpg",
+      "images": [
+        "https://example.com/oneplus_9_pro_image1.jpg",
+        "https://example.com/oneplus_9_pro_image2.jpg",
+        "https://example.com/oneplus_9_pro_image3.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.5,
+      "ratingQuantity": 28,
+      "createdAt": "2022-04-10T11:30:00.000Z",
+      "updatedAt": "2022-04-10T11:30:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Snapdragon 888",
+        "RAM": "12GB",
+        "Storage": "256GB",
+        "screenSize": "6.7 inches",
+        "BatteryCapacity": "4500 mAh",
+        "OperatingSystem": "OxygenOS (based on Android)",
+        "BiometricAuthentication": "Under-display fingerprint sensor",
+        "WirelessCharging": "Yes",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 5,
+      "name": "iPhone 13 Pro",
+      "description": "Pro-level smartphone with enhanced camera and performance.",
+      "price": 1299.99,
+      "quantity": 30,
+      "imageCover": "https://example.com/iphone_13_pro.jpg",
+      "images": [
+        "https://example.com/iphone_13_pro_image1.jpg",
+        "https://example.com/iphone_13_pro_image2.jpg",
+        "https://example.com/iphone_13_pro_image3.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.8,
+      "ratingQuantity": 30,
+      "createdAt": "2022-07-10T12:00:00.000Z",
+      "updatedAt": "2022-07-10T12:00:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Apple A15 Bionic",
+        "RAM": "6GB",
+        "Storage": "128GB",
+        "screenSize": "6.1 inches",
+        "BatteryCapacity": "3095 mAh",
+        "OperatingSystem": "iOS 15",
+        "BiometricAuthentication": "Face ID",
+        "WirelessCharging": "Yes",
+        "Ports": "Lightning"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Xiaomi Mi 11",
+      "description": "Premium smartphone with a focus on photography and performance.",
+      "price": 899.99,
+      "quantity": 60,
+      "imageCover": "https://example.com/mi_11.jpg",
+      "images": [
+        "https://example.com/mi_11_image1.jpg",
+        "https://example.com/mi_11_image2.jpg",
+        "https://example.com/mi_11_image3.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.7,
+      "ratingQuantity": 25,
+      "createdAt": "2022-09-05T14:45:00.000Z",
+      "updatedAt": "2022-09-05T14:45:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Snapdragon 888",
+        "RAM": "8GB",
+        "Storage": "256GB",
+        "screenSize": "6.81 inches",
+        "BatteryCapacity": "4600 mAh",
+        "OperatingSystem": "MIUI 12",
+        "BiometricAuthentication": "Under-display fingerprint sensor",
+        "WirelessCharging": "Yes",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Sony Xperia 1 III",
+      "description": "Flagship smartphone with a focus on multimedia and photography.",
+      "price": 1199.99,
+      "quantity": 35,
+      "imageCover": "https://example.com/xperia_1_iii.jpg",
+      "images": [
+        "https://example.com/xperia_1_iii_image1.jpg",
+        "https://example.com/xperia_1_iii_image2.jpg",
+        "https://example.com/xperia_1_iii_image3.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.8,
+      "ratingQuantity": 22,
+      "createdAt": "2022-11-15T13:20:00.000Z",
+      "updatedAt": "2022-11-15T13:20:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Snapdragon 888",
+        "RAM": "12GB",
+        "Storage": "256GB",
+        "screenSize": "6.5 inches",
+        "BatteryCapacity": "4500 mAh",
+        "OperatingSystem": "Android 11",
+        "BiometricAuthentication": "Fingerprint sensor",
+        "WirelessCharging": "Yes",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 8,
+      "name": "OnePlus Nord 2",
+      "description": "Mid-range smartphone with a focus on performance and value.",
+      "price": 499.99,
+      "quantity": 45,
+      "imageCover": "https://example.com/nord_2.jpg",
+      "images": [
+        "https://example.com/nord_2_image1.jpg",
+        "https://example.com/nord_2_image2.jpg",
+        "https://example.com/nord_2_image3.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.5,
+      "ratingQuantity": 18,
+      "createdAt": "2023-02-10T10:00:00.000Z",
+      "updatedAt": "2023-02-10T10:00:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "MediaTek Dimensity 1200",
+        "RAM": "8GB",
+        "Storage": "128GB",
+        "screenSize": "6.43 inches",
+        "BatteryCapacity": "4500 mAh",
+        "OperatingSystem": "OxygenOS (based on Android)",
+        "BiometricAuthentication": "In-display fingerprint sensor",
+        "WirelessCharging": "No",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Huawei P50 Pro",
+      "description": "Premium smartphone with a focus on camera innovation.",
+      "price": 1099.99,
+      "quantity": 40,
+      "imageCover": "https://example.com/p50_pro.jpg",
+      "images": [
+        "https://example.com/p50_pro_image1.jpg",
+        "https://example.com/p50_pro_image2.jpg",
+        "https://example.com/p50_pro_image3.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.7,
+      "ratingQuantity": 28,
+      "createdAt": "2023-04-25T11:45:00.000Z",
+      "updatedAt": "2023-04-25T11:45:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Kirin 9000",
+        "RAM": "8GB",
+        "Storage": "256GB",
+        "screenSize": "6.6 inches",
+        "BatteryCapacity": "4360 mAh",
+        "OperatingSystem": "HarmonyOS 2",
+        "BiometricAuthentication": "Under-display fingerprint sensor",
+        "WirelessCharging": "Yes",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Motorola Edge 20 Pro",
+      "description": "Slim and powerful smartphone with a focus on photography.",
+      "price": 799.99,
+      "quantity": 50,
+      "imageCover": "https://example.com/edge_20_pro.jpg",
+      "images": [
+        "https://example.com/edge_20_pro_image1.jpg",
+        "https://example.com/edge_20_pro_image2.jpg",
+        "https://example.com/edge_20_pro_image3.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.6,
+      "ratingQuantity": 20,
+      "createdAt": "2023-08-15T14:30:00.000Z",
+      "updatedAt": "2023-08-15T14:30:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Snapdragon 870",
+        "RAM": "6GB",
+        "Storage": "128GB",
+        "screenSize": "6.7 inches",
+        "BatteryCapacity": "4500 mAh",
+        "OperatingSystem": "Android 11",
+        "BiometricAuthentication": "Under-display fingerprint sensor",
+        "WirelessCharging": "No",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Apple Watch Series 7",
+      "description": "Advanced smartwatch with a larger and always-on Retina display.",
+      "price": 399.99,
+      "quantity": 50,
+      "imageCover": "https://example.com/apple_watch_series_7.jpg",
+      "images": [
+        "https://example.com/apple_watch_series_7_image1.jpg",
+        "https://example.com/apple_watch_series_7_image2.jpg",
+        "https://example.com/apple_watch_series_7_image3.jpg"
+      ],
+      "category": 2,
+      "ratingAverage": 4.9,
+      "ratingQuantity": 40,
+      "createdAt": "2023-09-30T12:15:00.000Z",
+      "updatedAt": "2023-09-30T12:15:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Apple S7",
+        "RAM": "Not specified",
+        "Storage": "32GB",
+        "screenSize": "41mm or 45mm",
+        "BatteryCapacity": "Not specified",
+        "OperatingSystem": "watchOS 8",
+        "BiometricAuthentication": "Blood oxygen sensor, ECG, Fall detection",
+        "WirelessCharging": "Yes",
+        "Ports": "MagSafe"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Samsung Galaxy Watch 4",
+      "description": "Feature-rich smartwatch with advanced health tracking capabilities.",
+      "price": 349.99,
+      "quantity": 35,
+      "imageCover": "https://example.com/galaxy_watch_4.jpg",
+      "images": [
+        "https://example.com/galaxy_watch_4_image1.jpg",
+        "https://example.com/galaxy_watch_4_image2.jpg",
+        "https://example.com/galaxy_watch_4_image3.jpg"
+      ],
+      "category": 2,
+      "ratingAverage": 4.8,
+      "ratingQuantity": 30,
+      "createdAt": "2023-10-15T11:30:00.000Z",
+      "updatedAt": "2023-10-15T11:30:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Exynos W920",
+        "RAM": "1.5GB",
+        "Storage": "16GB",
+        "screenSize": "40mm or 44mm",
+        "BatteryCapacity": "361mAh",
+        "OperatingSystem": "Wear OS 3.5",
+        "BiometricAuthentication": "Heart rate monitor, SpO2 sensor, ECG",
+        "WirelessCharging": "Yes",
+        "Ports": "Wireless charging"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Garmin Venu 2",
+      "description": "Fitness-focused smartwatch with a vibrant AMOLED display.",
+      "price": 399.99,
+      "quantity": 25,
+      "imageCover": "https://example.com/garmin_venu_2.jpg",
+      "images": [
+        "https://example.com/garmin_venu_2_image1.jpg",
+        "https://example.com/garmin_venu_2_image2.jpg",
+        "https://example.com/garmin_venu_2_image3.jpg"
+      ],
+      "category": 2,
+      "ratingAverage": 4.7,
+      "ratingQuantity": 25,
+      "createdAt": "2023-11-20T10:45:00.000Z",
+      "updatedAt": "2023-11-20T10:45:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Not specified",
+        "RAM": "Not specified",
+        "Storage": "16GB",
+        "screenSize": "45mm",
+        "BatteryCapacity": "Not specified",
+        "OperatingSystem": "Not specified",
+        "BiometricAuthentication": "Heart rate monitor, Pulse Ox sensor, Body Battery",
+        "WirelessCharging": "No",
+        "Ports": "Charging port"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Fitbit Sense",
+      "description": "Health and fitness smartwatch with stress management features.",
+      "price": 329.99,
+      "quantity": 30,
+      "imageCover": "https://example.com/fitbit_sense.jpg",
+      "images": [
+        "https://example.com/fitbit_sense_image1.jpg",
+        "https://example.com/fitbit_sense_image2.jpg",
+        "https://example.com/fitbit_sense_image3.jpg"
+      ],
+      "category": 2,
+      "ratingAverage": 4.6,
+      "ratingQuantity": 20,
+      "createdAt": "2024-01-05T12:00:00.000Z",
+      "updatedAt": "2024-01-05T12:00:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Not specified",
+        "RAM": "Not specified",
+        "Storage": "Not specified",
+        "screenSize": "Not specified",
+        "BatteryCapacity": "Not specified",
+        "OperatingSystem": "Not specified",
+        "BiometricAuthentication": "EDA sensor, ECG, Skin temperature sensor",
+        "WirelessCharging": "No",
+        "Ports": "Charging port"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Huawei Watch GT 3",
+      "description": "Stylish smartwatch with long battery life and fitness tracking.",
+      "price": 249.99,
+      "quantity": 40,
+      "imageCover": "https://example.com/huawei_watch_gt_3.jpg",
+      "images": [
+        "https://example.com/huawei_watch_gt_3_image1.jpg",
+        "https://example.com/huawei_watch_gt_3_image2.jpg",
+        "https://example.com/huawei_watch_gt_3_image3.jpg"
+      ],
+      "category": 2,
+      "ratingAverage": 4.5,
+      "ratingQuantity": 18,
+      "createdAt": "2024-02-20T13:15:00.000Z",
+      "updatedAt": "2024-02-20T13:15:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Not specified",
+        "RAM": "Not specified",
+        "Storage": "16GB",
+        "screenSize": "46mm",
+        "BatteryCapacity": "Not specified",
+        "OperatingSystem": "Not specified",
+        "BiometricAuthentication": "Heart rate monitor, SpO2 sensor, Stress tracking",
+        "WirelessCharging": "No",
+        "Ports": "Charging port"
+      }
+    },
+    {
+      "id": 16,
+      "name": "MacBook Pro M2",
+      "description": "High-performance laptop for professional use.",
+      "price": 1999.99,
+      "quantity": 20,
+      "imageCover": "https://example.com/macbook_pro_m2.jpg",
+      "images": [
+        "https://example.com/macbook_pro_m2_image1.jpg",
+        "https://example.com/macbook_pro_m2_image2.jpg",
+        "https://example.com/macbook_pro_m2_image3.jpg"
+      ],
+      "category": 3,
+      "ratingAverage": 4.8,
+      "ratingQuantity": 15,
+      "createdAt": "2024-03-15T14:30:00.000Z",
+      "updatedAt": "2024-03-15T14:30:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Apple M2",
+        "RAM": "16GB",
+        "Storage": "512GB SSD",
+        "screenSize": "14 inches",
+        "BatteryCapacity": "Not specified",
+        "OperatingSystem": "macOS Monterey",
+        "BiometricAuthentication": "Touch ID",
+        "WirelessCharging": "No",
+        "Ports": "Thunderbolt 4, USB-C"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Dell XPS 15 2024",
+      "description": "Powerful and stylish laptop with a vibrant display.",
+      "price": 1799.99,
+      "quantity": 25,
+      "imageCover": "https://example.com/dell_xps_15_2024.jpg",
+      "images": [
+        "https://example.com/dell_xps_15_2024_image1.jpg",
+        "https://example.com/dell_xps_15_2024_image2.jpg",
+        "https://example.com/dell_xps_15_2024_image3.jpg"
+      ],
+      "category": 3,
+      "ratingAverage": 4.7,
+      "ratingQuantity": 18,
+      "createdAt": "2024-04-05T12:45:00.000Z",
+      "updatedAt": "2024-04-05T12:45:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Intel Core i7 12th Gen",
+        "RAM": "32GB",
+        "Storage": "1TB SSD",
+        "screenSize": "15.6 inches",
+        "BatteryCapacity": "Not specified",
+        "OperatingSystem": "Windows 11",
+        "BiometricAuthentication": "Fingerprint reader",
+        "WirelessCharging": "No",
+        "Ports": "Thunderbolt 4, USB-C"
+      }
+    },
+    {
+      "id": 18,
+      "name": "HP Spectre x360 2024",
+      "description": "Convertible laptop with a sleek design and powerful performance.",
+      "price": 1599.99,
+      "quantity": 30,
+      "imageCover": "https://example.com/hp_spectre_x360_2024.jpg",
+      "images": [
+        "https://example.com/hp_spectre_x360_2024_image1.jpg",
+        "https://example.com/hp_spectre_x360_2024_image2.jpg",
+        "https://example.com/hp_spectre_x360_2024_image3.jpg"
+      ],
+      "category": 3,
+      "ratingAverage": 4.9,
+      "ratingQuantity": 22,
+      "createdAt": "2024-04-20T15:00:00.000Z",
+      "updatedAt": "2024-04-20T15:00:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Intel Core i5 12th Gen",
+        "RAM": "16GB",
+        "Storage": "512GB SSD",
+        "screenSize": "13.3 inches",
+        "BatteryCapacity": "Not specified",
+        "OperatingSystem": "Windows 11",
+        "BiometricAuthentication": "Fingerprint reader",
+        "WirelessCharging": "No",
+        "Ports": "Thunderbolt 4, USB-C"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Lenovo ThinkPad X1 Carbon",
+      "description": "Premium business laptop with a durable and lightweight design.",
+      "price": 1899.99,
+      "quantity": 18,
+      "imageCover": "https://example.com/lenovo_thinkpad_x1_carbon.jpg",
+      "images": [
+        "https://example.com/lenovo_thinkpad_x1_carbon_image1.jpg",
+        "https://example.com/lenovo_thinkpad_x1_carbon_image2.jpg",
+        "https://example.com/lenovo_thinkpad_x1_carbon_image3.jpg"
+      ],
+      "category": 3,
+      "ratingAverage": 4.6,
+      "ratingQuantity": 15,
+      "createdAt": "2024-05-10T11:30:00.000Z",
+      "updatedAt": "2024-05-10T11:30:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Intel Core i7 12th Gen",
+        "RAM": "16GB",
+        "Storage": "1TB SSD",
+        "screenSize": "14 inches",
+        "BatteryCapacity": "Not specified",
+        "OperatingSystem": "Windows 11",
+        "BiometricAuthentication": "Fingerprint reader",
+        "WirelessCharging": "No",
+        "Ports": "Thunderbolt 4, USB-C"
+      }
+    },
+    {
+      "id": 20,
+      "name": "Asus ROG Zephyrus G14",
+      "description": "Gaming laptop with a powerful AMD Ryzen processor and dedicated GPU.",
+      "price": 1799.99,
+      "quantity": 22,
+      "imageCover": "https://example.com/asus_rog_zephyrus_g14.jpg",
+      "images": [
+        "https://example.com/asus_rog_zephyrus_g14_image1.jpg",
+        "https://example.com/asus_rog_zephyrus_g14_image2.jpg",
+        "https://example.com/asus_rog_zephyrus_g14_image3.jpg"
+      ],
+      "category": 3,
+      "ratingAverage": 4.8,
+      "ratingQuantity": 20,
+      "createdAt": "2024-06-01T14:00:00.000Z",
+      "updatedAt": "2024-06-01T14:00:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "AMD Ryzen 9 5900HS",
+        "RAM": "32GB",
+        "Storage": "1TB SSD",
+        "screenSize": "14 inches",
+        "BatteryCapacity": "76Wh",
+        "OperatingSystem": "Windows 10",
+        "BiometricAuthentication": "No",
+        "WirelessCharging": "No",
+        "Ports": "USB-C, HDMI, USB-A"
+      }
+    }
+  ],
+
+  "users": [
+    {
+      "id": 1,
+      "name": "User1",
+      "email": "user1@gmail.com",
+      "phone": "01012345611",
+      "profilePic": "https://example.com/user1.jpg",
+      "Address": "123, Street, City, Country",
+      "wishlist": [1, 2]
+    },
+    {
+      "id": 2,
+      "name": "User2",
+      "email": "user2@gmail.com",
+      "phone": "01012345612",
+      "profilePic": "https://example.com/user2.jpg",
+      "Address": "456, Street, City, Country",
+      "wishlist": [1, 3]
+    },
+    {
+      "id": 3,
+      "name": "User3",
+      "email": "user2@gmail.com",
+      "phone": "01012345613",
+      "profilePic": "https://example.com/user3.jpg",
+      "Address": "789, Street, City, Country",
+      "wishlist": [2, 3]
+    },
+    {
+      "id": 4,
+      "name": "User4",
+      "email": "user4@gmail.com",
+      "phone": "01012345614",
+      "profilePic": "https://example.com/user4.jpg",
+      "Address": "101, Street, City, Country",
+      "wishlist": [1, 4]
+    },
+    {
+      "id": 5,
+      "name": "User5",
+      "email": "user5@gmail.com",
+      "phone": "01012345615",
+      "profilePic": "https://example.com/user5.jpg",
+      "Address": "112, Street, City, Country",
+      "wishlist": [2, 4]
+    }
+  ],
+
+  "carts": [
+    {
+      "id": 1,
+      "user": 1,
+      "products": [
+        {
+          "id": 1,
+          "quantity": 2
+        },
+        {
+          "id": 2,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 2699.97,
+      "ordered": false,
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "user": 2,
+      "products": [
+        {
+          "id": 1,
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 1699.98,
+      "ordered": true,
+      "createdAt": "2022-02-02T10:45:00.000Z",
+      "updatedAt": "2022-02-02T10:45:00.000Z"
+    },
+    {
+      "id": 3,
+      "user": 3,
+      "products": [
+        {
+          "id": 2,
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 1799.98,
+      "ordered": false,
+      "createdAt": "2022-03-20T15:00:00.000Z",
+      "updatedAt": "2022-03-20T15:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "user": 4,
+      "products": [
+        {
+          "id": 1,
+          "quantity": 1
+        },
+        {
+          "id": 4,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 2499.98,
+      "ordered": true,
+      "createdAt": "2022-04-10T11:30:00.000Z",
+      "updatedAt": "2022-04-10T11:30:00.000Z"
+    },
+    {
+      "id": 5,
+      "user": 5,
+      "products": [
+        {
+          "id": 2,
+          "quantity": 1
+        },
+        {
+          "id": 4,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 2999.98,
+      "ordered": false,
+      "createdAt": "2022-04-10T11:30:00.000Z",
+      "updatedAt": "2022-04-10T11:30:00.000Z"
+    }
+  ],
+
+  "reviews": [
+    {
+      "id": 1,
+      "user": 1,
+      "product": 1,
+      "rating": 5,
+      "comment": "This is a great product",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "user": 2,
+      "product": 4,
+      "rating": 4,
+      "comment": "This is a good product",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 3,
+      "user": 3,
+      "product": 2,
+      "rating": 3,
+      "comment": "This is an average product",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 4,
+      "user": 4,
+      "product": 5,
+      "rating": 2,
+      "comment": "This is a bad product",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 5,
+      "user": 5,
+      "product": 1,
+      "rating": 1,
+      "comment": "This is a terrible product",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 6,
+      "user": 1,
+      "product": 2,
+      "rating": 5,
+      "comment": "This is a great product",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 7,
+      "user": 2,
+      "product": 5,
+      "rating": 4,
+      "comment": "This is a good product",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 8,
+      "user": 3,
+      "product": 3,
+      "rating": 3,
+      "comment": "This is an average product",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    }
+  ]
+}
