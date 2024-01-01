@@ -2,36 +2,41 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-lg-3 col-md-6 col-sm-12  mb-4 ">
-        <a class="product" href="#">
-          <div class="card my-3  shadow-lg bg-body-tertiary " style="border-radius: 15px 15px 2px 2px; height: 500;">
-            <div class="col-10 m-auto mt-3">
-              <!-- <img src = {{oneProduct.imgeCover}}> -->
-              <img src="assets\mob.jpg" alt="" class="card-img-top" width="95%" height="350px">
-            </div>
-            <div class="card-body">
-              <!-- <p>{{oneProduct.name}}</p> -->
-              <p style="font-weight:550; font-size: 22px;" class="card-title text-center">Apple Iphone 13</p>
-             <!-- ????????? -->
-              <p class="card-text">128 GB | FaceTime</p>
 
-              <div class="row">
-                <!-- <div>{{oneProduct.price}}</div> -->
-                <div style="font-size: 30px;" class="col-9"><span style="font-size: 30px;">&#36;</span>500</div>
-                <div class="col-2 mr-2">
-                  <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
-                </div>
-
-                <div class="m-auto text-center mt-3">
-                  <a href="#" class="btn btn-dark"
-                    style="font-weight:500; font-size:20px; color:white; width: 100%; background-color:black;">Add To
-                    Cart</a>
+      @for (p of product; track p.id) {
+        <div class="col-lg-3 col-md-6 col-sm-12  mb-4 ">
+          <a class="product" href="#">
+            <div class="card my-3  shadow-lg bg-body-tertiary " style="border-radius: 15px 15px 2px 2px; height: 500;">
+              <div class="col-10 m-auto mt-3">
+                <!-- <img src = {{oneProduct.imgeCover}}> -->
+                <img src="{{p.imageCover}}" alt="" class="card-img-top" width="95%" height="350px">
+              </div>
+              <div class="card-body">
+                <!-- <p>{{oneProduct.name}}</p> -->
+                <p style="font-weight:550; font-size: 22px;" class="card-title text-center">{{p.name}}</p>
+               <!-- ????????? -->
+                <p class="card-text">{{p.name}}</p>
+  
+                <div class="row">
+                  <!-- <div>{{oneProduct.price}}</div> -->
+                  <div style="font-size: 30px;" class="col-9"><span style="font-size: 30px;">&#36;
+                  </span>{{p.price}}</div>
+                  <div class="col-2 mr-2">
+                    <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+                  </div>
+  
+                  <div class="m-auto text-center mt-3">
+                    <a href="#" class="btn btn-dark"
+                      style="font-weight:500; font-size:20px; color:white; width: 100%; background-color:black;">Add To
+                      Cart</a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </a>
-      </div>
+          </a>
+        </div>
+      }
+      
       <!-- } -->
     </div>
   </div>
@@ -41,7 +46,7 @@
 <!-- In Home component -->
 <!-- 
   @for (p of AllProducts; track p.id) {
-            <app-product [oneProduct]="p"></app-product>
+            <app-product [Product]="p"></app-product>
                 }
  -->
 
