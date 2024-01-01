@@ -2,25 +2,25 @@
   "categories": [
     {
       "id": 1,
-      "name": "SmartPhones",
+      "name": "Smart Phones",
       "description": "Smartphones and accessories",
-      "imageCover": "https://example.com/smartphones.jpg",
+      "imageCover": "https://watanimg.elwatannews.com/image_archive/648x316/111041571666098024.jpg",
       "createdAt": "2022-01-15T12:30:00.000Z",
       "updatedAt": "2022-01-15T12:30:00.000Z"
     },
     {
       "id": 2,
-      "name": "SmartWatches",
-      "description": "Laptops and accessories",
-      "imageCover": "https://example.com/laptops.jpg",
+      "name": "Smart Watches",
+      "description": "smart watches",
+      "imageCover": "https://cdn.al-ain.com/lg/images/2023/10/11/62-225503-best-smart-watches-egypt-2023_700x400.jpg",
       "createdAt": "2022-02-02T10:45:00.000Z",
       "updatedAt": "2022-02-02T10:45:00.000Z"
     },
     {
       "id": 3,
-      "name": "LapTops",
-      "description": "Cameras and accessories",
-      "imageCover": "https://example.com/cameras.jpg",
+      "name": "Laptops",
+      "description": "Laptops and accessories",
+      "imageCover": "https://newsline-ye.com/user_images/news/02-12-22-17597543.jpg",
       "createdAt": "2022-03-20T15:00:00.000Z",
       "updatedAt": "2022-03-20T15:00:00.000Z"
     }
@@ -32,7 +32,7 @@
       "description": "High-performance smartphone with advanced features.",
       "price": 799.99,
       "quantity": 100,
-      "imageCover": "https://example.com/iphone_x.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/71i2XhHU3pL._AC_SX569_.jpg",
       "images": [
         "https://example.com/iphone_x_image1.jpg",
         "https://example.com/iphone_x_image2.jpg",
@@ -61,7 +61,7 @@
       "description": "Foldable smartphone with a large immersive display.",
       "price": 1999.99,
       "quantity": 50,
-      "imageCover": "https://example.com/galaxy_z_fold_2.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/619T9-5afsL._AC_SX569_.jpg",
       "images": [
         "https://example.com/galaxy_z_fold_2_image1.jpg",
         "https://example.com/galaxy_z_fold_2_image2.jpg",
@@ -90,7 +90,7 @@
       "description": "Flagship smartphone with top-notch camera capabilities.",
       "price": 899.99,
       "quantity": 75,
-      "imageCover": "https://example.com/pixel_6.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/712H7eI9Y6L.__AC_SX300_SY300_QL70_ML2_.jpg",
       "images": [
         "https://example.com/pixel_6_image1.jpg",
         "https://example.com/pixel_6_image2.jpg",
@@ -119,7 +119,7 @@
       "description": "High-performance smartphone with a focus on speed.",
       "price": 999.99,
       "quantity": 40,
-      "imageCover": "https://example.com/oneplus_9_pro.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/613SAOPmLeL._AC_SX569_.jpg",
       "images": [
         "https://example.com/oneplus_9_pro_image1.jpg",
         "https://example.com/oneplus_9_pro_image2.jpg",

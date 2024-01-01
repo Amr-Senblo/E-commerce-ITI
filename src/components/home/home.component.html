@@ -1,2 +1,12 @@
 <app-carousel [carouselImges]="images"></app-carousel>
-<app-categories></app-categories>
+<div class="container">
+  <div class="my-5">
+    <app-categories [categories]="allCategories"></app-categories>
+  </div>
+  <h2 class="text-center my-5">Smart Phones</h2>
+  <app-products-array [products]="mobileCatg4"></app-products-array>
+  <h2 class="text-center my-5">Smart Watches</h2>
+  <app-products-array [products]="smartWatch4"></app-products-array>
+  <h2 class="text-center my-5">Laptops</h2>
+  <app-products-array [products]="laptops4"></app-products-array>
+</div>
