@@ -7,6 +7,7 @@ import { ProfileComponent } from '../components/profile/profile.component';
 import { MainLayoutComponent } from '../layouts/main-layout/main-layout.component';
 import { HomeComponent } from '../components/home/home.component';
 import { CreateProductComponent } from '../components/create-product/create-product.component';
+import { RegisterFormComponent } from '../components/register-form/register-form.component';
 
 export const routes: Routes = [
   {
@@ -20,6 +21,7 @@ export const routes: Routes = [
       { path: 'Cart', component: CartComponent }, //Add Guard
     ],
   },
+  { path: 'Register', component: RegisterFormComponent },
   { path: 'CreateProduct', component: CreateProductComponent },
   { path: 'Profile/:id', component: ProfileComponent }, //Add Guard
   { path: '**', component: ErrorPageComponent },

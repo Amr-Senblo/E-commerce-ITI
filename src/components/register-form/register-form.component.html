@@ -1,0 +1,45 @@
+<div class="text-danger">
+    <h3>To Be Removed[For Test]</h3>
+    <div>
+        {{ userRegForm.value| json }}
+    </div>
+</div>
+<hr>
+<h3>Create User</h3>
+<div class="mt-3 m-auto col-6">
+    <form [formGroup]="userRegForm">
+        <div class="mb-3">
+            <label for="name" class="form-label">Your name</label>
+            <input type="text" class="form-control" id="name" form formControlName="name">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label"> Email</label>
+            <input type="email" class="form-control" id="email" form formControlName="email">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password">
+        </div>
+        <div class="mb-3">
+            <label for="phoneNumber" class="form-label">Mobile number</label>
+            <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber">
+        </div>
+        <div formGroupName="address">
+            <div class="mb-3">
+                <label for="street" class="form-label">Street </label>
+                <input type="text" class="form-control" id="street" formControlName="street">
+            </div>
+            <div class="mb-3">
+                <label for="city" class="form-label">City </label>
+                <input type="text" class="form-control" id="city" formControlName="city">
+            </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Country </label>
+                <input type="text" class="form-control" id="country" formControlName="country">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+</div>
