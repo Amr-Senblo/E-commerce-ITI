@@ -1,7 +1,10 @@
 <div class="text-danger">
     <h3>To Be Removed[For Test]</h3>
     <div>
-        {{ userRegForm.value| json }}
+        <!-- {{ userRegForm.value| json }} -->
+    </div>
+    <div>
+        {{ formName?.errors|json}}
     </div>
 </div>
 <hr>
@@ -10,7 +13,17 @@
     <form [formGroup]="userRegForm">
         <div class="mb-3">
             <label for="name" class="form-label">Your name</label>
-            <input type="text" class="form-control" id="name" form formControlName="name">
+            <input type="text" class="form-control" id="name" form formControlName="name"
+                [class.is-invalid]="!formName?.valid&& formName?.touched" [class.is-valid]="formName?.valid">
+            <div class="alert alert-warning" [hidden]="formName?.valid||formName?.untouched">
+                <small *ngIf="formName?.errors?.['required']">
+                    full name is required
+                </small>
+                <small *ngIf="formName?.errors?.['pattern']">
+                    the name must be 3 letters at least,<span
+                        class="d-block fw-bold">{{formName?.errors?.['pattern'].actualValue}} doesn't match</span>
+                </small>
+            </div>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label"> Email</label>
@@ -38,7 +51,7 @@
                 <input type="text" class="form-control" id="country" formControlName="country">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" [disabled]="userRegForm.invalid" class="btn btn-primary">Submit</button>
     </form>
 
 
