@@ -1,26 +1,21 @@
 <section id="gallery">
-  <div class="container">
-    <div class="row">
-
-
-      @for (p of product; track p.id) {
-        <div class="col-lg-3 col-md-6 col-sm-12  mb-4 ">
+ 
           <a class="product" href="#">
             <div class="card my-3  shadow-lg bg-body-tertiary " style="border-radius: 15px 15px 2px 2px; height: 500;">
               <div class="col-10 m-auto mt-3">
-                <!-- <img src = {{oneProduct.imgeCover}}> -->
-                <img src="{{p.imageCover}}" alt="" class="card-img-top" width="95%" height="350px">
+                
+                <img src="{{Product.imageCover}}" alt="" class="card-img-top" width="95%" height="350px">
               </div>
               <div class="card-body">
-                <!-- <p>{{oneProduct.name}}</p> -->
-                <p style="font-weight:550; font-size: 22px;" class="card-title text-center">{{p.name}}</p>
-               <!-- ????????? -->
-                <p class="card-text">{{p.name}}</p>
+               
+                <p style="font-weight:550; font-size: 22px;" class="card-title text-center">{{Product.name}}</p>
+              
+                <p class="card-text">{{Product.name}}</p>
   
                 <div class="row">
-                  <!-- <div>{{oneProduct.price}}</div> -->
+                  
                   <div style="font-size: 30px;" class="col-9"><span style="font-size: 30px;">&#36;
-                  </span>{{p.price}}</div>
+                  </span>{{Product.price}}</div>
                   <div class="col-2 mr-2">
                     <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
                   </div>
@@ -34,25 +29,7 @@
               </div>
             </div>
           </a>
-        </div>
-      }
       
-      <!-- } -->
-    </div>
-  </div>
 </section>
 
 
-<!-- In Home component -->
-<!-- 
-  @for (p of AllProducts; track p.id) {
-            <app-product [Product]="p"></app-product>
-                }
- -->
-
- <!-- 
- 1 ) create service
- 2 ) Using external module HttpClient
- 3 ) create getAllProducts()
- 4 ) ingect service in home component
-  -->

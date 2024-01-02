@@ -1,0 +1,11 @@
+
+.product{
+    text-decoration-line: none;
+  }
+
+  a .product:hover{
+    border: 5px solid #96ADA5;
+ 
+    
+    
+    }
