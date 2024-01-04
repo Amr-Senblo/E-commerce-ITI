@@ -119,7 +119,11 @@
       "description": "High-performance smartphone with a focus on speed.",
       "price": 999.99,
       "quantity": 40,
+
+    
+
       "imageCover": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/81fRAoUL-fL._AC_SL1500_.jpg",
+
       "images": [
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/41is2-Tl-JL._AC_.jpg",
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51viQV+uAuL._AC_.jpg",
@@ -380,11 +384,11 @@
       "description": "Fitness-focused smartwatch with a vibrant AMOLED display.",
       "price": 399.99,
       "quantity": 25,
-      "imageCover": "https://example.com/garmin_venu_2.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/51i6UseuG1L._AC_SX679_.jpg",
       "images": [
-        "https://example.com/garmin_venu_2_image1.jpg",
-        "https://example.com/garmin_venu_2_image2.jpg",
-        "https://example.com/garmin_venu_2_image3.jpg"
+        "https://m.media-amazon.com/images/I/611y2gUko8L._AC_SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61q+Emp9ObL._AC_SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51jvGS-8KML._AC_SY679_.jpg"
       ],
       "category": 2,
       "ratingAverage": 4.7,
@@ -409,11 +413,11 @@
       "description": "Health and fitness smartwatch with stress management features.",
       "price": 329.99,
       "quantity": 30,
-      "imageCover": "https://example.com/fitbit_sense.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/41TMmWY0MeL._AC_SX522_.jpg",
       "images": [
-        "https://example.com/fitbit_sense_image1.jpg",
-        "https://example.com/fitbit_sense_image2.jpg",
-        "https://example.com/fitbit_sense_image3.jpg"
+        "https://m.media-amazon.com/images/I/41ooeAvmcXL._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/41da2dnU0lL._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/41ooeAvmcXL._AC_SX522_.jpg"
       ],
       "category": 2,
       "ratingAverage": 4.6,
@@ -438,11 +442,11 @@
       "description": "Stylish smartwatch with long battery life and fitness tracking.",
       "price": 249.99,
       "quantity": 40,
-      "imageCover": "https://example.com/huawei_watch_gt_3.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/615XFQdvsxL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "images": [
-        "https://example.com/huawei_watch_gt_3_image1.jpg",
-        "https://example.com/huawei_watch_gt_3_image2.jpg",
-        "https://example.com/huawei_watch_gt_3_image3.jpg"
+        "https://m.media-amazon.com/images/I/61W6+ISIOCL._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/51vORPzCIWL._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/51Jd460JgiL._AC_SX522_.jpg"
       ],
       "category": 2,
       "ratingAverage": 4.5,
@@ -467,11 +471,11 @@
       "description": "High-performance laptop for professional use.",
       "price": 1999.99,
       "quantity": 20,
-      "imageCover": "https://example.com/macbook_pro_m2.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/51feQ7mwboL._AC_SX679_.jpg",
       "images": [
-        "https://example.com/macbook_pro_m2_image1.jpg",
-        "https://example.com/macbook_pro_m2_image2.jpg",
-        "https://example.com/macbook_pro_m2_image3.jpg"
+        "https://m.media-amazon.com/images/I/718iF6rFkHL._AC_SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61hxMhmK1VL._AC_SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61W+ul6W+iL._AC_SX679_.jpg"
       ],
       "category": 3,
       "ratingAverage": 4.8,

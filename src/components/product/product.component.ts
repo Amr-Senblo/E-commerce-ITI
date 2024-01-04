@@ -11,34 +11,13 @@ import { RouterLink } from '@angular/router';
   styleUrl: './product.component.css'
 })
 export class ProductComponent {
-  @Input() product: IProduct =<IProduct>{};
-    // {
-    //   "id": 1,
-    //   "name": "iPhone X",
-    //   "description": "High-performance smartphone with advanced features.",
-    //   "price": 799.99,
-    //   "quantity": 100,
-    //   "imageCover": "https://example.com/iphone_x.jpg",
-    //   "images": [
-    //     "https://example.com/iphone_x_image1.jpg",
-    //     "https://example.com/iphone_x_image2.jpg",
-    //     "https://example.com/iphone_x_image3.jpg"
-    //   ],
-    //   "category": 1,
-    //   "ratingAverage": 4.8,
-    //   "ratingQuantity": 25,
-    //   "createdAt": "2022-01-15T12:30:00.000Z",
-    //   "updatedAt": "2022-01-15T12:30:00.000Z",
-    //   "CommonSpecifications": {
-    //     "Processor": "Apple A11 Bionic",
-    //     "RAM": "3GB",
-    //     "Storage": "64GB",
-    //     "screenSize": "5.8 inches",
-    //     "BatteryCapacity": "2716 mAh",
-    //     "OperatingSystem": "iOS 11",
-    //     "BiometricAuthentication": "Face ID",
-    //     "WirelessCharging": "Yes",
-    //     "Ports": "Lightning"
-    //   }
-    // }
+  @Input() product: IProduct = <IProduct>{};
+  heart = 'fa-regular fa-heart '
+  onWishList() {
+    if (this.heart === 'fa-regular fa-heart ')
+      this.heart = 'fa-solid fa-heart wish'
+    else
+      this.heart = 'fa-regular fa-heart '
+  }
+
 }
