@@ -13,23 +13,21 @@ import { FilterComponent } from '../components/filter/filter.component';
 
 import { CreateProductComponent } from '../components/create-product/create-product.component';
 
-
 export const routes: Routes = [
   {
-    path: '', component: MainLayoutComponent,
-    children:
-    [
+    path: '',
+    component: MainLayoutComponent,
+    children: [
       { path: 'Home', component: HomeComponent },
       { path: '', redirectTo: 'Home', pathMatch: 'full' },
-
-      { path: 'Category/:categoryId', component: ProductListComponent },
+      { path: 'category/:categoryId', component: ProductListComponent },
       { path: 'Category/:categoryId/:id', component: ProductDetailsComponent },
       { path: 'Cart/:id', component: CartComponent }, //Add Guard
       { path: 'search/:keyword', component: FilterComponent },
     ],
   },
   { path: 'CreateProduct', component: CreateProductComponent },
-{
+  {
     path: 'register',
     component: RegisterComponent,
     data: { isRegister: true },
