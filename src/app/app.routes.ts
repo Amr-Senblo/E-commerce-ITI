@@ -9,9 +9,9 @@ import { HomeComponent } from '../components/home/home.component';
 
 export const routes: Routes = [
   {
-    path: '',
-    component: MainLayoutComponent,
-    children: [
+    path: '', component: MainLayoutComponent,
+    children:
+    [
       { path: 'Home', component: HomeComponent },
       { path: '', redirectTo: 'Home', pathMatch: 'full' },
       { path: 'Category/:categoryId', component: ProductListComponent },
