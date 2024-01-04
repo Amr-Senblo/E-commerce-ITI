@@ -500,11 +500,11 @@
       "description": "Powerful and stylish laptop with a vibrant display.",
       "price": 1799.99,
       "quantity": 25,
-      "imageCover": "https://example.com/dell_xps_15_2024.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/61kojk8MkkL._AC_SL1488_.jpg",
       "images": [
-        "https://example.com/dell_xps_15_2024_image1.jpg",
-        "https://example.com/dell_xps_15_2024_image2.jpg",
-        "https://example.com/dell_xps_15_2024_image3.jpg"
+        "https://m.media-amazon.com/images/I/71iwo-OWh7L._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/61uwX+7nXJL._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71J6u5s8f7L._AC_SL1500_.jpg"
       ],
       "category": 3,
       "ratingAverage": 4.7,
@@ -529,11 +529,11 @@
       "description": "Convertible laptop with a sleek design and powerful performance.",
       "price": 1599.99,
       "quantity": 30,
-      "imageCover": "https://example.com/hp_spectre_x360_2024.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/51WHI1KTGhL._AC_SL1000_.jpg",
       "images": [
-        "https://example.com/hp_spectre_x360_2024_image1.jpg",
-        "https://example.com/hp_spectre_x360_2024_image2.jpg",
-        "https://example.com/hp_spectre_x360_2024_image3.jpg"
+        "https://m.media-amazon.com/images/I/61ZFasreAFL._AC_SL1000_.jpg",
+        "https://m.media-amazon.com/images/I/61J389y0xdL._AC_SL1000_.jpg",
+        "https://m.media-amazon.com/images/I/615u41o5SbL._AC_SL1000_.jpg"
       ],
       "category": 3,
       "ratingAverage": 4.9,
@@ -558,11 +558,11 @@
       "description": "Premium business laptop with a durable and lightweight design.",
       "price": 1899.99,
       "quantity": 18,
-      "imageCover": "https://example.com/lenovo_thinkpad_x1_carbon.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/7114JUk91ML._AC_SL1500_.jpg",
       "images": [
-        "https://example.com/lenovo_thinkpad_x1_carbon_image1.jpg",
-        "https://example.com/lenovo_thinkpad_x1_carbon_image2.jpg",
-        "https://example.com/lenovo_thinkpad_x1_carbon_image3.jpg"
+        "https://m.media-amazon.com/images/I/81vaqNw60jL._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71oOMY8vhmL._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71i6H9-R9NL._AC_SL1500_.jpg"
       ],
       "category": 3,
       "ratingAverage": 4.6,
@@ -587,11 +587,11 @@
       "description": "Gaming laptop with a powerful AMD Ryzen processor and dedicated GPU.",
       "price": 1799.99,
       "quantity": 22,
-      "imageCover": "https://example.com/asus_rog_zephyrus_g14.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/71+U-WoUrWL._AC_SL1500_.jpg",
       "images": [
-        "https://example.com/asus_rog_zephyrus_g14_image1.jpg",
-        "https://example.com/asus_rog_zephyrus_g14_image2.jpg",
-        "https://example.com/asus_rog_zephyrus_g14_image3.jpg"
+        "https://m.media-amazon.com/images/I/61lE6VyQtrL._AC_SL1200_.jpg",
+        "https://m.media-amazon.com/images/I/61nfN+qOX5L._AC_SL1200_.jpg",
+        "https://m.media-amazon.com/images/I/617NH3JPV1L._AC_SL1200_.jpg"
       ],
       "category": 3,
       "ratingAverage": 4.8,

@@ -6,7 +6,13 @@ import { CartComponent } from '../components/cart/cart.component';
 import { ProfileComponent } from '../components/profile/profile.component';
 import { MainLayoutComponent } from '../layouts/main-layout/main-layout.component';
 import { HomeComponent } from '../components/home/home.component';
+
+import { RegisterComponent } from '../components/register/register.component';
+
+import { FilterComponent } from '../components/filter/filter.component';
+
 import { CreateProductComponent } from '../components/create-product/create-product.component';
+
 
 export const routes: Routes = [
   {
@@ -15,12 +21,20 @@ export const routes: Routes = [
     [
       { path: 'Home', component: HomeComponent },
       { path: '', redirectTo: 'Home', pathMatch: 'full' },
+
       { path: 'Category/:categoryId', component: ProductListComponent },
       { path: 'Category/:categoryId/:id', component: ProductDetailsComponent },
       { path: 'Cart/:id', component: CartComponent }, //Add Guard
+      { path: 'search/:keyword', component: FilterComponent },
     ],
   },
   { path: 'CreateProduct', component: CreateProductComponent },
+{
+    path: 'register',
+    component: RegisterComponent,
+    data: { isRegister: true },
+  },
+
   { path: 'Profile/:id', component: ProfileComponent }, //Add Guard
   { path: '**', component: ErrorPageComponent },
 ];
