@@ -1,1 +1,8 @@
-<p>cart works!</p>
+<div class="card p-3 m-5">
+  <div *ngFor="let product of products;let i= index">
+    <app-product-cart (cartProductEvent)="onAction($event)" [product]="product"
+      [quantity]="productsQuantity[i]"></app-product-cart>
+    <hr>
+  </div>
+  <button class="btn">Check Out</button>
+</div>

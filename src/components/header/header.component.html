@@ -21,7 +21,6 @@
                 <img src="assets/images/profile.png" alt="profile" class="profile-icon">
 
                 <span class="signin-text">Sign In</span>
-
             </div>
             <div class="dropdown">
                 <!-- <span>Username</span> -->
@@ -35,7 +34,6 @@
         </div>
     </div>
     <div class="second-header-container">
-
         <div class="categories-container">
             <div class="category-icon">
 
@@ -67,5 +65,74 @@
 
 
     </div>
-
 </div>
+
+  <div class="first-header-container">
+    <div class="logo-container">
+      <!-- <p class="logo">E-Commerce</p> -->
+      <img src="assets/images/logo-black.svg" alt="logo" class="logo">
+    </div>
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search for anything...">
+      <img src="assets/images/search.svg" alt="search" class="search-icon">
+    </div>
+    <div class="user-container">
+      <a routerLink="Cart/1">
+        <div class="cart">
+          <span class="cart-count">0</span>
+          <img src="assets/images/cart.png" alt="cart" class="cart-icon">
+          <span class="cart-text">Cart</span>
+        </div>
+      </a>
+      <div class="profile" (click)="toggleDropdown()">
+        <img src="assets/images/profile.png" alt="profile" class="profile-icon">
+
+        <span class="signin-text">Sign In</span>
+
+      </div>
+      <div class="dropdown">
+        <!-- <span>Username</span> -->
+        <div class="dropdown-content" *ngIf="isDropdownOpen">
+          <a href="#">My Profile</a>
+          <a href="#">Settings</a>
+          <a href="#">Logout</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="second-header-container">
+
+    <div class="categories-container">
+      <div class="category-icon">
+
+        <img src="assets/images/categories.svg" alt="category" class="category-icon">
+      </div>
+      <span class="category-text" (click)="toggleCategoriesDropdown()">Categories</span>
+      <div class="category-list" *ngIf="categoriesDropdown">
+        <div class="category-item">
+          <a href="#">Category 1</a>
+        </div>
+        <div class="category-item">
+          <a href="#">Category 2</a>
+        </div>
+        <div class="category-item">
+          <a href="#">Category 3</a>
+        </div>
+        <div class="category-item">
+          <a href="#">Category 4</a>
+        </div>
+        <div class="category-item">
+          <a href="#">Category 5</a>
+        </div>
+      </div>
+    </div>
+    <div class="info-container">
+      <div class="contact"><a href="#">Contact</a></div>
+      <!-- <div class="about-us"><a href="#">About Us</a></div> -->
+    </div>
+
+
+  </div>
+
+

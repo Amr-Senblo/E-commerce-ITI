@@ -1,7 +1,10 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { CategoriesComponent } from '../categories/categories.component';
+
 import { customHomeService } from '../../services/customHome.Service';
+
+
 import { HttpClientModule } from '@angular/common/http';
 import { IProduct } from '../../models/iproduct';
 import { ProductsArrayComponent } from '../products-array/products-array.component';
@@ -9,24 +12,37 @@ import { Image } from '../../models/image';
 import { ICategory } from '../../models/icategory';
 import { CategoryService } from '../../services/category.service';
 
+
+import { ProductService } from '../../services/product.service';
+import { SliderComponent } from '../slider/slider.component';
+
+
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  imports: [CarouselComponent, CategoriesComponent, HttpClientModule, ProductsArrayComponent],
-  providers: [customHomeService, CategoryService]
-})
+
+
+
 export class HomeComponent implements OnInit {
   images: Image[] = []
+
+  imports: [CarouselComponent, CategoriesComponent, HttpClientModule, ProductsArrayComponent, SliderComponent],
+  providers: [ProductService, CategoryService]
+
+export class HomeComponent implements OnInit {
+  images: Image[] = [{ imgSrc: 'https://m.media-amazon.com/images/I/714qCf4ZqGL.SX3000.jpg', imgAlt: 'cover' }]
+
   allCategories: ICategory[] = [];
   mobileCatg4: IProduct[] = [];
   smartWatch4: IProduct[] = [];
   laptops4: IProduct[] = [];
-  constructor(public productService: customHomeService, public categoryServise: CategoryService) { }
+
+  constructor(public productService: ProductService, public categoryServise: CategoryService) { }
 
   ngOnInit(): void {
-    //getProduct4 () ??????
+
     this.productService.getProduct4(1).subscribe({
       next: (value) => {
         this.mobileCatg4 = value;
