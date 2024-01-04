@@ -34,9 +34,9 @@
       "quantity": 100,
       "imageCover": "https://m.media-amazon.com/images/I/71i2XhHU3pL._AC_SX569_.jpg",
       "images": [
-        "https://example.com/iphone_x_image1.jpg",
-        "https://example.com/iphone_x_image2.jpg",
-        "https://example.com/iphone_x_image3.jpg"
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51S-6V4UOLL._AC_SL1100_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/515Ro7dQ02L._AC_SL1100_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51YZcGtBeYL._AC_SL1100_.jpg"
       ],
       "category": 1,
       "ratingAverage": 4.8,
@@ -63,9 +63,9 @@
       "quantity": 50,
       "imageCover": "https://m.media-amazon.com/images/I/619T9-5afsL._AC_SX569_.jpg",
       "images": [
-        "https://example.com/galaxy_z_fold_2_image1.jpg",
-        "https://example.com/galaxy_z_fold_2_image2.jpg",
-        "https://example.com/galaxy_z_fold_2_image3.jpg"
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61f3V3m9xnL._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61rLosd-3nL._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61dfQM7lwaL._AC_SL1500_.jpg"
       ],
       "category": 1,
       "ratingAverage": 4.7,
@@ -92,9 +92,9 @@
       "quantity": 75,
       "imageCover": "https://m.media-amazon.com/images/I/712H7eI9Y6L.__AC_SX300_SY300_QL70_ML2_.jpg",
       "images": [
-        "https://example.com/pixel_6_image1.jpg",
-        "https://example.com/pixel_6_image2.jpg",
-        "https://example.com/pixel_6_image3.jpg"
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61oQtjPpM-L._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61cK588k49L._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71bNpVQeSDL._AC_SL1500_.jpg"
       ],
       "category": 1,
       "ratingAverage": 4.6,
@@ -115,15 +115,15 @@
     },
     {
       "id": 4,
-      "name": "OnePlus 9 Pro",
+      "name": "OnePlus 11 5G",
       "description": "High-performance smartphone with a focus on speed.",
       "price": 999.99,
       "quantity": 40,
-      "imageCover": "https://m.media-amazon.com/images/I/613SAOPmLeL._AC_SX569_.jpg",
+      "imageCover": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/81fRAoUL-fL._AC_SL1500_.jpg",
       "images": [
-        "https://example.com/oneplus_9_pro_image1.jpg",
-        "https://example.com/oneplus_9_pro_image2.jpg",
-        "https://example.com/oneplus_9_pro_image3.jpg"
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/41is2-Tl-JL._AC_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51viQV+uAuL._AC_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51Yui+D9NfL._AC_.jpg"
       ],
       "category": 1,
       "ratingAverage": 4.5,
@@ -607,7 +607,6 @@
       }
     }
   ],
-
   "users": [
     {
       "id": 1,
@@ -616,7 +615,10 @@
       "phone": "01012345611",
       "profilePic": "https://example.com/user1.jpg",
       "Address": "123, Street, City, Country",
-      "wishlist": [1, 2]
+      "wishlist": [
+        1,
+        2
+      ]
     },
     {
       "id": 2,
@@ -625,7 +627,10 @@
       "phone": "01012345612",
       "profilePic": "https://example.com/user2.jpg",
       "Address": "456, Street, City, Country",
-      "wishlist": [1, 3]
+      "wishlist": [
+        1,
+        3
+      ]
     },
     {
       "id": 3,
@@ -634,7 +639,10 @@
       "phone": "01012345613",
       "profilePic": "https://example.com/user3.jpg",
       "Address": "789, Street, City, Country",
-      "wishlist": [2, 3]
+      "wishlist": [
+        2,
+        3
+      ]
     },
     {
       "id": 4,
@@ -643,7 +651,10 @@
       "phone": "01012345614",
       "profilePic": "https://example.com/user4.jpg",
       "Address": "101, Street, City, Country",
-      "wishlist": [1, 4]
+      "wishlist": [
+        1,
+        4
+      ]
     },
     {
       "id": 5,
@@ -652,10 +663,12 @@
       "phone": "01012345615",
       "profilePic": "https://example.com/user5.jpg",
       "Address": "112, Street, City, Country",
-      "wishlist": [2, 4]
+      "wishlist": [
+        2,
+        4
+      ]
     }
   ],
-
   "carts": [
     {
       "id": 1,
@@ -681,10 +694,10 @@
       "products": [
         {
           "id": 1,
-          "quantity": 1
+          "quantity": 9
         },
         {
-          "id": 3,
+          "id": 2,
           "quantity": 1
         }
       ],
@@ -748,7 +761,6 @@
       "updatedAt": "2022-04-10T11:30:00.000Z"
     }
   ],
-
   "reviews": [
     {
       "id": 1,
