@@ -1,16 +1,11 @@
- .container{
-    /* background: linear-gradient(to bottom, #01001F, #53527e), linear-gradient(to left, #01001F, #53527e); */
-    /* background: radial-gradient(circle, #01001F, #01001F); */
-    background-color: white;
 
+
+:host{
+  background-color: var(--third-color);
 }
-/*
-div{
-  background-color: #01001F !important;
+h2{
+  color: var(--sec-color);
+  font-size: 50px;
+  font-weight: 700;
 }
-*/
-h1{
-  color: rgb(0, 0, 0) !important;
-  font-size: 50px !important;
-  font-weight: bolder !important;
-}
+
