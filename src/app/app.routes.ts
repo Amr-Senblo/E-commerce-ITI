@@ -7,6 +7,7 @@ import { ProfileComponent } from '../components/profile/profile.component';
 import { MainLayoutComponent } from '../layouts/main-layout/main-layout.component';
 import { HomeComponent } from '../components/home/home.component';
 import { CreateProductComponent } from '../components/create-product/create-product.component';
+import { FilterComponent } from '../components/filter/filter.component';
 
 export const routes: Routes = [
   {
@@ -16,6 +17,7 @@ export const routes: Routes = [
       { path: 'Home', component: HomeComponent },
       { path: '', redirectTo: 'Home', pathMatch: 'full' },
       { path: 'Category/:categoryId', component: ProductListComponent },
+      { path: 'Search/:categoryId', component: FilterComponent },
       { path: 'Category/:categoryId/:id', component: ProductDetailsComponent },
       { path: 'Cart', component: CartComponent }, //Add Guard
     ],

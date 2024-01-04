@@ -39,6 +39,7 @@ export class ProductComponent {
         "BiometricAuthentication": "Face ID",
         "WirelessCharging": "Yes",
         "Ports": "Lightning"
-      }
+      },
+      brand: ''
     }
 }

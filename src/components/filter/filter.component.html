@@ -1,1 +1,25 @@
-<p>filter works!</p>
+<div class="row m-0">
+    <div class="col-2 bg-light m-0 p-0 ">
+        
+        <div class="row m-0 p-0" >
+                <h4>Select Brand </h4>
+                @for (brand of brandsNames; track $index) 
+                {
+                <p class="col-5 p-0 m-0"><mat-checkbox color="primary" [(ngModel)]="checkboxStates[brand]"(change)="toggleCheckbox()">{{brand}}</mat-checkbox></p>
+                }
+
+            </div>
+            <div class="row p-0 m-0">
+                
+            </div>
+       
+    </div>
+    <div class="col-9  ">
+        <app-products-array [products]="productList"></app-products-array>
+
+    </div>
+</div>
+        <section class="example-section">
+            <h4>You chose:</h4>
+            <!-- {{checkBoxes.nativeElement.value|json }} -->
+        </section>
