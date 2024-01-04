@@ -19,6 +19,7 @@ export class ProductService {
     let url= `${this.DB}/${id}`;
     return this.http.get<IProduct>(url);
   }
+
   createProduct(data:{}){
     return this.http.post<IProduct>(this.DB,data);
   }
@@ -31,5 +32,15 @@ export class ProductService {
   {
     let url= `${this.DB}/${id}`;
     return this.http.delete<IProduct>(url);
+  }
+
+  getProductsOfCategory(categoryId: number) {
+    let url =`${this.DB}?category=${categoryId}`;
+    return this.http.get<IProduct[]>(url)
+  }
+
+  getProduct4(categoryId: number) {
+    let url =`${this.DB}?category=${categoryId}&_page=1&_limit=4`;
+    return this.http.get<IProduct[]>(url)
   }
 }
