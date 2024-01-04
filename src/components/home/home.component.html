@@ -1,18 +1,19 @@
-<app-carousel [carouselImges]="images"></app-carousel>
-<app-categories></app-categories>
-
-
-<div class="container">
-    <div class="row ">
-
-        @for (p of AllProducts; track p.id) {
-        <div class="col-lg-3 col-md-6 col-sm-12  mb-4 ">
-            <a class="product" href="#">
-                <app-product [Product]="p"></app-product>
-            </a>
-        </div>
-
-        }
-
-    </div>
+<app-carousel [indecators]="false" [autoSlide]="true" [intervalInSecands]="5" [carouselImges]="images"></app-carousel>
+<!-- <app-slider></app-slider> -->
+<div class="container home m-auto">
+  <div class="my-5">
+    <app-categories [categories]="allCategories"></app-categories>
+  </div>
+  <div class="my-5">
+    <h2 class="text-center my-5">Smart Phones</h2>
+    <app-products-array [products]="mobileCatg4"></app-products-array>
+  </div>
+  <div class="my-5">
+    <h2 class="text-center my-5">Smart Watches</h2>
+    <app-products-array [products]="smartWatch4"></app-products-array>
+  </div>
+  <div class="my-5">
+    <h2 class="text-center my-5">Laptops</h2>
+    <app-products-array [products]="laptops4"></app-products-array>
+  </div>
 </div>

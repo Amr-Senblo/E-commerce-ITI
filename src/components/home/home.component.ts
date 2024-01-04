@@ -1,21 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { CategoriesComponent } from '../categories/categories.component';
-import { ProductComponent } from '../product/product.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ProductService } from '../../services/product.service';
-import { IProduct } from '../../models/iproduct';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  imports: [CarouselComponent, CategoriesComponent, ProductComponent, HttpClientModule],
-  providers: [ProductService],
-
+  imports: [CarouselComponent, CategoriesComponent],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   images = [
     {
       imgSrc:
@@ -33,21 +27,4 @@ export class HomeComponent implements OnInit {
       imgAlt: 'photo',
     },
   ];
-
-  constructor(private myService: ProductService) { }
-
-  AllProducts: IProduct[] = [];
-  ngOnInit(): void {
-
-    this.myService.getProducts().subscribe((data: IProduct[]) => {
-      this.AllProducts = data.slice(0, 8);
-      console.log(this.AllProducts);
-      
-    });
-
-
-
-  }
-
-
 }

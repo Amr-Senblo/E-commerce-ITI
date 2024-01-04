@@ -9,14 +9,14 @@ import { HomeComponent } from '../components/home/home.component';
 
 export const routes: Routes = [
   {
-    path: '',
-    component: MainLayoutComponent,
-    children: [
+    path: '', component: MainLayoutComponent,
+    children:
+    [
       { path: 'Home', component: HomeComponent },
       { path: '', redirectTo: 'Home', pathMatch: 'full' },
       { path: 'Category/:categoryId', component: ProductListComponent },
       { path: 'Category/:categoryId/:id', component: ProductDetailsComponent },
-      { path: 'Cart', component: CartComponent },//Add Guard
+      { path: 'Cart/:id', component: CartComponent },//Add Guard
     ],
   },
   { path: 'Profile/:id', component: ProfileComponent },//Add Guard
