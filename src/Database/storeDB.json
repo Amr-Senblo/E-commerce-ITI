@@ -2,25 +2,25 @@
   "categories": [
     {
       "id": 1,
-      "name": "SmartPhones",
+      "name": "Smart Phones",
       "description": "Smartphones and accessories",
-      "imageCover": "https://example.com/smartphones.jpg",
+      "imageCover": "https://watanimg.elwatannews.com/image_archive/648x316/111041571666098024.jpg",
       "createdAt": "2022-01-15T12:30:00.000Z",
       "updatedAt": "2022-01-15T12:30:00.000Z"
     },
     {
       "id": 2,
-      "name": "SmartWatches",
-      "description": "Laptops and accessories",
-      "imageCover": "https://example.com/laptops.jpg",
+      "name": "Smart Watches",
+      "description": "smart watches",
+      "imageCover": "https://cdn.al-ain.com/lg/images/2023/10/11/62-225503-best-smart-watches-egypt-2023_700x400.jpg",
       "createdAt": "2022-02-02T10:45:00.000Z",
       "updatedAt": "2022-02-02T10:45:00.000Z"
     },
     {
       "id": 3,
-      "name": "LapTops",
-      "description": "Cameras and accessories",
-      "imageCover": "https://example.com/cameras.jpg",
+      "name": "Laptops",
+      "description": "Laptops and accessories",
+      "imageCover": "https://newsline-ye.com/user_images/news/02-12-22-17597543.jpg",
       "createdAt": "2022-03-20T15:00:00.000Z",
       "updatedAt": "2022-03-20T15:00:00.000Z"
     }
@@ -32,7 +32,7 @@
       "description": "High-performance smartphone with advanced features.",
       "price": 799.99,
       "quantity": 100,
-      "imageCover": "https://example.com/iphone_x.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/71i2XhHU3pL._AC_SX569_.jpg",
       "images": [
         "https://example.com/iphone_x_image1.jpg",
         "https://example.com/iphone_x_image2.jpg",
@@ -61,7 +61,7 @@
       "description": "Foldable smartphone with a large immersive display.",
       "price": 1999.99,
       "quantity": 50,
-      "imageCover": "https://example.com/galaxy_z_fold_2.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/619T9-5afsL._AC_SX569_.jpg",
       "images": [
         "https://example.com/galaxy_z_fold_2_image1.jpg",
         "https://example.com/galaxy_z_fold_2_image2.jpg",
@@ -90,7 +90,7 @@
       "description": "Flagship smartphone with top-notch camera capabilities.",
       "price": 899.99,
       "quantity": 75,
-      "imageCover": "https://example.com/pixel_6.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/712H7eI9Y6L.__AC_SX300_SY300_QL70_ML2_.jpg",
       "images": [
         "https://example.com/pixel_6_image1.jpg",
         "https://example.com/pixel_6_image2.jpg",
@@ -119,7 +119,7 @@
       "description": "High-performance smartphone with a focus on speed.",
       "price": 999.99,
       "quantity": 40,
-      "imageCover": "https://example.com/oneplus_9_pro.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/613SAOPmLeL._AC_SX569_.jpg",
       "images": [
         "https://example.com/oneplus_9_pro_image1.jpg",
         "https://example.com/oneplus_9_pro_image2.jpg",
@@ -380,11 +380,11 @@
       "description": "Fitness-focused smartwatch with a vibrant AMOLED display.",
       "price": 399.99,
       "quantity": 25,
-      "imageCover": "https://example.com/garmin_venu_2.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/51i6UseuG1L._AC_SX679_.jpg",
       "images": [
-        "https://example.com/garmin_venu_2_image1.jpg",
-        "https://example.com/garmin_venu_2_image2.jpg",
-        "https://example.com/garmin_venu_2_image3.jpg"
+        "https://m.media-amazon.com/images/I/611y2gUko8L._AC_SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61q+Emp9ObL._AC_SX679_.jpg",
+        "https://m.media-amazon.com/images/I/51jvGS-8KML._AC_SY679_.jpg"
       ],
       "category": 2,
       "ratingAverage": 4.7,
@@ -409,11 +409,11 @@
       "description": "Health and fitness smartwatch with stress management features.",
       "price": 329.99,
       "quantity": 30,
-      "imageCover": "https://example.com/fitbit_sense.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/41TMmWY0MeL._AC_SX522_.jpg",
       "images": [
-        "https://example.com/fitbit_sense_image1.jpg",
-        "https://example.com/fitbit_sense_image2.jpg",
-        "https://example.com/fitbit_sense_image3.jpg"
+        "https://m.media-amazon.com/images/I/41ooeAvmcXL._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/41da2dnU0lL._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/41ooeAvmcXL._AC_SX522_.jpg"
       ],
       "category": 2,
       "ratingAverage": 4.6,
@@ -438,11 +438,11 @@
       "description": "Stylish smartwatch with long battery life and fitness tracking.",
       "price": 249.99,
       "quantity": 40,
-      "imageCover": "https://example.com/huawei_watch_gt_3.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/615XFQdvsxL.__AC_SX300_SY300_QL70_ML2_.jpg",
       "images": [
-        "https://example.com/huawei_watch_gt_3_image1.jpg",
-        "https://example.com/huawei_watch_gt_3_image2.jpg",
-        "https://example.com/huawei_watch_gt_3_image3.jpg"
+        "https://m.media-amazon.com/images/I/61W6+ISIOCL._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/51vORPzCIWL._AC_SX522_.jpg",
+        "https://m.media-amazon.com/images/I/51Jd460JgiL._AC_SX522_.jpg"
       ],
       "category": 2,
       "ratingAverage": 4.5,
@@ -467,11 +467,11 @@
       "description": "High-performance laptop for professional use.",
       "price": 1999.99,
       "quantity": 20,
-      "imageCover": "https://example.com/macbook_pro_m2.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/51feQ7mwboL._AC_SX679_.jpg",
       "images": [
-        "https://example.com/macbook_pro_m2_image1.jpg",
-        "https://example.com/macbook_pro_m2_image2.jpg",
-        "https://example.com/macbook_pro_m2_image3.jpg"
+        "https://m.media-amazon.com/images/I/718iF6rFkHL._AC_SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61hxMhmK1VL._AC_SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61W+ul6W+iL._AC_SX679_.jpg"
       ],
       "category": 3,
       "ratingAverage": 4.8,

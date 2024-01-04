@@ -1,35 +1,32 @@
 <section id="gallery">
- 
-          <a class="product" href="#">
-            <div class="card my-3  shadow-lg bg-body-tertiary " style="border-radius: 15px 15px 2px 2px; height: 500;">
-              <div class="col-10 m-auto mt-3">
-                
-                <img src="{{Product.imageCover}}" alt="" class="card-img-top" width="95%" height="350px">
+  <div class="container">
+    <div class="row">
+      <a class="product" [routerLink]="'/Category/'+product.category+'/'+product.id">
+        <div class="card my-3  shadow-lg bg-body-tertiary " style="border-radius: 15px 15px 2px 2px; height: 500;">
+          <div class="col-10 m-auto mt-3">
+            <img [src]="product.imageCover" [alt]="product.name" class="card-img-top" width="95%" height="350px">
+          </div>
+          <div class="card-body">
+            <p style="font-weight:500; font-size: 22px;" class="card-title text-center">{{product.name}}</p>
+            <p class="card-text">{{product.CommonSpecifications.Processor}}|{{product.CommonSpecifications.Storage}}
+            </p>
+            <!-- <a href="" class="btn btn-outline-success btn-sm">Read More</a> -->
+            <div class="row">
+              <div style="font-size: 30px;" class="col-9"><span style="font-size: 30px;">&#36;</span>{{product.price}}$
               </div>
-              <div class="card-body">
-               
-                <p style="font-weight:550; font-size: 22px;" class="card-title text-center">{{Product.name}}</p>
-              
-                <p class="card-text">{{Product.name}}</p>
-  
-                <div class="row">
-                  
-                  <div style="font-size: 30px;" class="col-9"><span style="font-size: 30px;">&#36;
-                  </span>{{Product.price}}</div>
-                  <div class="col-2 mr-2">
-                    <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
-                  </div>
-  
-                  <div class="m-auto text-center mt-3">
-                    <a href="#" class="btn btn-dark"
-                      style="font-weight:500; font-size:20px; color:white; width: 100%; background-color:black;">Add To
-                      Cart</a>
-                  </div>
-                </div>
+              <div class="col-2 mr-2">
+                <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+              </div>
+
+              <div class="m-auto text-center mt-3">
+                <a href="#" class="btn btn-dark"
+                  style="font-weight:500; font-size:20px; color:white; width: 100%; background-color:black;">Add To
+                  Cart</a>
               </div>
             </div>
-          </a>
-      
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
 </section>
-
-
