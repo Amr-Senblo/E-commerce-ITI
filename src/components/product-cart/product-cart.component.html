@@ -1,0 +1,25 @@
+<div class="container product m-5 mx-auto" [style.display]="displayItem">
+
+
+  <div class="row p-3  align-items-center">
+    <div class="col-12 col-md-3 img-cont">
+      <img [src]="product.imageCover" alt="product Image" class="img">
+    </div>
+    <div class="col-12 col-md-3 text-center">
+      {{product.name}}
+    </div>
+    <div class="col-12 col-md-3 text-center">
+      {{quantity*product.price}} $
+    </div>
+    <div class="col-12 col-md-3 text-center d-flex">
+      <button class="btn mx-1" (click)="onMinus(product.id,quantity)">-</button>
+      <input disabled type="text" class="form-control mx-1" [value]="quantity" min="1" [style.Width]="'50px'" />
+      <button class="btn mx-1" (click)="onPlus(product.id,quantity)">+</button>
+      <div class="d-flex justify-conten-center align-items-center mx-3 fs-2">
+        <button (click)="onRemove(product.id)" class="removeBtn">
+          <i class="fa-solid fa-circle-minus" [style.color]="'var(--main-color)'"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

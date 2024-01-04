@@ -19,7 +19,7 @@ export const routes: Routes = [
       { path: 'Category/:categoryId', component: ProductListComponent },
       { path: 'Search/:categoryId', component: FilterComponent },
       { path: 'Category/:categoryId/:id', component: ProductDetailsComponent },
-      { path: 'Cart', component: CartComponent }, //Add Guard
+      { path: 'Cart/:id', component: CartComponent }, //Add Guard
     ],
   },
   { path: 'CreateProduct', component: CreateProductComponent },

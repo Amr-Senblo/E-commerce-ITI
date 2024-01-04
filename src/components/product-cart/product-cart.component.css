@@ -1,0 +1,16 @@
+.img{
+  max-width : 100px;
+  height: auto;
+}
+.img-cont{
+  height: 100px;
+}
+.btn{
+  background-color: var(--main-color);
+  color: var(--third-color);
+  width: 50px;
+}
+.removeBtn{
+  border: none;
+  background-color: transparent;
+}
