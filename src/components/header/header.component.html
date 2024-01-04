@@ -3,13 +3,16 @@
 
 
     <div class="first-header-container">
-        <div class="logo-container">
+        <div routerLink="Home" class="logo-container">
             <!-- <p class="logo">E-Commerce</p> -->
             <img src="assets/images/logo-black.svg" alt="logo" class="logo">
         </div>
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search for anything...">
-            <img src="assets/images/search.svg" alt="search" class="search-icon">
+
+            <input type="text" class="search-input" placeholder="Search for anything..." [(ngModel)]="searchkeyword">
+
+            <a [routerLink]="['/search',searchkeyword]"><img src="assets/images/search.svg" alt="search"
+                    class="search-icon"></a>
         </div>
         <div class="user-container">
             <div class="cart">
@@ -26,9 +29,11 @@
             <div class="dropdown">
                 <!-- <span>Username</span> -->
                 <div class="dropdown-content" *ngIf="isDropdownOpen">
-                    <a href="#">My Profile</a>
-                    <a href="#">Settings</a>
-                    <a href="#">Logout</a>
+                    <a> <i class="fa-regular fa-user"></i>Profile</a>
+                    <a><i class="fa-regular fa-heart"></i> Wishlist</a>
+                    <a> <i class="fa-regular fa-credit-card"></i> Orders</a>
+
+                    <a routerLink="register"><i class="fa-solid fa-power-off"></i> Logout</a>
                 </div>
             </div>
 
@@ -43,25 +48,17 @@
             </div>
             <span class="category-text" (click)="toggleCategoriesDropdown()">Categories</span>
             <div class="category-list" *ngIf="categoriesDropdown">
+                @for(category of categories; track category.id){
                 <div class="category-item">
-                    <a href="#">Category 1</a>
+                    <a [routerLink]="['/category', category.id]">{{category.name}}</a>
+                    <!-- <a routerLink="category/:categoryId"> {{category.name}}</a> -->
                 </div>
-                <div class="category-item">
-                    <a href="#">Category 2</a>
-                </div>
-                <div class="category-item">
-                    <a href="#">Category 3</a>
-                </div>
-                <div class="category-item">
-                    <a href="#">Category 4</a>
-                </div>
-                <div class="category-item">
-                    <a href="#">Category 5</a>
-                </div>
+                }
+
             </div>
         </div>
         <div class="info-container">
-            <div class="contact"><a href="#">Contact</a></div>
+            <div class="contact"><a href="#">Contact </a></div>
             <div class="about-us"><a href="#">About Us</a></div>
         </div>
 

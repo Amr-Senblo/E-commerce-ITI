@@ -6,6 +6,9 @@ import { CartComponent } from '../components/cart/cart.component';
 import { ProfileComponent } from '../components/profile/profile.component';
 import { MainLayoutComponent } from '../layouts/main-layout/main-layout.component';
 import { HomeComponent } from '../components/home/home.component';
+import { RegisterComponent } from '../components/register/register.component';
+
+import { FilterComponent } from '../components/filter/filter.component';
 
 export const routes: Routes = [
   {
@@ -14,11 +17,17 @@ export const routes: Routes = [
     children: [
       { path: 'Home', component: HomeComponent },
       { path: '', redirectTo: 'Home', pathMatch: 'full' },
-      { path: 'Category/:categoryId', component: ProductListComponent },
-      { path: 'Category/:categoryId/:id', component: ProductDetailsComponent },
-      { path: 'Cart', component: CartComponent },//Add Guard
+      { path: 'category/:categoryId', component: ProductListComponent },
+      { path: 'search/:keyword', component: FilterComponent },
+      { path: 'category/:categoryId/:id', component: ProductDetailsComponent },
+      { path: 'cart', component: CartComponent }, //Add Guard
     ],
   },
-  { path: 'Profile/:id', component: ProfileComponent },//Add Guard
+  {
+    path: 'register',
+    component: RegisterComponent,
+    data: { isRegister: true },
+  },
+  { path: 'Profile/:id', component: ProfileComponent }, //Add Guard
   { path: '**', component: ErrorPageComponent },
 ];
