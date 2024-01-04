@@ -2,8 +2,8 @@
   @for (category of categories; track category.id) {
   <a [routerLink]="'/Category/'+category.id"
     class="col-12 col-md-6 col-lg-4 text-center text-decoration-none catg d-flex align-items-center justify-content-center">
-    <div>
-      {{category.name}}
+    <div style="border-radius: 100%;">
+          <h4> {{category.name}}</h4>
     </div>
   </a>
   }

@@ -17,7 +17,7 @@ export const routes: Routes = [
       { path: '', redirectTo: 'Home', pathMatch: 'full' },
       { path: 'Category/:categoryId', component: ProductListComponent },
       { path: 'Category/:categoryId/:id', component: ProductDetailsComponent },
-      { path: 'Cart', component: CartComponent }, //Add Guard
+      { path: 'Cart/:id', component: CartComponent }, //Add Guard
     ],
   },
   { path: 'CreateProduct', component: CreateProductComponent },
