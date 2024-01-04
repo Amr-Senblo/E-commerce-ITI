@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 import { ICategory } from '../../models/icategory';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
 @Component({
   selector: 'app-categories',
   standalone: true,
