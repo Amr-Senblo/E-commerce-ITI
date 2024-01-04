@@ -24,4 +24,9 @@ export class FilterAPIService {
       `${environment.apiUrl}/products?category=${catId}&${brans}`
     );
   }
+  getProductFromShearch(keyword: string): Observable<IProduct[]> {
+    return this.httpClient.get<IProduct[]>(
+      `${environment.apiUrl}/products?q=${keyword}`
+    );
+  }
 }
