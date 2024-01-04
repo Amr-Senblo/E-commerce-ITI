@@ -19,7 +19,7 @@ import { SliderComponent } from '../slider/slider.component';
   providers: [ProductService, CategoryService]
 })
 export class HomeComponent implements OnInit {
-  images: Image[] = []
+  images: Image[] = [{ imgSrc: 'https://m.media-amazon.com/images/I/714qCf4ZqGL.SX3000.jpg', imgAlt: 'cover' }]
   allCategories: ICategory[] = [];
   mobileCatg4: IProduct[] = [];
   smartWatch4: IProduct[] = [];
