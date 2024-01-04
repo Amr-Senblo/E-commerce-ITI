@@ -2,6 +2,12 @@
   min-height: 100px;
   color: #eee;
   background-color: var(--main-color);
-  border-radius: 20px;
-  border: 10px solid var(--third-color);
+  border-radius: 50px;
+  border: 2px solid var(--third-color);
+  margin-top: 5%;
+  /* margin: 1%; */
+  box-sizing: border-box;
+}
+.catg:hover{
+  background-color: rgba(255, 255, 255, 0.438);
 }

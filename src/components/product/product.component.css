@@ -1,6 +1,6 @@
 a:hover i {
-  color: #fff; /* Set the text color to white when hovering */
-  background-color: #dc3545; /* Set the background color to red when hovering (if applicable) */
+  color: #fff;
+  background-color: #dc3545;
   overflow: hidden;
 }
 .product{
@@ -8,7 +8,11 @@ a:hover i {
 }
 a .product:hover{
 border: 1px solid #96ADA5;
-/* box-shadow: inset 2px 2px #96ADA5; */
-
-
+}
+.Image {
+  width: 50% !important;
+  margin-left: 25% !important;
+}
+.btn:hover{
+  background-color: #ffffff86;
 }
