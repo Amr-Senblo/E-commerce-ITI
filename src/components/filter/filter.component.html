@@ -7,7 +7,7 @@
 
             @for (category of categories; track $index)
             {
-            <p class="col-8 p-0 m-0"><mat-checkbox color="primary" [(ngModel)]="checkCategoryBoxStates[category.id]"
+            <p class="col-8 p-0 m-0"><mat-checkbox  class="custom-checkbox-primary"color="primary" [(ngModel)]="checkCategoryBoxStates[category.id]"
                     (change)="filter()">{{category.name}}</mat-checkbox></p>
             }
 

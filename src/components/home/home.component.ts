@@ -14,7 +14,7 @@ import { CategoryService } from '../../services/category.service';
 
 
 import { ProductService } from '../../services/product.service';
-import { SliderComponent } from '../slider/slider.component';
+
 
 
 @Component({
@@ -22,14 +22,15 @@ import { SliderComponent } from '../slider/slider.component';
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
+ 
 
 
 
-export class HomeComponent implements OnInit {
-  images: Image[] = []
 
-  imports: [CarouselComponent, CategoriesComponent, HttpClientModule, ProductsArrayComponent, SliderComponent],
+
+  imports: [CarouselComponent, CategoriesComponent, HttpClientModule, ProductsArrayComponent],
   providers: [ProductService, CategoryService]
+})
 
 export class HomeComponent implements OnInit {
   images: Image[] = [{ imgSrc: 'https://m.media-amazon.com/images/I/714qCf4ZqGL.SX3000.jpg', imgAlt: 'cover' }]

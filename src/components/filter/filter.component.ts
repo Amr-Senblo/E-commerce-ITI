@@ -13,7 +13,7 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
   selector: 'app-filter',
   standalone: true,
   templateUrl: './filter.component.html',
-  styleUrl: './filter.component.css',
+  styleUrls: ['./filter.component.css'],
   imports: [
     MatSidenavModule,
     ProductsArrayComponent,
@@ -22,6 +22,7 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     MatSliderModule,
+    
   ],
 })
 export class FilterComponent implements OnInit {
