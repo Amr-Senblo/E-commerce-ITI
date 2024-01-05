@@ -1,17 +1,15 @@
 <div class="header">
-
-
-
   <div class="first-header-container">
     <div routerLink="Home" class="logo-container">
-      <!-- <p class="logo">E-Commerce</p> -->
       <img src="assets/images/logo-black.svg" alt="logo" class="logo">
     </div>
     <div class="search-container">
-      <input type="text" class="search-input" placeholder="Search for anything..." [(ngModel)]="searchkeyword">
-      <a [routerLink]="['/search',searchkeyword]"><img src="assets/images/search.svg" alt="search"
+      <input type="text" class="search-input" (input)="gitNames(searchInput.value)" (keyup.enter)="onSearchEnter(searchInput.value)" #searchInput placeholder="Search for anything..." [(ngModel)]="searchkeyword">
+      <a [routerLink]="['/Search',searchkeyword]"><img src="assets/images/search.svg" alt="search"
           class="search-icon"></a>
     </div>
+
+
     <div class="user-container">
       <a routerLink="Cart/1" class="cart-anchor">
         <div class="cart">
@@ -22,29 +20,22 @@
       </a>
       <div class="profile" (click)="toggleDropdown()">
         <img src="assets/images/profile.png" alt="profile" class="profile-icon">
-
-
         <span class="signin-text">Sign In</span>
 
       </div>
       <div class="dropdown">
-        <!-- <span>Username</span> -->
+ 
         <div class="dropdown-content" *ngIf="isDropdownOpen">
           <a> <i class="fa-regular fa-user"></i>Profile</a>
           <a><i class="fa-regular fa-heart"></i> Wishlist</a>
           <a> <i class="fa-regular fa-credit-card"></i> Orders</a>
-
           <a routerLink="register"><i class="fa-solid fa-power-off"></i> Logout</a>
         </div>
       </div>
-
-
-
     </div>
-
   </div>
   <div class="dropdown">
-    <!-- <span>Username</span> -->
+
     <div class="dropdown-content" *ngIf="isDropdownOpen">
       <a href="#">My Profile</a>
       <a href="#">Settings</a>
@@ -65,19 +56,12 @@
         @for(category of categories; track category.id){
         <div class="category-item">
           <a [routerLink]="['/category', category.id]">{{category.name}}</a>
-          <!-- <a routerLink="category/:categoryId"> {{category.name}}</a> -->
         </div>
         }
-
-
-
       </div>
-    </div>
-    <div class="info-container">
-      <div class="contact"><a href="#">Contact </a></div>
-      <div class="about-us"><a href="#">About Us</a></div>
     </div>
 
 
   </div>
 </div>
+<!-- <h1>{{names|json}}</h1> -->

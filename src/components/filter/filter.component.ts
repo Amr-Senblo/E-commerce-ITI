@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { IProduct } from '../../models/iproduct';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { FilterAPIService } from '../../services/filter-api.service';
 import { ProductsArrayComponent } from '../products-array/products-array.component';
 import { MatSliderModule } from '@angular/material/slider';
@@ -28,7 +28,7 @@ export class FilterComponent implements OnInit {
   productList!: IProduct[];
   filterProductList: IProduct[];
   form!: FormGroup;
-  shearchWord: string;
+  shearchWord!: string;
   minPrice!: number;
   minvalue!: number;
   maxPrice!: number;
@@ -39,48 +39,53 @@ export class FilterComponent implements OnInit {
   checkCategoryBoxStates: { [key: string]: boolean } = {};
   constructor(
     private activeRouter: ActivatedRoute,
-    private filterApi: FilterAPIService
+    private filterApi: FilterAPIService,
+    private router:Router
   ) {
-    this.shearchWord = this.activeRouter.snapshot.params['word'];
+    
+    this.activeRouter.params.subscribe((prams) => {
+      this.shearchWord = prams['word'];
+      this.router.navigateByUrl(`Search/${this.shearchWord }`)
+      this.filterApi.getProductFromShearch(this.shearchWord).subscribe((data) => {
+        this.productList = data;
+        this.filterProductList = this.productList;
+        this.brandsNames = Array.from(
+          new Set(this.filterProductList.map((p) => p.brand))
+        );
+        let categoriesIds: number[] = Array.from(
+          new Set(this.productList.map((p) => p.category))
+        );
+        this.filterApi
+          .getCategoriesNameByProductsIds(categoriesIds)
+          .subscribe((data) => {
+            this.categories = data.map((name, index) => {
+              return { name, id: categoriesIds[index] };
+            });
+            console.log(this.categories);
+            this.minPrice = Math.min(...this.productList.map((p) => p.price));
+            this.minvalue = this.minPrice;
+            this.maxPrice = Math.max(...this.productList.map((p) => p.price));
+            this.maxvalue = this.maxPrice;
+          });
+      });
+    });
     this.filterProductList = [];
   }
   ngOnInit(): void {
-    this.filterApi.getProductFromShearch(this.shearchWord).subscribe((data) => {
-      this.productList = data;
-      this.filterProductList = this.productList;
-      this.brandsNames = Array.from(
-        new Set(this.filterProductList.map((p) => p.brand))
-      );
-      let categoriesIds: number[] = Array.from(
-        new Set(this.productList.map((p) => p.category))
-      );
-      this.filterApi
-        .getCategoriesNameByProductsIds(categoriesIds)
-        .subscribe((data) => {
-          this.categories = data.map((name, index) => {
-            return { name, id: categoriesIds[index] };
-          });
-          console.log(this.categories);
-          this.minPrice = Math.min(...this.productList.map((p) => p.price));
-          this.minvalue = this.minPrice;
-          this.maxPrice = Math.max(...this.productList.map((p) => p.price));
-          this.maxvalue = this.maxPrice;
-        });
-    });
   }
   toggleCatCheckbox() {
     // if (this.categories.length > 1) {
-      let checkedCatId = Object.keys(this.checkCategoryBoxStates).filter(
-        (key) => this.checkCategoryBoxStates[key]
+    let checkedCatId = Object.keys(this.checkCategoryBoxStates).filter(
+      (key) => this.checkCategoryBoxStates[key]
+    );
+    if (checkedCatId.length) {
+      this.filterProductList = this.productList.filter((pro) =>
+        checkedCatId.includes(pro.category.toString())
       );
-      if (checkedCatId.length) {
-        this.filterProductList = this.productList.filter((pro) =>
-          checkedCatId.includes(pro.category.toString())
-        );
-        console.log(this.filterProductList);
-      } else {
-        console.log('case single cat');
-        this.filterProductList = this.productList;
+      console.log(this.filterProductList);
+    } else {
+      console.log('case single cat');
+      this.filterProductList = this.productList;
       // }
     }
   }
@@ -95,7 +100,8 @@ export class FilterComponent implements OnInit {
         brands.includes(p.brand)
       );
     } else {
-      this.toggleCatCheckbox();    }
+      this.toggleCatCheckbox();
+    }
   }
 
   updatePrice() {
