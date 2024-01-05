@@ -30,6 +30,13 @@ export class FilterAPIService {
       `${environment.apiUrl}/products?q=${keyword}`
     );
   }
+  getProductNameFromShearch(keyword: string): Observable<string[]> {
+    return this.httpClient.get<IProduct[]>(
+      `${environment.apiUrl}/products?q=${keyword}`
+    ).pipe(
+      map(pro=>pro.map(p=>p.name))
+    )
+  }
   getCategoriesNameByProductsIds(ids:number[]):Observable<string[]>{
     // http://localhost:3000/categories?id=1&id=2
     let querstring='id='+ids.join('&id=')
@@ -37,4 +44,5 @@ export class FilterAPIService {
     .pipe(map((categories)=>categories.map(cat=>cat.name))
     )
   }
+  
 }

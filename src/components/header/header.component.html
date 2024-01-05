@@ -4,10 +4,12 @@
       <img src="assets/images/logo-black.svg" alt="logo" class="logo">
     </div>
     <div class="search-container">
-      <input type="text" class="search-input" (keyup.enter)="onSearchEnter(searchInput.value)" #searchInput placeholder="Search for anything..." [(ngModel)]="searchkeyword">
+      <input type="text" class="search-input" (input)="gitNames(searchInput.value)" (keyup.enter)="onSearchEnter(searchInput.value)" #searchInput placeholder="Search for anything..." [(ngModel)]="searchkeyword">
       <a [routerLink]="['/Search',searchkeyword]"><img src="assets/images/search.svg" alt="search"
           class="search-icon"></a>
     </div>
+
+
     <div class="user-container">
       <a routerLink="Cart/1" class="cart-anchor">
         <div class="cart">
@@ -27,15 +29,10 @@
           <a> <i class="fa-regular fa-user"></i>Profile</a>
           <a><i class="fa-regular fa-heart"></i> Wishlist</a>
           <a> <i class="fa-regular fa-credit-card"></i> Orders</a>
-
           <a routerLink="register"><i class="fa-solid fa-power-off"></i> Logout</a>
         </div>
       </div>
-
-
-
     </div>
-
   </div>
   <div class="dropdown">
 
@@ -65,6 +62,6 @@
     </div>
 
 
-
   </div>
 </div>
+<!-- <h1>{{names|json}}</h1> -->
