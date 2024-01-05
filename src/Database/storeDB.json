@@ -209,7 +209,7 @@
     {
       "id": 7,
       "name": "Samsung Galaxy M34",
-      "brand":"Samsung",
+      "brand": "Samsung",
       "description": "Flagship smartphone with a focus on multimedia and photography.",
       "price": 1199.99,
       "quantity": 35,
@@ -239,7 +239,7 @@
     {
       "id": 8,
       "name": "Samsung galaxy m33",
-      "brand":"Samsung",
+      "brand": "Samsung",
       "description": "Mid-range smartphone with a focus on performance and value.",
       "price": 499.99,
       "quantity": 45,
@@ -269,7 +269,7 @@
     {
       "id": 9,
       "name": "Huawei P50 Pro",
-      "brand":"Huawei",
+      "brand": "Huawei",
       "description": "Premium smartphone with a focus on camera innovation.",
       "price": 1099.99,
       "quantity": 40,
@@ -299,7 +299,7 @@
     {
       "id": 10,
       "name": "Motorola Edge 20 Pro",
-      "brand":"Motorola",
+      "brand": "Motorola",
       "description": "Slim and powerful smartphone with a focus on photography.",
       "price": 799.99,
       "quantity": 50,
@@ -539,7 +539,7 @@
     {
       "id": 18,
       "name": "HP Spectre x360 2024",
-      "brand":"HP",
+      "brand": "HP",
       "description": "Convertible laptop with a sleek design and powerful performance.",
       "price": 1599.99,
       "quantity": 30,
@@ -569,7 +569,7 @@
     {
       "id": 19,
       "name": "Lenovo ThinkPad X1 Carbon",
-      "brand":"Lenovo",
+      "brand": "Lenovo",
       "description": "Premium business laptop with a durable and lightweight design.",
       "price": 1899.99,
       "quantity": 18,
@@ -599,7 +599,7 @@
     {
       "id": 20,
       "name": "Asus ROG Zephyrus G14",
-      "brand":"Asus",
+      "brand": "Asus",
       "description": "Gaming laptop with a powerful AMD Ryzen processor and dedicated GPU.",
       "price": 1799.99,
       "quantity": 22,
@@ -635,7 +635,10 @@
       "phone": "01012345611",
       "profilePic": "https://example.com/user1.jpg",
       "Address": "123, Street, City, Country",
-      "wishlist": [1, 2]
+      "wishlist": [
+        1,
+        2
+      ]
     },
     {
       "id": 2,
@@ -644,7 +647,10 @@
       "phone": "01012345612",
       "profilePic": "https://example.com/user2.jpg",
       "Address": "456, Street, City, Country",
-      "wishlist": [1, 3]
+      "wishlist": [
+        1,
+        3
+      ]
     },
     {
       "id": 3,
@@ -653,7 +659,10 @@
       "phone": "01012345613",
       "profilePic": "https://example.com/user3.jpg",
       "Address": "789, Street, City, Country",
-      "wishlist": [2, 3]
+      "wishlist": [
+        2,
+        3
+      ]
     },
     {
       "id": 4,
@@ -662,7 +671,10 @@
       "phone": "01012345614",
       "profilePic": "https://example.com/user4.jpg",
       "Address": "101, Street, City, Country",
-      "wishlist": [1, 4]
+      "wishlist": [
+        1,
+        4
+      ]
     },
     {
       "id": 5,
@@ -671,7 +683,10 @@
       "phone": "01012345615",
       "profilePic": "https://example.com/user5.jpg",
       "Address": "112, Street, City, Country",
-      "wishlist": [2, 4]
+      "wishlist": [
+        2,
+        4
+      ]
     }
   ],
   "carts": [
@@ -689,6 +704,18 @@
         },
         {
           "id": 16,
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "quantity": 1
+        },
+        {
+          "id": 3,
           "quantity": 1
         }
       ],
