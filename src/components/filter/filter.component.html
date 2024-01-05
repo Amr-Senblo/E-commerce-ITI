@@ -1,16 +1,12 @@
 <div class="row m-0">
     <div class="col-2 bg-light m-0 p-0 ">
-     
         <div class="row m-0 p-0 ">
-
             <h3 class="form-label mt-3 mb-1">Select Category</h3>
-
             @for (category of categories; track $index)
             {
             <p class="col-8 p-0 m-0"><mat-checkbox  class="custom-checkbox-primary"color="primary" [(ngModel)]="checkCategoryBoxStates[category.id]"
                     (change)="filter()">{{category.name}}</mat-checkbox></p>
             }
-
         </div>
         <div class="row m-0 p-0 ">
 
@@ -34,11 +30,7 @@
         </div>
 
     </div>
-    <div class="col-9  ">
+    <div class="col-9   mt-3 ms-0 me-0 mb-3">
         <app-products-array [products]="filterProductList"></app-products-array>
     </div>
 </div>
-<section class="example-section">
-    <h4>You chose:</h4>
-    <!-- {{checkBoxes.nativeElement.value|json }} -->
-</section>

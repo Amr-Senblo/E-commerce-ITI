@@ -1,14 +1,9 @@
 import { CommonModule } from '@angular/common';
-
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
-import { RouterLink } from '@angular/router';
-
-
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -25,7 +20,7 @@ export class HeaderComponent implements OnInit {
   categories: any = [];
   searchkeyword: string = '';
 
-  constructor(private categoryService: CategoryService) {}
+  constructor(private categoryService: CategoryService,private route:Router) {}
 
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe((data) => {
@@ -39,5 +34,8 @@ export class HeaderComponent implements OnInit {
 
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
+  }
+  onSearchEnter(searchword: string) {
+  this.route.navigateByUrl(`Search/${searchword}`)
   }
 }
