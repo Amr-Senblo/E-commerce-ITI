@@ -686,6 +686,10 @@
         {
           "id": 2,
           "quantity": 1
+        },
+        {
+          "id": 16,
+          "quantity": 1
         }
       ],
       "totalPrice": 2699.97,
