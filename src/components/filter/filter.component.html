@@ -1,1 +1,44 @@
-<p>filter works!</p>
+<div class="row m-0">
+    <div class="col-2 bg-light m-0 p-0 ">
+     
+        <div class="row m-0 p-0 ">
+
+            <h3 class="form-label mt-3 mb-1">Select Category</h3>
+
+            @for (category of categories; track $index)
+            {
+            <p class="col-8 p-0 m-0"><mat-checkbox  class="custom-checkbox-primary"color="primary" [(ngModel)]="checkCategoryBoxStates[category.id]"
+                    (change)="filter()">{{category.name}}</mat-checkbox></p>
+            }
+
+        </div>
+        <div class="row m-0 p-0 ">
+
+            <h3 class="form-label mt-3 mb-1">Select Brands</h3>
+
+            @for (brand of brandsNames; track $index)
+            {
+            <p class="col-5 p-0 m-0"><mat-checkbox color="primary" [(ngModel)]="checkboxStates[brand]"
+                    (change)="filter()">{{brand}}</mat-checkbox></p>
+            }
+
+        </div>
+        <div class="row  m-0 p-0  ">
+            <h3 class="form-label mt-3 mb-1">Price in USA</h3>
+            <div class="col-9 m-0 text-center" >
+                <mat-slider discrete [min]="minPrice" [max]="maxPrice " class="d-block"  >
+                    <input [(ngModel)]="minvalue" matSliderStartThumb (change)="filter()">
+                    <input [(ngModel)]="maxvalue" matSliderEndThumb (change)="filter()">
+                </mat-slider>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-9  ">
+        <app-products-array [products]="filterProductList"></app-products-array>
+    </div>
+</div>
+<section class="example-section">
+    <h4>You chose:</h4>
+    <!-- {{checkBoxes.nativeElement.value|json }} -->
+</section>
