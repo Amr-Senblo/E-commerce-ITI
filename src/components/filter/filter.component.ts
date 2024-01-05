@@ -22,7 +22,6 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     MatSliderModule,
-    
   ],
 })
 export class FilterComponent implements OnInit {
@@ -70,7 +69,7 @@ export class FilterComponent implements OnInit {
     });
   }
   toggleCatCheckbox() {
-    if (this.categories.length > 1) {
+    // if (this.categories.length > 1) {
       let checkedCatId = Object.keys(this.checkCategoryBoxStates).filter(
         (key) => this.checkCategoryBoxStates[key]
       );
@@ -78,46 +77,43 @@ export class FilterComponent implements OnInit {
         this.filterProductList = this.productList.filter((pro) =>
           checkedCatId.includes(pro.category.toString())
         );
-        console.log(this.filterProductList)
+        console.log(this.filterProductList);
       } else {
-        console.log("case single cat")
+        console.log('case single cat');
         this.filterProductList = this.productList;
-      }
+      // }
     }
   }
   toggleCheckbox() {
-    if (this.brandsNames.length > 1) {
-      console.log('inside brand')
-      let brands: string[] = Object.keys(this.checkboxStates).filter(
-        (key) => this.checkboxStates[key]
+    console.log('inside brand');
+    let brands: string[] = Object.keys(this.checkboxStates).filter(
+      (key) => this.checkboxStates[key]
+    );
+    console.log(brands);
+    if (brands.length) {
+      this.filterProductList = this.filterProductList.filter((p) =>
+        brands.includes(p.brand)
       );
-      console.log(brands);
-      if (brands.length) {
-        this.filterProductList = this.filterProductList.filter((p) =>
-          brands.includes(p.brand)
-        );
-      } else {
-        this.toggleCatCheckbox();
-      }
-    }
+    } else {
+      this.toggleCatCheckbox();    }
   }
 
-  updatePrice() 
-  {console.log(this.maxvalue,this.maxPrice, this.minvalue, this.minPrice )
+  updatePrice() {
+    console.log(this.maxvalue, this.maxPrice, this.minvalue, this.minPrice);
     if (this.maxvalue != this.maxPrice || this.minvalue != this.minPrice) {
-      console.log('insde price')
+      console.log('insde price');
       this.filterProductList = this.filterProductList.filter(
         (p) => p.price <= this.maxvalue && p.price >= this.minvalue
       );
     } else {
       // this.toggleCheckbox();
-      console.log(this.filterProductList)
+      console.log(this.filterProductList);
     }
-   console.log(this.filterProductList)
+    console.log(this.filterProductList);
   }
   filter() {
     this.toggleCatCheckbox();
     this.toggleCheckbox();
-    this.updatePrice()
+    this.updatePrice();
   }
 }
