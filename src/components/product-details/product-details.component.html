@@ -1,1 +1,41 @@
-<p>product-details works!</p>
+
+  <!-- Details -->
+        <div class="box m-auto">
+            <div class="images col-6">
+                <div class="img-holder active ">
+                    <img src="{{p.imageCover}}">
+                </div>
+                <div class="img-holder border border-primary ">
+                    <img src="{{p.images[0]}} " class="im">
+                </div>
+                <div class="img-holder border border-primary ">
+                    <img src="{{p.images[1]}}" class="im">
+                </div>
+                <div class="img-holder border border-primary">
+                    <img src="{{p.images[2]}}"class="im">
+                </div>
+            </div>
+            <div class="basic-info">
+                <h1>{{p.name}}</h1>
+                <div class="rate">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+
+
+                </div>
+                <span>${{p.price}}</span>
+                <div class="options">
+                    <button href="#" class="btn btn-primary p-3 mx-1">Buy It Now</button>
+                    <button href="#" class="btn btn-success p-3">Add to Cart</button>
+                </div>
+            </div>
+            <div class="description">
+                <p>Description:</p>
+                <p>{{p.description}}</p>
+               
+            </div>
+        </div>
+  
