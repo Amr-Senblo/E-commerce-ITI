@@ -1,12 +1,7 @@
-.catg {
-  min-height: 100px;
-  color: #eee;
-  background-color: var(--main-color);
-  border-radius: 20px;
-  border: 10px solid var(--third-color);
+h4{
+  margin: 0;
 }
-
-.catg-body {
+.catg-body{
   display: flex;
   justify-content: space-between;
   align-items: center;
