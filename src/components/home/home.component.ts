@@ -1,15 +1,36 @@
-import { Component } from '@angular/core';
+<<<<<<<<< Temporary merge branch 1
+import { Component, OnInit } from '@angular/core';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { CategoriesComponent } from '../categories/categories.component';
+import { ProductComponent } from '../product/product.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductService } from '../../services/product.service';
+import { IProduct } from '../../models/iproduct';
+=========
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { CarouselComponent } from '../carousel/carousel.component';
+import { CategoriesComponent } from '../categories/categories.component';
+import { HttpClientModule } from '@angular/common/http';
+import { IProduct } from '../../models/iproduct';
+import { ProductsArrayComponent } from '../products-array/products-array.component';
+import { Image } from '../../models/image';
+import { ICategory } from '../../models/icategory';
+import { CategoryService } from '../../services/category.service';
+import { ProductService } from '../../services/product.service';
+import { SliderComponent } from '../slider/slider.component';
+>>>>>>>>> Temporary merge branch 2
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  imports: [CarouselComponent, CategoriesComponent],
+<<<<<<<<< Temporary merge branch 1
+  imports: [CarouselComponent, CategoriesComponent, ProductComponent, HttpClientModule],
+  providers: [ProductService],
+
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   images = [
     {
       imgSrc:
@@ -27,4 +48,62 @@ export class HomeComponent {
       imgAlt: 'photo',
     },
   ];
+
+  constructor(private myService: ProductService) { }
+
+  AllProducts: IProduct[] = [];
+  ngOnInit(): void {
+
+    this.myService.getProducts().subscribe((data: IProduct[]) => {
+      this.AllProducts = data.slice(0, 8);
+      console.log(this.AllProducts);
+      
+    });
+
+
+
+  }
+
+
+=========
+  imports: [CarouselComponent, CategoriesComponent, HttpClientModule, ProductsArrayComponent, SliderComponent],
+  providers: [ProductService, CategoryService]
+})
+export class HomeComponent implements OnInit {
+  images: Image[] = [{ imgSrc: 'https://m.media-amazon.com/images/I/714qCf4ZqGL.SX3000.jpg', imgAlt: 'cover' }]
+  allCategories: ICategory[] = [];
+  mobileCatg4: IProduct[] = [];
+  smartWatch4: IProduct[] = [];
+  laptops4: IProduct[] = [];
+  constructor(public productService: ProductService, public categoryServise: CategoryService) { }
+
+  ngOnInit(): void {
+    this.productService.getProduct4(1).subscribe({
+      next: (value) => {
+        this.mobileCatg4 = value;
+      },
+      error: (err) => console.log(err)
+    })
+    this.productService.getProduct4(2).subscribe({
+      next: (value) => {
+        this.smartWatch4 = value;
+      },
+      error: (err) => console.log(err)
+    })
+    this.productService.getProduct4(3).subscribe({
+      next: (value) => {
+        this.laptops4 = value;
+      },
+      error: (err) => console.log(err)
+    })
+    this.categoryServise.getCategories().subscribe({
+      next: (value) => {
+        this.allCategories = value
+        for (let category of this.allCategories)
+          this.images.push({ imgSrc: category.imageCover, imgAlt: category.name })
+      },
+      error: (err) => console.log(err)
+    })
+  }
+>>>>>>>>> Temporary merge branch 2
 }

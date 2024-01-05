@@ -11,8 +11,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './product.component.css'
 })
 export class ProductComponent {
-  // <i class="fa-solid fa-heart"></i>
-  // <i class="fa-regular fa-heart"></i>
   @Input() product: IProduct = <IProduct>{};
   heart = 'fa-regular fa-heart '
   onWishList() {
@@ -21,4 +19,5 @@ export class ProductComponent {
     else
       this.heart = 'fa-regular fa-heart '
   }
+
 }
