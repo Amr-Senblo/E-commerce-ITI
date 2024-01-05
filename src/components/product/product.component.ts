@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.css'
+  styleUrl: './product.component.css',
 })
 export class ProductComponent {
   @Input() product: IProduct = <IProduct>{};

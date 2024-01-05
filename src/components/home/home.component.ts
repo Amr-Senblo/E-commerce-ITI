@@ -8,20 +8,18 @@ import { Image } from '../../models/image';
 import { ICategory } from '../../models/icategory';
 import { CategoryService } from '../../services/category.service';
 import { ProductService } from '../../services/product.service';
-import { SliderComponent } from '../slider/slider.component';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-
   imports: [
     CarouselComponent,
     CategoriesComponent,
     HttpClientModule,
     ProductsArrayComponent,
-    SliderComponent,
   ],
   providers: [ProductService, CategoryService],
 })
