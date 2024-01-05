@@ -12,4 +12,5 @@ import { RouterLink } from '@angular/router';
 export class BreadCrumbComponent {
   @Input() titles: string[] = [];
   @Input() links: string[] = [];
+  mySepartor = '<i class="fa-solid fa-angles-right"></i>'
 }
