@@ -1,37 +1,38 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductComponent } from '../product/product.component';
 import { IProduct } from '../../models/iproduct';
 import { ProductService } from '../../services/product.service';
+import { ProductsOfCategoryService } from '../../services/products-of-category.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [ProductComponent,HttpClientModule],
-  providers: [ProductService],
-  templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.css'
-})
-export class ProductListComponent implements OnInit {
-  constructor(private service:ProductService,private route: ActivatedRoute){}
-  products:IProduct[]=[]
-  private category_id=1;
 
+  imports: [ProductComponent, HttpClientModule, CommonModule],
+  providers: [ProductService, ProductsOfCategoryService],
+
+  templateUrl: './product-list.component.html',
+  styleUrl: './product-list.component.css',
+})
+export class ProductListComponent {
+  categoryId!: number;
+  products!: IProduct[];
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private productsOfCategoryService: ProductsOfCategoryService
+  ) {}
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-    this.category_id = +params['categoryId']; // '+' is used to convert the parameter to a number
-    console.log(this.category_id);
-    this.service.getProductsOfCategory(this.category_id).subscribe(
-      {
-        next:(data:IProduct[])=>{
-          this.products=data,
-          console.log(this.category_id);
-        },
-        error:()=>"error"
-      }
-    );
+    this.activatedRoute.params.subscribe((params) => {
+      this.categoryId = params['categoryId'];
+      this.productsOfCategoryService
+        .getProductOfCategory(this.categoryId)
+        .subscribe((data) => {
+          this.products = data;
+          console.log(this.products);
+        });
     });
   }
-
 }

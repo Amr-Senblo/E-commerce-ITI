@@ -18,17 +18,21 @@ import { ICategory } from '../../models/icategory';
 import { CategoryService } from '../../services/category.service';
 import { ProductService } from '../../services/product.service';
 import { SliderComponent } from '../slider/slider.component';
->>>>>>>>> Temporary merge branch 2
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-<<<<<<<<< Temporary merge branch 1
-  imports: [CarouselComponent, CategoriesComponent, ProductComponent, HttpClientModule],
-  providers: [ProductService],
 
+  imports: [
+    CarouselComponent,
+    CategoriesComponent,
+    HttpClientModule,
+    ProductsArrayComponent,
+    SliderComponent,
+  ],
+  providers: [ProductService, CategoryService],
 })
 export class HomeComponent implements OnInit {
   images = [

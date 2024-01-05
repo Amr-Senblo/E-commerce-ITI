@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="my-3">
+    <app-bread-crumb [titles]="breadCrumbTitles" [links]="breadCrumbLinks"></app-bread-crumb>
+  </div>
+  <div>
+    <app-product-details></app-product-details>
+  </div>
+  <div class="my-5">
+    <h2 class="my-5 text-center fw-bold theme-color">You May Like</h2>
+    <app-products-array [products]="categoryProducts"></app-products-array>
+  </div>
+</div>

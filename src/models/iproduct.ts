@@ -3,6 +3,7 @@ import { CommonSpecifications } from './common-specifications';
 export interface IProduct {
   id: number;
   name: string;
+  brand: string;
   description: string;
   price: number;
   quantity: number;

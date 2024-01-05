@@ -1,18 +1,17 @@
 <div class="header">
-
-
-
   <div class="first-header-container">
-    <div class="logo-container">
-      <!-- <p class="logo">E-Commerce</p> -->
+    <div routerLink="Home" class="logo-container">
       <img src="assets/images/logo-black.svg" alt="logo" class="logo">
     </div>
     <div class="search-container">
-      <input type="text" class="search-input" placeholder="Search for anything...">
-      <img src="assets/images/search.svg" alt="search" class="search-icon">
+      <input type="text" class="search-input" (input)="gitNames(searchInput.value)" (keyup.enter)="onSearchEnter(searchInput.value)" #searchInput placeholder="Search for anything..." [(ngModel)]="searchkeyword">
+      <a [routerLink]="['/Search',searchkeyword]"><img src="assets/images/search.svg" alt="search"
+          class="search-icon"></a>
     </div>
+
+
     <div class="user-container">
-      <a routerLink="Cart/1">
+      <a routerLink="Cart/1" class="cart-anchor">
         <div class="cart">
           <span class="cart-count">0</span>
           <img src="assets/images/cart.png" alt="cart" class="cart-icon">
@@ -21,53 +20,48 @@
       </a>
       <div class="profile" (click)="toggleDropdown()">
         <img src="assets/images/profile.png" alt="profile" class="profile-icon">
-
         <span class="signin-text">Sign In</span>
 
       </div>
       <div class="dropdown">
-        <!-- <span>Username</span> -->
+ 
         <div class="dropdown-content" *ngIf="isDropdownOpen">
-          <a href="#">My Profile</a>
-          <a href="#">Settings</a>
-          <a href="#">Logout</a>
+          <a> <i class="fa-regular fa-user"></i>Profile</a>
+          <a><i class="fa-regular fa-heart"></i> Wishlist</a>
+          <a> <i class="fa-regular fa-credit-card"></i> Orders</a>
+          <a routerLink="register"><i class="fa-solid fa-power-off"></i> Logout</a>
         </div>
       </div>
-
     </div>
   </div>
+  <div class="dropdown">
+
+    <div class="dropdown-content" *ngIf="isDropdownOpen">
+      <a href="#">My Profile</a>
+      <a href="#">Settings</a>
+      <a href="#">Logout</a>
+    </div>
+  </div>
+
   <div class="second-header-container">
 
     <div class="categories-container">
       <div class="category-icon">
 
+
         <img src="assets/images/categories.svg" alt="category" class="category-icon">
       </div>
       <span class="category-text" (click)="toggleCategoriesDropdown()">Categories</span>
       <div class="category-list" *ngIf="categoriesDropdown">
+        @for(category of categories; track category.id){
         <div class="category-item">
-          <a href="#">Category 1</a>
+          <a [routerLink]="['/category', category.id]">{{category.name}}</a>
         </div>
-        <div class="category-item">
-          <a href="#">Category 2</a>
-        </div>
-        <div class="category-item">
-          <a href="#">Category 3</a>
-        </div>
-        <div class="category-item">
-          <a href="#">Category 4</a>
-        </div>
-        <div class="category-item">
-          <a href="#">Category 5</a>
-        </div>
+        }
       </div>
-    </div>
-    <div class="info-container">
-      <div class="contact"><a href="#">Contact</a></div>
-      <!-- <div class="about-us"><a href="#">About Us</a></div> -->
     </div>
 
 
   </div>
-
 </div>
+<!-- <h1>{{names|json}}</h1> -->

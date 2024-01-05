@@ -1,0 +1,6 @@
+:host{
+  background-color: var(--fourth-color);
+}
+.theme-color{
+  color: var(--sec-color);
+}
