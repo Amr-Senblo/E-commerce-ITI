@@ -6,6 +6,7 @@ export interface IProduct {
   brand: string;
   description: string;
   price: number;
+ 
   quantity: number;
   imageCover: string;
   images: string[];
