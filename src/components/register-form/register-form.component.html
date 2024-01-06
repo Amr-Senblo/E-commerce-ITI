@@ -4,7 +4,7 @@
         <!-- {{ userRegForm.value| json }} -->
     </div>
     <div>
-        {{ formName?.errors|json}}
+        {{ formEmail?.errors|json}}
     </div>
 </div>
 <hr>
@@ -27,15 +27,21 @@
         </div>
         <div class="mb-3">
             <label for="email" class="form-label"> Email</label>
-            <input type="email" class="form-control" id="email" form formControlName="email">
+            <input type="email" class="form-control" id="email" form formControlName="email"
+                [class.is-valid]="formEmail?.valid" [class.is-invalid]="formEmail?.invalid&&formEmail?.touched">
+            <div class="alert alert-warning" [hidden]="formEmail?.valid||formEmail?.untouched">
+                <small *ngIf="formEmail?.errors?.['required']">email is required</small>
+                <!-- <small *ngIf="formEmail?.errors"></small> -->
+            </div>
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" formControlName="password">
+            <input type="password" class="form-control" id="password" formControlName="password"
+                [class.is-Valid]="formPassword?.valid" [class.is-invalid]="formPassword">
         </div>
         <div class="mb-3">
             <label for="phoneNumber" class="form-label">Mobile number</label>
-            <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber">
+            <input type="text" class="form-control" id="phoneNumber" formControlName="mobileNumber">
         </div>
         <div formGroupName="address">
             <div class="mb-3">

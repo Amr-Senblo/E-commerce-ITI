@@ -17,17 +17,23 @@ import { IUser } from '../../models/iuser';
   styleUrl: './register-form.component.css',
 })
 export class RegisterFormComponent {
+  private passwordPattern =  
+       '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$';
+       private  emailPattern = '^\\w+([\.-]?\\w+)*@\\w+([\.-]?\\w+)*(\.\\w{2,3})+$'
   userRegForm: FormGroup;
   constructor(private fb: FormBuilder) {
     this.userRegForm = fb.group({
       name: ['', [Validators.required, Validators.pattern('[A-Za-z]{3,}')]],
       // gender: [''],
-      email: [''],
+      email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
       mobileNumber: [
         '',
         [Validators.required, Validators.pattern('[0-9]{12}')],
       ],
-      password: [''],
+      password: [
+        '',
+        [Validators.required, Validators.pattern(this.passwordPattern)],
+      ],
       profilePic: [''],
       address: fb.group({
         street: [''],
@@ -57,7 +63,7 @@ export class RegisterFormComponent {
   get formCountry() {
     return (this.userRegForm.get('address') as FormGroup).get('country');
   }
-  submit(){
+  submit() {
     // let newUser:IUser=
   }
   // constructor() {
