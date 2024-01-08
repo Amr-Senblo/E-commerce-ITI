@@ -3,7 +3,9 @@
     <app-bread-crumb [titles]="breadCrumbTitles" [links]="breadCrumbLinks"></app-bread-crumb>
   </div>
   <div>
-    <app-product-details></app-product-details>
+    @if (currentProduct) {
+    <app-product-details [product]="currentProduct"></app-product-details>
+    }
   </div>
   <div class="my-5">
     <h2 class="my-5 text-center fw-bold theme-color">You May Like</h2>
@@ -20,5 +22,9 @@
       </div>
   </div>
 
+  <div class="my-5">
+    <h2 class="my-5 text-center fw-bold theme-color">Reviews</h2>
+    <app-reviews [reviews]="currentProduct.reviews!"></app-reviews>
+  </div>
 
 </div>

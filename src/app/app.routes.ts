@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { ProductListComponent } from '../components/product-list/product-list.component';
 
 import { ErrorPageComponent } from '../components/error-page/error-page.component';
 import { CartComponent } from '../components/cart/cart.component';
@@ -22,6 +21,7 @@ export const routes: Routes = [
     children: [
       { path: 'Home', component: HomeComponent },
       { path: '', redirectTo: 'Home', pathMatch: 'full' },
+
 
       { path: 'category/:categoryId', component: ProductListComponent },
       { path: 'Category/:categoryId/:id', component: ProductDetailsContainerComponent },

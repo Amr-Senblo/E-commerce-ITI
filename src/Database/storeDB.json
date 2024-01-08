@@ -633,7 +633,7 @@
       "name": "User1",
       "email": "user1@gmail.com",
       "phone": "01012345611",
-      "profilePic": "https://example.com/user1.jpg",
+      "profilePic": "https://weimaracademy.org/wp-content/uploads/2021/08/dummy-user-680x548.png",
       "Address": "123, Street, City, Country",
       "wishlist": [
         1,
@@ -645,7 +645,7 @@
       "name": "User2",
       "email": "user2@gmail.com",
       "phone": "01012345612",
-      "profilePic": "https://example.com/user2.jpg",
+      "profilePic": "https://weimaracademy.org/wp-content/uploads/2021/08/dummy-user-680x548.png",
       "Address": "456, Street, City, Country",
       "wishlist": [
         1,
@@ -657,7 +657,7 @@
       "name": "User3",
       "email": "user2@gmail.com",
       "phone": "01012345613",
-      "profilePic": "https://example.com/user3.jpg",
+      "profilePic": "https://weimaracademy.org/wp-content/uploads/2021/08/dummy-user-680x548.png",
       "Address": "789, Street, City, Country",
       "wishlist": [
         2,
@@ -669,7 +669,7 @@
       "name": "User4",
       "email": "user4@gmail.com",
       "phone": "01012345614",
-      "profilePic": "https://example.com/user4.jpg",
+      "profilePic": "https://weimaracademy.org/wp-content/uploads/2021/08/dummy-user-680x548.png",
       "Address": "101, Street, City, Country",
       "wishlist": [
         1,
@@ -681,7 +681,7 @@
       "name": "User5",
       "email": "user5@gmail.com",
       "phone": "01012345615",
-      "profilePic": "https://example.com/user5.jpg",
+      "profilePic": "https://weimaracademy.org/wp-content/uploads/2021/08/dummy-user-680x548.png",
       "Address": "112, Street, City, Country",
       "wishlist": [
         2,
@@ -727,7 +727,9 @@
           "quantity": 1
         },
         {
+
           "id": 3,
+
           "quantity": 1
         }
       ],
@@ -813,7 +815,7 @@
     {
       "id": 1,
       "user": 1,
-      "product": 1,
+      "productId": 1,
       "rating": 5,
       "comment": "This is a great product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -822,7 +824,7 @@
     {
       "id": 2,
       "user": 2,
-      "product": 4,
+      "productId": 4,
       "rating": 4,
       "comment": "This is a good product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -831,7 +833,7 @@
     {
       "id": 3,
       "user": 3,
-      "product": 2,
+      "productId": 2,
       "rating": 3,
       "comment": "This is an average product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -840,7 +842,7 @@
     {
       "id": 4,
       "user": 4,
-      "product": 5,
+      "productId": 5,
       "rating": 2,
       "comment": "This is a bad product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -849,7 +851,7 @@
     {
       "id": 5,
       "user": 5,
-      "product": 1,
+      "productId": 1,
       "rating": 1,
       "comment": "This is a terrible product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -858,7 +860,7 @@
     {
       "id": 6,
       "user": 1,
-      "product": 2,
+      "productId": 2,
       "rating": 5,
       "comment": "This is a great product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -867,7 +869,7 @@
     {
       "id": 7,
       "user": 2,
-      "product": 5,
+      "productId": 5,
       "rating": 4,
       "comment": "This is a good product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -876,9 +878,387 @@
     {
       "id": 8,
       "user": 3,
-      "product": 3,
+      "productId": 3,
       "rating": 3,
       "comment": "This is an average product",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 9,
+      "user": 4,
+      "productId": 1,
+      "rating": 4,
+      "comment": "I really liked this product",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 10,
+      "user": 5,
+      "productId": 6,
+      "rating": 2,
+      "comment": "Not impressed with this product",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 11,
+      "user": 1,
+      "productId": 3,
+      "rating": 5,
+      "comment": "Amazing product, exceeded my expectations",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 12,
+      "user": 2,
+      "productId": 7,
+      "rating": 3,
+      "comment": "Decent product for the price",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 13,
+      "user": 3,
+      "productId": 2,
+      "rating": 1,
+      "comment": "Waste of money, would not recommend",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 14,
+      "user": 4,
+      "productId": 5,
+      "rating": 4,
+      "comment": "Satisfied with the purchase",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 15,
+      "user": 5,
+      "productId": 1,
+      "rating": 2,
+      "comment": "Disappointed with the quality",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 16,
+      "user": 1,
+      "productId": 2,
+      "rating": 5,
+      "comment": "Excellent product, would buy again",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 17,
+      "user": 2,
+      "productId": 5,
+      "rating": 3,
+      "comment": "Fairly satisfied with this product",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 18,
+      "user": 3,
+      "productId": 3,
+      "rating": 4,
+      "comment": "This product met my expectations",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 19,
+      "user": 4,
+      "productId": 1,
+      "rating": 2,
+      "comment": "Not happy with the durability",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 20,
+      "user": 5,
+      "productId": 2,
+      "rating": 5,
+      "comment": "Top-notch product, worth every penny",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 21,
+      "user": 1,
+      "productId": 6,
+      "rating": 3,
+      "comment": "An okay product, could be better",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 22,
+      "user": 2,
+      "productId": 3,
+      "rating": 4,
+      "comment": "Happy with the purchase decision",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 23,
+      "user": 3,
+      "productId": 7,
+      "rating": 1,
+      "comment": "Not recommended, poor quality",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 24,
+      "user": 4,
+      "productId": 4,
+      "rating": 5,
+      "comment": "Absolutely love this product",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 25,
+      "user": 5,
+      "productId": 1,
+      "rating": 4,
+      "comment": "Good value for money",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 26,
+      "user": 1,
+      "productId": 8,
+      "rating": 3,
+      "comment": "Average product, nothing exceptional",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 27,
+      "user": 2,
+      "productId": 2,
+      "rating": 2,
+      "comment": "Disappointed with the quality",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 28,
+      "user": 3,
+      "productId": 9,
+      "rating": 5,
+      "comment": "Exceeded my expectations, highly recommended",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 29,
+      "user": 4,
+      "productId": 5,
+      "rating": 1,
+      "comment": "Poor quality, regret buying",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 30,
+      "user": 5,
+      "productId": 1,
+      "rating": 4,
+      "comment": "Happy with the purchase, will buy again",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 31,
+      "user": 1,
+      "productId": 6,
+      "rating": 3,
+      "comment": "Decent product for the price",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 32,
+      "user": 2,
+      "productId": 3,
+      "rating": 5,
+      "comment": "Absolutely satisfied with my purchase",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 33,
+      "user": 3,
+      "productId": 10,
+      "rating": 2,
+      "comment": "Not as described, disappointed",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 34,
+      "user": 4,
+      "productId": 1,
+      "rating": 4,
+      "comment": "Good quality, exceeded my expectations",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 35,
+      "user": 5,
+      "productId": 4,
+      "rating": 1,
+      "comment": "Terrible quality, wouldn't recommend",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 36,
+      "user": 1,
+      "productId": 2,
+      "rating": 3,
+      "comment": "Average product, not too impressed",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 37,
+      "user": 2,
+      "productId": 11,
+      "rating": 5,
+      "comment": "Fantastic product, exceeded my expectations",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 38,
+      "user": 3,
+      "productId": 7,
+      "rating": 2,
+      "comment": "Disappointed with the durability",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 39,
+      "user": 4,
+      "productId": 3,
+      "rating": 4,
+      "comment": "Happy with the quality, would recommend",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 40,
+      "user": 5,
+      "productId": 12,
+      "rating": 3,
+      "comment": "Satisfactory product, met my expectations",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 41,
+      "user": 1,
+      "productId": 4,
+      "rating": 1,
+      "comment": "Regret buying this product",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 42,
+      "user": 2,
+      "productId": 13,
+      "rating": 4,
+      "comment": "Impressed with the features, good buy",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 43,
+      "user": 3,
+      "productId": 2,
+      "rating": 2,
+      "comment": "Not as durable as expected",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 44,
+      "user": 4,
+      "productId": 14,
+      "rating": 5,
+      "comment": "Excellent quality, worth the price",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 45,
+      "user": 5,
+      "productId": 1,
+      "rating": 3,
+      "comment": "Average product, met my basic needs",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 46,
+      "user": 1,
+      "productId": 5,
+      "rating": 4,
+      "comment": "Good product, no complaints",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 47,
+      "user": 2,
+      "productId": 15,
+      "rating": 2,
+      "comment": "Not what I expected, disappointed",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 48,
+      "user": 3,
+      "productId": 3,
+      "rating": 5,
+      "comment": "Outstanding product, exceeded expectations",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 49,
+      "user": 4,
+      "productId": 16,
+      "rating": 3,
+      "comment": "Decent quality, meets my requirements",
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "id": 50,
+      "user": 5,
+      "productId": 1,
+      "rating": 1,
+      "comment": "Poorly made, wouldn't recommend",
       "createdAt": "2022-01-15T12:30:00.000Z",
       "updatedAt": "2022-01-15T12:30:00.000Z"
     }

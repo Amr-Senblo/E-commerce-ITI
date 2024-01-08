@@ -1,0 +1,24 @@
+@if (reviews.length !=0 && UsersInOrderReviews.length!=0) {
+<h2 class="fs-1 text-center">{{avgRating}}</h2>
+<div class="text-center my-5">
+  <ngb-rating [(rate)]="avgRating" [readonly]="true" [max]="5" />
+</div>
+<div *ngFor="let review of reviews; let i = index;">
+  <div class="row my-5">
+    <div class="col-4">
+      <div class="d-flex flex-column align-items-center">
+        <div class="img-cont">
+          <img [src]="UsersInOrderReviews[i].profilePic" alt="User Profile pic" class="img-fluid">
+        </div>
+        <span class="my-3">{{UsersInOrderReviews[i].name}}</span>
+      </div>
+    </div>
+    <div class="col-8 d-flex flex-column card py-3 px-4">
+      <span class="my-3">{{review.rating}} <i class="fa-solid fa-star star"></i></span>
+      <span>{{review.comment}}</span>
+    </div>
+  </div>
+</div>
+}@else{
+<div class="text-center fs-1 theme">there are no reviews</div>
+}
