@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductComponent } from '../product/product.component';
@@ -17,38 +17,26 @@ import { IproductBuyed } from '../../models/iproduct-buyed';
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent implements OnChanges {
+  private isFirstChange = true;
   cartId = 1;
   productsInCart: IproductBuyed[] = [];
-  ID = 0;
-  p: any;
-  products: IProduct[] = []
-  constructor(private CartCustomService: CustomCartService, private cartService: CartService, private myService: ProductService, myActivated: ActivatedRoute) {
-    this.ID = parseInt(myActivated.snapshot.params["id"]);
-    // console.log("ID : " + this.ID);
+  productId = 0;
+  @Input() product: IProduct = <IProduct>{};
+  constructor(private CartCustomService: CustomCartService, private cartService: CartService) {
   }
-  ngOnInit(): void {
-    this.myService.getProduct(this.ID).subscribe({
-      next: (data) => {
-        // console.log(data)
-        this.p = data;
-      },
-      error: () => { console.log("error occured") }
-    })
-
-    this.myService.getProducts().subscribe({
-      next: (data) => {
-        // console.log(data)
-        this.products = data.slice(0, 8)
-      },
-      error: () => { console.log("Error") }
-    })
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.isFirstChange) {
+      this.isFirstChange = false;
+      return;
+    }
+    this.productId = this.product.id;
   }
   AddToCart() {
     this.cartService.getCart(this.cartId).subscribe({
       next: (value) => {
         this.productsInCart = value.products;
-        this.productsInCart.push({ id: this.ID, quantity: 1 })
+        this.productsInCart.push({ id: this.productId, quantity: 1 })
         this.CartCustomService.editCartProducts(this.cartId, this.productsInCart).subscribe();
       },
       error: (err) => console.log(err)

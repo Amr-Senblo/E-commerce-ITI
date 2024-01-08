@@ -6,11 +6,12 @@ import { ProductService } from '../../services/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { IProduct } from '../../models/iproduct';
 import { ProductsArrayComponent } from '../products-array/products-array.component';
+import { ReviewsComponent } from '../reviews/reviews.component';
 
 @Component({
   selector: 'app-product-details-container',
   standalone: true,
-  imports: [ProductDetailsComponent, BreadCrumbComponent, HttpClientModule, ProductsArrayComponent],
+  imports: [ProductDetailsComponent, BreadCrumbComponent, HttpClientModule, ProductsArrayComponent, ReviewsComponent],
   providers: [ProductService],
   templateUrl: './product-details-container.component.html',
   styleUrl: './product-details-container.component.css'

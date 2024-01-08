@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { ProductListComponent } from '../components/product-list/product-list.component';
 
 import { ErrorPageComponent } from '../components/error-page/error-page.component';
 import { CartComponent } from '../components/cart/cart.component';
@@ -25,7 +24,7 @@ export const routes: Routes = [
       { path: '', redirectTo: 'Home', pathMatch: 'full' },
 
       { path: 'category/:categoryId', component: TempProductsComponent },
-      { path: 'Category/:categoryId/:id', component: ProductDetailsComponent },
+      { path: 'Category/:categoryId/:id', component: ProductDetailsContainerComponent },
       { path: 'Cart/:id', component: CartComponent }, //Add Guard
       { path: 'Search/:word', component: FilterComponent },
       { path: 'AboutUs', component: AboutUsComponent }
@@ -38,7 +37,7 @@ export const routes: Routes = [
     component: RegisterComponent,
     data: { isRegister: true },
   },
-  
+
   { path: 'Profile', component: ProfileComponent }, //Add Guard
 
   { path: '**', component: ErrorPageComponent },
