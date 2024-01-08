@@ -695,23 +695,41 @@
       "user": 1,
       "products": [
         {
+          "id": 3,
+          "quantity": 1
+        },
+        {
+          "id": 9,
+          "quantity": 7
+        },
+        {
+          "id": 9,
+          "quantity": 7
+        },
+        {
+          "id": 9,
+          "quantity": 7
+        },
+        {
+          "id": 9,
+          "quantity": 7
+        },
+        {
+          "id": 9,
+          "quantity": 7
+        },
+        {
           "id": 1,
-          "quantity": 2
-        },
-        {
-          "id": 2,
           "quantity": 1
         },
         {
-          "id": 12,
+          "id": 18,
           "quantity": 1
         },
         {
-          "id": 12,
-          "quantity": 1
-        },
-        {
-          "id": 14,
+
+          "id": 3,
+
           "quantity": 1
         }
       ],

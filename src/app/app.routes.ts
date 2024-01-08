@@ -13,7 +13,6 @@ import { CreateProductComponent } from '../components/create-product/create-prod
 import { AboutUsComponent } from '../components/about-us/about-us.component';
 import { ProductDetailsContainerComponent } from '../components/product-details-container/product-details-container.component';
 
-import { TempProductsComponent } from '../components/temp-products/temp-products.component';
 
 export const routes: Routes = [
   {
@@ -23,7 +22,8 @@ export const routes: Routes = [
       { path: 'Home', component: HomeComponent },
       { path: '', redirectTo: 'Home', pathMatch: 'full' },
 
-      { path: 'category/:categoryId', component: TempProductsComponent },
+
+      { path: 'category/:categoryId', component: ProductListComponent },
       { path: 'Category/:categoryId/:id', component: ProductDetailsContainerComponent },
       { path: 'Cart/:id', component: CartComponent }, //Add Guard
       { path: 'Search/:word', component: FilterComponent },
