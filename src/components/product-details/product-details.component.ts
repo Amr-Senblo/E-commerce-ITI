@@ -5,7 +5,6 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductComponent } from '../product/product.component';
 import { IProduct } from '../../models/iproduct';
 import { CartService } from '../../services/cart.service';
-import { ProductsOfCategoryService } from '../../services/products-of-category.service';
 import { CustomCartService } from '../../services/custom-cart-products.service';
 import { IproductBuyed } from '../../models/iproduct-buyed';
 
@@ -13,7 +12,7 @@ import { IproductBuyed } from '../../models/iproduct-buyed';
   selector: 'app-product-details',
   standalone: true,
   imports: [HttpClientModule, RouterLink, ProductComponent],
-  providers: [ProductService, CartService, ProductsOfCategoryService, CustomCartService],
+  providers: [ProductService, CartService, CustomCartService],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })
