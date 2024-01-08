@@ -43,4 +43,8 @@ export class ProductService {
     let url =`${this.DB}?category=${categoryId}&_page=1&_limit=4`;
     return this.http.get<IProduct[]>(url)
   }
+  // getPaginateProduct(categoryId: number, itemsNum: number) {
+  //   let url =`${this.DB}?category=${categoryId}&_page=1&_limit=${itemsNum}`;
+  //   return this.http.get<IProduct[]>(url)
+  // }
 }
