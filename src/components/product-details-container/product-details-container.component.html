@@ -9,17 +9,9 @@
   </div>
   <div class="my-5">
     <h2 class="my-5 text-center fw-bold theme-color">You May Like</h2>
-      <div class="row">
-          @for (product of categoryProducts; track product.id)
-          {
-            <!-- <ng-container *ngIf="product.id !== productId"> -->
-              <div class="col-12 col-md-6 col-lg-3 product">
-                  <app-product class="product" [product]="product"></app-product>
-              </div>
-            <!-- </ng-container> -->
-
-          }
-      </div>
+    <div class="row">
+      <app-products-array [products]="categoryProducts"></app-products-array>
+    </div>
   </div>
 
   <div class="my-5">

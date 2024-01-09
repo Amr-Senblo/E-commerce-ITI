@@ -12,6 +12,7 @@ import { CreateProductComponent } from '../components/create-product/create-prod
 
 import { AboutUsComponent } from '../components/about-us/about-us.component';
 import { ProductDetailsContainerComponent } from '../components/product-details-container/product-details-container.component';
+import { ProductListComponent } from '../components/product-list/product-list.component';
 
 
 export const routes: Routes = [

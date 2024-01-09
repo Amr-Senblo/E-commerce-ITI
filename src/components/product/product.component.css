@@ -55,6 +55,7 @@ i.wish{
 
 .product{
   text-decoration-line: none;
+  cursor: pointer;
 }
 a .product:hover{
 border: 1px solid #96ADA5;

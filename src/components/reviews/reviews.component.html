@@ -1,5 +1,5 @@
 @if (reviews.length !=0 && UsersInOrderReviews.length!=0) {
-<h2 class="fs-1 text-center">{{avgRating}}</h2>
+<h2 class="fs-1 text-center">{{avgRating| number:'1.2-2'}}</h2>
 <div class="text-center my-5">
   <ngb-rating [(rate)]="avgRating" [readonly]="true" [max]="5" />
 </div>
