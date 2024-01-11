@@ -5,5 +5,8 @@ export interface IUser {
   phone: string;
   profilePic?: string;
   Address?: string;
+  gender?: string;
+  passward: string;
+  confirmPassward: string;
   wishlist?: number[];
 }
