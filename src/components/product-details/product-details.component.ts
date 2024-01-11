@@ -1,44 +1,54 @@
-import { HttpClientModule } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { ProductComponent } from '../product/product.component';
 import { IProduct } from '../../models/iproduct';
+import { CartService } from '../../services/cart.service';
+import { CustomCartService } from '../../services/custom-cart-products.service';
+import { IproductBuyed } from '../../models/iproduct-buyed';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [HttpClientModule , RouterLink , ProductComponent],
-  providers: [ProductService],
+  imports: [RouterLink, ProductComponent],
+  providers: [ProductService, CartService, CustomCartService],
   templateUrl: './product-details.component.html',
-  styleUrl: './product-details.component.css'
+  styleUrl: './product-details.component.css',
 })
-export class ProductDetailsComponent implements OnInit {
-
-  ID = 0;
-  p: any;
-  products: IProduct[] = []
-  constructor(private myService: ProductService, myActivated: ActivatedRoute) {
-    this.ID = myActivated.snapshot.params["id"];
-    console.log("ID : " + this.ID);
+export class ProductDetailsComponent implements OnChanges {
+  private isFirstChange = true;
+  cartId = 1;
+  productsInCart: IproductBuyed[] = [];
+  productId = 0;
+  @Input() product: IProduct = <IProduct>{};
+  constructor(
+    private CartCustomService: CustomCartService,
+    private cartService: CartService
+  ) {}
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.isFirstChange) {
+      this.isFirstChange = false;
+      return;
+    }
+    this.productId = this.product.id;
   }
-  ngOnInit(): void {
-    this.myService.getProduct(this.ID).subscribe({
-      next: (data) => {
-        console.log(data)
-        this.p = data;
+  AddToCart() {
+    this.cartService.getCart(this.cartId).subscribe({
+      next: (value) => {
+        this.productsInCart = value.products;
+        this.productsInCart.push({ id: this.productId, quantity: 1 });
+        this.CartCustomService.editCartProducts(
+          this.cartId,
+          this.productsInCart
+        ).subscribe();
       },
-      error: () => { console.log("error occured") }
-    })
-
-    this.myService.getProducts().subscribe({
-      next:(data)=>{
-        console.log(data)
-        this.products = data.slice(0, 8)
-      },
-      error:()=>{console.log("Error")}
-    })
+      error: (err) => console.log(err),
+    });
   }
-  
 }
-

@@ -1,6 +1,5 @@
 import { Component, Input, NgModule, OnInit } from '@angular/core';
 import { IProduct } from '../../models/iproduct';
-import { HttpClientModule } from '@angular/common/http';
 import { CartService } from '../../services/cart.service';
 import { ActivatedRoute } from '@angular/router';
 import { CustomCartService } from '../../services/custom-cart-products.service';
@@ -11,7 +10,7 @@ import { IproductBuyed } from '../../models/iproduct-buyed';
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [HttpClientModule, ProductCartComponent, CommonModule],
+  imports: [ProductCartComponent, CommonModule],
   providers: [CartService, CustomCartService],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'

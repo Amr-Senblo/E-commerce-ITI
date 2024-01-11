@@ -1,0 +1,55 @@
+  <!-- <div class="row my-5">
+    <div class="col-4">
+      <div class="d-flex flex-column align-items-center">
+        <div class="img-cont">
+          <img [src]="user.profilePic" alt="User Profile pic" class="img-fluid">
+        </div>
+        <span class="my-3">{{user.name}}</span>
+      </div>
+    </div>
+    <input class="col-8 d-flex flex-column card py-3 px-4">
+  </div> -->
+  <!-- <section style="background-color: #d94125;"> -->
+  <form [formGroup]="myForm" (ngSubmit)="send()">
+    <div class="container my-5 py-5 text-dark">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-6">
+          <div class="card">
+            <div class="card-body p-4">
+              <div class="d-flex flex-start w-100">
+                <img class="rounded-circle shadow-1-strong me-3"
+                  [src]="user.profilePic" alt="avatar" width="65" height="65" />
+                <div class="w-100">
+                  <h3 class="fw-bold theme-color" style="color: var(--sec-color);">{{user.name}}</h3>
+                  <!-- <ul class="rating mb-3" data-mdb-toggle="rating">
+                    <li>
+                      <i class="far fa-star fa-sm text-danger" title="Bad"></i>
+                    </li>
+                    <li>
+                      <i class="far fa-star fa-sm text-danger" title="Poor"></i>
+                    </li>
+                    <li>
+                      <i class="far fa-star fa-sm text-danger" title="OK"></i>
+                    </li>
+                    <li>
+                      <i class="far fa-star fa-sm text-danger" title="Good"></i>
+                    </li>
+                    <li>
+                      <i class="far fa-star fa-sm text-danger" title="Excellent"></i>
+                    </li>
+                  </ul> -->
+                  <div class="form-outline">
+                    <textarea formControlName="comment" class="form-control" id="textAreaExample" rows="2"></textarea>
+                  </div>
+                  <div class="d-flex justify-content-between mt-3">
+                    <input type="submit" class="btn" style="background-color: var(--main-color); color: white;" value="Send">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <!-- </section> -->

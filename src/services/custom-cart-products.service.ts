@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { IProduct } from '../models/iproduct';
 import { IproductBuyed } from '../models/iproduct-buyed';
 import { ICart } from '../models/icart';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomCartService {
-  urlProduct = 'http://localhost:3000/products';
-  urlcart = 'http://localhost:3000/carts';
+  urlProduct = `${environment.apiUrl}/products`;
+  urlcart =` ${environment.apiUrl}/carts`;
   constructor(private http: HttpClient) { }
   getCartProducts(productsIds: string) {
     return this.http.get<IProduct[]>(`${this.urlProduct}?${productsIds}`)

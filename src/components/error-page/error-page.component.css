@@ -7,9 +7,9 @@
 .img-container{
   width:80%;
   margin: 50px auto;
-  height: 70%;
+  height: 70vh;
 }
-.img-fluid{
+.img{
   width: 100%;
   height: 100%;
 }

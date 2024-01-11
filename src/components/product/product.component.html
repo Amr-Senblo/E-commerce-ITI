@@ -1,5 +1,5 @@
-
 <div class="container">
+  <div class="row">
   <div class="card my-3  shadow-lg bg-body-tertiary prod-comp">
     <div class="col-10 m-auto mt-3 photo-cont">
       <img [src]="product.imageCover" [alt]="product.name" class="card-img-top Image">
@@ -17,7 +17,7 @@
           <a class="fav-cont" (click)="onWishList()"><i [class]="heart + ' favourite'"></i></a>
         </div>
       </div>
-      <a class="product" [routerLink]="'/Category/'+product.category+'/'+product.id">
+      <a class="product" (click)="refreshRoute()">
         <div class="m-auto my-0 text-center Details">
           Details
 
@@ -27,5 +27,5 @@
   </div>
 
 
-</div>
 
+</div>
