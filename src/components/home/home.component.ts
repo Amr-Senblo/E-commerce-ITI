@@ -1,7 +1,6 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { CategoriesComponent } from '../categories/categories.component';
-import { HttpClientModule } from '@angular/common/http';
 import { IProduct } from '../../models/iproduct';
 import { ProductsArrayComponent } from '../products-array/products-array.component';
 import { Image } from '../../models/image';
@@ -19,7 +18,6 @@ import { ProductComponent } from '../product/product.component';
   imports: [
     CarouselComponent,
     CategoriesComponent,
-    HttpClientModule,
     ProductsArrayComponent,
     ProductComponent
   ],
