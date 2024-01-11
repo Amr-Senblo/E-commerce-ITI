@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 
-
 import { ErrorPageComponent } from '../components/error-page/error-page.component';
 import { CartComponent } from '../components/cart/cart.component';
 import { ProfileComponent } from '../components/profile/profile.component';
@@ -13,7 +12,8 @@ import { CreateProductComponent } from '../components/create-product/create-prod
 import { AboutUsComponent } from '../components/about-us/about-us.component';
 import { ProductDetailsContainerComponent } from '../components/product-details-container/product-details-container.component';
 import { ProductListComponent } from '../components/product-list/product-list.component';
-
+import { RegisterLayoutComponent } from '../layouts/register-layout/register-layout.component';
+import { LoginFormComponent } from '../components/login-form/login-form.component';
 
 export const routes: Routes = [
   {
@@ -23,15 +23,19 @@ export const routes: Routes = [
       { path: 'Home', component: HomeComponent },
       { path: '', redirectTo: 'Home', pathMatch: 'full' },
 
-
       { path: 'category/:categoryId', component: ProductListComponent },
-      { path: 'Category/:categoryId/:id', component: ProductDetailsContainerComponent },
+      {
+        path: 'Category/:categoryId/:id',
+        component: ProductDetailsContainerComponent,
+      },
       { path: 'Cart/:id', component: CartComponent }, //Add Guard
       { path: 'Search/:word', component: FilterComponent },
-      { path: 'AboutUs', component: AboutUsComponent }
-
+      { path: 'AboutUs', component: AboutUsComponent },
     ],
   },
+  { path: 'Login', component: RegisterLayoutComponent, children: [
+    { path: '', component: LoginFormComponent},
+  ] },
   { path: 'CreateProduct', component: CreateProductComponent },
   {
     path: 'register',
