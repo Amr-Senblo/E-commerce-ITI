@@ -630,10 +630,10 @@
   "users": [
     {
       "id": 1,
-      "name": "User1",
+      "name": "Jack Adam",
       "email": "user1@gmail.com",
       "phone": "01012345611",
-      "profilePic": "https://weimaracademy.org/wp-content/uploads/2021/08/dummy-user-680x548.png",
+      "profilePic": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "Address": "123, Street, City, Country",
       "wishlist": [
         1,
@@ -642,10 +642,10 @@
     },
     {
       "id": 2,
-      "name": "User2",
+      "name": "Marya Edward",
       "email": "user2@gmail.com",
       "phone": "01012345612",
-      "profilePic": "https://weimaracademy.org/wp-content/uploads/2021/08/dummy-user-680x548.png",
+      "profilePic": "https://images.unsplash.com/photo-1525186402429-b4ff38bedec6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "Address": "456, Street, City, Country",
       "wishlist": [
         1,
@@ -654,10 +654,10 @@
     },
     {
       "id": 3,
-      "name": "User3",
-      "email": "user2@gmail.com",
+      "name": "Mahran Antonyo",
+      "email": "mahran@gmail.com",
       "phone": "01012345613",
-      "profilePic": "https://weimaracademy.org/wp-content/uploads/2021/08/dummy-user-680x548.png",
+      "profilePic": "https://media.istockphoto.com/id/1170286252/photo/positive-human-facial-expressions-and-emotions-portrait-of-handsome-young-male-in-his-20s.jpg?s=1024x1024&w=is&k=20&c=trvPL1PKSZQNc_ZVAhx4JzD0tHtub4PE0znx22fc7-k=",
       "Address": "789, Street, City, Country",
       "wishlist": [
         2,
@@ -666,10 +666,10 @@
     },
     {
       "id": 4,
-      "name": "User4",
+      "name": "Ledya Karam",
       "email": "user4@gmail.com",
       "phone": "01012345614",
-      "profilePic": "https://weimaracademy.org/wp-content/uploads/2021/08/dummy-user-680x548.png",
+      "profilePic": "https://images.unsplash.com/photo-1506863530036-1efeddceb993?q=80&w=1488&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "Address": "101, Street, City, Country",
       "wishlist": [
         1,
@@ -678,10 +678,10 @@
     },
     {
       "id": 5,
-      "name": "User5",
+      "name": "Goerge Jacoup",
       "email": "user5@gmail.com",
       "phone": "01012345615",
-      "profilePic": "https://weimaracademy.org/wp-content/uploads/2021/08/dummy-user-680x548.png",
+      "profilePic": "https://plus.unsplash.com/premium_photo-1689977927774-401b12d137d6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "Address": "112, Street, City, Country",
       "wishlist": [
         2,
@@ -727,9 +727,7 @@
           "quantity": 1
         },
         {
-
           "id": 3,
-
           "quantity": 1
         }
       ],
@@ -913,7 +911,7 @@
     },
     {
       "id": 12,
-      "user": 2,
+      "user": 3,
       "productId": 7,
       "rating": 3,
       "comment": "Decent product for the price",
@@ -994,7 +992,7 @@
     },
     {
       "id": 21,
-      "user": 1,
+      "user": 4,
       "productId": 6,
       "rating": 3,
       "comment": "An okay product, could be better",
@@ -1261,6 +1259,41 @@
       "comment": "Poorly made, wouldn't recommend",
       "createdAt": "2022-01-15T12:30:00.000Z",
       "updatedAt": "2022-01-15T12:30:00.000Z"
+    },
+    {
+      "comment": "Good",
+      "user": 1,
+      "productId": 11,
+      "rating": 4,
+      "id": 53
+    },
+    {
+      "comment": "Bad",
+      "user": 1,
+      "productId": 11,
+      "rating": 4,
+      "id": 54
+    },
+    {
+      "comment": "High quality!",
+      "user": 3,
+      "productId": 11,
+      "rating": 4,
+      "id": 55
+    },
+    {
+      "comment": "Hight Quality <3",
+      "user": 2,
+      "productId": 6,
+      "rating": 4,
+      "id": 56
+    },
+    {
+      "comment": "GOOD!!",
+      "user": 1,
+      "productId": 3,
+      "rating": 4,
+      "id": 57
     }
   ]
 }
