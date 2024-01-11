@@ -36,6 +36,7 @@ export class ReviewsComponent implements OnChanges{
       this.isFirstChange = false;
       return;
     }
+    this.reviews=this.reviews.reverse(); // Reverse the array
 
     console.log(this.reviews)
     for (let review of this.reviews) {
@@ -52,6 +53,7 @@ export class ReviewsComponent implements OnChanges{
             this.UsersInOrderReviews.push(this.users.filter(user => user.id === review.user)[0]);
         }
         console.log(this.UsersInOrderReviews);
+
       }
     })
 
@@ -59,7 +61,5 @@ export class ReviewsComponent implements OnChanges{
       return accumulator + currentValue;
     }, 0) / this.Ratings.length;
     //console.log(this.avgRating)
-
   }
-
 }
