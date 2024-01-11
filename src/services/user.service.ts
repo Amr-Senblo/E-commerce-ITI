@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IUser } from '../models/iuser';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { IUser } from '../models/iuser';
 export class UserService {
 
   constructor(private http: HttpClient) { }
-  DB = "http://localhost:3000/users";
+  DB = `${environment.apiUrl}/users`;
   getUsers() {
     return this.http.get<IUser[]>(this.DB);
   }
