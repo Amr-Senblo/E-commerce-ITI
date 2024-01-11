@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IProduct } from '../models/iproduct';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SearchService {
-  url = 'http://localhost:3000';
+  url = environment.apiUrl;
   constructor(private http: HttpClient) {}
 
   // getSearchResult(search: string) {

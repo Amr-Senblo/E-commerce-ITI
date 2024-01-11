@@ -1,14 +1,13 @@
 import { CommonModule, DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
-import { HttpClientModule } from '@angular/common/http';
 import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FilterAPIService } from '../../services/filter-api.service';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, RouterModule, FormsModule],
+  imports: [CommonModule,  RouterModule, FormsModule],
   providers: [CategoryService],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',

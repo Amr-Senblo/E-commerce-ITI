@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { IReview } from '../models/ireview';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReviewService {
 
-  DB="http://localhost:3000/reviews";
+  DB=`${environment.apiUrl}/reviews`;
   constructor(private http:HttpClient) { }
 
   getReviews()
