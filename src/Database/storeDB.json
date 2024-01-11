@@ -119,11 +119,7 @@
       "description": "High-performance smartphone with a focus on speed.",
       "price": 999.99,
       "quantity": 40,
-
-    
-
       "imageCover": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/81fRAoUL-fL._AC_SL1500_.jpg",
-
       "images": [
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/41is2-Tl-JL._AC_.jpg",
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51viQV+uAuL._AC_.jpg",
@@ -268,7 +264,7 @@
       "description": "Premium smartphone with a focus on camera innovation.",
       "price": 1099.99,
       "quantity": 40,
-      "imageCover": "https://example.com/p50_pro.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/61w-1c1nOzL._AC_SL1500_.jpg",
       "images": [
         "https://example.com/p50_pro_image1.jpg",
         "https://example.com/p50_pro_image2.jpg",
@@ -297,9 +293,9 @@
       "description": "Slim and powerful smartphone with a focus on photography.",
       "price": 799.99,
       "quantity": 50,
-      "imageCover": "https://example.com/edge_20_pro.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/510pcyFB-vL._AC_SL1500_.jpg",
       "images": [
-        "https://example.com/edge_20_pro_image1.jpg",
+        "https://m.media-amazon.com/images/I/61eyXBlFk7L._AC_SL1500_.jpg",
         "https://example.com/edge_20_pro_image2.jpg",
         "https://example.com/edge_20_pro_image3.jpg"
       ],
@@ -326,7 +322,7 @@
       "description": "Advanced smartwatch with a larger and always-on Retina display.",
       "price": 399.99,
       "quantity": 50,
-      "imageCover": "https://example.com/apple_watch_series_7.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/71p1EMtYnvL._AC_SL1500_.jpg",
       "images": [
         "https://example.com/apple_watch_series_7_image1.jpg",
         "https://example.com/apple_watch_series_7_image2.jpg",
@@ -355,7 +351,7 @@
       "description": "Feature-rich smartwatch with advanced health tracking capabilities.",
       "price": 349.99,
       "quantity": 35,
-      "imageCover": "https://example.com/galaxy_watch_4.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/61em2RBifsL._AC_SL1500_.jpg",
       "images": [
         "https://example.com/galaxy_watch_4_image1.jpg",
         "https://example.com/galaxy_watch_4_image2.jpg",
@@ -619,10 +615,7 @@
       "phone": "01012345611",
       "profilePic": "https://example.com/user1.jpg",
       "Address": "123, Street, City, Country",
-      "wishlist": [
-        1,
-        2
-      ]
+      "wishlist": [1, 2]
     },
     {
       "id": 2,
@@ -631,10 +624,7 @@
       "phone": "01012345612",
       "profilePic": "https://example.com/user2.jpg",
       "Address": "456, Street, City, Country",
-      "wishlist": [
-        1,
-        3
-      ]
+      "wishlist": [1, 3]
     },
     {
       "id": 3,
@@ -643,10 +633,7 @@
       "phone": "01012345613",
       "profilePic": "https://example.com/user3.jpg",
       "Address": "789, Street, City, Country",
-      "wishlist": [
-        2,
-        3
-      ]
+      "wishlist": [2, 3]
     },
     {
       "id": 4,
@@ -655,10 +642,7 @@
       "phone": "01012345614",
       "profilePic": "https://example.com/user4.jpg",
       "Address": "101, Street, City, Country",
-      "wishlist": [
-        1,
-        4
-      ]
+      "wishlist": [1, 4]
     },
     {
       "id": 5,
@@ -667,26 +651,14 @@
       "phone": "01012345615",
       "profilePic": "https://example.com/user5.jpg",
       "Address": "112, Street, City, Country",
-      "wishlist": [
-        2,
-        4
-      ]
+      "wishlist": [2, 4]
     }
   ],
   "carts": [
     {
       "id": 1,
       "user": 1,
-      "products": [
-        {
-          "id": 1,
-          "quantity": 2
-        },
-        {
-          "id": 2,
-          "quantity": 1
-        }
-      ],
+      "products": [],
       "totalPrice": 2699.97,
       "ordered": false,
       "createdAt": "2022-01-15T12:30:00.000Z",

@@ -12,6 +12,8 @@ import { RegisterComponent } from '../components/register/register.component';
 import { FilterComponent } from '../components/filter/filter.component';
 
 import { CreateProductComponent } from '../components/create-product/create-product.component';
+import { LoginComponent } from '../components/login/login.component';
+import { Component } from '@angular/core';
 
 export const routes: Routes = [
   {
@@ -27,6 +29,11 @@ export const routes: Routes = [
     ],
   },
   { path: 'CreateProduct', component: CreateProductComponent },
+
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
   {
     path: 'register',
     component: RegisterComponent,

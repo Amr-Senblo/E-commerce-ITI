@@ -4,14 +4,15 @@
 
   <div class="first-header-container">
     <div routerLink="Home" class="logo-container">
-      <!-- <p class="logo">E-Commerce</p> -->
-      <img src="assets/images/logo-black.svg" alt="logo" class="logo">
+      <img src="assets/images/logo-white.png" alt="logo" class="logo">
     </div>
+
     <div class="search-container">
       <input type="text" class="search-input" placeholder="Search for anything..." [(ngModel)]="searchkeyword">
-      <a [routerLink]="['/search',searchkeyword]"><img src="assets/images/search.svg" alt="search"
+      <a [routerLink]="['/search',searchkeyword]"><img src="assets/images/search1.png" alt="search"
           class="search-icon"></a>
     </div>
+
     <div class="user-container">
       <a routerLink="Cart/1" class="cart-anchor">
         <div class="cart">
@@ -20,12 +21,10 @@
           <span class="cart-text">Cart</span>
         </div>
       </a>
+
       <div class="profile" (click)="toggleDropdown()">
-        <img src="assets/images/profile.png" alt="profile" class="profile-icon">
-
-
+        <img src="assets/images/profile.svg" alt="profile" class="profile-icon">
         <span class="signin-text">Sign In</span>
-
       </div>
       <div class="dropdown">
         <!-- <span>Username</span> -->
@@ -34,30 +33,22 @@
           <a><i class="fa-regular fa-heart"></i> Wishlist</a>
           <a> <i class="fa-regular fa-credit-card"></i> Orders</a>
 
-          <a routerLink="register"><i class="fa-solid fa-power-off"></i> Logout</a>
+          <a routerLink="login"><i class="fa-solid fa-power-off"></i> Logout</a>
         </div>
       </div>
-
-
-
     </div>
 
-  </div>
-  <div class="dropdown">
-    <!-- <span>Username</span> -->
-    <div class="dropdown-content" *ngIf="isDropdownOpen">
-      <a href="#">My Profile</a>
-      <a href="#">Settings</a>
-      <a href="#">Logout</a>
-    </div>
+
   </div>
 
-  <div class="second-header-container">
 
+
+
+  <!-- <div class="second-header-container">
     <div class="categories-container">
       <div class="category-icon">
-
-
+  
+  
         <img src="assets/images/categories.svg" alt="category" class="category-icon">
       </div>
       <span class="category-text" (click)="toggleCategoriesDropdown()">Categories</span>
@@ -65,19 +56,22 @@
         @for(category of categories; track category.id){
         <div class="category-item">
           <a [routerLink]="['/category', category.id]">{{category.name}}</a>
-          <!-- <a routerLink="category/:categoryId"> {{category.name}}</a> -->
+  
         </div>
         }
-
-
-
+  
+  
+  
       </div>
     </div>
     <div class="info-container">
       <div class="contact"><a href="#">Contact </a></div>
       <div class="about-us"><a href="#">About Us</a></div>
     </div>
+  </div> -->
 
 
-  </div>
+
+
+
 </div>
