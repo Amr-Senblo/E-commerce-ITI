@@ -12,6 +12,7 @@ import { IProduct } from '../../models/iproduct';
 import { CartService } from '../../services/cart.service';
 import { CustomCartService } from '../../services/custom-cart-products.service';
 import { IproductBuyed } from '../../models/iproduct-buyed';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product-details',
@@ -50,5 +51,24 @@ export class ProductDetailsComponent implements OnChanges {
       },
       error: (err) => console.log(err),
     });
+    this.showMessage('Added to cart');
+  }
+  x: any;
+
+  showMessage(message: string): void {
+    this.x = setInterval(() => {
+      Swal.fire({
+        title: message,
+        
+        icon: 'success',
+      });
+      this.clearMessage();
+    }, 1000);
+    console.log('interval work');
+  }
+
+  clearMessage(): void {
+    clearInterval(this.x);
+    console.log('clear work');
   }
 }
