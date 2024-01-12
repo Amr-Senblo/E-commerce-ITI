@@ -8,3 +8,11 @@ h2{
   font-weight: 700;
   text-align: center;
 }
+
+.product{
+  transition: 0.5s;
+}
+.product:hover{
+  transform: scale(1.1);
+}
+

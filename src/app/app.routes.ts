@@ -1,7 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { ProductListComponent } from '../components/product-list/product-list.component';
-
 import { ErrorPageComponent } from '../components/error-page/error-page.component';
 import { CartComponent } from '../components/cart/cart.component';
 import { ProfileComponent } from '../components/profile/profile.component';
@@ -10,11 +8,14 @@ import { HomeComponent } from '../components/home/home.component';
 import { RegisterComponent } from '../components/register/register.component';
 import { FilterComponent } from '../components/filter/filter.component';
 import { CreateProductComponent } from '../components/create-product/create-product.component';
+import { LoginComponent } from '../components/login/login.component';
+import { Component } from '@angular/core';
 
 import { AboutUsComponent } from '../components/about-us/about-us.component';
 import { ProductDetailsContainerComponent } from '../components/product-details-container/product-details-container.component';
-
-import { TempProductsComponent } from '../components/temp-products/temp-products.component';
+import { ProductListComponent } from '../components/product-list/product-list.component';
+import { RegisterLayoutComponent } from '../layouts/register-layout/register-layout.component';
+import { LoginFormComponent } from '../components/login-form/login-form.component';
 
 export const routes: Routes = [
   {
@@ -24,21 +25,31 @@ export const routes: Routes = [
       { path: 'Home', component: HomeComponent },
       { path: '', redirectTo: 'Home', pathMatch: 'full' },
 
-      { path: 'category/:categoryId', component: TempProductsComponent },
-      { path: 'Category/:categoryId/:id', component: ProductDetailsContainerComponent},
+      { path: 'category/:categoryId', component: ProductListComponent },
+      {
+        path: 'Category/:categoryId/:id',
+        component: ProductDetailsContainerComponent,
+      },
       { path: 'Cart/:id', component: CartComponent }, //Add Guard
       { path: 'Search/:word', component: FilterComponent },
-      { path: 'AboutUs', component: AboutUsComponent }
-
+      { path: 'AboutUs', component: AboutUsComponent },
     ],
   },
+  { path: 'Login', component: RegisterLayoutComponent, children: [
+    { path: '', component: LoginFormComponent},
+  ] },
   { path: 'CreateProduct', component: CreateProductComponent },
+
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
   {
     path: 'register',
     component: RegisterComponent,
     data: { isRegister: true },
   },
-  
+
   { path: 'Profile', component: ProfileComponent }, //Add Guard
 
   { path: '**', component: ErrorPageComponent },

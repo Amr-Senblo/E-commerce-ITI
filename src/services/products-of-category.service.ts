@@ -8,9 +8,12 @@ import { IProduct } from '../models/iproduct';
 export class ProductsOfCategoryService {
   url = 'http://localhost:3000';
   constructor(private hhtp: HttpClient) {}
+
   getProductOfCategory(categoryId: number) {
     return this.hhtp.get<IProduct[]>(
       `${this.url}/products?category=${categoryId}&_page=1&_limit=50`
     );
   }
+
+ 
 }

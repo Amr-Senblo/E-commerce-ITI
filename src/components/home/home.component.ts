@@ -1,13 +1,13 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { CategoriesComponent } from '../categories/categories.component';
-import { HttpClientModule } from '@angular/common/http';
 import { IProduct } from '../../models/iproduct';
 import { ProductsArrayComponent } from '../products-array/products-array.component';
 import { Image } from '../../models/image';
 import { ICategory } from '../../models/icategory';
 import { CategoryService } from '../../services/category.service';
 import { ProductService } from '../../services/product.service';
+import { ProductComponent } from '../product/product.component';
 
 
 @Component({
@@ -18,8 +18,8 @@ import { ProductService } from '../../services/product.service';
   imports: [
     CarouselComponent,
     CategoriesComponent,
-    HttpClientModule,
     ProductsArrayComponent,
+    ProductComponent
   ],
   providers: [ProductService, CategoryService],
 })
