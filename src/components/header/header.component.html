@@ -11,7 +11,7 @@
       <input type="text" class="search-input" (input)="gitNames(searchInput.value)"
         (keyup.enter)="onSearchEnter(searchInput.value)" #searchInput placeholder="Search for anything..."
         [(ngModel)]="searchkeyword">
-      <a [routerLink]="['/search',searchkeyword]"><img src="assets/images/search1.png" alt="search"
+      <a [routerLink]="['/Search',searchkeyword]"><img src="assets/images/search1.png" alt="search"
           class="search-icon"></a>
     </div>
 

@@ -61,7 +61,7 @@ export class ProductDetailsContainerComponent implements OnInit {
         this.currentProduct = value;
         this.breadCrumbTitles = ['Home', value.name];
         this.breadCrumbLinks = ["/Home", `/Category/${this.currentProduct.category}/${this.currentProduct.id}`]
-        this.productService.getProductsOfCategory(value.category).subscribe({
+        this.productService.getProduct4(value.category).subscribe({
           next: (products) => {
             this.categoryProducts = products.filter(product => product.id !== this.currentProduct.id)
           }
@@ -70,11 +70,12 @@ export class ProductDetailsContainerComponent implements OnInit {
     })
   }
 
-  handleReviewCreated(createdReview: IReview[]) {
-    if (this.reviews) { // Check if reviews are available
+  handleReviewCreated(createdReview: IReview[]) 
+  {
+    // Check if reviews are available
       this.reviews=createdReview;
       // this.changeDetectorRef.detectChanges(); // Trigger change detection
-    }
+   
   }
 
 
