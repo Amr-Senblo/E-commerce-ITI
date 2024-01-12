@@ -8,23 +8,23 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { JsonPipe } from '@angular/common';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ProductComponent } from "../product/product.component";
+import { ProductComponent } from '../product/product.component';
 
 @Component({
-    selector: 'app-filter',
-    standalone: true,
-    templateUrl: './filter.component.html',
-    styleUrls: ['./filter.component.css'],
-    imports: [
-        MatSidenavModule,
-        ProductsArrayComponent,
-        MatCheckboxModule,
-        JsonPipe,
-        FormsModule,
-        ReactiveFormsModule,
-        MatSliderModule,
-        ProductComponent
-    ]
+  selector: 'app-filter',
+  standalone: true,
+  templateUrl: './filter.component.html',
+  styleUrls: ['./filter.component.css'],
+  imports: [
+    MatSidenavModule,
+    ProductsArrayComponent,
+    MatCheckboxModule,
+    JsonPipe,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSliderModule,
+    ProductComponent,
+  ],
 })
 export class FilterComponent implements OnInit {
   productList!: IProduct[];
@@ -42,67 +42,73 @@ export class FilterComponent implements OnInit {
   constructor(
     private activeRouter: ActivatedRoute,
     private filterApi: FilterAPIService,
-    private router:Router
+    private router: Router
   ) {
-    
     this.activeRouter.params.subscribe((prams) => {
       this.shearchWord = prams['word'];
-      this.router.navigateByUrl(`Search/${this.shearchWord }`)
-      this.filterApi.getProductFromShearch(this.shearchWord).subscribe((data) => {
-        this.productList = data;
-        this.filterProductList = this.productList;
-        this.brandsNames = Array.from(
-          new Set(this.filterProductList.map((p) => p.brand))
-        );
-        let categoriesIds: number[] = Array.from(
-          new Set(this.productList.map((p) => p.category))
-        );
-        this.filterApi
-          .getCategoriesNameByProductsIds(categoriesIds)
-          .subscribe((data) => {
-            this.categories = data.map((name, index) => {
-              return { name, id: categoriesIds[index] };
+      this.router.navigateByUrl(`Search/${this.shearchWord}`);
+      this.filterApi
+        .getProductFromShearch(this.shearchWord)
+        .subscribe((data) => {
+          this.productList = data;
+          this.filterProductList = this.productList;
+          this.brandsNames = Array.from(
+            new Set(this.filterProductList.map((p) => p.brand))
+          );
+          let categoriesIds: number[] = Array.from(
+            new Set(this.productList.map((p) => p.category))
+          );
+          this.filterApi
+            .getCategoriesNameByProductsIds(categoriesIds)
+            .subscribe((data) => {
+              this.categories = data.map((name, index) => {
+                return { name, id: categoriesIds[index] };
+              });
+              console.log(this.categories);
+              this.minPrice = Math.min(...this.productList.map((p) => p.price));
+              this.minvalue = this.minPrice;
+              this.maxPrice = Math.max(...this.productList.map((p) => p.price));
+              this.maxvalue = this.maxPrice;
             });
-            console.log(this.categories);
-            this.minPrice = Math.min(...this.productList.map((p) => p.price));
-            this.minvalue = this.minPrice;
-            this.maxPrice = Math.max(...this.productList.map((p) => p.price));
-            this.maxvalue = this.maxPrice;
-          });
-      });
+        });
     });
     this.filterProductList = [];
   }
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   toggleCatCheckbox() {
-    // if (this.categories.length > 1) {
-    let checkedCatId = Object.keys(this.checkCategoryBoxStates).filter(
-      (key) => this.checkCategoryBoxStates[key]
-    );
-    if (checkedCatId.length) {
-      this.filterProductList = this.productList.filter((pro) =>
-        checkedCatId.includes(pro.category.toString())
+    console.log('case category length ', this.categories.length);
+
+    if (this.categories.length > 1) {
+      console.log('case category bigger than 1');
+      let checkedCatId = Object.keys(this.checkCategoryBoxStates).filter(
+        (key) => this.checkCategoryBoxStates[key]
       );
-      console.log(this.filterProductList);
-    } else {
-      console.log('case single cat');
-      this.filterProductList = this.productList;
-      // }
-    }
+      if (checkedCatId.length) {
+        this.filterProductList = this.productList.filter((pro) =>
+          checkedCatId.includes(pro.category.toString())
+        );
+        console.log(this.filterProductList);
+      } else {
+        console.log('case single cat');
+        this.filterProductList = this.productList;
+        // }
+      }
+    } else this.filterProductList = this.productList;
   }
   toggleCheckbox() {
-    console.log('inside brand');
-    let brands: string[] = Object.keys(this.checkboxStates).filter(
-      (key) => this.checkboxStates[key]
-    );
-    console.log(brands);
-    if (brands.length) {
-      this.filterProductList = this.filterProductList.filter((p) =>
-        brands.includes(p.brand)
+    if (this.brandsNames.length > 1) {
+      let brands: string[] = Object.keys(this.checkboxStates).filter(
+        (key) => this.checkboxStates[key]
       );
-    } else {
-      this.toggleCatCheckbox();
+      console.log(brands);
+      if (brands.length) {
+        this.filterProductList = this.filterProductList.filter((p) =>
+          brands.includes(p.brand)
+        );
+      } else {
+        console.log('no brand checked');
+        this.toggleCatCheckbox();
+      }
     }
   }
 
