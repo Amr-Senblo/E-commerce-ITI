@@ -8,6 +8,8 @@ import { HomeComponent } from '../components/home/home.component';
 import { RegisterComponent } from '../components/register/register.component';
 import { FilterComponent } from '../components/filter/filter.component';
 import { CreateProductComponent } from '../components/create-product/create-product.component';
+import { LoginComponent } from '../components/login/login.component';
+import { Component } from '@angular/core';
 
 import { AboutUsComponent } from '../components/about-us/about-us.component';
 import { ProductDetailsContainerComponent } from '../components/product-details-container/product-details-container.component';
@@ -37,6 +39,11 @@ export const routes: Routes = [
     { path: '', component: LoginFormComponent},
   ] },
   { path: 'CreateProduct', component: CreateProductComponent },
+
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
   {
     path: 'register',
     component: RegisterComponent,

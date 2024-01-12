@@ -8,21 +8,23 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { JsonPipe } from '@angular/common';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductComponent } from "../product/product.component";
 
 @Component({
-  selector: 'app-filter',
-  standalone: true,
-  templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.css'],
-  imports: [
-    MatSidenavModule,
-    ProductsArrayComponent,
-    MatCheckboxModule,
-    JsonPipe,
-    FormsModule,
-    ReactiveFormsModule,
-    MatSliderModule,
-  ],
+    selector: 'app-filter',
+    standalone: true,
+    templateUrl: './filter.component.html',
+    styleUrls: ['./filter.component.css'],
+    imports: [
+        MatSidenavModule,
+        ProductsArrayComponent,
+        MatCheckboxModule,
+        JsonPipe,
+        FormsModule,
+        ReactiveFormsModule,
+        MatSliderModule,
+        ProductComponent
+    ]
 })
 export class FilterComponent implements OnInit {
   productList!: IProduct[];
