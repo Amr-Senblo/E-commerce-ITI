@@ -61,7 +61,7 @@ export class ProductDetailsContainerComponent implements OnInit {
         this.currentProduct = value;
         this.breadCrumbTitles = ['Home', value.name];
         this.breadCrumbLinks = ["/Home", `/Category/${this.currentProduct.category}/${this.currentProduct.id}`]
-        this.productService.getProductsOfCategory(value.category).subscribe({
+        this.productService.getProduct4(value.category).subscribe({
           next: (products) => {
             this.categoryProducts = products.filter(product => product.id !== this.currentProduct.id)
           }
