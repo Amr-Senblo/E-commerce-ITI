@@ -45,64 +45,43 @@ export class CreateReviewComponent implements OnInit{
         comment:new FormControl(null, Validators.required)
       });
     }
-//   constructor(
-//     private userService: UserService,
-//     private reviewService: ReviewService,
-//     private route: ActivatedRoute
-//   ) {
-//     this.route.params.subscribe((params) => {
-//       this.productID = params['id']; //get product id
-//       console.log(this.productID);
-//     });
-//     this.myForm = new FormGroup({
-//       comment: new FormControl(null, Validators.required),
-//       user: new FormControl(this.userID),
-//       productId: new FormControl(this.productID),
-//       rating: new FormControl(4, [
-//         Validators.required,
-//         Validators.min(1),
-//         Validators.max(5),
-//       ]), //static rating until handling rating star
-//     });
-//   }
+    ngOnInit(): void {
+      this.userService.getUser(this.userID).subscribe({
+        next: (data) => {
+          this.user = data;
+          console.log(this.user);
+        },
+        error: () => console.log('error'),
+      });
+    }
+    checkUser() {
+      if (this.user === null) return;
+    }
+    send(){
+        let comment=this.myForm.controls['comment'].value;
+        let user= +this.userID;
+        let productId= +this.productID;
+        let rating=this.selectedRating;
 
-  ngOnInit(): void {
-    this.userService.getUser(this.userID).subscribe({
-      next: (data) => {
-        this.user = data;
-        console.log(this.user);
-      },
-      error: () => console.log('error'),
-    });
+      let newReview = { comment, user, productId, rating };
+
+        this.reviewService.createReview(newReview).subscribe(
+          {
+            next: (createdReview) => {
+              this.reviewService.getReviewsOfProduct(this.productID).subscribe({
+                next:(data:any)=>{
+                  this.reviewsOfProduct=data;
+                  console.log(this.reviewsOfProduct);
+                  this.reviewCreated.emit(this.reviewsOfProduct); // Emit the new review
+                }
+              });
+              this.myForm.reset();
+              this.selectedRating=1;
+            },
+          });
+        }
+
+    onRatingChange(newRating: number) {
+      console.log('New rating:', newRating);
+    }
   }
-  checkUser() {
-    if (this.user === null) return;
-  }
-  send(){
-      let comment=this.myForm.controls['comment'].value;
-      let user= +this.userID;
-      let productId= +this.productID;
-      let rating=this.selectedRating;
-
-    let newReview = { comment, user, productId, rating };
-
-      this.reviewService.createReview(newReview).subscribe(
-        {
-          next: (createdReview) => {
-            this.reviewService.getReviewsOfProduct(this.productID).subscribe({
-              next:(data:any)=>{
-                this.reviewsOfProduct=data;
-                console.log(this.reviewsOfProduct);
-                this.reviewCreated.emit(this.reviewsOfProduct); // Emit the new review
-              }
-            });
-            this.myForm.reset();
-            this.selectedRating=1;
-          },
-        });
-      }
-
-  onRatingChange(newRating: number) {
-    console.log('New rating:', newRating);
-  }
-}
