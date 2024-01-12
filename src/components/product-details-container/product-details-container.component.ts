@@ -70,11 +70,12 @@ export class ProductDetailsContainerComponent implements OnInit {
     })
   }
 
-  handleReviewCreated(createdReview: IReview[]) {
-    if (this.reviews) { // Check if reviews are available
+  handleReviewCreated(createdReview: IReview[]) 
+  {
+    // Check if reviews are available
       this.reviews=createdReview;
       // this.changeDetectorRef.detectChanges(); // Trigger change detection
-    }
+   
   }
 
 
