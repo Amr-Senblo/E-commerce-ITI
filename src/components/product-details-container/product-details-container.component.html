@@ -21,23 +21,12 @@
 
   <div class="row">
     <div class="my-5">
-      <h2 class="my-5 text-center fw-bold theme-color">Reviews</h2>
-      <!-- @if (!checkLogin) { -->
-
-        <!-- <app-create-review  [userID]="userId" [productID]="productId"
-       ></app-create-review> -->
-
-
+      <h2 class="text-center fw-bold theme-color" style="font-size: 22px;">Reviews</h2>
       <app-create-review
-        [userID]="userId"
         [productID]="productId"
         (reviewCreated)="handleReviewCreated($event)"
         ></app-create-review>
-      <!-- }  -->
-      <!-- <app-reviews [reviews]="currentProduct.reviews!"></app-reviews> -->
       <app-reviews   [reviews]="reviews!"></app-reviews>
-
-
     </div>
   </div>
 

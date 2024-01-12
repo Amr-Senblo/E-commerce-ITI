@@ -36,7 +36,6 @@ import { Observable, catchError, map, of, switchMap } from 'rxjs';
 
 export class ProductDetailsContainerComponent implements OnInit {
   productId!: number;
-  userId: number = 1; //static until the guard finish
   currentProduct: IProduct = <IProduct>{};
   categoryProducts: IProduct[] = [];
   breadCrumbTitles: string[] = [];
@@ -81,11 +80,5 @@ export class ProductDetailsContainerComponent implements OnInit {
     }
   }
 
-  checkLogin() {
-    if (this.userId === null)
-      return true;
-    else
-      return false;
-  }
 
 }

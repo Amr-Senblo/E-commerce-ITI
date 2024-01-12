@@ -27,126 +27,6 @@
   ],
   "products": [
     {
-      "id": 1,
-      "name": "iPhone X",
-      "brand": "Apple",
-      "description": "High-performance smartphone with advanced features.",
-      "price": 799.99,
-      "quantity": 100,
-      "imageCover": "https://m.media-amazon.com/images/I/71i2XhHU3pL._AC_SX569_.jpg",
-      "images": [
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51S-6V4UOLL._AC_SL1100_.jpg",
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/515Ro7dQ02L._AC_SL1100_.jpg",
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51YZcGtBeYL._AC_SL1100_.jpg"
-      ],
-      "category": 1,
-      "ratingAverage": 4.8,
-      "ratingQuantity": 25,
-      "createdAt": "2022-01-15T12:30:00.000Z",
-      "updatedAt": "2022-01-15T12:30:00.000Z",
-      "CommonSpecifications": {
-        "Processor": "Apple A11 Bionic",
-        "RAM": "3GB",
-        "Storage": "64GB",
-        "screenSize": "5.8 inches",
-        "BatteryCapacity": "2716 mAh",
-        "OperatingSystem": "iOS 11",
-        "BiometricAuthentication": "Face ID",
-        "WirelessCharging": "Yes",
-        "Ports": "Lightning"
-      }
-    },
-    {
-      "id": 2,
-      "name": "Samsung Galaxy Z Fold 2",
-      "brand": "Samsung",
-      "description": "Foldable smartphone with a large immersive display.",
-      "price": 1999.99,
-      "quantity": 50,
-      "imageCover": "https://m.media-amazon.com/images/I/619T9-5afsL._AC_SX569_.jpg",
-      "images": [
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61f3V3m9xnL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61rLosd-3nL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61dfQM7lwaL._AC_SL1500_.jpg"
-      ],
-      "category": 1,
-      "ratingAverage": 4.7,
-      "ratingQuantity": 30,
-      "createdAt": "2022-02-02T10:45:00.000Z",
-      "updatedAt": "2022-02-02T10:45:00.000Z",
-      "CommonSpecifications": {
-        "Processor": "Snapdragon 865 Plus",
-        "RAM": "12GB",
-        "Storage": "256GB",
-        "screenSize": "7.6 inches (unfolded)",
-        "BatteryCapacity": "4500 mAh",
-        "OperatingSystem": "Android 10",
-        "BiometricAuthentication": "Side-mounted fingerprint sensor",
-        "WirelessCharging": "Yes",
-        "Ports": "USB-C"
-      }
-    },
-    {
-      "id": 3,
-      "name": "Google Pixel 6",
-      "brand": "Google",
-      "description": "Flagship smartphone with top-notch camera capabilities.",
-      "price": 899.99,
-      "quantity": 75,
-      "imageCover": "https://m.media-amazon.com/images/I/712H7eI9Y6L.__AC_SX300_SY300_QL70_ML2_.jpg",
-      "images": [
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61oQtjPpM-L._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61cK588k49L._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71bNpVQeSDL._AC_SL1500_.jpg"
-      ],
-      "category": 1,
-      "ratingAverage": 4.6,
-      "ratingQuantity": 35,
-      "createdAt": "2022-03-20T15:00:00.000Z",
-      "updatedAt": "2022-03-20T15:00:00.000Z",
-      "CommonSpecifications": {
-        "Processor": "Google Tensor",
-        "RAM": "8GB",
-        "Storage": "128GB",
-        "screenSize": "6.4 inches",
-        "BatteryCapacity": "4600 mAh",
-        "OperatingSystem": "Android 12",
-        "BiometricAuthentication": "Under-display fingerprint sensor",
-        "WirelessCharging": "Yes",
-        "Ports": "USB-C"
-      }
-    },
-    {
-      "id": 4,
-      "name": "OnePlus 11 5G",
-      "brand": "OnePlus",
-      "description": "High-performance smartphone with a focus on speed.",
-      "price": 999.99,
-      "quantity": 40,
-      "imageCover": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/81fRAoUL-fL._AC_SL1500_.jpg",
-      "images": [
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/41is2-Tl-JL._AC_.jpg",
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51viQV+uAuL._AC_.jpg",
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51Yui+D9NfL._AC_.jpg"
-      ],
-      "category": 1,
-      "ratingAverage": 4.5,
-      "ratingQuantity": 28,
-      "createdAt": "2022-04-10T11:30:00.000Z",
-      "updatedAt": "2022-04-10T11:30:00.000Z",
-      "CommonSpecifications": {
-        "Processor": "Snapdragon 888",
-        "RAM": "12GB",
-        "Storage": "256GB",
-        "screenSize": "6.7 inches",
-        "BatteryCapacity": "4500 mAh",
-        "OperatingSystem": "OxygenOS (based on Android)",
-        "BiometricAuthentication": "Under-display fingerprint sensor",
-        "WirelessCharging": "Yes",
-        "Ports": "USB-C"
-      }
-    },
-    {
       "id": 5,
       "name": "iPhone 13 Pro",
       "brand": "Apple",
@@ -323,6 +203,126 @@
         "OperatingSystem": "Android 11",
         "BiometricAuthentication": "Under-display fingerprint sensor",
         "WirelessCharging": "No",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 1,
+      "name": "iPhone X",
+      "brand": "Apple",
+      "description": "High-performance smartphone with advanced features.",
+      "price": 799.99,
+      "quantity": 100,
+      "imageCover": "https://m.media-amazon.com/images/I/71i2XhHU3pL._AC_SX569_.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51S-6V4UOLL._AC_SL1100_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/515Ro7dQ02L._AC_SL1100_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51YZcGtBeYL._AC_SL1100_.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.8,
+      "ratingQuantity": 25,
+      "createdAt": "2022-01-15T12:30:00.000Z",
+      "updatedAt": "2022-01-15T12:30:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Apple A11 Bionic",
+        "RAM": "3GB",
+        "Storage": "64GB",
+        "screenSize": "5.8 inches",
+        "BatteryCapacity": "2716 mAh",
+        "OperatingSystem": "iOS 11",
+        "BiometricAuthentication": "Face ID",
+        "WirelessCharging": "Yes",
+        "Ports": "Lightning"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy Z Fold 2",
+      "brand": "Samsung",
+      "description": "Foldable smartphone with a large immersive display.",
+      "price": 1999.99,
+      "quantity": 50,
+      "imageCover": "https://m.media-amazon.com/images/I/619T9-5afsL._AC_SX569_.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61f3V3m9xnL._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61rLosd-3nL._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61dfQM7lwaL._AC_SL1500_.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.7,
+      "ratingQuantity": 30,
+      "createdAt": "2022-02-02T10:45:00.000Z",
+      "updatedAt": "2022-02-02T10:45:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Snapdragon 865 Plus",
+        "RAM": "12GB",
+        "Storage": "256GB",
+        "screenSize": "7.6 inches (unfolded)",
+        "BatteryCapacity": "4500 mAh",
+        "OperatingSystem": "Android 10",
+        "BiometricAuthentication": "Side-mounted fingerprint sensor",
+        "WirelessCharging": "Yes",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Google Pixel 6",
+      "brand": "Google",
+      "description": "Flagship smartphone with top-notch camera capabilities.",
+      "price": 899.99,
+      "quantity": 75,
+      "imageCover": "https://m.media-amazon.com/images/I/712H7eI9Y6L.__AC_SX300_SY300_QL70_ML2_.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61oQtjPpM-L._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61cK588k49L._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71bNpVQeSDL._AC_SL1500_.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.6,
+      "ratingQuantity": 35,
+      "createdAt": "2022-03-20T15:00:00.000Z",
+      "updatedAt": "2022-03-20T15:00:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Google Tensor",
+        "RAM": "8GB",
+        "Storage": "128GB",
+        "screenSize": "6.4 inches",
+        "BatteryCapacity": "4600 mAh",
+        "OperatingSystem": "Android 12",
+        "BiometricAuthentication": "Under-display fingerprint sensor",
+        "WirelessCharging": "Yes",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 4,
+      "name": "OnePlus 11 5G",
+      "brand": "OnePlus",
+      "description": "High-performance smartphone with a focus on speed.",
+      "price": 999.99,
+      "quantity": 40,
+      "imageCover": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/81fRAoUL-fL._AC_SL1500_.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/41is2-Tl-JL._AC_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51viQV+uAuL._AC_.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51Yui+D9NfL._AC_.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.5,
+      "ratingQuantity": 28,
+      "createdAt": "2022-04-10T11:30:00.000Z",
+      "updatedAt": "2022-04-10T11:30:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Snapdragon 888",
+        "RAM": "12GB",
+        "Storage": "256GB",
+        "screenSize": "6.7 inches",
+        "BatteryCapacity": "4500 mAh",
+        "OperatingSystem": "OxygenOS (based on Android)",
+        "BiometricAuthentication": "Under-display fingerprint sensor",
+        "WirelessCharging": "Yes",
         "Ports": "USB-C"
       }
     },
@@ -831,7 +831,7 @@
     {
       "id": 3,
       "user": 3,
-      "productId": 2,
+      "productId": 18,
       "rating": 3,
       "comment": "This is an average product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -849,7 +849,7 @@
     {
       "id": 5,
       "user": 5,
-      "productId": 1,
+      "productId": 3,
       "rating": 1,
       "comment": "This is a terrible product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -858,7 +858,7 @@
     {
       "id": 6,
       "user": 1,
-      "productId": 2,
+      "productId": 20,
       "rating": 5,
       "comment": "This is a great product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -885,7 +885,7 @@
     {
       "id": 9,
       "user": 4,
-      "productId": 1,
+      "productId": 20,
       "rating": 4,
       "comment": "I really liked this product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -930,7 +930,7 @@
     {
       "id": 14,
       "user": 4,
-      "productId": 5,
+      "productId": 20,
       "rating": 4,
       "comment": "Satisfied with the purchase",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -939,7 +939,7 @@
     {
       "id": 15,
       "user": 5,
-      "productId": 1,
+      "productId": 6,
       "rating": 2,
       "comment": "Disappointed with the quality",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -957,7 +957,7 @@
     {
       "id": 17,
       "user": 2,
-      "productId": 5,
+      "productId": 20,
       "rating": 3,
       "comment": "Fairly satisfied with this product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -975,7 +975,7 @@
     {
       "id": 19,
       "user": 4,
-      "productId": 1,
+      "productId": 9,
       "rating": 2,
       "comment": "Not happy with the durability",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1029,7 +1029,7 @@
     {
       "id": 25,
       "user": 5,
-      "productId": 1,
+      "productId": 12,
       "rating": 4,
       "comment": "Good value for money",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1074,7 +1074,7 @@
     {
       "id": 30,
       "user": 5,
-      "productId": 1,
+      "productId": 17,
       "rating": 4,
       "comment": "Happy with the purchase, will buy again",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1110,7 +1110,7 @@
     {
       "id": 34,
       "user": 4,
-      "productId": 1,
+      "productId": 17,
       "rating": 4,
       "comment": "Good quality, exceeded my expectations",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1128,7 +1128,7 @@
     {
       "id": 36,
       "user": 1,
-      "productId": 2,
+      "productId": 18,
       "rating": 3,
       "comment": "Average product, not too impressed",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1191,7 +1191,7 @@
     {
       "id": 43,
       "user": 3,
-      "productId": 2,
+      "productId": 18,
       "rating": 2,
       "comment": "Not as durable as expected",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1259,41 +1259,6 @@
       "comment": "Poorly made, wouldn't recommend",
       "createdAt": "2022-01-15T12:30:00.000Z",
       "updatedAt": "2022-01-15T12:30:00.000Z"
-    },
-    {
-      "comment": "Good",
-      "user": 1,
-      "productId": 11,
-      "rating": 4,
-      "id": 53
-    },
-    {
-      "comment": "Bad",
-      "user": 1,
-      "productId": 11,
-      "rating": 4,
-      "id": 54
-    },
-    {
-      "comment": "High quality!",
-      "user": 3,
-      "productId": 11,
-      "rating": 4,
-      "id": 55
-    },
-    {
-      "comment": "Hight Quality <3",
-      "user": 2,
-      "productId": 6,
-      "rating": 4,
-      "id": 56
-    },
-    {
-      "comment": "GOOD!!",
-      "user": 1,
-      "productId": 3,
-      "rating": 4,
-      "id": 57
     }
   ]
 }
