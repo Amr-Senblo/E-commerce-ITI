@@ -8,7 +8,9 @@
 
     <div class="search-container">
 
-     <input type="text" class="search-input" (input)="gitNames(searchInput.value)" (keyup.enter)="onSearchEnter(searchInput.value)" #searchInput placeholder="Search for anything..." [(ngModel)]="searchkeyword">
+      <input type="text" class="search-input" (input)="gitNames(searchInput.value)"
+        (keyup.enter)="onSearchEnter(searchInput.value)" #searchInput placeholder="Search for anything..."
+        [(ngModel)]="searchkeyword">
       <a [routerLink]="['/search',searchkeyword]"><img src="assets/images/search1.png" alt="search"
           class="search-icon"></a>
     </div>
@@ -26,11 +28,9 @@
 
       <div class="profile" (click)="toggleDropdown()">
         <img src="assets/images/profile.svg" alt="profile" class="profile-icon">
-
-        <span class="signin-text">Sign In</span>
+        <a routerLink="Login"><span class="signin-text">Sign In</span></a>
       </div>
       <div class="dropdown">
- 
         <div class="dropdown-content" *ngIf="isDropdownOpen">
           <a> <i class="fa-regular fa-user"></i>Profile</a>
           <a><i class="fa-regular fa-heart"></i> Wishlist</a>
@@ -52,4 +52,3 @@
 
 
 </div>
-
