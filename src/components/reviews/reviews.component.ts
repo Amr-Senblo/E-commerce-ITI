@@ -53,6 +53,7 @@ export class ReviewsComponent implements OnChanges{
             this.UsersInOrderReviews.push(this.users.filter(user => user.id === review.user)[0]);
         }
         console.log(this.UsersInOrderReviews);
+
       }
     })
 

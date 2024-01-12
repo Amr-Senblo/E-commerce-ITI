@@ -48,9 +48,7 @@ export class ProductDetailsContainerComponent implements OnInit {
     private changeDetectorRef: ChangeDetectorRef
     ) {
     this.route.params.subscribe(params => {
-      // Access the 'id' parameter
       this.productId = +params['id'];
-      //console.log(this.cartId)
     })
 
   }
@@ -74,7 +72,6 @@ export class ProductDetailsContainerComponent implements OnInit {
 
   handleReviewCreated(createdReview: IReview[]) {
     if (this.reviews) { // Check if reviews are available
-      // this.reviews.push(createdReview);
       this.reviews=createdReview;
       // this.changeDetectorRef.detectChanges(); // Trigger change detection
     }

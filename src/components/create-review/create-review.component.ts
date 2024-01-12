@@ -3,7 +3,12 @@ import { IUser } from '../../models/iuser';
 import { UserService } from '../../services/user.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ReviewService } from '../../services/review.service';
 import { IReview } from '../../models/ireview';
@@ -15,7 +20,7 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [CommonModule, HttpClientModule, ReactiveFormsModule, NgbRatingModule],
   providers:[UserService],
   templateUrl: './create-review.component.html',
-  styleUrl: './create-review.component.css'
+  styleUrl: './create-review.component.css',
 })
 export class CreateReviewComponent implements OnInit{
   // @Input() userID!:number;
@@ -23,12 +28,12 @@ export class CreateReviewComponent implements OnInit{
   @Input() productID!:number;
   @Output() reviewCreated: EventEmitter<IReview[]> = new EventEmitter<IReview[]>();
 
-  user!:IUser;
+  user!: IUser;
   myForm: FormGroup;
   @Output() newReview!:IReview;
   selectedRating:number = 1; // Initial value
 
-  reviewsOfProduct:IReview[]=[];
+  reviewsOfProduct: IReview[] = [];
 
   constructor(private userService:UserService,private reviewService:ReviewService,private route:ActivatedRoute){
     this.route.params.subscribe( (params) => {
@@ -39,20 +44,39 @@ export class CreateReviewComponent implements OnInit{
       {
         comment:new FormControl(null, Validators.required)
       });
-  }
+    }
+//   constructor(
+//     private userService: UserService,
+//     private reviewService: ReviewService,
+//     private route: ActivatedRoute
+//   ) {
+//     this.route.params.subscribe((params) => {
+//       this.productID = params['id']; //get product id
+//       console.log(this.productID);
+//     });
+//     this.myForm = new FormGroup({
+//       comment: new FormControl(null, Validators.required),
+//       user: new FormControl(this.userID),
+//       productId: new FormControl(this.productID),
+//       rating: new FormControl(4, [
+//         Validators.required,
+//         Validators.min(1),
+//         Validators.max(5),
+//       ]), //static rating until handling rating star
+//     });
+//   }
 
   ngOnInit(): void {
     this.userService.getUser(this.userID).subscribe({
-      next:(data)=> {
-        this.user=data
+      next: (data) => {
+        this.user = data;
         console.log(this.user);
       },
-      error:()=>console.log("error")
-    })
+      error: () => console.log('error'),
+    });
   }
-  checkUser(){
-    if(this.user === null)
-    return ;
+  checkUser() {
+    if (this.user === null) return;
   }
   send(){
       let comment=this.myForm.controls['comment'].value;
@@ -60,7 +84,7 @@ export class CreateReviewComponent implements OnInit{
       let productId= +this.productID;
       let rating=this.selectedRating;
 
-      let newReview={comment, user, productId, rating};
+    let newReview = { comment, user, productId, rating };
 
       this.reviewService.createReview(newReview).subscribe(
         {
@@ -75,12 +99,8 @@ export class CreateReviewComponent implements OnInit{
             this.myForm.reset();
             this.selectedRating=1;
           },
-          error: () => {
-            console.log("error");
-          }
-        }
-      );
-  }
+        });
+      }
 
   onRatingChange(newRating: number) {
     console.log('New rating:', newRating);
