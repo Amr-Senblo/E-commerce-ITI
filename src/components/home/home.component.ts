@@ -8,6 +8,7 @@ import { Image } from '../../models/image';
 import { ICategory } from '../../models/icategory';
 import { CategoryService } from '../../services/category.service';
 import { ProductService } from '../../services/product.service';
+import { ProductComponent } from '../product/product.component';
 
 
 @Component({
@@ -20,6 +21,7 @@ import { ProductService } from '../../services/product.service';
     CategoriesComponent,
     HttpClientModule,
     ProductsArrayComponent,
+    ProductComponent
   ],
   providers: [ProductService, CategoryService],
 })

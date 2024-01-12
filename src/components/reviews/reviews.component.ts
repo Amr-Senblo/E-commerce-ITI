@@ -1,10 +1,13 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { IReview } from '../../models/ireview';
 import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
 import { IUser } from '../../models/iuser';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../../services/user.service';
 import { CommonModule } from '@angular/common';
+import { ReviewService } from '../../services/review.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable, catchError, map, of, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-reviews',
@@ -13,7 +16,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './reviews.component.html',
   styleUrl: './reviews.component.css'
 })
-export class ReviewsComponent implements OnChanges {
+export class ReviewsComponent implements OnChanges{
   private isFirstChange = true;
   @Input() reviews: IReview[] = [];
   users: IUser[] = [];
@@ -21,13 +24,20 @@ export class ReviewsComponent implements OnChanges {
   usersIds: number[] = [];
   Ratings: number[] = [];
   avgRating: number = 0;
-  constructor(private userService: UserService) { }
+
+  constructor(
+    private userService: UserService,
+    private reviewService: ReviewService,
+    private route: ActivatedRoute
+  ) {}
+
   ngOnChanges(changes: SimpleChanges): void {
     if (this.isFirstChange) {
       this.isFirstChange = false;
       return;
     }
-    //console.log(this.reviews)
+
+    console.log(this.reviews)
     for (let review of this.reviews) {
       this.Ratings.push(review.rating);
       this.usersIds.push(review.user);
@@ -44,6 +54,7 @@ export class ReviewsComponent implements OnChanges {
         console.log(this.UsersInOrderReviews);
       }
     })
+
     this.avgRating = this.Ratings.reduce((accumulator, currentValue) => {
       return accumulator + currentValue;
     }, 0) / this.Ratings.length;
