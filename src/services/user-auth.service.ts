@@ -19,8 +19,9 @@ export class UserAuthService {
         (user) => user.email === email && user.password === password
       );
       if (!userExists) {
-        console.log('user not exsits');
-      } else console.log('user exists');
+              // localStorage.setItem('userToken', userToken);
+
+      } 
     });
   }
 
