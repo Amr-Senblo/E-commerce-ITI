@@ -2,11 +2,15 @@
     <div class="registration-container">
         <h1>Enter Your Information</h1>
 
+        <!-- registered successfully -->
+        <div class="alert alert-success" *ngIf="submitted">
+            <strong>Success!</strong> You have been registered successfully.
+        </div>
 
 
-        form is valid : {{userFrom.valid}}
 
-        <form #userFrom="ngForm">
+        <form #userFrom="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
             <div class="form-group">
                 <label for="name">Name</label>
                 <input class="form-control" type="text" placeholder="Enter your name" name="name" required
@@ -22,35 +26,38 @@
                     #email="ngModel" [class.is-invalid]="email.invalid && email.touched" [(ngModel)]="userModel.email"
                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
                 @if (email.errors&&(email.invalid || email.touched)) {
-                <small class="text-danger" *ngIf="email.errors['required'] && email.touched">Email is required </small>
+                <small class="text-danger" *ngIf="email.errors['required'] && email.touched">Email is required
+                </small>
                 <small class="text-danger" *ngIf="email.errors['pattern']">Invalid Email </small>
                 }
 
             </div>
 
+            <div class="row">
 
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input class="form-control" type="tel" placeholder="Enter your phone number" name="phone" required
-                    #phone="ngModel" pattern="[0-9]{11}" [class.is-invalid]="phone.invalid && phone.touched"
-                    [(ngModel)]="userModel.phone">
 
-                @if (phone.errors&&(phone.invalid || phone.touched)) {
-                <small class="text-danger" *ngIf="phone.errors['required'] && phone.touched">Phone number is
-                    required</small>
-                <small class="text-danger" *ngIf="phone.errors['pattern']">Invalid Phone number</small>
-                }
+                <div class="form-group col-md-6">
+                    <label for="phone">Phone</label>
+                    <input class="form-control" type="tel" placeholder="Enter your phone number" name="phone" required
+                        #phone="ngModel" pattern="[0-9]{11}" [class.is-invalid]="phone.invalid && phone.touched"
+                        [(ngModel)]="userModel.phone">
+
+                    @if (phone.errors&&(phone.invalid || phone.touched)) {
+                    <small class="text-danger" *ngIf="phone.errors['required'] && phone.touched">Phone number is
+                        required</small>
+                    <small class="text-danger" *ngIf="phone.errors['pattern']">Invalid Phone number</small>
+                    }
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="address">Address</label>
+                    <input class="form-control" type="text" placeholder="Enter your address" name="address" required
+                        #address="ngModel" [(ngModel)]="userModel.Address">
+
+                    <small class="text-danger" [class.d-none]="address.untouched || address.valid">Address is
+                        required</small>
+                </div>
             </div>
-
-            <div class="form-group">
-                <label for="address">Address</label>
-                <input class="form-control" type="text" placeholder="Enter your address" name="address" required
-                    #address="ngModel" [(ngModel)]="userModel.Address">
-
-                <small class="text-danger" [class.d-none]="address.untouched || address.valid">Address is
-                    required</small>
-            </div>
-
 
             <div class="form-group">
                 <label for="Gender"> Gender</label>
@@ -65,43 +72,51 @@
                 <small *ngIf="gender.errors&&gender.touched">Gender is required </small>
             </div>
 
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" placeholder="Enter your password" name="password" required #password="ngModel"
-                    [(ngModel)]="userModel.passward" pattern="^(?=.*[A-Z]).{8,}$">
+            <div class="row">
 
-                @if (password.errors&&(password.touched || password.invalid)) {
-                <small class="text-danger" *ngIf="password.errors['required'] && password.touched">Password is
-                    required</small>
-                <small class="text-danger" *ngIf="password.errors['pattern']">Password must contain at least 8
-                    characters and one uppercase letter</small>
-                }
+
+                <div class="form-group col-md-6">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" placeholder="Enter your password" name="password"
+                        required #password="ngModel" [(ngModel)]="userModel.passward" pattern="^(?=.*[A-Z]).{8,}$">
+
+                    @if (password.errors&&(password.touched || password.invalid)) {
+                    <small class="text-danger" *ngIf="password.errors['required'] && password.touched">Password is
+                        required</small>
+                    <small class="text-danger" *ngIf="password.errors['pattern']">Password must contain at least 8
+                        characters and one uppercase letter</small>
+                    }
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input class="form-control" type="password" placeholder="Confirm your password"
+                        name="confirm-password" required #confirmPassword="ngModel"
+                        [(ngModel)]="userModel.confirmPassward">
+
+                    @if (confirmPassword.touched ){
+                    <small class="text-danger" *ngIf="confirmPassword.errors?.['required']  ">Confirm
+                        Password is required</small>
+                    <small class="text-danger" *ngIf="!passowrdMatch()&&!confirmPassword.errors?.['required']">Password
+                        doesn't match</small>
+                    }
+
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" placeholder="Confirm your password" name="confirm-password" required
-                    #confirmPassword="ngModel" [(ngModel)]="userModel.confirmPassward">
-
-                @if (confirmPassword.touched ){
-                <small class="text-danger" *ngIf="confirmPassword.errors?.['required']  ">Confirm
-                    Password is required</small>
-                <small class="text-danger" *ngIf="!passowrdMatch()&&!confirmPassword.errors?.['required']">Password
-                    doesn't match</small>
-                }
-
+            <div class="btn-container">
+                <button type="submit" #register [class.disabled]="!userFrom.valid" class="register-btn">Get In
+                    Now!</button>
             </div>
-
-
-
-            <button type="submit" #register [class.disabled]="userFrom.valid" class="register-btn">Get In
-                Now!</button>
         </form>
-        register {{register.classList}}
+
     </div>
 
     <div class="signIn-container">
-        <img src="" alt="">
+        <div routerLink="/Home" class="logo-container">
+            <img src="assets\images\logo-white1__2.png" alt="">
+        </div>
+
 
         <div class="welcome">
             <h1>Welcome!</h1>
@@ -111,7 +126,7 @@
             <p>Already have an account?</p>
         </div>
 
-        <div class="signIn-btn">
+        <div routerLink="/login" class="signIn-btn">
             <button class="signIn-btn">Sign In</button>
         </div>
 
