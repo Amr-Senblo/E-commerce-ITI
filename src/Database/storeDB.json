@@ -27,6 +27,190 @@
   ],
   "products": [
     {
+      "id": 5,
+      "name": "iPhone 13 Pro",
+      "brand": "Apple",
+      "description": "Pro-level smartphone with enhanced camera and performance.",
+      "price": 1299.99,
+      "quantity": 30,
+      "imageCover": "https://m.media-amazon.com/images/I/71xb2xkN5qL.AC_SL1500.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/I/61d8XHJuE2L.AC_SL1500.jpg",
+        "https://m.media-amazon.com/images/I/81junVbiuyL.AC_SL1500.jpg",
+        "https://m.media-amazon.com/images/I/817WqZsxjWL.AC_SL1500.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.8,
+      "ratingQuantity": 30,
+      "createdAt": "2022-07-10T12:00:00.000Z",
+      "updatedAt": "2022-07-10T12:00:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Apple A15 Bionic",
+        "RAM": "128GB",
+        "Storage": "128GB",
+        "screenSize": "6.1 inches",
+        "BatteryCapacity": "3095 mAh",
+        "OperatingSystem": "iOS 15",
+        "BiometricAuthentication": "Face ID",
+        "WirelessCharging": "Yes",
+        "Ports": "Lightning"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Xiaomi Mi 11",
+      "brand": "Xiaomi",
+      "description": "Premium smartphone with a focus on photography and performance.",
+      "price": 899.99,
+      "quantity": 60,
+      "imageCover": "https://techcart.com.au/wp-content/uploads/2021/10/61746-Xiaomi-Mi-11-Lite-5G-NE-256GB_8GB-Peach-Pink-Global-Version-550x550.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/I/61ejOV80CgL.AC_SL1500.jpg",
+        "https://m.media-amazon.com/images/I/61SQmWlNILL.AC_SL1500.jpg",
+        "https://m.media-amazon.com/images/I/51b3oZ-oNxL.AC_SL1500.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.7,
+      "ratingQuantity": 25,
+      "createdAt": "2022-09-05T14:45:00.000Z",
+      "updatedAt": "2022-09-05T14:45:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Snapdragon 888",
+        "RAM": "128GB",
+        "Storage": "256GB",
+        "screenSize": "6.1 Inches",
+        "BatteryCapacity": "4600 mAh",
+        "OperatingSystem": "MIUI 12",
+        "BiometricAuthentication": "Under-display fingerprint sensor",
+        "WirelessCharging": "Yes",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Samsung Galaxy M34",
+      "brand": "Samsung",
+      "description": "Flagship smartphone with a focus on multimedia and photography.",
+      "price": 1199.99,
+      "quantity": 35,
+      "imageCover": "https://m.media-amazon.com/images/I/8125fkrkQDL.AC_SL1500.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/I/818nr9rBNnL.AC_SL1500.jpg",
+        "https://m.media-amazon.com/images/I/71qMManR5bL.AC_SL1500.jpg",
+        "https://m.media-amazon.com/images/I/51pfFg-XAPL.AC_SL1500.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.8,
+      "ratingQuantity": 22,
+      "createdAt": "2022-11-15T13:20:00.000Z",
+      "updatedAt": "2022-11-15T13:20:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Snapdragon 888",
+        "RAM": "12GB",
+        "Storage": "256GB",
+        "screenSize": "6.5 inches",
+        "BatteryCapacity": "4500 mAh",
+        "OperatingSystem": "Android 11",
+        "BiometricAuthentication": "Fingerprint sensor",
+        "WirelessCharging": "Yes",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Samsung galaxy m33",
+      "brand": "Samsung",
+      "description": "Mid-range smartphone with a focus on performance and value.",
+      "price": 499.99,
+      "quantity": 45,
+      "imageCover": "https://m.media-amazon.com/images/I/719Zb5jJA9L.AC_SL1500.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/I/51idiI4+hEL.AC_SL1500.jpg",
+        "https://m.media-amazon.com/images/I/318I5CQV4SL.AC_SL1500.jpg",
+        "https://m.media-amazon.com/images/I/71FJP9GCd3L.AC_SL1500.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.5,
+      "ratingQuantity": 18,
+      "createdAt": "2023-02-10T10:00:00.000Z",
+      "updatedAt": "2023-02-10T10:00:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "MediaTek Dimensity 1200",
+        "RAM": "8GB",
+        "Storage": "128GB",
+        "screenSize": "6.43 inches",
+        "BatteryCapacity": "4500 mAh",
+        "OperatingSystem": "OxygenOS (based on Android)",
+        "BiometricAuthentication": "In-display fingerprint sensor",
+        "WirelessCharging": "No",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Huawei P50 Pro",
+      "brand": "Huawei",
+      "description": "Premium smartphone with a focus on camera innovation.",
+      "price": 1099.99,
+      "quantity": 40,
+
+      "imageCover": "https://m.media-amazon.com/images/I/51tNBbfB4DL.AC_SX679.jpg",
+
+      "images": [
+        "https://m.media-amazon.com/images/I/315LF8dKsHL.AC_SR38,50.jpg",
+        "https://m.media-amazon.com/images/I/41vAsIvNcRL.AC_SX679.jpg",
+        "https://m.media-amazon.com/images/I/41SGzyK33bL.AC_SL1000.jpg"
+      ],
+      "category": 1,
+      "ratingAverage": 4.7,
+      "ratingQuantity": 28,
+      "createdAt": "2023-04-25T11:45:00.000Z",
+      "updatedAt": "2023-04-25T11:45:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Kirin 9000",
+        "RAM": "8GB",
+        "Storage": "256GB",
+        "screenSize": "6.6 inches",
+        "BatteryCapacity": "4360 mAh",
+        "OperatingSystem": "HarmonyOS 2",
+        "BiometricAuthentication": "Under-display fingerprint sensor",
+        "WirelessCharging": "Yes",
+        "Ports": "USB-C"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Motorola Edge 20 Pro",
+      "brand": "Motorola",
+      "description": "Slim and powerful smartphone with a focus on photography.",
+      "price": 799.99,
+      "quantity": 50,
+
+      "imageCover": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71p+vczOK-L.AC_SX466.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51IUHCI5jFL.AC_SX679.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51hTIoLNcnL.AC_SX679.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51IUHCI5jFL.AC_SX679.jpg"
+
+      ],
+      "category": 1,
+      "ratingAverage": 4.6,
+      "ratingQuantity": 20,
+      "createdAt": "2023-08-15T14:30:00.000Z",
+      "updatedAt": "2023-08-15T14:30:00.000Z",
+      "CommonSpecifications": {
+        "Processor": "Snapdragon 870",
+        "RAM": "6GB",
+        "Storage": "128GB",
+        "screenSize": "6.7 inches",
+        "BatteryCapacity": "4500 mAh",
+        "OperatingSystem": "Android 11",
+        "BiometricAuthentication": "Under-display fingerprint sensor",
+        "WirelessCharging": "No",
+        "Ports": "USB-C"
+      }
+    },
+    {
       "id": 1,
       "name": "iPhone X",
       "brand": "Apple",
@@ -147,197 +331,19 @@
       }
     },
     {
-      "id": 5,
-      "name": "iPhone 13 Pro",
-      "brand": "Apple",
-      "description": "Pro-level smartphone with enhanced camera and performance.",
-      "price": 1299.99,
-      "quantity": 30,
-      "imageCover": "https://m.media-amazon.com/images/I/71xb2xkN5qL._AC_SL1500_.jpg",
-      "images": [
-        "https://m.media-amazon.com/images/I/61d8XHJuE2L._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/81junVbiuyL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/817WqZsxjWL._AC_SL1500_.jpg"
-      ],
-      "category": 1,
-      "ratingAverage": 4.8,
-      "ratingQuantity": 30,
-      "createdAt": "2022-07-10T12:00:00.000Z",
-      "updatedAt": "2022-07-10T12:00:00.000Z",
-      "CommonSpecifications": {
-        "Processor": "Apple A15 Bionic",
-        "RAM": "128GB",
-        "Storage": "128GB",
-        "screenSize": "6.1 inches",
-        "BatteryCapacity": "3095 mAh",
-        "OperatingSystem": "iOS 15",
-        "BiometricAuthentication": "Face ID",
-        "WirelessCharging": "Yes",
-        "Ports": "Lightning"
-      }
-    },
-    {
-      "id": 6,
-      "name": "Xiaomi Mi 11",
-      "brand": "Xiaomi",
-      "description": "Premium smartphone with a focus on photography and performance.",
-      "price": 899.99,
-      "quantity": 60,
-      "imageCover": "https://techcart.com.au/wp-content/uploads/2021/10/61746-Xiaomi-Mi-11-Lite-5G-NE-256GB_8GB-Peach-Pink-Global-Version-550x550.jpg",
-      "images": [
-        "https://m.media-amazon.com/images/I/61ejOV80CgL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/61SQmWlNILL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/51b3oZ-oNxL._AC_SL1500_.jpg"
-      ],
-      "category": 1,
-      "ratingAverage": 4.7,
-      "ratingQuantity": 25,
-      "createdAt": "2022-09-05T14:45:00.000Z",
-      "updatedAt": "2022-09-05T14:45:00.000Z",
-      "CommonSpecifications": {
-        "Processor": "Snapdragon 888",
-        "RAM": "128GB",
-        "Storage": "256GB",
-        "screenSize": "6.1 Inches",
-        "BatteryCapacity": "4600 mAh",
-        "OperatingSystem": "MIUI 12",
-        "BiometricAuthentication": "Under-display fingerprint sensor",
-        "WirelessCharging": "Yes",
-        "Ports": "USB-C"
-      }
-    },
-    {
-      "id": 7,
-      "name": "Samsung Galaxy M34",
-      "brand": "Samsung",
-      "description": "Flagship smartphone with a focus on multimedia and photography.",
-      "price": 1199.99,
-      "quantity": 35,
-      "imageCover": "https://m.media-amazon.com/images/I/8125fkrkQDL._AC_SL1500_.jpg",
-      "images": [
-        "https://m.media-amazon.com/images/I/818nr9rBNnL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/71qMManR5bL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/51pfFg-XAPL._AC_SL1500_.jpg"
-      ],
-      "category": 1,
-      "ratingAverage": 4.8,
-      "ratingQuantity": 22,
-      "createdAt": "2022-11-15T13:20:00.000Z",
-      "updatedAt": "2022-11-15T13:20:00.000Z",
-      "CommonSpecifications": {
-        "Processor": "Snapdragon 888",
-        "RAM": "12GB",
-        "Storage": "256GB",
-        "screenSize": "6.5 inches",
-        "BatteryCapacity": "4500 mAh",
-        "OperatingSystem": "Android 11",
-        "BiometricAuthentication": "Fingerprint sensor",
-        "WirelessCharging": "Yes",
-        "Ports": "USB-C"
-      }
-    },
-    {
-      "id": 8,
-      "name": "Samsung galaxy m33",
-      "brand": "Samsung",
-      "description": "Mid-range smartphone with a focus on performance and value.",
-      "price": 499.99,
-      "quantity": 45,
-      "imageCover": "https://m.media-amazon.com/images/I/719Zb5jJA9L._AC_SL1500_.jpg",
-      "images": [
-        "https://m.media-amazon.com/images/I/51idiI4+hEL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/318I5CQV4SL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/71FJP9GCd3L._AC_SL1500_.jpg"
-      ],
-      "category": 1,
-      "ratingAverage": 4.5,
-      "ratingQuantity": 18,
-      "createdAt": "2023-02-10T10:00:00.000Z",
-      "updatedAt": "2023-02-10T10:00:00.000Z",
-      "CommonSpecifications": {
-        "Processor": "MediaTek Dimensity 1200",
-        "RAM": "8GB",
-        "Storage": "128GB",
-        "screenSize": "6.43 inches",
-        "BatteryCapacity": "4500 mAh",
-        "OperatingSystem": "OxygenOS (based on Android)",
-        "BiometricAuthentication": "In-display fingerprint sensor",
-        "WirelessCharging": "No",
-        "Ports": "USB-C"
-      }
-    },
-    {
-      "id": 9,
-      "name": "Huawei P50 Pro",
-      "brand": "Huawei",
-      "description": "Premium smartphone with a focus on camera innovation.",
-      "price": 1099.99,
-      "quantity": 40,
-      "imageCover": "https://m.media-amazon.com/images/I/51tNBbfB4DL._AC_SX679_.jpg",
-      "images": [
-        "https://m.media-amazon.com/images/I/315LF8dKsHL._AC_SR38,50_.jpg",
-        "https://m.media-amazon.com/images/I/41vAsIvNcRL._AC_SX679_.jpg",
-        "https://m.media-amazon.com/images/I/41SGzyK33bL._AC_SL1000_.jpg"
-      ],
-      "category": 1,
-      "ratingAverage": 4.7,
-      "ratingQuantity": 28,
-      "createdAt": "2023-04-25T11:45:00.000Z",
-      "updatedAt": "2023-04-25T11:45:00.000Z",
-      "CommonSpecifications": {
-        "Processor": "Kirin 9000",
-        "RAM": "8GB",
-        "Storage": "256GB",
-        "screenSize": "6.6 inches",
-        "BatteryCapacity": "4360 mAh",
-        "OperatingSystem": "HarmonyOS 2",
-        "BiometricAuthentication": "Under-display fingerprint sensor",
-        "WirelessCharging": "Yes",
-        "Ports": "USB-C"
-      }
-    },
-    {
-      "id": 10,
-      "name": "Motorola Edge 20 Pro",
-      "brand": "Motorola",
-      "description": "Slim and powerful smartphone with a focus on photography.",
-      "price": 799.99,
-      "quantity": 50,
-      "imageCover": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71p+vczOK-L._AC_SX466_.jpg",
-      "images": [
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51IUHCI5jFL._AC_SX679_.jpg",
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51hTIoLNcnL._AC_SX679_.jpg",
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51IUHCI5jFL._AC_SX679_.jpg"
-      ],
-      "category": 1,
-      "ratingAverage": 4.6,
-      "ratingQuantity": 20,
-      "createdAt": "2023-08-15T14:30:00.000Z",
-      "updatedAt": "2023-08-15T14:30:00.000Z",
-      "CommonSpecifications": {
-        "Processor": "Snapdragon 870",
-        "RAM": "6GB",
-        "Storage": "128GB",
-        "screenSize": "6.7 inches",
-        "BatteryCapacity": "4500 mAh",
-        "OperatingSystem": "Android 11",
-        "BiometricAuthentication": "Under-display fingerprint sensor",
-        "WirelessCharging": "No",
-        "Ports": "USB-C"
-      }
-    },
-    {
       "id": 11,
       "name": "Apple Watch Series 7",
       "brand": "Apple",
       "description": "Advanced smartwatch with a larger and always-on Retina display.",
       "price": 399.99,
       "quantity": 50,
-      "imageCover": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71p1EMtYnvL.__AC_SY445_SX342_QL70_FMwebp_.jpg",
+
+      "imageCover": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71p1EMtYnvL._AC_SY445_SX342_QL70_FMwebp.jpg",
+
       "images": [
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71h1jt6g3kL._AC_SX522_.jpg",
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71h1jt6g3kL._AC_SX522_.jpg",
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/81PComNMj1L._AC_SX522_.jpg"
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71h1jt6g3kL.AC_SX522.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71h1jt6g3kL.AC_SX522.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/81PComNMj1L.AC_SX522.jpg"
       ],
       "category": 2,
       "ratingAverage": 4.9,
@@ -363,11 +369,13 @@
       "description": "Feature-rich smartwatch with advanced health tracking capabilities.",
       "price": 349.99,
       "quantity": 35,
-      "imageCover": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61IZmXci7qS._AC_SX679_.jpg",
+
+      "imageCover": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61IZmXci7qS.AC_SX679.jpg",
+
       "images": [
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/614HKugi5QL._AC_SX679_.jpg",
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/614HKugi5QL._AC_SX679_.jpg",
-        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/615AfPh9G5L._AC_SX522_.jpg"
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/614HKugi5QL.AC_SX679.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/614HKugi5QL.AC_SX679.jpg",
+        "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/615AfPh9G5L.AC_SX522.jpg"
       ],
       "category": 2,
       "ratingAverage": 4.8,
@@ -393,11 +401,11 @@
       "description": "Fitness-focused smartwatch with a vibrant AMOLED display.",
       "price": 399.99,
       "quantity": 25,
-      "imageCover": "https://m.media-amazon.com/images/I/51i6UseuG1L._AC_SX679_.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/51i6UseuG1L.AC_SX679.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/611y2gUko8L._AC_SX679_.jpg",
-        "https://m.media-amazon.com/images/I/61q+Emp9ObL._AC_SX679_.jpg",
-        "https://m.media-amazon.com/images/I/51jvGS-8KML._AC_SY679_.jpg"
+        "https://m.media-amazon.com/images/I/611y2gUko8L.AC_SX679.jpg",
+        "https://m.media-amazon.com/images/I/61q+Emp9ObL.AC_SX679.jpg",
+        "https://m.media-amazon.com/images/I/51jvGS-8KML.AC_SY679.jpg"
       ],
       "category": 2,
       "ratingAverage": 4.7,
@@ -423,11 +431,11 @@
       "description": "Health and fitness smartwatch with stress management features.",
       "price": 329.99,
       "quantity": 30,
-      "imageCover": "https://m.media-amazon.com/images/I/41TMmWY0MeL._AC_SX522_.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/41TMmWY0MeL.AC_SX522.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/41ooeAvmcXL._AC_SX522_.jpg",
-        "https://m.media-amazon.com/images/I/41da2dnU0lL._AC_SX522_.jpg",
-        "https://m.media-amazon.com/images/I/41ooeAvmcXL._AC_SX522_.jpg"
+        "https://m.media-amazon.com/images/I/41ooeAvmcXL.AC_SX522.jpg",
+        "https://m.media-amazon.com/images/I/41da2dnU0lL.AC_SX522.jpg",
+        "https://m.media-amazon.com/images/I/41ooeAvmcXL.AC_SX522.jpg"
       ],
       "category": 2,
       "ratingAverage": 4.6,
@@ -453,11 +461,11 @@
       "description": "Stylish smartwatch with long battery life and fitness tracking.",
       "price": 249.99,
       "quantity": 40,
-      "imageCover": "https://m.media-amazon.com/images/I/615XFQdvsxL.__AC_SX300_SY300_QL70_ML2_.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/615XFQdvsxL._AC_SX300_SY300_QL70_ML2.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/61W6+ISIOCL._AC_SX522_.jpg",
-        "https://m.media-amazon.com/images/I/51vORPzCIWL._AC_SX522_.jpg",
-        "https://m.media-amazon.com/images/I/51Jd460JgiL._AC_SX522_.jpg"
+        "https://m.media-amazon.com/images/I/61W6+ISIOCL.AC_SX522.jpg",
+        "https://m.media-amazon.com/images/I/51vORPzCIWL.AC_SX522.jpg",
+        "https://m.media-amazon.com/images/I/51Jd460JgiL.AC_SX522.jpg"
       ],
       "category": 2,
       "ratingAverage": 4.5,
@@ -483,11 +491,11 @@
       "description": "High-performance laptop for professional use.",
       "price": 1999.99,
       "quantity": 20,
-      "imageCover": "https://m.media-amazon.com/images/I/51feQ7mwboL._AC_SX679_.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/51feQ7mwboL.AC_SX679.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/718iF6rFkHL._AC_SX679_.jpg",
-        "https://m.media-amazon.com/images/I/61hxMhmK1VL._AC_SX679_.jpg",
-        "https://m.media-amazon.com/images/I/61W+ul6W+iL._AC_SX679_.jpg"
+        "https://m.media-amazon.com/images/I/718iF6rFkHL.AC_SX679.jpg",
+        "https://m.media-amazon.com/images/I/61hxMhmK1VL.AC_SX679.jpg",
+        "https://m.media-amazon.com/images/I/61W+ul6W+iL.AC_SX679.jpg"
       ],
       "category": 3,
       "ratingAverage": 4.8,
@@ -513,11 +521,11 @@
       "description": "Powerful and stylish laptop with a vibrant display.",
       "price": 1799.99,
       "quantity": 25,
-      "imageCover": "https://m.media-amazon.com/images/I/61kojk8MkkL._AC_SL1488_.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/61kojk8MkkL.AC_SL1488.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/71iwo-OWh7L._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/61uwX+7nXJL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/71J6u5s8f7L._AC_SL1500_.jpg"
+        "https://m.media-amazon.com/images/I/71iwo-OWh7L.AC_SL1500.jpg",
+        "https://m.media-amazon.com/images/I/61uwX+7nXJL.AC_SL1500.jpg",
+        "https://m.media-amazon.com/images/I/71J6u5s8f7L.AC_SL1500.jpg"
       ],
       "category": 3,
       "ratingAverage": 4.7,
@@ -543,11 +551,11 @@
       "description": "Convertible laptop with a sleek design and powerful performance.",
       "price": 1599.99,
       "quantity": 30,
-      "imageCover": "https://m.media-amazon.com/images/I/51WHI1KTGhL._AC_SL1000_.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/51WHI1KTGhL.AC_SL1000.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/61ZFasreAFL._AC_SL1000_.jpg",
-        "https://m.media-amazon.com/images/I/61J389y0xdL._AC_SL1000_.jpg",
-        "https://m.media-amazon.com/images/I/615u41o5SbL._AC_SL1000_.jpg"
+        "https://m.media-amazon.com/images/I/61ZFasreAFL.AC_SL1000.jpg",
+        "https://m.media-amazon.com/images/I/61J389y0xdL.AC_SL1000.jpg",
+        "https://m.media-amazon.com/images/I/615u41o5SbL.AC_SL1000.jpg"
       ],
       "category": 3,
       "ratingAverage": 4.9,
@@ -573,11 +581,11 @@
       "description": "Premium business laptop with a durable and lightweight design.",
       "price": 1899.99,
       "quantity": 18,
-      "imageCover": "https://m.media-amazon.com/images/I/7114JUk91ML._AC_SL1500_.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/7114JUk91ML.AC_SL1500.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/81vaqNw60jL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/71oOMY8vhmL._AC_SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/71i6H9-R9NL._AC_SL1500_.jpg"
+        "https://m.media-amazon.com/images/I/81vaqNw60jL.AC_SL1500.jpg",
+        "https://m.media-amazon.com/images/I/71oOMY8vhmL.AC_SL1500.jpg",
+        "https://m.media-amazon.com/images/I/71i6H9-R9NL.AC_SL1500.jpg"
       ],
       "category": 3,
       "ratingAverage": 4.6,
@@ -603,11 +611,11 @@
       "description": "Gaming laptop with a powerful AMD Ryzen processor and dedicated GPU.",
       "price": 1799.99,
       "quantity": 22,
-      "imageCover": "https://m.media-amazon.com/images/I/71+U-WoUrWL._AC_SL1500_.jpg",
+      "imageCover": "https://m.media-amazon.com/images/I/71+U-WoUrWL.AC_SL1500.jpg",
       "images": [
-        "https://m.media-amazon.com/images/I/61lE6VyQtrL._AC_SL1200_.jpg",
-        "https://m.media-amazon.com/images/I/61nfN+qOX5L._AC_SL1200_.jpg",
-        "https://m.media-amazon.com/images/I/617NH3JPV1L._AC_SL1200_.jpg"
+        "https://m.media-amazon.com/images/I/61lE6VyQtrL.AC_SL1200.jpg",
+        "https://m.media-amazon.com/images/I/61nfN+qOX5L.AC_SL1200.jpg",
+        "https://m.media-amazon.com/images/I/617NH3JPV1L.AC_SL1200.jpg"
       ],
       "category": 3,
       "ratingAverage": 4.8,
@@ -631,7 +639,9 @@
     {
       "id": 1,
       "name": "Jack Adam",
-      "password": "A1234567",
+
+      "password": "123456Abcd",
+
       "email": "user1@gmail.com",
       "phone": "01012345611",
       "profilePic": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -644,7 +654,9 @@
     {
       "id": 2,
       "name": "Marya Edward",
-      "password": "A1234567",
+
+      "password": "123456Abcd",
+
       "email": "user2@gmail.com",
       "phone": "01012345612",
       "profilePic": "https://images.unsplash.com/photo-1525186402429-b4ff38bedec6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -657,7 +669,9 @@
     {
       "id": 3,
       "name": "Mahran Antonyo",
-      "password": "A1234567",
+
+      "password": "123456Abcd",
+
       "email": "mahran@gmail.com",
       "phone": "01012345613",
       "profilePic": "https://media.istockphoto.com/id/1170286252/photo/positive-human-facial-expressions-and-emotions-portrait-of-handsome-young-male-in-his-20s.jpg?s=1024x1024&w=is&k=20&c=trvPL1PKSZQNc_ZVAhx4JzD0tHtub4PE0znx22fc7-k=",
@@ -670,7 +684,9 @@
     {
       "id": 4,
       "name": "Ledya Karam",
-      "password": "A1234567",
+
+      "password": "123456Abcd",
+
       "email": "user4@gmail.com",
       "phone": "01012345614",
       "profilePic": "https://images.unsplash.com/photo-1506863530036-1efeddceb993?q=80&w=1488&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -683,7 +699,9 @@
     {
       "id": 5,
       "name": "Goerge Jacoup",
-      "password": "A1234567",
+
+      "password": "123456Abcd",
+
       "email": "user5@gmail.com",
       "phone": "01012345615",
       "profilePic": "https://plus.unsplash.com/premium_photo-1689977927774-401b12d137d6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -692,90 +710,7 @@
         2,
         4
       ]
-    },
-    {
-      "id": 181485683476,
-      "name": "Amr Mohsen Senblo",
-      "email": "amrsenblo@gmail.com",
-      "phone": "01099341206",
-      "profilePic": "",
-      "Address": "Egypt, ElGarbiah, Tanta",
-      "gender": "male",
-      "passward": "A1234567",
-      "confirmPassward": "A1234657",
-      "wishlist": []
-    },
-    {
-      "id": 181200270995,
-      "name": "Ahmed Mohsen",
-      "email": "ahmed@mohsen.com",
-      "phone": "01234567897",
-      "profilePic": "",
-      "Address": "Mostafa El Nahas",
-      "gender": "male",
-      "passward": "A123456789",
-      "confirmPassward": "A123456789",
-      "wishlist": []
-    },
-    {
-      "id": 594568255104,
-      "name": "Emad",
-      "email": "Emad@gmail.com",
-      "phone": "01234512687",
-      "profilePic": "",
-      "Address": "Cairo",
-      "gender": "male",
-      "passward": "A123456789",
-      "confirmPassward": "A123456789",
-      "wishlist": []
-    },
-    {
-      "id": 97515223822,
-      "name": "Amrrr",
-      "email": "amrsenblo@gmail.com",
-      "phone": "01234567897",
-      "profilePic": "",
-      "Address": "Egypt, ElGarbiah, Tanta",
-      "gender": "male",
-      "passward": "A123456789",
-      "confirmPassward": "A123456789",
-      "wishlist": []
-    },
-    {
-      "id": 452134863510,
-      "name": "Hamoo",
-      "email": "amrsenblo@gmail.com",
-      "phone": "01524111111",
-      "profilePic": "",
-      "Address": "Egypt, ElGarbiah, Tanta",
-      "gender": "male",
-      "passward": "D0000000",
-      "confirmPassward": "D0000000",
-      "wishlist": []
-    },
-    {
-      "id": 895680185110,
-      "name": "Amoor",
-      "email": "amrsenblo@gmail.com",
-      "phone": "01258945210",
-      "profilePic": "",
-      "Address": "Egypt, ElGarbiah, Tanta",
-      "gender": "male",
-      "passward": "A1234567",
-      "confirmPassward": "A1234567",
-      "wishlist": []
-    },
-    {
-      "id": 294112532346,
-      "name": "hala",
-      "email": "hala@gmail.com",
-      "phone": "01111111111",
-      "profilePic": "",
-      "Address": "adfasd",
-      "gender": "male",
-      "passward": "A145214521",
-      "confirmPassward": "A145214521",
-      "wishlist": []
+
     }
   ],
   "carts": [
@@ -798,6 +733,34 @@
         {
           "id": 9,
           "quantity": 7
+        },
+        {
+          "id": 9,
+          "quantity": 7
+        },
+        {
+          "id": 9,
+          "quantity": 7
+        },
+        {
+          "id": 1,
+          "quantity": 1
+        },
+        {
+          "id": 18,
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "quantity": 1
+        },
+        {
+          "id": 1,
+          "quantity": 1
+        },
+        {
+          "id": 17,
+          "quantity": 1
         }
       ],
       "totalPrice": 2699.97,
@@ -900,7 +863,7 @@
     {
       "id": 3,
       "user": 3,
-      "productId": 2,
+      "productId": 18,
       "rating": 3,
       "comment": "This is an average product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -918,7 +881,7 @@
     {
       "id": 5,
       "user": 5,
-      "productId": 1,
+      "productId": 3,
       "rating": 1,
       "comment": "This is a terrible product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -927,7 +890,7 @@
     {
       "id": 6,
       "user": 1,
-      "productId": 2,
+      "productId": 20,
       "rating": 5,
       "comment": "This is a great product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -954,7 +917,7 @@
     {
       "id": 9,
       "user": 4,
-      "productId": 1,
+      "productId": 20,
       "rating": 4,
       "comment": "I really liked this product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -980,7 +943,7 @@
     },
     {
       "id": 12,
-      "user": 3,
+      "user": 2,
       "productId": 7,
       "rating": 3,
       "comment": "Decent product for the price",
@@ -999,7 +962,7 @@
     {
       "id": 14,
       "user": 4,
-      "productId": 5,
+      "productId": 20,
       "rating": 4,
       "comment": "Satisfied with the purchase",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1008,7 +971,7 @@
     {
       "id": 15,
       "user": 5,
-      "productId": 1,
+      "productId": 6,
       "rating": 2,
       "comment": "Disappointed with the quality",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1026,7 +989,7 @@
     {
       "id": 17,
       "user": 2,
-      "productId": 5,
+      "productId": 20,
       "rating": 3,
       "comment": "Fairly satisfied with this product",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1044,7 +1007,7 @@
     {
       "id": 19,
       "user": 4,
-      "productId": 1,
+      "productId": 9,
       "rating": 2,
       "comment": "Not happy with the durability",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1079,7 +1042,7 @@
     },
     {
       "id": 23,
-      "user": 3,
+      "user": 1,
       "productId": 7,
       "rating": 1,
       "comment": "Not recommended, poor quality",
@@ -1098,7 +1061,7 @@
     {
       "id": 25,
       "user": 5,
-      "productId": 1,
+      "productId": 12,
       "rating": 4,
       "comment": "Good value for money",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1143,7 +1106,7 @@
     {
       "id": 30,
       "user": 5,
-      "productId": 1,
+      "productId": 17,
       "rating": 4,
       "comment": "Happy with the purchase, will buy again",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1179,7 +1142,7 @@
     {
       "id": 34,
       "user": 4,
-      "productId": 1,
+      "productId": 17,
       "rating": 4,
       "comment": "Good quality, exceeded my expectations",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1197,7 +1160,7 @@
     {
       "id": 36,
       "user": 1,
-      "productId": 2,
+      "productId": 18,
       "rating": 3,
       "comment": "Average product, not too impressed",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1214,7 +1177,7 @@
     },
     {
       "id": 38,
-      "user": 3,
+      "user": 5,
       "productId": 7,
       "rating": 2,
       "comment": "Disappointed with the durability",
@@ -1260,7 +1223,7 @@
     {
       "id": 43,
       "user": 3,
-      "productId": 2,
+      "productId": 18,
       "rating": 2,
       "comment": "Not as durable as expected",
       "createdAt": "2022-01-15T12:30:00.000Z",
@@ -1330,39 +1293,18 @@
       "updatedAt": "2022-01-15T12:30:00.000Z"
     },
     {
-      "comment": "Good",
+      "comment": "I am in LOVE with it😍😍😍",
       "user": 1,
-      "productId": 11,
-      "rating": 4,
-      "id": 53
-    },
-    {
-      "comment": "Bad",
-      "user": 1,
-      "productId": 11,
-      "rating": 4,
+      "productId": 17,
+      "rating": 5,
       "id": 54
     },
     {
-      "comment": "High quality!",
-      "user": 3,
-      "productId": 11,
+      "comment": "GOODD",
+      "user": 1,
+      "productId": 7,
       "rating": 4,
       "id": 55
-    },
-    {
-      "comment": "Hight Quality <3",
-      "user": 2,
-      "productId": 6,
-      "rating": 4,
-      "id": 56
-    },
-    {
-      "comment": "GOOD!!",
-      "user": 1,
-      "productId": 3,
-      "rating": 4,
-      "id": 57
     }
   ]
 }

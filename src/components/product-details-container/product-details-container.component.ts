@@ -36,7 +36,6 @@ import { Observable, catchError, map, of, switchMap } from 'rxjs';
 
 export class ProductDetailsContainerComponent implements OnInit {
   productId!: number;
-  userId: number = 1; //static until the guard finish
   currentProduct: IProduct = <IProduct>{};
   categoryProducts: IProduct[] = [];
   breadCrumbTitles: string[] = [];
@@ -49,9 +48,7 @@ export class ProductDetailsContainerComponent implements OnInit {
     private changeDetectorRef: ChangeDetectorRef
     ) {
     this.route.params.subscribe(params => {
-      // Access the 'id' parameter
       this.productId = +params['id'];
-      //console.log(this.cartId)
     })
 
   }
@@ -73,19 +70,13 @@ export class ProductDetailsContainerComponent implements OnInit {
     })
   }
 
-  handleReviewCreated(createdReview: IReview[]) {
-    if (this.reviews) { // Check if reviews are available
-      // this.reviews.push(createdReview);
+  handleReviewCreated(createdReview: IReview[]) 
+  {
+    // Check if reviews are available
       this.reviews=createdReview;
       // this.changeDetectorRef.detectChanges(); // Trigger change detection
-    }
+   
   }
 
-  checkLogin() {
-    if (this.userId === null)
-      return true;
-    else
-      return false;
-  }
 
 }

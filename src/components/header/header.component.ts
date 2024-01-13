@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe((data) => {
       this.categories = data;
-      console.log(this.categories);
+      // console.log(this.categories);
     });
   }
   toggleCategoriesDropdown() {
