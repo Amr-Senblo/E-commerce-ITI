@@ -66,7 +66,7 @@ export class CreateReviewComponent implements OnInit{
         {
           next: (createdReview) => {
             this.reviewService.getReviewsOfProduct(this.productID).subscribe({
-              next:(data)=>{
+              next:(data: IReview[])=>{
                 this.reviewsOfProduct=data;
                 console.log(this.reviewsOfProduct);
 
