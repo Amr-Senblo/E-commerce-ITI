@@ -63,7 +63,9 @@ export class CreateReviewComponent implements OnInit{
         let productId= +this.productID;
         let rating=this.selectedRating;
 
+
       let newReview = { comment, user, productId, rating };
+
 
         this.reviewService.createReview(newReview).subscribe(
           {
