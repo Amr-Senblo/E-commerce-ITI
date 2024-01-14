@@ -17,7 +17,7 @@ import { IproductBuyed } from '../../models/iproduct-buyed';
 import Swal from 'sweetalert2';
 import { ICart } from '../../models/icart';
 
-import { NgxImageZoomModule } from 'ngx-image-zoom';
+//import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 @Component({
   selector: 'app-product-details',

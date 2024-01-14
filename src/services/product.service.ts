@@ -17,6 +17,7 @@ export class ProductService {
     let url = `${this.DB}/${id}?_embed=reviews`;
     return this.http.get<IProduct>(url);
   }
+  
 
   createProduct(data: {}) {
     return this.http.post<IProduct>(this.DB, data);
