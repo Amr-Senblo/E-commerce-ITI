@@ -45,13 +45,10 @@ export class HeaderComponent implements OnInit {
   ) {
     this.logstate = this.userAuthService.LoggedState;
     this.userAuthService.getAllUsers().subscribe((alluser) => {
-      console.log(this.storge.getItemFromSessionStorge('accesToken'))
       let token =this.storge.getItemFromLocalStorge('accesToken')||this.storge.getItemFromSessionStorge('accesToken')
-      console.log(token);
       this.currentUser = alluser.find(
-        (user) => user.accessToken == token.substring(1, token.length - 1)
+        (user) => user.accessToken == token
       );
-      console.log(this.currentUser?.name);
       if (this.currentUser) {
         this.userAuthService.setLoggedState = true;
       } else this.userAuthService.setLoggedState = false;
