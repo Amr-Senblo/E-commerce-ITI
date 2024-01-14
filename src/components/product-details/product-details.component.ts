@@ -12,11 +12,12 @@ import { IProduct } from '../../models/iproduct';
 import { CartService } from '../../services/cart.service';
 import { CustomCartService } from '../../services/custom-cart-products.service';
 import { IproductBuyed } from '../../models/iproduct-buyed';
+import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [RouterLink, ProductComponent],
+  imports: [RouterLink, ProductComponent, NgbRating],
   providers: [ProductService, CartService, CustomCartService],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css',
@@ -29,7 +30,8 @@ export class ProductDetailsComponent implements OnChanges {
   @Input() product: IProduct = <IProduct>{};
   constructor(
     private CartCustomService: CustomCartService,
-    private cartService: CartService
+    private cartService: CartService,
+    private productService: ProductService
   ) {}
   ngOnChanges(changes: SimpleChanges): void {
     if (this.isFirstChange) {
@@ -51,4 +53,5 @@ export class ProductDetailsComponent implements OnChanges {
       error: (err) => console.log(err),
     });
   }
+
 }
