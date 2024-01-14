@@ -32,7 +32,6 @@ export class ProductsArrayComponent {
     return this.products.slice(startIndex, endIndex);//0-8 //8-16 //16-..
   }
 
-
 }
 
 

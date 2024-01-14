@@ -17,6 +17,7 @@ import { ToastComponent } from '../toast/toast.component';
   imports: [CommonModule, RouterModule, FormsModule, ToastComponent],
 })
 export class HeaderComponent implements OnInit {
+  counter:number =0;
   logOut() {
     this.userAuthService.logOut();
     this.toast.openSnackBar('Logged Out', '');

@@ -20,8 +20,14 @@
     <div class="user-container">
       <a routerLink="Cart/{{currentUser?.id}}" class="cart-anchor">
         <div class="cart">
-          <span class="cart-count">0</span>
-          <img src="assets/images/cart.png" alt="cart" class="cart-icon">
+         
+          <span class="cart-count badge text-bg-danger" >
+            {{counter}}
+          
+          </span> 
+
+          
+           <img src="assets/images/cart.png" alt="cart" class="cart-icon">
           <span class="cart-text">Cart</span>
         </div>
       </a>
@@ -33,7 +39,7 @@
         <img [src]="currentUser.profilePic" alt="profile picture" class="profile-icon">
         }
         @else {
-        <a routerLink="Login"><span class="signin-text">Sign In</span></a>
+        <a routerLink="Login" style="text-decoration: none;"><span class="signin-text">Sign In</span></a>
         <img src="assets/images/profile.svg" alt="profile" class="profile-icon">
         }
       </div>

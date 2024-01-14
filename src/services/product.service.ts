@@ -19,7 +19,6 @@ export class ProductService {
   }
   
 
-
   createProduct(data: {}) {
     return this.http.post<IProduct>(this.DB, data);
   }

@@ -14,6 +14,7 @@ import { IUser } from '../../models/iuser';
 import { IReview } from '../../models/ireview';
 import { ReviewService } from '../../services/review.service';
 import { Observable, catchError, map, of, switchMap } from 'rxjs';
+import { CartService } from '../../services/cart.service';
 
 
 @Component({
@@ -45,7 +46,8 @@ export class ProductDetailsContainerComponent implements OnInit {
   constructor(private reviewService:ReviewService,
     private route: ActivatedRoute,
     private productService: ProductService,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef ,
+  
     ) {
     this.route.params.subscribe(params => {
       this.productId = +params['id'];
@@ -61,7 +63,7 @@ export class ProductDetailsContainerComponent implements OnInit {
         this.currentProduct = value;
         this.breadCrumbTitles = ['Home', value.name];
         this.breadCrumbLinks = ["/Home", `/Category/${this.currentProduct.category}/${this.currentProduct.id}`]
-        this.productService.getProduct4(value.category).subscribe({
+        this.productService.getProductsOfCategory(value.category).subscribe({
           next: (products) => {
             this.categoryProducts = products.filter(product => product.id !== this.currentProduct.id)
           }

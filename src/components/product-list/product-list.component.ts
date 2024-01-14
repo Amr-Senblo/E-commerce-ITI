@@ -12,7 +12,7 @@ import { ProductsArrayComponent } from '../products-array/products-array.compone
   selector: 'app-product-list',
   standalone: true,
 
-  imports: [ProductComponent, HttpClientModule, CommonModule, PaginationComponent, ProductsArrayComponent],
+  imports: [ProductComponent, HttpClientModule, CommonModule, PaginationComponent, ProductsArrayComponent ],
   providers: [ProductService, ProductService],
 
   templateUrl: './product-list.component.html',
@@ -41,5 +41,22 @@ export class ProductListComponent {
 
         );
     });
+  }
+
+  currentPage = 1;
+  itemsPerPage = 8;
+
+  onPageChange(page: number): void {
+    this.currentPage = page;
+  }
+
+  getTotalPages(): number {
+    return Math.ceil(this.products.length / this.itemsPerPage);
+  }
+
+  getPaginatedProducts(): IProduct[] {
+    let startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    let endIndex = startIndex + this.itemsPerPage;
+    return this.products.slice(startIndex, endIndex);//0-8 //8-16 //16-..
   }
 }
