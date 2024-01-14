@@ -1,11 +1,4 @@
-<div class="text-danger">
-    <h2>For Testing</h2>
-    <!-- <p>{{for|json}}</p> -->
-    <!-- <p>{{formEmail.value|json}}</p>
-    <p>{{formRemmberMe.value|json}}</p>
-    <p>{{formpassword.value|json}}</p> -->
-    <p>{{formShowPassword?.value|json}}</p>
-</div>
+
 <div class="container py-5 h-100 ">
     <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5 ">
@@ -25,12 +18,12 @@
                         <span class="text-danger">{{message}}</span>
                         <!-- Checkbox -->
                         <div class="form-check d-flex justify-content-start mb-4">
-                            <input class="form-check-input me-1" type="checkbox" value="" id="form2Example31" formControlName="showPassword"  />
-                            <label class="form-check-label"  for="form2Example31" > Show password </label>
+                            <input class="form-check-input me-1" type="checkbox" value="" id="showpasswordInput" formControlName="showPassword"  />
+                            <label class="form-check-label"  for="showpasswordInput" > Show password </label>
                         </div>
                         <div class="form-check d-flex justify-content-start mb-4">
-                            <input class="form-check-input me-1" type="checkbox" value="" id="form2Example31" formControlName="remmberMe" />
-                            <label class="form-check-label" for="form2Example31" > Remember me </label>
+                            <input class="form-check-input me-1" type="checkbox" value="" id="remmberMeinput" formControlName="remmberMe" />
+                            <label class="form-check-label" for="remmberMeinput" > Remember me </label>
                         </div>
 
                         <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="loginForm.invalid" (click)="login()">Login</button>
