@@ -23,7 +23,7 @@ export class LocalStrogeService {
     sessionStorage.setItem(key, JSON.stringify(value));
   }
   getItemFromSessionStorge(key: string): string {
-    let token = sessionStorage.getItem('accesToken') || '';
+    let token = sessionStorage.getItem('accesToken') || '';//"2dfdfdf"
     return token.substring(1, token?.length - 1);
   }
   getItemFromLocalStorge(key: string) {

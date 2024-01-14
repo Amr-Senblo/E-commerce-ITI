@@ -14,6 +14,7 @@ import { RegisterLayoutComponent } from '../layouts/register-layout/register-lay
 import { LoginFormComponent } from '../components/login-form/login-form.component';
 import { loginGuard } from '../guards/login.guard';
 import { logoutGuard } from '../guards/logout.guard';
+import { WishListComponent } from '../components/wish-list/wish-list.component';
 export const routes: Routes = [
   {
     path: '',
@@ -31,7 +32,12 @@ export const routes: Routes = [
         path: 'Cart/:id',
         component: CartComponent,
         canActivate: [loginGuard],
-      }, //Add Guard
+      },
+      {
+        path: 'WishList',
+        component: WishListComponent,
+        canActivateChild: [loginGuard],
+      }, 
       { path: 'Search/:word', component: FilterComponent },
       { path: 'AboutUs', component: AboutUsComponent },
     ],
