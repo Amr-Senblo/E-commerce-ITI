@@ -25,6 +25,7 @@ export class RegisterComponent {
     passward: '',
     confirmPassward: '',
     wishlist: [],
+    accessToken:''
   };
   constructor() {}
 
