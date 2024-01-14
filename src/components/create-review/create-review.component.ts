@@ -63,7 +63,9 @@ export class CreateReviewComponent implements OnInit{
         let productId= +this.productID;
         let rating=this.selectedRating;
 
+
       let newReview = { comment, user, productId, rating };
+
 
         this.reviewService.createReview(newReview).subscribe(
           {
@@ -71,7 +73,7 @@ export class CreateReviewComponent implements OnInit{
               this.reviewService.getReviewsOfProduct(this.productID).subscribe({
                 next:(data:any)=>{
                   this.reviewsOfProduct=data;
-                  console.log(this.reviewsOfProduct);
+                  console.log("all prodcut review",this.reviewsOfProduct);
                   this.reviewCreated.emit(this.reviewsOfProduct); // Emit the new review
                 }
               });

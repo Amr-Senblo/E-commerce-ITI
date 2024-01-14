@@ -153,7 +153,9 @@
       "description": "Premium smartphone with a focus on camera innovation.",
       "price": 1099.99,
       "quantity": 40,
+
       "imageCover": "https://m.media-amazon.com/images/I/51tNBbfB4DL.AC_SX679.jpg",
+
       "images": [
         "https://m.media-amazon.com/images/I/315LF8dKsHL.AC_SR38,50.jpg",
         "https://m.media-amazon.com/images/I/41vAsIvNcRL.AC_SX679.jpg",
@@ -183,11 +185,13 @@
       "description": "Slim and powerful smartphone with a focus on photography.",
       "price": 799.99,
       "quantity": 50,
+
       "imageCover": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71p+vczOK-L.AC_SX466.jpg",
       "images": [
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51IUHCI5jFL.AC_SX679.jpg",
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51hTIoLNcnL.AC_SX679.jpg",
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51IUHCI5jFL.AC_SX679.jpg"
+
       ],
       "category": 1,
       "ratingAverage": 4.6,
@@ -333,7 +337,9 @@
       "description": "Advanced smartwatch with a larger and always-on Retina display.",
       "price": 399.99,
       "quantity": 50,
+
       "imageCover": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71p1EMtYnvL._AC_SY445_SX342_QL70_FMwebp.jpg",
+
       "images": [
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71h1jt6g3kL.AC_SX522.jpg",
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71h1jt6g3kL.AC_SX522.jpg",
@@ -363,7 +369,9 @@
       "description": "Feature-rich smartwatch with advanced health tracking capabilities.",
       "price": 349.99,
       "quantity": 35,
+
       "imageCover": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61IZmXci7qS.AC_SX679.jpg",
+
       "images": [
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/614HKugi5QL.AC_SX679.jpg",
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/614HKugi5QL.AC_SX679.jpg",
@@ -631,7 +639,9 @@
     {
       "id": 1,
       "name": "Jack Adam",
+
       "password": "123456Abcd",
+
       "email": "user1@gmail.com",
       "phone": "01012345611",
       "profilePic": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -644,7 +654,9 @@
     {
       "id": 2,
       "name": "Marya Edward",
+
       "password": "123456Abcd",
+
       "email": "user2@gmail.com",
       "phone": "01012345612",
       "profilePic": "https://images.unsplash.com/photo-1525186402429-b4ff38bedec6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -657,7 +669,9 @@
     {
       "id": 3,
       "name": "Mahran Antonyo",
+
       "password": "123456Abcd",
+
       "email": "mahran@gmail.com",
       "phone": "01012345613",
       "profilePic": "https://media.istockphoto.com/id/1170286252/photo/positive-human-facial-expressions-and-emotions-portrait-of-handsome-young-male-in-his-20s.jpg?s=1024x1024&w=is&k=20&c=trvPL1PKSZQNc_ZVAhx4JzD0tHtub4PE0znx22fc7-k=",
@@ -670,7 +684,9 @@
     {
       "id": 4,
       "name": "Ledya Karam",
+
       "password": "123456Abcd",
+
       "email": "user4@gmail.com",
       "phone": "01012345614",
       "profilePic": "https://images.unsplash.com/photo-1506863530036-1efeddceb993?q=80&w=1488&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -683,7 +699,9 @@
     {
       "id": 5,
       "name": "Goerge Jacoup",
+
       "password": "123456Abcd",
+
       "email": "user5@gmail.com",
       "phone": "01012345615",
       "profilePic": "https://plus.unsplash.com/premium_photo-1689977927774-401b12d137d6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -692,6 +710,7 @@
         2,
         4
       ]
+
     }
   ],
   "carts": [
