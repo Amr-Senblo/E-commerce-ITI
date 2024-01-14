@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 import { Observable, map } from 'rxjs';
 import { IProduct } from '../models/iproduct';
 import { environment } from '../environments/environment';
