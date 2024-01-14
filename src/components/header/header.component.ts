@@ -1,34 +1,66 @@
 import { CommonModule, DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
 import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FilterAPIService } from '../../services/filter-api.service';
+import { UserAuthService } from '../../services/user-auth.service';
+import { IUser } from '../../models/iuser';
+import { LocalStrogeService } from '../../services/local-stroge.service';
+import { ToastComponent } from '../toast/toast.component';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule,  RouterModule, FormsModule],
   providers: [CategoryService],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
+  imports: [CommonModule, RouterModule, FormsModule, ToastComponent],
 })
 export class HeaderComponent implements OnInit {
+  logOut() {
+    this.userAuthService.logOut();
+    this.toast.openSnackBar('Logged Out', '');
+    this.logstate = this.userAuthService.LoggedState;
+    this.currentUser = undefined;
+  }
+  showstate() {
+    console.log(this.userAuthService.LoggedState);
+  }
+
   isDropdownOpen = false;
   categoriesDropdown = false;
   categories: any = [];
   searchkeyword: string = '';
   names!: string[];
+  logstate!: boolean;
+  currentUser?: IUser;
+  @ViewChild(ToastComponent) toast!: ToastComponent;
 
   constructor(
     private categoryService: CategoryService,
     private route: Router,
-    private filterApi: FilterAPIService
-  ) {}
+    private filterApi: FilterAPIService,
+    private userAuthService: UserAuthService,
+    private storge: LocalStrogeService
+  ) {
+    this.logstate = this.userAuthService.LoggedState;
+    this.userAuthService.getAllUsers().subscribe((alluser) => {
+      console.log(this.storge.getItemFromSessionStorge('accesToken'))
+      let token =this.storge.getItemFromLocalStorge('accesToken')||this.storge.getItemFromSessionStorge('accesToken')
+      console.log(token);
+      this.currentUser = alluser.find(
+        (user) => user.accessToken == token.substring(1, token.length - 1)
+      );
+      console.log(this.currentUser?.name);
+      if (this.currentUser) {
+        this.userAuthService.setLoggedState = true;
+      } else this.userAuthService.setLoggedState = false;
+    });
+  }
 
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe((data) => {
       this.categories = data;
-      // console.log(this.categories);
     });
   }
   toggleCategoriesDropdown() {
@@ -37,13 +69,18 @@ export class HeaderComponent implements OnInit {
 
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
+    console.log(this.currentUser?.name);
   }
+
   onSearchEnter(searchword: string) {
     this.route.navigateByUrl(`Search/${searchword}`);
   }
+
   gitNames(word: string) {
     // console.log("fdfdf")
-     this.filterApi .getProductNameFromShearch(word).subscribe(data=>{this.names=data})
+    this.filterApi.getProductNameFromShearch(word).subscribe((data) => {
+      this.names = data;
+    });
     //   .subscribe((data) => {this.names = data
     //     console.log(this.names)});
 

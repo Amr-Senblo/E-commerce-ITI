@@ -1,3 +1,4 @@
+
 <div class="header">
   <div class="first-header-container">
     <div routerLink="Home" class="logo-container">
@@ -27,9 +28,16 @@
 
 
       <div class="profile" (click)="toggleDropdown()">
-        <img src="assets/images/profile.svg" alt="profile" class="profile-icon">
+        @if (currentUser)
+        {
+        <img [src]="currentUser.profilePic" alt="profile picture" class="profile-icon">
+        }
+        @else {
         <a routerLink="Login"><span class="signin-text">Sign In</span></a>
+        <img src="assets/images/profile.svg" alt="profile" class="profile-icon">
+        }
       </div>
+
       <div class="dropdown">
         <div class="dropdown-content" *ngIf="isDropdownOpen">
           <a> <i class="fa-regular fa-user"></i>Profile</a>
@@ -37,18 +45,20 @@
           <a> <i class="fa-regular fa-credit-card"></i> Orders</a>
 
 
-          <a routerLink="login"><i class="fa-solid fa-power-off"></i> Logout</a>
+          <a (click)="logOut()"><i class="fa-solid fa-power-off"></i> Logout</a>
         </div>
       </div>
     </div>
 
 
   </div>
+  <!-- <button mat-stroked-button (click)="openSnackBar()">Show snack-bar</button> -->
+
+  <!-- <button (click)="showstate()">Test</button> -->
 
 
 
 
 
-
-
+  <app-toast hidden></app-toast>
 </div>

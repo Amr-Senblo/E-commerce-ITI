@@ -32,6 +32,7 @@ export class RegisterComponent {
     passward: '',
     confirmPassward: '',
     wishlist: [],
+    accessToken:''
   };
   constructor(
     private _registerService: RegisterService // private _ngForm: NgForm
