@@ -62,6 +62,7 @@ export class UserAuthService {
       this.loggSubject.next(false);
       this.userLocalStorge.removeItemFromLocalStorage('accesToken');
       this.userLocalStorge.removerItemFromSessionStorage('accesToken');
+      this.router.navigateByUrl('Home');
     }
   }
   getLoggedStateSubject() {
