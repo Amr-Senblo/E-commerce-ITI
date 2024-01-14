@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ICategory } from '../models/icategory';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { ICategory } from '../models/icategory';
 export class CategoryService {
 
   constructor(private http:HttpClient) { }
-  DB="http://localhost:3000/categories";
+  DB=`${environment.apiUrl}/categories`;
   getCategories()
   {
     return this.http.get<ICategory[]>(this.DB);

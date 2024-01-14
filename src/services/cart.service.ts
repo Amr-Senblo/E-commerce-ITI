@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ICart } from '../models/icart';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  DB="http://localhost:3000/carts";
+  DB=`${environment.apiUrl}/carts`;
   constructor(private http:HttpClient) { }
 
   getCarts()

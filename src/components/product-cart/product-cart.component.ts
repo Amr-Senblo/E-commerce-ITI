@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProduct } from '../../models/iproduct';
-import { FormsModule } from '@angular/forms';
-import { ICart } from '../../models/icart';
 import { IproductBuyed } from '../../models/iproduct-buyed';
 import { CommonModule } from '@angular/common';
 

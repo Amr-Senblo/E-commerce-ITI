@@ -1,4 +1,5 @@
 import { CommonSpecifications } from './common-specifications';
+import { IReview } from './ireview';
 
 export interface IProduct {
   id: number;
@@ -15,4 +16,5 @@ export interface IProduct {
   createdAt?: string;
   updatedAt?: string;
   CommonSpecifications: CommonSpecifications;
+  reviews?: IReview[]
 }
