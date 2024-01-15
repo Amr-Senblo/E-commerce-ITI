@@ -14,6 +14,7 @@ import { IProduct } from '../../models/iproduct';
 import { CartService } from '../../services/cart.service';
 import { CustomCartService } from '../../services/custom-cart-products.service';
 import { IproductBuyed } from '../../models/iproduct-buyed';
+import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
 import { ICart } from '../../models/icart';
 
@@ -22,13 +23,10 @@ import { ICart } from '../../models/icart';
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [RouterLink, ProductComponent],
+  imports: [RouterLink, ProductComponent, NgbRating],
   providers: [ProductService, CartService, CustomCartService],
   templateUrl: './product-details.component.html',
-  template: `
-    <button (click)="incrementCounter()">Increment Counter</button>
-  `
-,
+  template: ` <button (click)="incrementCounter()">Increment Counter</button> `,
   styleUrl: './product-details.component.css',
 })
 export class ProductDetailsComponent implements OnChanges {
@@ -36,16 +34,18 @@ export class ProductDetailsComponent implements OnChanges {
   cartId = 1;
   productsInCart: IproductBuyed[] = [];
   productId = 0;
-  @Input()counter =0;
+  @Input() counter = 0;
   @Input() product: IProduct = <IProduct>{};
+  x: any;
 
   constructor(
     private CartCustomService: CustomCartService,
-    private cartService: CartService
-  ) {}
-  ngOnChanges(changes: SimpleChanges): void {
-    if (this.isFirstChange) {
-      this.isFirstChange = false;
+    private cartService: CartService,
+    private productService: ProductService
+    ) {}
+    ngOnChanges(changes: SimpleChanges): void {
+      if (this.isFirstChange) {
+        this.isFirstChange = false;
       return;
     }
     this.productId = this.product.id;
@@ -57,19 +57,16 @@ export class ProductDetailsComponent implements OnChanges {
         this.productsInCart.push({ id: this.productId, quantity: 1 });
         this.CartCustomService.editCartProducts(
           this.cartId,
-          this.productsInCart 
-          
+          this.productsInCart
         ).subscribe();
       },
       error: (err) => console.log(err),
     });
     this.showMessage('Added to cart');
-   
-    // Increment the counter
-  
 
-  this.incrementCounter();
-    
+    // Increment the counter
+
+    this.incrementCounter();
   }
 
   // @Output() counterChanged: EventEmitter<number> = new EventEmitter<number>();
@@ -79,35 +76,27 @@ export class ProductDetailsComponent implements OnChanges {
   //   this.counter++;
   // }
 
-
   incrementCounter() {
     // this.cartService.incrementCounter();
     // console.log("counter2 : ",this.cartService.incrementCounter());
 
     let counter = localStorage.getItem('counter');
-  if (counter) {
-    this.counter = parseInt(counter) + 1;
-  } else {
-    this.counter = 1;
+    if (counter) {
+      this.counter = parseInt(counter) + 1;
+    } else {
+      this.counter = 1;
+    }
+    localStorage.setItem('counter', this.counter.toString());
+
+    console.log('counter1: ', this.counter);
   }
-  localStorage.setItem('counter', this.counter.toString());
 
-   console.log("counter1: ", this.counter);
-    
-  }
-
-
-
- 
-  
-
-  x: any;
 
   showMessage(message: string): void {
     this.x = setInterval(() => {
       Swal.fire({
         title: message,
-        
+
         icon: 'success',
       });
       this.clearMessage();
@@ -119,23 +108,21 @@ export class ProductDetailsComponent implements OnChanges {
     clearInterval(this.x);
     console.log('clear work');
   }
-
-
-
-  //update image to be dynamic
   prodct = {
     imageCover: '',
-    images: []
+    images: [],
   };
 
   fetchProduct(): void {
-    
     this.prodct = {
       imageCover: this.prodct.imageCover,
-      images: [this.prodct.images[0],this.prodct.images[1] , this.prodct.images[2]]
+      images: [
+        this.prodct.images[0],
+        this.prodct.images[1],
+        this.prodct.images[2],
+      ],
     };
   }
-
 
   updateImage(imageUrl: string): void {
     this.product.imageCover = imageUrl;
@@ -145,9 +132,8 @@ export class ProductDetailsComponent implements OnChanges {
     this.fetchProduct();
   }
 
-
   zoomOptions = {
     zoomFactor: 3,
-    container: 'container-element'
+    container: 'container-element',
   };
 }
