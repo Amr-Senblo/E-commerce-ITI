@@ -26,7 +26,6 @@ export class ReviewService {
   createReview(data: {}) {
     return this.http.post<IReview>(this.DB, data);
   }
-
   updateReview(id: number, data: {}) {
     let url = `${this.DB}/${id}`;
     return this.http.put<IReview>(url, data);

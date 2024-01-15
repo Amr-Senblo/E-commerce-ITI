@@ -1,8 +1,10 @@
 import {
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChanges,
 } from '@angular/core';
 import { ProductService } from '../../services/product.service';
@@ -14,6 +16,9 @@ import { CustomCartService } from '../../services/custom-cart-products.service';
 import { IproductBuyed } from '../../models/iproduct-buyed';
 import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
+import { ICart } from '../../models/icart';
+
+//import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 @Component({
   selector: 'app-product-details',
@@ -21,6 +26,7 @@ import Swal from 'sweetalert2';
   imports: [RouterLink, ProductComponent, NgbRating],
   providers: [ProductService, CartService, CustomCartService],
   templateUrl: './product-details.component.html',
+  template: ` <button (click)="incrementCounter()">Increment Counter</button> `,
   styleUrl: './product-details.component.css',
 })
 export class ProductDetailsComponent implements OnChanges {
@@ -28,15 +34,18 @@ export class ProductDetailsComponent implements OnChanges {
   cartId = 1;
   productsInCart: IproductBuyed[] = [];
   productId = 0;
+  @Input() counter = 0;
   @Input() product: IProduct = <IProduct>{};
+  x: any;
+
   constructor(
     private CartCustomService: CustomCartService,
     private cartService: CartService,
     private productService: ProductService
-  ) {}
-  ngOnChanges(changes: SimpleChanges): void {
-    if (this.isFirstChange) {
-      this.isFirstChange = false;
+    ) {}
+    ngOnChanges(changes: SimpleChanges): void {
+      if (this.isFirstChange) {
+        this.isFirstChange = false;
       return;
     }
     this.productId = this.product.id;
@@ -54,8 +63,34 @@ export class ProductDetailsComponent implements OnChanges {
       error: (err) => console.log(err),
     });
     this.showMessage('Added to cart');
+
+    // Increment the counter
+
+    this.incrementCounter();
   }
-  x: any;
+
+  // @Output() counterChanged: EventEmitter<number> = new EventEmitter<number>();
+
+  // incrementCounter() {
+  //   this.counterChanged.emit(this.counter);
+  //   this.counter++;
+  // }
+
+  incrementCounter() {
+    // this.cartService.incrementCounter();
+    // console.log("counter2 : ",this.cartService.incrementCounter());
+
+    let counter = localStorage.getItem('counter');
+    if (counter) {
+      this.counter = parseInt(counter) + 1;
+    } else {
+      this.counter = 1;
+    }
+    localStorage.setItem('counter', this.counter.toString());
+
+    console.log('counter1: ', this.counter);
+  }
+
 
   showMessage(message: string): void {
     this.x = setInterval(() => {
@@ -73,5 +108,32 @@ export class ProductDetailsComponent implements OnChanges {
     clearInterval(this.x);
     console.log('clear work');
   }
+  prodct = {
+    imageCover: '',
+    images: [],
+  };
 
+  fetchProduct(): void {
+    this.prodct = {
+      imageCover: this.prodct.imageCover,
+      images: [
+        this.prodct.images[0],
+        this.prodct.images[1],
+        this.prodct.images[2],
+      ],
+    };
+  }
+
+  updateImage(imageUrl: string): void {
+    this.product.imageCover = imageUrl;
+  }
+
+  ngOnInit(): void {
+    this.fetchProduct();
+  }
+
+  zoomOptions = {
+    zoomFactor: 3,
+    container: 'container-element',
+  };
 }

@@ -3,6 +3,7 @@ import { IProduct } from '../../models/iproduct';
 import { ProductComponent } from '../product/product.component';
 import { CommonModule } from '@angular/common';
 import { PaginationComponent } from '../pagination/pagination.component';
+import { IUser } from '../../models/iuser';
 
 @Component({
   selector: 'app-products-array',
