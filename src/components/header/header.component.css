@@ -116,7 +116,9 @@
     cursor: pointer;
 
 }
-
+.profile:hover{
+  cursor: pointer;
+}
 .signin-text {
     font-size: 1rem;
     font-weight: 500;
@@ -149,7 +151,7 @@
 
 
 
-/* 
+/*
 .second-header-container {
     display: flex;
     justify-content: space-between;
@@ -253,7 +255,7 @@
 
 
 
-/* 
+/*
 .category-item {
     display: flex;
     align-items: center;

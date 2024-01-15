@@ -17,6 +17,7 @@ export class ProductService {
     let url = `${this.DB}/${id}?_embed=reviews`;
     return this.http.get<IProduct>(url);
   }
+  
 
   createProduct(data: {}) {
     return this.http.post<IProduct>(this.DB, data);
@@ -24,6 +25,10 @@ export class ProductService {
   updateProduct(id: number, data: {}) {
     let url = `${this.DB}/${id}`;
     return this.http.put<IProduct>(url, data);
+  }
+  updateProductQuantity(id: number, newQuantity: number) {
+    let url = `${this.DB}/${id}`;
+    return this.http.patch<IProduct>(url, { "quantity": newQuantity });
   }
   deleteProduct(id: number) {
     let url = `${this.DB}/${id}`;

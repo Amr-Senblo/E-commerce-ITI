@@ -14,6 +14,7 @@ import { IUser } from '../../models/iuser';
 import { IReview } from '../../models/ireview';
 import { ReviewService } from '../../services/review.service';
 import { Observable, catchError, map, of, switchMap } from 'rxjs';
+import { CartService } from '../../services/cart.service';
 
 
 @Component({
@@ -36,7 +37,6 @@ import { Observable, catchError, map, of, switchMap } from 'rxjs';
 
 export class ProductDetailsContainerComponent implements OnInit {
   productId!: number;
-  userId: number = 1; //static until the guard finish
   currentProduct: IProduct = <IProduct>{};
   categoryProducts: IProduct[] = [];
   breadCrumbTitles: string[] = [];
@@ -46,12 +46,11 @@ export class ProductDetailsContainerComponent implements OnInit {
   constructor(private reviewService:ReviewService,
     private route: ActivatedRoute,
     private productService: ProductService,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef ,
+  
     ) {
     this.route.params.subscribe(params => {
-      // Access the 'id' parameter
       this.productId = +params['id'];
-      //console.log(this.cartId)
     })
 
   }
@@ -64,7 +63,7 @@ export class ProductDetailsContainerComponent implements OnInit {
         this.currentProduct = value;
         this.breadCrumbTitles = ['Home', value.name];
         this.breadCrumbLinks = ["/Home", `/Category/${this.currentProduct.category}/${this.currentProduct.id}`]
-        this.productService.getProduct4(value.category).subscribe({
+        this.productService.getProductsOfCategory(value.category).subscribe({
           next: (products) => {
             this.categoryProducts = products.filter(product => product.id !== this.currentProduct.id)
           }
@@ -73,19 +72,13 @@ export class ProductDetailsContainerComponent implements OnInit {
     })
   }
 
-  handleReviewCreated(createdReview: IReview[]) {
-    if (this.reviews) { // Check if reviews are available
-      // this.reviews.push(createdReview);
+  handleReviewCreated(createdReview: IReview[]) 
+  {
+    // Check if reviews are available
       this.reviews=createdReview;
       // this.changeDetectorRef.detectChanges(); // Trigger change detection
-    }
+   
   }
 
-  checkLogin() {
-    if (this.userId === null)
-      return true;
-    else
-      return false;
-  }
 
 }

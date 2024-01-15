@@ -1,7 +1,11 @@
+import { IOrder } from "./iorder";
+
 export interface IUser {
   id: number;
   name: string;
   email: string;
+  password: string;
+  accessToken: string;
   phone: string;
   profilePic?: string;
   Address?: string;
@@ -9,4 +13,5 @@ export interface IUser {
   passward: string;
   confirmPassward: string;
   wishlist?: number[];
+  orders?: IOrder[]
 }

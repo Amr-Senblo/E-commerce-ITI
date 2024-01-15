@@ -22,6 +22,7 @@ export class RegisterComponent {
   userModel: IUser = {
     //auto generate id automatically
     id: Math.floor(Math.random() * 1000000000000),
+    password: '',
     name: '',
     email: '',
     phone: '',
@@ -31,6 +32,7 @@ export class RegisterComponent {
     passward: '',
     confirmPassward: '',
     wishlist: [],
+    accessToken:''
   };
   constructor(
     private _registerService: RegisterService // private _ngForm: NgForm

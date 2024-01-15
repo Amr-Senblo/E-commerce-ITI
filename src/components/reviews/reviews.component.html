@@ -2,7 +2,7 @@
 @if (reviews.length !=0 && UsersInOrderReviews.length!=0) {
 <h2 class="fs-1 text-center">{{avgRating| number:'1.2-2'}}</h2>
 <div class="text-center my-5">
-  <ngb-rating [(rate)]="avgRating" [readonly]="true" [max]="5" />
+  <ngb-rating [(rate)]="avgRating" [readonly]="true" [max]="5"  style="color: var(--rating-color); font-size:37px;"/>
 </div>
 <div *ngFor="let review of reviews; let i = index;">
   <div class="row my-5">
@@ -15,7 +15,9 @@
       </div>
     </div>
     <div class="col-10 d-flex flex-column card py-3 px-4">
-      <span class="my-3">{{review.rating}} <i class="fa-solid fa-star star"></i></span>
+      <span class="my-3">
+        <ngb-rating [(rate)]="review.rating" [readonly]="true" [max]="5" class="rating-color" style="font-size:30px;"></ngb-rating>
+      </span>
       <span>{{review.comment}}</span>
     </div>
   </div>
@@ -23,3 +25,4 @@
 }@else{
 <div class="text-center fs-1 theme">there are no reviews</div>
 }
+

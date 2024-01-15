@@ -24,6 +24,8 @@ export class ReviewsComponent implements OnChanges{
   usersIds: number[] = [];
   Ratings: number[] = [];
   avgRating: number = 0;
+  reviewAndUser!:{"review":IReview,"user":any};
+  ArrayOfReviewAndUser:{"review":IReview,"user":IUser}[]=[];
 
   constructor(
     private userService: UserService,
@@ -31,11 +33,33 @@ export class ReviewsComponent implements OnChanges{
     private route: ActivatedRoute
   ) {}
 
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   if (this.isFirstChange) {
+  //     this.isFirstChange = false;
+  //     return;
+  //   }
+
+  //   this.reviews=this.reviews.reverse(); // the order of reviews from newest to oldest
+  //   for (let review of this.reviews) {
+  //     this.Ratings.push(review.rating);
+  //     this.usersIds.push(review.user);
+  //   }
+
+  //   for (let userID of this.usersIds) {
+  //     this.userService.getUser(userID).subscribe(user => {
+  //       this.UsersInOrderReviews.push(user);
+  //     });
+  //   }
+  //   this.avgRating = this.Ratings.reduce((accumulator, currentValue) => {
+  //     return accumulator + currentValue;
+  //   }, 0) / this.Ratings.length;
+  // }
   ngOnChanges(changes: SimpleChanges): void {
     if (this.isFirstChange) {
       this.isFirstChange = false;
       return;
     }
+    this.reviews=this.reviews.reverse(); // Reverse the array
 
     console.log(this.reviews)
     for (let review of this.reviews) {
@@ -52,6 +76,7 @@ export class ReviewsComponent implements OnChanges{
             this.UsersInOrderReviews.push(this.users.filter(user => user.id === review.user)[0]);
         }
         console.log(this.UsersInOrderReviews);
+
       }
     })
 
@@ -59,7 +84,6 @@ export class ReviewsComponent implements OnChanges{
       return accumulator + currentValue;
     }, 0) / this.Ratings.length;
     //console.log(this.avgRating)
-
   }
 
 }

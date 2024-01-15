@@ -1,3 +1,4 @@
+
 <div class="header">
   <div class="first-header-container">
     <div routerLink="Home" class="logo-container">
@@ -11,46 +12,84 @@
       <input type="text" class="search-input" (input)="gitNames(searchInput.value)"
         (keyup.enter)="onSearchEnter(searchInput.value)" #searchInput placeholder="Search for anything..."
         [(ngModel)]="searchkeyword">
+
       <a [routerLink]="['/search',searchkeyword]"><img src="assets/images/search1.png" alt="search"
+
+      <a [routerLink]="['/Search',searchkeyword]"><img src="assets/images/search1.png" alt="search"
+
           class="search-icon"></a>
     </div>
 
 
-    <div class="user-container">
-      <a routerLink="Cart/1" class="cart-anchor">
-        <div class="cart">
-          <span class="cart-count">0</span>
-          <img src="assets/images/cart.png" alt="cart" class="cart-icon">
+    <div class="user-container ">
+      <a routerLink="Cart/{{currentUser?.id}}" class="cart-anchor">
+        <div class="cart ">
+
+          <span class="cart-count badge text-bg-danger" >
+            {{counter}}
+
+          </span>
+
+
+           <img src="assets/images/cart.png" alt="cart" class="cart-icon">
           <span class="cart-text">Cart</span>
         </div>
       </a>
 
 
       <div class="profile" (click)="toggleDropdown()">
-        <img src="assets/images/profile.svg" alt="profile" class="profile-icon">
-
-        <span class="signin-text">Sign In</span>
+        @if (currentUser)
+        {
+          <!-- <img [src]="currentUser.profilePic" alt="profile picture" class="profile-icon"> -->
+          <img class="rounded-circle shadow-1-strong  mx-4"
+          [src]="currentUser.profilePic" alt="avatar" width="35" height="30" />
+          <div class="username" style="color: white;">{{ currentUserName }}</div> <!-- Display the current user's name -->
+        }
+        @else
+        {
+          <a routerLink="Login" style="text-decoration: none;"><span class="signin-text">Sign In</span></a>
+          <img src="assets/images/profile.svg" alt="profile" class="profile-icon">
+        }
       </div>
+
+
+      <!-- <div class="profile" (click)="toggleDropdown()">
+        @if (currentUser)
+        {
+        <img [src]="currentUser.profilePic" alt="profile picture" class="profile-icon">
+        }
+        @else {
+        <a routerLink="Login" style="text-decoration: none;"><span class="signin-text">Sign In</span></a>
+        <img src="assets/images/profile.svg" alt="profile" class="profile-icon">
+        }
+      </div> -->
+
       <div class="dropdown">
+
 
         <div class="dropdown-content" *ngIf="isDropdownOpen">
           <a routerLink="/myprofile"> <i class="fa-regular fa-user"></i>Profile</a>
           <a><i class="fa-regular fa-heart"></i> Wishlist</a>
+
           <a> <i class="fa-regular fa-credit-card"></i> Orders</a>
 
 
-          <a routerLink="login"><i class="fa-solid fa-power-off"></i> Logout</a>
+          <a (click)="logOut()"><i class="fa-solid fa-power-off"></i> Logout</a>
         </div>
       </div>
     </div>
 
 
   </div>
+  <!-- <button mat-stroked-button (click)="openSnackBar()">Show snack-bar</button> -->
+
+  <!-- <button (click)="showstate()">Test</button> -->
 
 
 
 
 
 
-
+  <app-toast hidden></app-toast>
 </div>
+
