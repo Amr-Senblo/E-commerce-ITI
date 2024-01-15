@@ -35,6 +35,7 @@ export class HeaderComponent implements OnInit {
   names!: string[];
   logstate!: boolean;
   currentUser?: IUser;
+  currentUserName?:string;
   @ViewChild(ToastComponent) toast!: ToastComponent;
 
   constructor(
@@ -44,17 +45,37 @@ export class HeaderComponent implements OnInit {
     private userAuthService: UserAuthService,
     private storge: LocalStrogeService
   ) {
+    // this.logstate = this.userAuthService.LoggedState;
+    // this.userAuthService.getAllUsers().subscribe((alluser) => {
+    //   let token =this.storge.getItemFromLocalStorge('accesToken')||this.storge.getItemFromSessionStorge('accesToken')
+    //   this.currentUser = alluser.find(
+    //     (user) => user.accessToken == token
+    //   );
+    //   if (this.currentUser) {
+    //     this.userAuthService.setLoggedState = true;
+    //   } else this.userAuthService.setLoggedState = false;
+
     this.logstate = this.userAuthService.LoggedState;
-    this.userAuthService.getAllUsers().subscribe((alluser) => {
-      let token =this.storge.getItemFromLocalStorge('accesToken')||this.storge.getItemFromSessionStorge('accesToken')
-      this.currentUser = alluser.find(
-        (user) => user.accessToken == token
-      );
-      if (this.currentUser) {
-        this.userAuthService.setLoggedState = true;
-      } else this.userAuthService.setLoggedState = false;
+this.userAuthService.getAllUsers().subscribe((alluser) => {
+  let token = this.storge.getItemFromLocalStorge('accesToken') || this.storge.getItemFromSessionStorge('accesToken');
+  this.currentUser = alluser.find((user) => user.accessToken == token);
+  if (this.currentUser) {
+    this.userAuthService.setLoggedState = true ;
+    this.currentUserName = this.currentUser.name; // Store the current user's name
+    console.log(  this.currentUserName);
+    
+  } else {
+    this.userAuthService.setLoggedState = false;
+    this.currentUserName = ''; // Clear the current user's name if not logged in
+  }
     });
   }
+    
+  
+
+
+  
+
 
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe((data) => {

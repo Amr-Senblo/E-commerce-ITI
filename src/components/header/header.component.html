@@ -17,9 +17,9 @@
     </div>
 
 
-    <div class="user-container">
+    <div class="user-container ">
       <a routerLink="Cart/{{currentUser?.id}}" class="cart-anchor">
-        <div class="cart">
+        <div class="cart ">
          
           <span class="cart-count badge text-bg-danger" >
             {{counter}}
@@ -36,13 +36,27 @@
       <div class="profile" (click)="toggleDropdown()">
         @if (currentUser)
         {
+          <img [src]="currentUser.profilePic" alt="profile picture" class="profile-icon">
+          <span class="username" style="color: white;">{{ currentUserName }}</span> <!-- Display the current user's name -->
+        }
+        @else
+        {
+          <a routerLink="Login" style="text-decoration: none;"><span class="signin-text">Sign In</span></a>
+          <img src="assets/images/profile.svg" alt="profile" class="profile-icon">
+        }
+      </div>
+
+
+      <!-- <div class="profile" (click)="toggleDropdown()">
+        @if (currentUser)
+        {
         <img [src]="currentUser.profilePic" alt="profile picture" class="profile-icon">
         }
         @else {
         <a routerLink="Login" style="text-decoration: none;"><span class="signin-text">Sign In</span></a>
         <img src="assets/images/profile.svg" alt="profile" class="profile-icon">
         }
-      </div>
+      </div> -->
 
       <div class="dropdown">
         <div class="dropdown-content" *ngIf="isDropdownOpen">
