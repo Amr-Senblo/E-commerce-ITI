@@ -2,13 +2,15 @@
   <div class="first-header-container">
     <div routerLink="Home" class="logo-container">
 
-      <img src="assets/images/logo-white.png" alt="logo" class="logo">
+      <img src="assets/images/logo-white .png" alt="logo" class="logo">
 
     </div>
 
     <div class="search-container">
 
-     <input type="text" class="search-input" (input)="gitNames(searchInput.value)" (keyup.enter)="onSearchEnter(searchInput.value)" #searchInput placeholder="Search for anything..." [(ngModel)]="searchkeyword">
+      <input type="text" class="search-input" (input)="gitNames(searchInput.value)"
+        (keyup.enter)="onSearchEnter(searchInput.value)" #searchInput placeholder="Search for anything..."
+        [(ngModel)]="searchkeyword">
       <a [routerLink]="['/search',searchkeyword]"><img src="assets/images/search1.png" alt="search"
           class="search-icon"></a>
     </div>
@@ -30,9 +32,9 @@
         <span class="signin-text">Sign In</span>
       </div>
       <div class="dropdown">
- 
+
         <div class="dropdown-content" *ngIf="isDropdownOpen">
-          <a> <i class="fa-regular fa-user"></i>Profile</a>
+          <a routerLink="/myprofile"> <i class="fa-regular fa-user"></i>Profile</a>
           <a><i class="fa-regular fa-heart"></i> Wishlist</a>
           <a> <i class="fa-regular fa-credit-card"></i> Orders</a>
 
@@ -52,4 +54,3 @@
 
 
 </div>
-
