@@ -13,6 +13,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ReviewService } from '../../services/review.service';
 import { IReview } from '../../models/ireview';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserAuthService } from '../../services/user-auth.service';
+import { LocalStrogeService } from '../../services/local-stroge.service';
 
 @Component({
   selector: 'app-create-review',
@@ -23,7 +25,7 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     NgbRatingModule,
   ],
-  providers: [UserService],
+  providers: [UserService , UserAuthService],
   templateUrl: './create-review.component.html',
   styleUrl: './create-review.component.css',
 })
@@ -41,15 +43,36 @@ export class CreateReviewComponent implements OnInit {
   selectedRating: number = 1; // Initial value
 
   reviewsOfProduct: IReview[] = [];
+  logstate!: boolean;
+  currentUser?: IUser;
+  currentUserName?:string;
 
   constructor(
     private userService: UserService,
     private reviewService: ReviewService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute ,
+    private userAuthService: UserAuthService,
+    private storge: LocalStrogeService
   ) {
     this.route.params.subscribe((params) => {
       this.productID = params['id']; //get product id
       console.log(this.productID);
+
+      this.logstate = this.userAuthService.LoggedState;
+      this.userAuthService.getAllUsers().subscribe((alluser) => {
+        let token = this.storge.getItemFromLocalStorge('accesToken') || this.storge.getItemFromSessionStorge('accesToken');
+        this.currentUser = alluser.find((user) => user.accessToken == token);
+        if (this.currentUser) {
+          this.userAuthService.setLoggedState = true ;
+          this.currentUserName = this.currentUser.name; // Store the current user's name
+          console.log(  this.currentUserName);
+          
+        } else {
+          this.userAuthService.setLoggedState = false;
+          this.currentUserName = ''; // Clear the current user's name if not logged in
+        }
+          });
+
     });
     this.myForm = new FormGroup({
       comment: new FormControl(null, Validators.required),
