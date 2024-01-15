@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IUser } from '../models/iuser';
 import { environment } from '../environments/environment';
+import { IOrder } from '../models/iorder';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,10 @@ export class UserService {
   updateUser(id: number, data: {}) {
     let url = `${this.DB}/${id}`;
     return this.http.put<IUser>(url, data);
+  }
+  updateUserOrders(id: number, orders: IOrder[]) {
+    let url = `${this.DB}/${id}`;
+    return this.http.patch<IUser>(url, { "orders": orders });
   }
   deleteUser(id: number) {
     let url = `${this.DB}/${id}`;
