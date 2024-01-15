@@ -78,6 +78,7 @@ export class HeaderComponent implements OnInit {
     // console.log("fdfdf")
     this.filterApi.getProductNameFromShearch(word).subscribe((data) => {
       this.names = data;
+      console.log(data)
     });
     //   .subscribe((data) => {this.names = data
     //     console.log(this.names)});

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IUser } from '../models/iuser';
 import { environment } from '../environments/environment';
-import { BehaviorSubject, Observable, retry } from 'rxjs';
+import { BehaviorSubject, Observable, map, retry } from 'rxjs';
 import { LocalStrogeService } from './local-stroge.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -56,6 +56,20 @@ export class UserAuthService {
   //     }
   //   });
   // }
+   getCurrentUser():Observable<IUser | undefined>{
+    
+    return this.getAllUsers().pipe(
+      map(allUsers => {
+          const token = this.userLocalStorge.getItemFromLocalStorge('accessToken') ||
+                        this.userLocalStorge.getItemFromSessionStorge('accessToken');
+          const currentUser = allUsers.find(user => user.accessToken === token);
+          this.setLoggedState = !!currentUser;
+          return currentUser;
+      })
+  );
+  
+
+  }
   logOut() {
     if (this.isLogged) {
       this.isLogged = false;
@@ -65,6 +79,7 @@ export class UserAuthService {
       this.router.navigateByUrl('Home');
     }
   }
+
   getLoggedStateSubject() {
     return this.loggSubject.asObservable();
   }

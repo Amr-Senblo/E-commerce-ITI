@@ -15,6 +15,7 @@ import { LoginFormComponent } from '../components/login-form/login-form.componen
 import { loginGuard } from '../guards/login.guard';
 import { logoutGuard } from '../guards/logout.guard';
 import { WishListComponent } from '../components/wish-list/wish-list.component';
+import { ProductCartComponent } from '../components/product-cart/product-cart.component';
 export const routes: Routes = [
   {
     path: '',
@@ -56,6 +57,7 @@ export const routes: Routes = [
   },
 
   { path: 'Profile', component: ProfileComponent }, //Add Guard
+  {path:'test',component:ProductCartComponent},
 
   { path: '**', component: ErrorPageComponent },
 ];
