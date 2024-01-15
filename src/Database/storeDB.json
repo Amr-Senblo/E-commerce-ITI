@@ -32,7 +32,7 @@
       "brand": "Apple",
       "description": "Pro-level smartphone with enhanced camera and performance.",
       "price": 1299.99,
-      "quantity": 30,
+      "quantity": 25,
       "imageCover": "https://m.media-amazon.com/images/I/71xb2xkN5qL.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/61d8XHJuE2L.AC_SL1500.jpg",
@@ -62,7 +62,7 @@
       "brand": "Xiaomi",
       "description": "Premium smartphone with a focus on photography and performance.",
       "price": 899.99,
-      "quantity": 60,
+      "quantity": 59,
       "imageCover": "https://techcart.com.au/wp-content/uploads/2021/10/61746-Xiaomi-Mi-11-Lite-5G-NE-256GB_8GB-Peach-Pink-Global-Version-550x550.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/61ejOV80CgL.AC_SL1500.jpg",
@@ -122,7 +122,7 @@
       "brand": "Samsung",
       "description": "Mid-range smartphone with a focus on performance and value.",
       "price": 499.99,
-      "quantity": 45,
+      "quantity": 39,
       "imageCover": "https://m.media-amazon.com/images/I/719Zb5jJA9L.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/719Zb5jJA9L.AC_SL1500.jpg",
@@ -392,7 +392,7 @@
       "brand": "Garmin",
       "description": "Fitness-focused smartwatch with a vibrant AMOLED display.",
       "price": 399.99,
-      "quantity": 25,
+      "quantity": 22,
       "imageCover": "https://m.media-amazon.com/images/I/51i6UseuG1L.AC_SX679.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/611y2gUko8L.AC_SX679.jpg",
@@ -629,6 +629,17 @@
   ],
   "users": [
     {
+      "0": {
+        "transactionID": "1N722060GV6596749",
+        "date": "2024-01-15T18:27:57.341Z",
+        "products": [
+          {
+            "id": 13,
+            "quantity": 1
+          }
+        ],
+        "totalPrice": "399.99"
+      },
       "id": 1,
       "name": "Jack Adam",
       "password": "123456Abcd",
@@ -640,6 +651,47 @@
       "wishlist": [
         1,
         2
+      ],
+      "orders": [
+        {
+          "transactionID": "5SY17869U1955000M",
+          "date": "2024-01-15T18:32:41.172Z",
+          "products": [
+            {
+              "id": 5,
+              "quantity": 2
+            },
+            {
+              "id": 8,
+              "quantity": 2
+            },
+            {
+              "id": 8,
+              "quantity": 2
+            },
+            {
+              "id": 8,
+              "quantity": 2
+            },
+            {
+              "id": 8,
+              "quantity": 2
+            },
+            {
+              "id": 8,
+              "quantity": 2
+            },
+            {
+              "id": 8,
+              "quantity": 2
+            },
+            {
+              "id": 8,
+              "quantity": 2
+            }
+          ],
+          "totalPrice": "3599.96"
+        }
       ]
     },
     {
@@ -705,47 +757,11 @@
       "user": 1,
       "products": [
         {
-          "id": 3,
+          "id": 6,
           "quantity": 1
         },
         {
-          "id": 9,
-          "quantity": 7
-        },
-        {
-          "id": 9,
-          "quantity": 7
-        },
-        {
-          "id": 9,
-          "quantity": 7
-        },
-        {
-          "id": 9,
-          "quantity": 7
-        },
-        {
-          "id": 9,
-          "quantity": 7
-        },
-        {
-          "id": 1,
-          "quantity": 1
-        },
-        {
-          "id": 18,
-          "quantity": 1
-        },
-        {
-          "id": 3,
-          "quantity": 1
-        },
-        {
-          "id": 1,
-          "quantity": 1
-        },
-        {
-          "id": 17,
+          "id": 5,
           "quantity": 1
         },
         {
@@ -769,7 +785,7 @@
           "quantity": 1
         }
       ],
-      "totalPrice": 2699.97,
+      "totalPrice": 2199.98,
       "ordered": false,
       "createdAt": "2022-01-15T12:30:00.000Z",
       "updatedAt": "2022-01-15T12:30:00.000Z"

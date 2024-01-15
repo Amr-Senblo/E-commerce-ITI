@@ -10,12 +10,15 @@ import { environment } from '../environments/environment';
 })
 export class CustomCartService {
   urlProduct = `${environment.apiUrl}/products`;
-  urlcart =` ${environment.apiUrl}/carts`;
+  urlcart = ` ${environment.apiUrl}/carts`;
   constructor(private http: HttpClient) { }
   getCartProducts(productsIds: string) {
     return this.http.get<IProduct[]>(`${this.urlProduct}?${productsIds}`)
   }
   editCartProducts(CartId: number, productsArray: IproductBuyed[]) {
     return this.http.patch<ICart>(`${this.urlcart}/${CartId}`, { "products": productsArray })
+  }
+  editCartTotalPrice(CartId: number, totalPrice: number) {
+    return this.http.patch<ICart>(`${this.urlcart}/${CartId}`, { "totalPrice": totalPrice })
   }
 }
