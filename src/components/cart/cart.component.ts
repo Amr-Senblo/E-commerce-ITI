@@ -6,35 +6,65 @@ import { CustomCartService } from '../../services/custom-cart-products.service';
 import { ProductCartComponent } from '../product-cart/product-cart.component';
 import { CommonModule } from '@angular/common';
 import { IproductBuyed } from '../../models/iproduct-buyed';
+import { UserAuthService } from '../../services/user-auth.service';
+import { IUser } from '../../models/iuser';
+import { LocalStrogeService } from '../../services/local-stroge.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [ProductCartComponent, CommonModule, RouterLink],
-  providers: [],
+  imports: [ProductCartComponent, CommonModule,RouterLink],
+  providers: [CartService, CustomCartService,UserAuthService, UserService,LocalStrogeService],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
 export class CartComponent {
   cartId: number = 0;
-  productsBuyedArray: IproductBuyed[] = [];
-  productsIds: number[] = [];
-  productsQuantity: number[] = [];
-  products: IProduct[] = [];
+  productsBuyedArray: IproductBuyed[] = []
+  productsIds: number[] = []
+  productsQuantity: number[] = []
+  products: IProduct[] = []
   totalPrice = 0;
   productsString!: string;
-  constructor(private getProductsService: CustomCartService, private cartService: CartService, private route: ActivatedRoute) {
-    this.route.params.subscribe(params => {
-      // Access the 'id' parameter
-      this.cartId = params['id'];
-      //console.log(this.cartId)
-    })
+  logstate!: boolean;
+  currentUser?: IUser;
+  // currentUserName?:string;
+  UserId?:number;
+
+  constructor(
+    private getProductsService: CustomCartService,
+    private cartService: CartService,
+    private route: ActivatedRoute,
+    private userAuthService: UserAuthService,
+    private storge: LocalStrogeService,
+    private userService:UserService
+    )
+    {
+          this.route.params.subscribe(params => {
+          this.cartId = params['id'];
+          })
+            this.logstate = this.userAuthService.LoggedState;
+            this.userAuthService.getAllUsers().subscribe((alluser) => {
+            let token = this.storge.getItemFromLocalStorge('accesToken') || this.storge.getItemFromSessionStorge('accesToken');
+            this.currentUser = alluser.find((user) => user.accessToken == token);
+            if (this.currentUser) {
+              this.userAuthService.setLoggedState = true ;
+              this.UserId = this.currentUser.id; // Store the current user's id
+              console.log(  this.UserId);
+
+            } else {
+              this.userAuthService.setLoggedState = false;
+              // this.UserId = ''; // Clear the current user's name if not logged in
+            }
+          });
   }
   ngOnInit(): void {
     this.products = [];
     this.cartService.getCart(this.cartId).subscribe({
       next: (data) => {
         //console.log(data);
+
         this.productsBuyedArray = data.products;
         for (let product of data.products) {
           this.productsIds.push(product.id);
