@@ -21,4 +21,12 @@
   <div>
       <app-products-array [products]="products"></app-products-array>
   </div>
+
+  <div class="d-flex align-items-center justify-content-center">
+    <app-pagination
+            [currentPage]="currentPage"
+            [totalPages]="getTotalPages()"
+            (pageChange)="onPageChange($event)"
+    ></app-pagination>
+</div>
 </div>
