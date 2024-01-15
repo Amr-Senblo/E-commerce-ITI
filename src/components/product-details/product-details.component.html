@@ -4,35 +4,26 @@
 <div class="box m-auto">
   <div class="images col-6">
     <div class="img-holder active ">
-      <img src="{{product.imageCover}}">
+      <img src="{{product.imageCover}}"  (click)="zoomOptions">
     </div>
-    <div class="img-holder border border-primary ">
-      <img src="{{product.images[0]}} " class="im">
+    <div class="img-holder border border-primary  " (click)="updateImage(product.images[0])">
+      <img src="{{product.images[0]}} " class="im"  (click)="zoomOptions">
     </div>
-    <div class="img-holder border border-primary ">
-      <img src="{{product.images[1]}}" class="im">
+    <div class="img-holder border border-primary " (click)="updateImage(product.images[1])">
+      <img src="{{product.images[1]}}" class="im "  (click)="zoomOptions" >
     </div>
-    <div class="img-holder border border-primary">
-      <img src="{{product.images[2]}}" class="im">
+    <div class="img-holder border border-primary  "(click)="updateImage(product.images[2])">
+      <img src="{{product.images[2]}}" class="im "  (click)="zoomOptions" >
     </div>
   </div>
   <div class="basic-info">
     <h1>{{product.name}}</h1>
     <div class="rate">
-      <!-- <i class="bi bi-star-fill text-warning"></i>
-      <i class="bi bi-star-fill text-warning"></i>
-      <i class="bi bi-star-fill text-warning"></i>
-      <i class="bi bi-star-fill text-warning"></i>
-      <i class="bi bi-star-fill text-warning"></i> -->
-
-      <!-- <span class="my-3"> -->
         <ngb-rating [(rate)]="product.ratingAverage == undefined? 0 : product.ratingAverage" [readonly]="true" [max]="5" class="rating-color" style="  color: var(--rating-color);
         font-size:30px;"></ngb-rating>
-      <!-- </span> -->
     </div>
     <span>${{product.price}}</span>
     <div class="options">
-      <!-- <button href="#" class="btn btn-primary p-3 mx-1">Buy It Now</button> -->
       <button (click)="AddToCart()" class="btn btn-success p-3 buttonX">Add to Cart</button>
     </div>
   </div>
