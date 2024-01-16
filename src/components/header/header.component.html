@@ -22,17 +22,11 @@
     <div class="user-container">
       <a [routerLink]="['Cart',currentUser?.id]" class="cart-anchor">
         <div class="cart">
-         
-          <span class="cart-count badge text-bg-danger" >
-            {{counter}}
-          
-          </span> 
 
           <span class="cart-count badge text-bg-danger">
             {{counter}}
 
           </span>
-
 
           <img src="assets/images/cart.png" alt="cart" class="cart-icon">
           <span class="cart-text">Cart</span>
@@ -43,10 +37,10 @@
       <div class="profile" (click)="toggleDropdown()">
         @if (currentUser)
         {
-          <!-- <img [src]="currentUser.profilePic" alt="profile picture" class="profile-icon"> -->
-          <img class="rounded-circle shadow-1-strong mx-4"
-          [src]="currentUser.profilePic" alt="avatar" width="35" height="30" />
-          <div class="username" style="color: white;">{{ currentUserName }}</div> <!-- Display the current user's name -->
+        <!-- <img [src]="currentUser.profilePic" alt="profile picture" class="profile-icon"> -->
+        <img class="rounded-circle shadow-1-strong mx-4" [src]="currentUser.profilePic" alt="avatar" width="35"
+          height="30" />
+        <div class="username" style="color: white;">{{ currentUserName }}</div> <!-- Display the current user's name -->
         }
         @else
         {
@@ -72,9 +66,9 @@
 
         <div class="dropdown-content" *ngIf="isDropdownOpen">
           <a routerLink="/myprofile"> <i class="fa-regular fa-user"></i>Profile</a>
-          <a  routerLink="WishList"><i class="fa-regular fa-heart" ></i> Wishlist</a>
+          <a routerLink="/WishList"><i class="fa-regular fa-heart"></i> Wishlist</a>
 
-          <a> <i class="fa-regular fa-credit-card"></i> Orders</a>
+          <a routerLink="/Orders/{{UserId}}"> <i class="fa-regular fa-credit-card"></i> Orders</a>
 
 
           <a (click)="logOut()" routerLink="/Login"><i class="fa-solid fa-power-off"></i> Logout</a>

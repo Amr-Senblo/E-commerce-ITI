@@ -12,11 +12,12 @@ import { UserService } from '../../services/user.service';
 import { CartService } from '../../services/cart.service';
 import { CustomCartService } from '../../services/custom-cart-products.service';
 import { forkJoin } from 'rxjs';
+import { ICart } from '../../models/icart';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  providers: [CategoryService,UserAuthService, UserService,LocalStrogeService, CartService,CustomCartService],
+  providers: [CategoryService, UserAuthService, UserService, LocalStrogeService, CartService, CustomCartService],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   imports: [CommonModule, RouterModule, FormsModule, ToastComponent],
@@ -24,7 +25,8 @@ import { forkJoin } from 'rxjs';
 export class HeaderComponent implements OnInit {
   @ViewChild(ToastComponent) toast!: ToastComponent;
 
-  @Input() counter: number=0;
+  //@Input() counter: number=0;
+  counter: number = 0;
   isDropdownOpen = false;
   categoriesDropdown = false;
   categories: any = [];
@@ -34,8 +36,9 @@ export class HeaderComponent implements OnInit {
   currentUser?: IUser;
   currentUserName?: string;
   cartId: number = 0;
-  UserId!:number;
-  productsCart!:number[];
+  UserId!: number;
+  productsCart!: number[];
+  cart!: ICart
 
   constructor(
     private categoryService: CategoryService,
@@ -44,10 +47,9 @@ export class HeaderComponent implements OnInit {
     private filterApi: FilterAPIService,
     private userAuthService: UserAuthService,
     private storge: LocalStrogeService,
-    private cartService:CartService,
+    private cartService: CartService,
     private CartCustomService: CustomCartService
-  )
-  {
+  ) {
     //Get Cart ID
     this.route.params.subscribe(params => {
       this.cartId = params['id'];
@@ -55,18 +57,23 @@ export class HeaderComponent implements OnInit {
 
     //Get User ID
     this.logstate = this.userAuthService.LoggedState;
-          this.userAuthService.getAllUsers().subscribe((alluser) => {
-          let token = this.storge.getItemFromLocalStorge('accesToken') || this.storge.getItemFromSessionStorge('accesToken');
-          this.currentUser = alluser.find((user) => user.accessToken == token);
-          if (this.currentUser) {
-            this.userAuthService.setLoggedState = true ;
-            this.UserId = this.currentUser.id; // Store the current user's id
-            console.log(  this.UserId);
-            this.currentUserName=this.currentUser.name
-          } else {
-            this.userAuthService.setLoggedState = false;
+    this.userAuthService.getAllUsers().subscribe((alluser) => {
+      let token = this.storge.getItemFromLocalStorge('accesToken') || this.storge.getItemFromSessionStorge('accesToken');
+      this.currentUser = alluser.find((user) => user.accessToken == token);
+      if (this.currentUser) {
+        this.userAuthService.setLoggedState = true;
+        this.UserId = this.currentUser.id; // Store the current user's id
+        console.log(this.UserId);
+        this.currentUserName = this.currentUser.name
+        this.CartCustomService.getCartContent(this.UserId).subscribe({
+          next: (val) => {
+            this.cart = val
           }
-        });
+        })
+      } else {
+        this.userAuthService.setLoggedState = false;
+      }
+    });
     //   this.cartService.getCart(this.cartId).subscribe({
     //     next: (cart) => {
     //       let quantities = cart.products.map(product => product.quantity);
@@ -76,14 +83,18 @@ export class HeaderComponent implements OnInit {
     //       this.counter = totalQuantity;
     //     }
     // });
+  }
 
-}
-
-ngOnInit(): void {
-  this.categoryService.getCategories().subscribe((data) => {
-    this.categories = data;
-  });
-}
+  ngOnInit(): void {
+    this.categoryService.getCategories().subscribe((data) => {
+      this.categories = data;
+    });
+    CustomCartService.cartCounter$.subscribe({
+      next: (value) => {
+        this.counter = value;
+      }
+    })
+  }
 
   logOut() {
     this.userAuthService.logOut();

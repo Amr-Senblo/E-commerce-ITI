@@ -19,6 +19,7 @@ import { SuccessPaymentComponent } from '../components/success-payment/success-p
 import { loginGuard } from '../guards/login.guard';
 import { logoutGuard } from '../guards/logout.guard';
 import { WishListComponent } from '../components/wish-list/wish-list.component';
+import { OrdersComponent } from '../components/orders/orders.component';
 export const routes: Routes = [
   {
     path: '',
@@ -39,25 +40,25 @@ export const routes: Routes = [
       {
         path: 'Cart/:id',
         component: CartComponent,
-        canActivate: [loginGuard],
+        /*canActivate: [logoutGuard] */
       },
       {
         path: 'WishList',
         component: WishListComponent,
-        canActivate: [loginGuard],
-      }, 
+        /*canActivate: [logoutGuard] */
+      },
       { path: 'Search/:word', component: FilterComponent },
       { path: 'AboutUs', component: AboutUsComponent },
       { path: 'Payment', component: PaymentComponent },
-      { path: 'success', component: SuccessPaymentComponent }
-
+      { path: 'success', component: SuccessPaymentComponent },
+      { path: 'Orders/:id', component: OrdersComponent, /*canActivate: [logoutGuard] */ }
     ],
   },
 
   {
     path: 'Login',
     component: RegisterLayoutComponent,
-    children: [{ path: '', component: LoginFormComponent,canActivate:[logoutGuard] }],
+    children: [{ path: '', component: LoginFormComponent, /*canActivate: [logoutGuard] */ }],
   },
   { path: 'CreateProduct', component: CreateProductComponent },
 

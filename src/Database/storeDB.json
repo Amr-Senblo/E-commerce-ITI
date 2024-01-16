@@ -629,17 +629,6 @@
   ],
   "users": [
     {
-      "0": {
-        "transactionID": "1N722060GV6596749",
-        "date": "2024-01-15T18:27:57.341Z",
-        "products": [
-          {
-            "id": 13,
-            "quantity": 1
-          }
-        ],
-        "totalPrice": "399.99"
-      },
       "id": 1,
       "name": "Jack Adam",
       "password": "123456Abcd",
@@ -664,25 +653,31 @@
             {
               "id": 8,
               "quantity": 2
-            },
+            }
+          ],
+          "totalPrice": "3599.96"
+        },
+        {
+          "transactionID": "5SY169U1955000M",
+          "date": "2024-01-15T18:32:41.172Z",
+          "products": [
             {
-              "id": 8,
+              "id": 5,
               "quantity": 2
             },
             {
               "id": 8,
               "quantity": 2
-            },
+            }
+          ],
+          "totalPrice": "3599.96"
+        },
+        {
+          "transactionID": "5SY869U1955000M",
+          "date": "2024-01-15T18:32:41.172Z",
+          "products": [
             {
-              "id": 8,
-              "quantity": 2
-            },
-            {
-              "id": 8,
-              "quantity": 2
-            },
-            {
-              "id": 8,
+              "id": 5,
               "quantity": 2
             },
             {
@@ -702,7 +697,12 @@
       "email": "user2@gmail.com",
       "phone": "01012345612",
       "profilePic": "https://images.unsplash.com/photo-1525186402429-b4ff38bedec6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "wishlist": [8, 7, 17, 18]
+      "wishlist": [
+        8,
+        7,
+        17,
+        18
+      ]
     },
     {
       "id": 3,
@@ -727,7 +727,11 @@
       "phone": "01012345614",
       "profilePic": "https://images.unsplash.com/photo-1506863530036-1efeddceb993?q=80&w=1488&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "Address": "101, Street, City, Country",
-      "wishlist": [1, 5, 4]
+      "wishlist": [
+        1,
+        5,
+        4
+      ]
     },
     {
       "id": 5,
@@ -742,7 +746,6 @@
         2,
         4
       ]
-
     },
     {
       "id": 181485683476,
@@ -839,7 +842,6 @@
       "passward": "A1234567",
       "confirmPassward": "A1234567",
       "wishlist": []
-
     }
   ],
   "carts": [
@@ -848,11 +850,15 @@
       "user": 1,
       "products": [
         {
+          "id": 8,
+          "quantity": 1
+        },
+        {
           "id": 5,
           "quantity": 1
         }
       ],
-      "totalPrice": 4.547473508864641e-13,
+      "totalPrice": 499.99,
       "ordered": false,
       "createdAt": "2022-01-15T12:30:00.000Z",
       "updatedAt": "2022-01-15T12:30:00.000Z"
@@ -863,14 +869,14 @@
       "products": [
         {
           "id": 1,
-          "quantity": 9
+          "quantity": 1
         },
         {
           "id": 2,
           "quantity": 1
         }
       ],
-      "totalPrice": 1699.98,
+      "totalPrice": 2799.98,
       "ordered": true,
       "createdAt": "2022-02-02T10:45:00.000Z",
       "updatedAt": "2022-02-02T10:45:00.000Z"

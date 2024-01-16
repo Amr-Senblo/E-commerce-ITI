@@ -28,7 +28,7 @@ import { IUser } from '../../models/iuser';
   selector: 'app-product-details',
   standalone: true,
   imports: [RouterLink, ProductComponent, NgbRating],
-  providers: [ProductService, CartService, CustomCartService,UserAuthService, UserService,LocalStrogeService],
+  providers: [],
   templateUrl: './product-details.component.html',
   template: ` <button (click)="incrementCounter()">Increment Counter</button> `,
   styleUrl: './product-details.component.css',
@@ -41,8 +41,8 @@ export class ProductDetailsComponent implements OnChanges {
   logstate!: boolean;
   currentUser?: IUser;
   // currentUserName?:string;
-  UserId!:number;
-  counter:number = 0;
+  UserId!: number;
+  counter: number = 0;
   @Input() product: IProduct = <IProduct>{};
   x: any;
 
@@ -52,52 +52,52 @@ export class ProductDetailsComponent implements OnChanges {
     private productService: ProductService,
     private userAuthService: UserAuthService,
     private storge: LocalStrogeService,
-    private userService:UserService
-    ) {
-      this.logstate = this.userAuthService.LoggedState;
-      this.userAuthService.getAllUsers().subscribe((alluser) => {
+    private userService: UserService
+  ) {
+    this.logstate = this.userAuthService.LoggedState;
+    this.userAuthService.getAllUsers().subscribe((alluser) => {
       let token = this.storge.getItemFromLocalStorge('accesToken') || this.storge.getItemFromSessionStorge('accesToken');
       this.currentUser = alluser.find((user) => user.accessToken == token);
       if (this.currentUser) {
-        this.userAuthService.setLoggedState = true ;
+        this.userAuthService.setLoggedState = true;
         this.UserId = this.currentUser.id; // Store the current user's id
-        console.log(  this.UserId);
+        console.log(this.UserId);
 
       } else {
         this.userAuthService.setLoggedState = false;
         // this.UserId = ''; // Clear the current user's name if not logged in
       }
     });
-    }
-    ngOnChanges(changes: SimpleChanges): void {
-      if (this.isFirstChange) {
-        this.isFirstChange = false;
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.isFirstChange) {
+      this.isFirstChange = false;
       return;
     }
     this.productId = this.product.id;
   }
   AddToCart() {
-  this.cartService.getCart(this.UserId).subscribe({
-    next: (value) => {
-      this.productsInCart = value.products || [];
+    this.cartService.getCart(this.UserId).subscribe({
+      next: (value) => {
+        this.productsInCart = value.products || [];
 
-      const existingProductIndex = this.productsInCart.findIndex(
-        product => product.id === this.productId
-      );
+        const existingProductIndex = this.productsInCart.findIndex(
+          product => product.id === this.productId
+        );
 
-      if (existingProductIndex !== -1) {
-        // Product exists, increment quantity
-        this.productsInCart[existingProductIndex].quantity++;
-      } else {
-        // Product not found, add it
-        this.productsInCart.push({ id: this.productId, quantity: 1 });
-      }
+        if (existingProductIndex !== -1) {
+          // Product exists, increment quantity
+          this.productsInCart[existingProductIndex].quantity++;
+        } else {
+          // Product not found, add it
+          this.productsInCart.push({ id: this.productId, quantity: 1 });
+        }
 
-      // Save the updated cart after checking or adding the product
-      this.CartCustomService.editCartProducts(this.UserId, this.productsInCart).subscribe();
-    },
-    error: (err) => console.log(err),
-  });
+        // Save the updated cart after checking or adding the product
+        this.CartCustomService.editCartProducts(this.UserId, this.productsInCart).subscribe();
+      },
+      error: (err) => console.log(err),
+    });
     // this.cartService.getCart(this.UserId).subscribe({
     //   next: (value) => {
     //     this.productsInCart = value.products || [];
@@ -123,15 +123,15 @@ export class ProductDetailsComponent implements OnChanges {
     this.showMessage('Added to cart');
 
     //TO increament counter
-    this.cartService.getCart(this.UserId).subscribe({
-      next: (cart) => {
-        let quantities = cart.products.map(product => product.quantity);
-        console.log(cart.products);
+    //   this.cartService.getCart(this.UserId).subscribe({
+    //     next: (cart) => {
+    //       let quantities = cart.products.map(product => product.quantity);
+    //       console.log(cart.products);
 
-        const totalQuantity = quantities.reduce((sum, quantity) => sum + quantity, 0);
-        this.counter = totalQuantity;
-      }
-  });
+    //       const totalQuantity = quantities.reduce((sum, quantity) => sum + quantity, 0);
+    //       this.counter = totalQuantity;
+    //     }
+    // });
 
     // Increment the counter
     // this.incrementCounter();
@@ -145,20 +145,20 @@ export class ProductDetailsComponent implements OnChanges {
   //   this.counter++;
   // }
 
-  incrementCounter() {
-    // this.cartService.incrementCounter();
-    // console.log("counter2 : ",this.cartService.incrementCounter());
+  // incrementCounter() {
+  //   // this.cartService.incrementCounter();
+  //   // console.log("counter2 : ",this.cartService.incrementCounter());
 
-    let counter = localStorage.getItem('counter');
-    if (counter) {
-      this.counter = parseInt(counter) + 1;
-    } else {
-      this.counter = 1;
-    }
-    localStorage.setItem('counter', this.counter.toString());
+  //   let counter = localStorage.getItem('counter');
+  //   if (counter) {
+  //     this.counter = parseInt(counter) + 1;
+  //   } else {
+  //     this.counter = 1;
+  //   }
+  //   localStorage.setItem('counter', this.counter.toString());
 
-    console.log('counter1: ', this.counter);
-  }
+  //   console.log('counter1: ', this.counter);
+  // }
 
 
   showMessage(message: string): void {

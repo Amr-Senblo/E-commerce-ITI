@@ -74,7 +74,7 @@ export class PaymentComponent implements OnInit {
                   }
                   this.userService.getUser(this.cartID).subscribe({
                     next: (val) => {
-                      this.Orders != val.orders;
+                      this.Orders = val.orders!;
                       this.Orders.push({ transactionID: details.id, date: new Date(), products: this.productsBuyedArray, totalPrice: this.price })
                       this.userService.updateUserOrders(this.cartID, this.Orders).subscribe();
                     }
