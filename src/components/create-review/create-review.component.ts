@@ -33,9 +33,7 @@ export class CreateReviewComponent implements OnInit {
   // @Input() userID!:number;
   userID: number = 1; //static until the guard finish
   @Input() productID!: number;
-  @Output() reviewCreated: EventEmitter<IReview[]> = new EventEmitter<
-    IReview[]
-  >();
+  @Output() reviewCreated: EventEmitter<IReview[]> = new EventEmitter<IReview[]>();
 
   user!: IUser;
   myForm: FormGroup;
@@ -66,7 +64,7 @@ export class CreateReviewComponent implements OnInit {
           this.userAuthService.setLoggedState = true ;
           this.currentUserName = this.currentUser.name; // Store the current user's name
           console.log(  this.currentUserName);
-          
+
         } else {
           this.userAuthService.setLoggedState = false;
           this.currentUserName = ''; // Clear the current user's name if not logged in
