@@ -20,13 +20,13 @@
     <div class="user-container ">
       <a routerLink="Cart/{{currentUser?.id}}" class="cart-anchor">
         <div class="cart ">
-         
+
           <span class="cart-count badge text-bg-danger" >
             {{counter}}
-          
-          </span> 
 
-          
+          </span>
+
+
            <img src="assets/images/cart.png" alt="cart" class="cart-icon">
           <span class="cart-text">Cart</span>
         </div>
@@ -36,8 +36,10 @@
       <div class="profile" (click)="toggleDropdown()">
         @if (currentUser)
         {
-          <img [src]="currentUser.profilePic" alt="profile picture" class="profile-icon">
-          <span class="username" style="color: white;">{{ currentUserName }}</span> <!-- Display the current user's name -->
+          <!-- <img [src]="currentUser.profilePic" alt="profile picture" class="profile-icon"> -->
+          <img class="rounded-circle shadow-1-strong  mx-4"
+          [src]="currentUser.profilePic" alt="avatar" width="35" height="30" />
+          <div class="username" style="color: white;">{{ currentUserName }}</div> <!-- Display the current user's name -->
         }
         @else
         {
