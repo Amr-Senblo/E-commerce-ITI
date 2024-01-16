@@ -11,9 +11,7 @@ import { CreateProductComponent } from '../components/create-product/create-prod
 import { AboutUsComponent } from '../components/about-us/about-us.component';
 import { ProductDetailsContainerComponent } from '../components/product-details-container/product-details-container.component';
 import { ProductListComponent } from '../components/product-list/product-list.component';
-
 import { UserProfileComponent } from '../components/user-profile/user-profile.component';
-
 import { RegisterLayoutComponent } from '../layouts/register-layout/register-layout.component';
 import { LoginFormComponent } from '../components/login-form/login-form.component';
 import { PaymentComponent } from '../components/payment/payment.component';
@@ -21,7 +19,6 @@ import { SuccessPaymentComponent } from '../components/success-payment/success-p
 import { loginGuard } from '../guards/login.guard';
 import { logoutGuard } from '../guards/logout.guard';
 import { WishListComponent } from '../components/wish-list/wish-list.component';
-
 export const routes: Routes = [
   {
     path: '',
@@ -46,7 +43,7 @@ export const routes: Routes = [
       {
         path: 'WishList',
         component: WishListComponent,
-        canActivateChild: [loginGuard],
+        canActivate: [loginGuard],
       },
       { path: 'Search/:word', component: FilterComponent },
       { path: 'AboutUs', component: AboutUsComponent },

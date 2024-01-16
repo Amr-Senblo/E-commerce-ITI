@@ -9,13 +9,40 @@
       <p class="card-text desc">
         {{ product.CommonSpecifications.Storage }}
       </p>
-      <div class="d-flex justify-content-between align-items-center my-3">
+      <div class="d-flex justify-content-between align-items-center my-2">
         <div class="price">
           <span>&#36;{{ product.price }}</span>
         </div>
         <div>
-          <a class="fav-cont" (click)="onWishList()"><i [class]="heart + ' favourite'"></i></a>
+          <!-- <a class="fav-cont" (click)="onWishList()"><i [class]="heart + ' favourite'"></i></a> -->
+          <!-- <a class="fav-cont" (click)="onWishList()"><i class="fa-regular fa-heart v" [class.wish]="userWishList.includes(product.id)"></i></a> -->
+          <a class="fav-cont" (click)="onWishList()"><i class="fa-heart favourite "
+            [class.fa-regular]="!wished"
+            [class.fa-solid]="wished"
+            [class.wish]="wished">
+         </i></a>
+         
         </div>
+      
+      </div>
+      <div  class="mb-2">
+        @switch (product.quantity) {
+          @case (0) {
+          <span class="badge rounded-pill text-bg-danger">Out OF Stock</span>
+          }
+          @case (1) {
+
+          <span class="badge rounded-pill text-bg-warning">Last Item</span>
+          }
+          @case (2) {
+          <span class="badge rounded-pill text-bg-info">Last Two Items</span>
+          }
+          @default {
+
+          <span class=" badge rounded-pill text-bg-success">In Stock</span>
+
+          }
+          }
       </div>
       <a class="product" (click)="refreshRoute()">
         <div class="m-auto my-0 text-center Details">

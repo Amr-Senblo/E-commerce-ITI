@@ -4,6 +4,7 @@ import { ProductComponent } from '../product/product.component';
 import { CommonModule } from '@angular/common';
 import { PaginationComponent } from '../pagination/pagination.component';
 import { IUser } from '../../models/iuser';
+import { UserAuthService } from '../../services/user-auth.service';
 
 @Component({
   selector: 'app-products-array',
@@ -13,11 +14,17 @@ import { IUser } from '../../models/iuser';
   styleUrl: './products-array.component.css'
 })
 export class ProductsArrayComponent {
-
+  wishList:number[]=[]
   @Input() products: IProduct[] = []
   currentPage = 1;
   itemsPerPage = 8;
-
+constructor(private userAuth: UserAuthService)   {
+  this.userAuth.getCurrentUser().subscribe(user=>{
+    this.wishList=user?.wishlist||[]
+    
+   }
+   )
+}
   onPageChange(page: number): void {
     this.currentPage = page;
   }

@@ -81,9 +81,12 @@
     border: 0.5px solid #3dc47e;
 }
 
-.logo {
-    max-width: 10rem;
-    margin-bottom: 5rem;
+img.logo {
+    /* max-width: 10rem; */
+    /* margin-bottom: 5rem; */
+    height: 50px !important;
+    width: 50px !important;
+
     cursor: pointer;
 }
 
