@@ -1,9 +1,8 @@
-
 <div class="header">
   <div class="first-header-container">
     <div routerLink="Home" class="logo-container">
 
-      <img src="assets/images/logo-white.png" alt="logo" class="logo">
+      <img src="assets/images/logo-white .png" alt="logo" class="logo">
 
     </div>
 
@@ -12,6 +11,9 @@
       <input type="text" class="search-input" (input)="gitNames(searchInput.value)"
         (keyup.enter)="onSearchEnter(searchInput.value)" #searchInput placeholder="Search for anything..."
         [(ngModel)]="searchkeyword">
+
+
+
       <a [routerLink]="['/Search',searchkeyword]"><img src="assets/images/search1.png" alt="search"
           class="search-icon"></a>
     </div>
@@ -21,13 +23,13 @@
       <a routerLink="Cart/{{currentUser?.id}}" class="cart-anchor">
         <div class="cart ">
 
-          <span class="cart-count badge text-bg-danger" >
+          <span class="cart-count badge text-bg-danger">
             {{counter}}
 
           </span>
 
 
-           <img src="assets/images/cart.png" alt="cart" class="cart-icon">
+          <img src="assets/images/cart.png" alt="cart" class="cart-icon">
           <span class="cart-text">Cart</span>
         </div>
       </a>
@@ -43,8 +45,8 @@
         }
         @else
         {
-          <a routerLink="Login" style="text-decoration: none;"><span class="signin-text">Sign In</span></a>
-          <img src="assets/images/profile.svg" alt="profile" class="profile-icon">
+        <a routerLink="Login" style="text-decoration: none;"><span class="signin-text">Sign In</span></a>
+        <img src="assets/images/profile.svg" alt="profile" class="profile-icon">
         }
       </div>
 
@@ -61,13 +63,16 @@
       </div> -->
 
       <div class="dropdown">
+
+
         <div class="dropdown-content" *ngIf="isDropdownOpen">
-          <a> <i class="fa-regular fa-user"></i>Profile</a>
-          <a routerLink="WishList"><i class="fa-regular fa-heart"></i> Wishlist</a>
+          <a routerLink="/myprofile"> <i class="fa-regular fa-user"></i>Profile</a>
+          <a><i class="fa-regular fa-heart"></i> Wishlist</a>
+
           <a> <i class="fa-regular fa-credit-card"></i> Orders</a>
 
 
-          <a (click)="logOut()"><i class="fa-solid fa-power-off"></i> Logout</a>
+          <a (click)="logOut()" routerLink="/Login"><i class="fa-solid fa-power-off"></i> Logout</a>
         </div>
       </div>
     </div>
@@ -77,6 +82,7 @@
   <!-- <button mat-stroked-button (click)="openSnackBar()">Show snack-bar</button> -->
 
   <!-- <button (click)="showstate()">Test</button> -->
+
 
 
 

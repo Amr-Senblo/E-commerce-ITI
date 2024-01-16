@@ -1,0 +1,143 @@
+<div class="container-fluid rounded bg-white "> <!--mt-5 mb-5-->
+    <div class="row">
+        <div class="col-md-3 border-right picture-side">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
+                    width="150px"
+                    src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
+                    class="font-weight-bold">Edogaru</span><span class="text-white-50">edogaru.com.my</span><span>
+                </span></div>
+        </div>
+        <div class="info-container col-md-8 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="text-right">Main Info</h2>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-3">
+                        <label for="Name" class="labels">Name</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="text" class="form-control" placeholder="Your Name" value=""
+                            [attr.disabled]="isNameEditing ? null : true">
+                        <div class=" edit-icon" (click)="toggleEdit('name')">
+                            <i class="fas fa-edit ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3 ">
+                    <div class="col-md-3 lbls">
+                        <label class="labels">Surname</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="text" class="form-control" value="" placeholder="surname"
+                            [attr.disabled]="isSurnameEditing ? null : true">
+                        <div class=" edit-icon" (click)="toggleEdit('surname')">
+                            <i class="fas fa-edit ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3 ">
+                    <div class="col-md-3 lbls">
+                        <label class="labels">Email</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="text" class="form-control" placeholder="Enter your email" value=""
+                            [attr.disabled]="isEmailEditing ? null : true">
+                        <div class=" edit-icon" (click)="toggleEdit('email')">
+                            <i class="fas fa-edit ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3 ">
+                    <div class="col-md-3 lbls">
+                        <label class="labels">Phone Number</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="text" class="form-control" placeholder="Enter phone number" value=""
+                            [attr.disabled]="isPhoneEditing ? null : true">
+                        <div class=" edit-icon" (click)="toggleEdit('phone')">
+                            <i class="fas fa-edit ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3 ">
+                    <div class="col-md-3 lbls">
+                        <label class="labels">Address</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="text" class="form-control" placeholder="Enter your Address" value=""
+                            [attr.disabled]="isAddressEditing ? null : true">
+                        <div class=" edit-icon" (click)="toggleEdit('address')">
+                            <i class="fas fa-edit ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 text-end"><button class="btn btn-primary profile-button" type="button">Update
+                        Info</button></div>
+            </div>
+
+
+
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="text-right">Change Password</h2>
+                </div>
+
+                <!-- Old Password -->
+                <div class="row mt-1">
+                    <div class="col-md-3 lbls">
+                        <label class="labels">Old password</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="{{ showOldPassword ? 'text' : 'password' }}" class="form-control"
+                            placeholder="Current Password" value="" />
+                        <div class="show-password-icon" type="button" (click)="togglePassword('old')">
+                            <i class="{{ showOldPassword ? 'fa fa-eye-slash' : 'fa fa-eye' }}"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Password -->
+                <div class="row mt-2">
+                    <div class="col-md-3 lbls">
+                        <label class="labels">New Password</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="{{ showNewPassword ? 'text' : 'password' }}" class="form-control"
+                            placeholder="Enter a New Password" value="" />
+                        <div class="show-password-icon" type="button" (click)="togglePassword('new')">
+                            <i class="{{ showNewPassword ? 'fa fa-eye-slash' : 'fa fa-eye' }}"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="row mt-3 ">
+                    <div class="col-md-3 lbls">
+                        <label class="labels">Confirm Password</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="{{ showConfirmPassword ? 'text' : 'password' }}" class="form-control"
+                            placeholder="Confirm New Password" value="" />
+                        <div class="show-password-icon" type="button" (click)="togglePassword('confirm')">
+                            <i class="{{ showConfirmPassword ? 'fa fa-eye-slash' : 'fa fa-eye' }}"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 text-end">
+                    <button class="btn btn-primary profile-button" type="button">Change Password</button>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
