@@ -32,11 +32,7 @@
       "brand": "Apple",
       "description": "Pro-level smartphone with enhanced camera and performance.",
       "price": 1299.99,
-<<<<<<< HEAD
       "quantity": 2,
-=======
-      "quantity": 25,
->>>>>>> dev
       "imageCover": "https://m.media-amazon.com/images/I/71xb2xkN5qL.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/61d8XHJuE2L.AC_SL1500.jpg",
@@ -126,11 +122,7 @@
       "brand": "Samsung",
       "description": "Mid-range smartphone with a focus on performance and value.",
       "price": 499.99,
-<<<<<<< HEAD
       "quantity": 0,
-=======
-      "quantity": 39,
->>>>>>> dev
       "imageCover": "https://m.media-amazon.com/images/I/719Zb5jJA9L.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/719Zb5jJA9L.AC_SL1500.jpg",
@@ -710,15 +702,7 @@
       "email": "user2@gmail.com",
       "phone": "01012345612",
       "profilePic": "https://images.unsplash.com/photo-1525186402429-b4ff38bedec6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-<<<<<<< HEAD
       "wishlist": [8, 7, 17, 18]
-=======
-      "Address": "456, Street, City, Country",
-      "wishlist": [
-        1,
-        3
-      ]
->>>>>>> dev
     },
     {
       "id": 3,
@@ -743,14 +727,7 @@
       "phone": "01012345614",
       "profilePic": "https://images.unsplash.com/photo-1506863530036-1efeddceb993?q=80&w=1488&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "Address": "101, Street, City, Country",
-<<<<<<< HEAD
       "wishlist": [1, 5, 4]
-=======
-      "wishlist": [
-        1,
-        4
-      ]
->>>>>>> dev
     },
     {
       "id": 5,
