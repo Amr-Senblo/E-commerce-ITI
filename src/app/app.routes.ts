@@ -37,7 +37,7 @@ export const routes: Routes = [
       {
         path: 'WishList',
         component: WishListComponent,
-        canActivateChild: [loginGuard],
+        canActivate: [loginGuard],
       }, 
       { path: 'Search/:word', component: FilterComponent },
       { path: 'AboutUs', component: AboutUsComponent },
