@@ -8,6 +8,8 @@ import { CommonModule } from '@angular/common';
 import { ReviewService } from '../../services/review.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable, catchError, map, of, switchMap } from 'rxjs';
+import { UserAuthService } from '../../services/user-auth.service';
+import { LocalStrogeService } from '../../services/local-stroge.service';
 
 @Component({
   selector: 'app-reviews',
@@ -27,11 +29,40 @@ export class ReviewsComponent implements OnChanges{
   reviewAndUser!:{"review":IReview,"user":any};
   ArrayOfReviewAndUser:{"review":IReview,"user":IUser}[]=[];
 
+  logstate!: boolean;
+  currentUser?: IUser;
+  currentUserName?:string;
+
+  check:boolean = true;
+
   constructor(
     private userService: UserService,
     private reviewService: ReviewService,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute ,
+    private userAuthService: UserAuthService,
+    private storge: LocalStrogeService
+  ) {
+
+
+    this.logstate = this.userAuthService.LoggedState;
+      this.userAuthService.getAllUsers().subscribe((alluser) => {
+        let token = this.storge.getItemFromLocalStorge('accesToken') || this.storge.getItemFromSessionStorge('accesToken');
+        this.currentUser = alluser.find((user) => user.accessToken == token);
+        if (this.currentUser) {
+          this.userAuthService.setLoggedState = true ;
+          this.currentUserName = this.currentUser.name; // Store the current user's name
+          console.log(  this.currentUserName);
+          this.check = true ;
+          
+        } else {
+          this.userAuthService.setLoggedState = false;
+          this.currentUserName = ''; // Clear the current user's name if not logged in
+         
+        }
+          });
+
+
+  }
 
   // ngOnChanges(changes: SimpleChanges): void {
   //   if (this.isFirstChange) {
@@ -61,9 +92,11 @@ export class ReviewsComponent implements OnChanges{
     }
     this.reviews=this.reviews.reverse(); // Reverse the array
 
-    console.log(this.reviews)
+    console.log("reviews",this.reviews)
     for (let review of this.reviews) {
       this.Ratings.push(review.rating);
+      console.log("review raiting  is : ",review.rating);
+      
       this.usersIds.push(review.user);
     }
     let users = this.usersIds.map(value => `id=${value}`);
@@ -75,7 +108,7 @@ export class ReviewsComponent implements OnChanges{
           if (this.usersIds.includes(review.user))
             this.UsersInOrderReviews.push(this.users.filter(user => user.id === review.user)[0]);
         }
-        console.log(this.UsersInOrderReviews);
+        console.log("users in order review : ", this.UsersInOrderReviews);
 
       }
     })
@@ -83,7 +116,7 @@ export class ReviewsComponent implements OnChanges{
     this.avgRating = this.Ratings.reduce((accumulator, currentValue) => {
       return accumulator + currentValue;
     }, 0) / this.Ratings.length;
-    //console.log(this.avgRating)
+    console.log("avg rate : " , this.avgRating)
   }
 
 }

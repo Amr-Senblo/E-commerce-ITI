@@ -1,51 +1,68 @@
 import { CommonModule, DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
 import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FilterAPIService } from '../../services/filter-api.service';
 import { UserAuthService } from '../../services/user-auth.service';
 import { IUser } from '../../models/iuser';
 import { LocalStrogeService } from '../../services/local-stroge.service';
 import { ToastComponent } from '../toast/toast.component';
+
 import { UserService } from '../../services/user.service';
 import { CartService } from '../../services/cart.service';
 import { CustomCartService } from '../../services/custom-cart-products.service';
 import { forkJoin } from 'rxjs';
 import { ICart } from '../../models/icart';
 
+
 @Component({
   selector: 'app-header',
   standalone: true,
-  providers: [CategoryService, UserAuthService, UserService, LocalStrogeService, CartService, CustomCartService],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   imports: [CommonModule, RouterModule, FormsModule, ToastComponent],
 })
-export class HeaderComponent implements OnInit {
-  @ViewChild(ToastComponent) toast!: ToastComponent;
+export class HeaderComponent implements OnInit, OnChanges {
+  counter:number =0;
+  logOut() {
+    this.userAuthService.logOut();
+    this.toast.openSnackBar('Logged Out', '');
+    this.logstate = this.userAuthService.LoggedState;
+    this.currentUser = undefined;
+  }
+  showstate() {
+    console.log(this.userAuthService.LoggedState);
+  }
+
 
   //@Input() counter: number=0;
   counter: number = 0;
+
   isDropdownOpen = false;
   categoriesDropdown = false;
   categories: any = [];
   searchkeyword: string = '';
-  names!: string[];
+  @Input()names!: string[];
   logstate!: boolean;
   currentUser?: IUser;
+
   currentUserName?: string;
   cartId: number = 0;
   UserId!: number;
   productsCart!: number[];
   cart!: ICart
+  @ViewChild(ToastComponent) toast!: ToastComponent;
+
+  searchKeyword: string = '';
+
 
   constructor(
     private categoryService: CategoryService,
-    private route: ActivatedRoute,
-    private router: Router,
+    private route: Router,
     private filterApi: FilterAPIService,
     private userAuthService: UserAuthService,
+
     private storge: LocalStrogeService,
     private cartService: CartService,
     private CartCustomService: CustomCartService
@@ -72,6 +89,7 @@ export class HeaderComponent implements OnInit {
         })
       } else {
         this.userAuthService.setLoggedState = false;
+        this.currentUserName = ''; // Clear the current user's name if not logged in
       }
     });
     //   this.cartService.getCart(this.cartId).subscribe({
@@ -99,13 +117,24 @@ export class HeaderComponent implements OnInit {
   logOut() {
     this.userAuthService.logOut();
     this.toast.openSnackBar('Logged Out', '');
-    this.logstate = this.userAuthService.LoggedState;
-    this.currentUser = undefined;
   }
 
-  showstate() {
-    console.log(this.userAuthService.LoggedState);
+
+    const storedKeyword = localStorage.getItem('searchKeyword');
+  if (storedKeyword) {
+    this.searchKeyword = storedKeyword;
+    this.getNames(this.searchKeyword);
   }
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.names = changes['names'].currentValue
+  }
+    
+  
+
+
+  
+
 
 
   toggleCategoriesDropdown() {
@@ -118,14 +147,60 @@ export class HeaderComponent implements OnInit {
   }
 
   onSearchEnter(searchword: string) {
-    this.router.navigateByUrl(`Search/${searchword}`);
+    this.route.navigateByUrl(`Search/${searchword}`);
+    this.onSearch();
   }
+  noResult :string ='';
 
-  gitNames(word: string) {
+  getNames(word: string) {
+    // console.log("fdfdf")
     this.filterApi.getProductNameFromShearch(word).subscribe((data) => {
       this.names = data;
-      console.log(data)
+      console.log( "items in search ", this.names);
+      if (this.names.length==0){
+        console.log("no result found");
+       this.noResult = "No results found";
+      }
+      
     });
+    //   .subscribe((data) => {this.names = data
+    //     console.log(this.names)});
+
     console.log(word);
   }
+   
+  userNavigated: boolean = false;
+  itemClicked: boolean = false;
+
+  navigateToResult(result: string) {
+    this.userNavigated = true;
+    this.itemClicked = true;
+    // Navigate to the same page with the selected result
+    this.route.navigate(['/Search', result]);
+  }
+
+
+
+  
+  onSearch() {
+    localStorage.setItem('searchKeyword', this.searchKeyword);
+    this.getNames(this.searchKeyword);
+  }
+
+  onKeyUp(event: KeyboardEvent) {
+    if (event.key === 'Backspace') {
+      this.names = [];
+      this.itemClicked = false;
+    }
+  }
+  inputCleared: boolean = false;
+
+  onKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Backspace') {
+      this.names = [];
+      this.inputCleared = true;
+      this.itemClicked = false;
+    }
+  }
+
 }
