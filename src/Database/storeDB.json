@@ -819,6 +819,30 @@
         {
           "id": 7,
           "quantity": 1
+        },
+        {
+          "id": 5,
+          "quantity": 1
+        },
+        {
+          "id": 5,
+          "quantity": 1
+        },
+        {
+          "id": 5,
+          "quantity": 1
+        },
+        {
+          "id": 5,
+          "quantity": 1
+        },
+        {
+          "id": 6,
+          "quantity": 1
+        },
+        {
+          "id": 6,
+          "quantity": 1
         }
       ],
       "totalPrice": 2199.98,
@@ -847,17 +871,8 @@
     {
       "id": 3,
       "user": 3,
-      "products": [
-        {
-          "id": 2,
-          "quantity": 1
-        },
-        {
-          "id": 3,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 1799.98,
+      "products": [],
+      "totalPrice": 0,
       "ordered": false,
       "createdAt": "2022-03-20T15:00:00.000Z",
       "updatedAt": "2022-03-20T15:00:00.000Z"
