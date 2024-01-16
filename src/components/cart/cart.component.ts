@@ -30,7 +30,7 @@ export class CartComponent {
   logstate!: boolean;
   currentUser?: IUser;
   // currentUserName?:string;
-  UserId?:number;
+  UserId!:number;
 
   constructor(
     private getProductsService: CustomCartService,
