@@ -12,6 +12,8 @@ import { ProductDetailsContainerComponent } from '../components/product-details-
 import { ProductListComponent } from '../components/product-list/product-list.component';
 import { RegisterLayoutComponent } from '../layouts/register-layout/register-layout.component';
 import { LoginFormComponent } from '../components/login-form/login-form.component';
+import { PaymentComponent } from '../components/payment/payment.component';
+import { SuccessPaymentComponent } from '../components/success-payment/success-payment.component';
 import { loginGuard } from '../guards/login.guard';
 import { logoutGuard } from '../guards/logout.guard';
 import { WishListComponent } from '../components/wish-list/wish-list.component';
@@ -40,8 +42,11 @@ export const routes: Routes = [
       }, 
       { path: 'Search/:word', component: FilterComponent },
       { path: 'AboutUs', component: AboutUsComponent },
+      { path: 'Payment', component: PaymentComponent },
+      { path: 'success', component: SuccessPaymentComponent }
     ],
   },
+
   {
     path: 'Login',
     component: RegisterLayoutComponent,
