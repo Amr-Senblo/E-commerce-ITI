@@ -1,17 +1,28 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { UserProfileService } from '../../services/user-profile.service';
 import { FormsModule } from '@angular/forms';
+import { UserAuthService } from '../../services/user-auth.service';
+import { IUser } from '../../models/iuser';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   providers: [UserProfileService],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css',
 })
 export class UserProfileComponent {
-  constructor(private userService: UserProfileService) {}
+  loggedUser!: IUser;
+  constructor(
+    private userService: UserProfileService,
+    private userAuthService: UserAuthService
+  ) {
+    this.userAuthService.getCurrentUser().subscribe((data) => {
+      if (data) this.loggedUser = data;
+    });
+  }
   @ViewChild('nameInput') nameInput!: ElementRef;
   @ViewChild('surnameInput') surnameInput!: ElementRef;
   @ViewChild('emailInput') emailInput!: ElementRef;
@@ -21,23 +32,9 @@ export class UserProfileComponent {
   @ViewChild('newPasswordInput') newPasswordInput!: ElementRef;
   @ViewChild('confirmPasswordInput') confirmPasswordInput!: ElementRef;
 
-  loggedUser = {
-    id: 127351569297,
-    name: 'Omdaaaaaaa',
-    surname: 'Omda',
-    email: 'amrsenblo@gmail.com',
-    phone: '01012345678',
-    profilePic:
-      'https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg',
-    Address: 'Egypt, ElGarbiah, Tanta',
-    gender: 'male',
-    passward: 'A1234567',
-    confirmPassward: 'A1234567',
-    wishlist: [],
-  };
-
   passwordChanged = false;
   wrongPassword = false;
+  mismatchPassword = false;
 
   isNameEditing = false;
   isSurnameEditing = false;
@@ -48,6 +45,9 @@ export class UserProfileComponent {
   showOldPassword = false;
   showNewPassword = false;
   showConfirmPassword = false;
+
+  userInfoUpdatedSuccess = false;
+  userInfoUpdatedFailure = false;
 
   toggleEdit(field: string) {
     if (field === 'name') {
@@ -96,14 +96,16 @@ export class UserProfileComponent {
       this.isAddressEditing = false;
     }
 
-    this.userService.updateUser(this.loggedUser.id, updatedUser).subscribe(
-      (data) => {
-        console.log(data);
+    this.userService.updateUser(this.loggedUser.id, updatedUser).subscribe({
+      next: (data) => {
+        this.loggedUser = data;
+        this.userInfoUpdatedSuccess = true;
       },
-      (err) => {
+      error: (err) => {
         console.log(err);
-      }
-    );
+        this.userInfoUpdatedFailure = true;
+      },
+    });
   }
 
   changePassword() {
@@ -111,27 +113,32 @@ export class UserProfileComponent {
     const newPassword = this.newPasswordInput.nativeElement.value;
     const confirmPassword = this.confirmPasswordInput.nativeElement.value;
 
-    if (oldPassword !== this.loggedUser.passward) {
+    if (oldPassword !== this.loggedUser.password) {
+      this.wrongPassword = true;
       console.log('Wrong Password');
     } else if (
       newPassword === confirmPassword &&
-      oldPassword === this.loggedUser.passward
+      oldPassword === this.loggedUser.password
     ) {
       this.userService
         .changePassword(this.loggedUser.id, {
           password: newPassword,
+          confirmPassword: confirmPassword,
         })
-        .subscribe(
-          (data) => {
-            console.log(data);
+        .subscribe({
+          next: (data) => {
+            this.loggedUser = data;
             this.passwordChanged = true;
+            this.oldPasswordInput.nativeElement.value = '';
+            this.newPasswordInput.nativeElement.value = '';
+            this.confirmPasswordInput.nativeElement.value = '';
           },
-          (err) => {
+          error: (err) => {
             console.log(err);
-            this.wrongPassword = true;
-          }
-        );
+          },
+        });
     } else {
+      this.mismatchPassword = true;
       console.log('Passwords do not match');
     }
   }

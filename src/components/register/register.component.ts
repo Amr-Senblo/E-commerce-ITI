@@ -18,11 +18,13 @@ export class RegisterComponent {
   @ViewChild('userForm', { static: false })
   userForm!: NgForm;
 
+  matched: boolean = false;
   submitted = false;
+  userIdCounter = Math.floor(Math.random() * 1000000000);
   userModel: IUser = {
-    //auto generate id automatically
-    id: Math.floor(Math.random() * 1000000000000),
-    password: '',
+    id: this.userIdCounter,
+    accessToken: this.userIdCounter.toString(),
+
     name: '',
     email: '',
     phone: '',
@@ -30,20 +32,20 @@ export class RegisterComponent {
       'https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg',
     Address: '',
     gender: '',
-    passward: '',
-    confirmPassward: '',
+    password: '',
+    confirmPassword: '',
     wishlist: [],
-    accessToken: '',
   };
   constructor(
     private _registerService: RegisterService // private _ngForm: NgForm
   ) {}
 
   passowrdMatch() {
-    return this.userModel.passward === this.userModel.confirmPassward;
+    this.matched = this.userModel.password === this.userModel.confirmPassword;
   }
   onSubmit() {
     this.submitted = true;
+
     this._registerService.register(this.userModel).subscribe(
       (data) => {
         console.log('Success!', data);
