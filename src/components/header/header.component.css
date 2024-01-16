@@ -38,8 +38,8 @@
     justify-content: center;
     width: 40%;
     height: 2.5rem;
-    border: 1px solid #ffffff;
-
+    border: 1px solid #535353;
+    color: white !important;
     border-radius: 0.5rem;
 }
 
@@ -149,7 +149,15 @@
     font-weight: 500;
 }
 
-
+.search-container[_ngcontent-ng-c642065583] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 2.5rem;
+  border: 1px solid #535353 !important;
+  border-radius: 0.5rem;
+}
 
 /*
 .second-header-container {

@@ -10,4 +10,5 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './main-layout.component.css',
   imports: [HeaderComponent, FooterComponent, RouterOutlet],
 })
-export class MainLayoutComponent {}
+export class MainLayoutComponent {
+}

@@ -27,7 +27,8 @@ import { CartService } from '../../services/cart.service';
     ProductsArrayComponent,
     ReviewsComponent,
     ProductComponent,
-    CreateReviewComponent
+    CreateReviewComponent,
+    ProductDetailsComponent
   ],
 
   providers: [ProductService],
@@ -42,12 +43,11 @@ export class ProductDetailsContainerComponent implements OnInit {
   breadCrumbTitles: string[] = [];
   breadCrumbLinks: string[] = [];
   @Input() reviews: IReview[] = [];
-
   constructor(private reviewService:ReviewService,
     private route: ActivatedRoute,
     private productService: ProductService,
     private changeDetectorRef: ChangeDetectorRef ,
-  
+
     ) {
     this.route.params.subscribe(params => {
       this.productId = +params['id'];
@@ -72,12 +72,12 @@ export class ProductDetailsContainerComponent implements OnInit {
     })
   }
 
-  handleReviewCreated(createdReview: IReview[]) 
+  handleReviewCreated(createdReview: IReview[])
   {
     // Check if reviews are available
       this.reviews=createdReview;
       // this.changeDetectorRef.detectChanges(); // Trigger change detection
-   
+
   }
 
 
