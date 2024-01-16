@@ -8,7 +8,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductComponent } from '../product/product.component';
 import { IProduct } from '../../models/iproduct';
 import { CartService } from '../../services/cart.service';
@@ -17,19 +17,20 @@ import { IproductBuyed } from '../../models/iproduct-buyed';
 import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
 import { ICart } from '../../models/icart';
+import { HttpClientModule } from '@angular/common/http';
+import { ReviewService } from '../../services/review.service';
 
 //import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [RouterLink, ProductComponent, NgbRating],
-  providers: [ProductService, CartService, CustomCartService],
+  imports: [RouterLink, ProductComponent, NgbRating , HttpClientModule],
+  providers: [ProductService, CartService, CustomCartService , ReviewService ],
   templateUrl: './product-details.component.html',
-  template: ` <button (click)="incrementCounter()">Increment Counter</button> `,
   styleUrl: './product-details.component.css',
 })
-export class ProductDetailsComponent implements OnChanges {
+export class ProductDetailsComponent implements OnChanges ,OnInit {
   private isFirstChange = true;
   cartId = 1;
   productsInCart: IproductBuyed[] = [];
@@ -37,19 +38,49 @@ export class ProductDetailsComponent implements OnChanges {
   @Input() counter = 0;
   @Input() product: IProduct = <IProduct>{};
   x: any;
+  @Input() rev :any;
+  prodId :number =0;
+
+  avgRating: number = 0;
+  Ratings: number[] = [];
 
   constructor(
     private CartCustomService: CustomCartService,
     private cartService: CartService,
-    private productService: ProductService
-    ) {}
+    private productService: ProductService ,
+    private revServices :ReviewService ,
+   private myActivated:ActivatedRoute
+    ) {
+      this.prodId = myActivated.snapshot.params["id"];
+    console.log("ID of product : "+this.prodId);
+    }
+
     ngOnChanges(changes: SimpleChanges): void {
       if (this.isFirstChange) {
         this.isFirstChange = false;
       return;
     }
     this.productId = this.product.id;
+
+    
+    
+
+    this.avgRating = this.Ratings.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue;
+    }, 0) / this.Ratings.length;
+    console.log("avg rate : " , this.avgRating)
   }
+
+
+  // ngOnInit(): void {
+  //   this.revService.getReview(this.prodId).subscribe({
+  //     next:(data)=>{
+  //        console.log(data)
+  //       this.rev = data;
+  //     },
+  //     error:()=>{console.log(" Error")}
+  //   })
+  // }
   AddToCart() {
     this.cartService.getCart(this.cartId).subscribe({
       next: (value) => {
@@ -136,4 +167,7 @@ export class ProductDetailsComponent implements OnChanges {
     zoomFactor: 3,
     container: 'container-element',
   };
+
+
+ 
 }
