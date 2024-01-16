@@ -78,7 +78,7 @@
                 <div class="form-group col-md-6">
                     <label for="password">Password</label>
                     <input class="form-control" type="password" placeholder="Enter your password" name="password"
-                        required #password="ngModel" [(ngModel)]="userModel.passward" pattern="^(?=.*[A-Z]).{8,}$">
+                        required #password="ngModel" [(ngModel)]="userModel.password" pattern="^(?=.*[A-Z]).{8,}$">
 
                     @if (password.errors&&(password.touched || password.invalid)) {
                     <small class="text-danger" *ngIf="password.errors['required'] && password.touched">Password is
@@ -90,14 +90,14 @@
 
                 <div class="form-group col-md-6">
                     <label for="confirm-password">Confirm Password</label>
-                    <input class="form-control" type="password" placeholder="Confirm your password"
-                        name="confirm-password" required #confirmPassword="ngModel"
-                        [(ngModel)]="userModel.confirmPassward">
+                    <input (input)="passowrdMatch()" class="form-control" type="password"
+                        placeholder="Confirm your password" name="confirm-password" required #confirmPassword="ngModel"
+                        [(ngModel)]="userModel.confirmPassword">
 
                     @if (confirmPassword.touched ){
                     <small class="text-danger" *ngIf="confirmPassword.errors?.['required']  ">Confirm
                         Password is required</small>
-                    <small class="text-danger" *ngIf="!passowrdMatch()&&!confirmPassword.errors?.['required']">Password
+                    <small class="text-danger" *ngIf="!matched&&!confirmPassword.errors?.['required']">Password
                         doesn't match</small>
                     }
 
@@ -105,7 +105,7 @@
             </div>
 
             <div class="btn-container">
-                <button type="submit" #register [class.disabled]="!userFrom.valid" class="register-btn">Get In
+                <button type="submit" #register [class.disabled]="!userFrom.valid||!matched" class="register-btn">Get In
                     Now!</button>
             </div>
         </form>
