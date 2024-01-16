@@ -12,7 +12,7 @@
     <div class="row">
       @for (pro of mobileCatg4; track $index) {
         <div class="col-12 col-md-6 col-lg-3 product">
-          <app-product [product]="pro"></app-product>
+          <app-product [product]="pro" [userWishList]="wishList"></app-product>
         </div>
       }
     </div>
@@ -22,7 +22,7 @@
     <div class="row">
       @for (pro of smartWatch4; track $index) {
         <div class="col-12 col-md-6 col-lg-3 product">
-          <app-product [product]="pro"></app-product>
+          <app-product [product]="pro" [userWishList]="wishList"></app-product>
         </div>
       }
     </div>
@@ -32,7 +32,7 @@
     <div class="row">
       @for (pro of laptops4; track $index) {
         <div class="col-12 col-md-6 col-lg-3 product">
-          <app-product [product]="pro"></app-product>
+          <app-product [product]="pro" [userWishList]="wishList"></app-product>
         </div>
       }
     </div>

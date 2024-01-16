@@ -113,6 +113,7 @@ ngOnInit(): void {
   gitNames(word: string) {
     this.filterApi.getProductNameFromShearch(word).subscribe((data) => {
       this.names = data;
+      console.log(data)
     });
     console.log(word);
   }

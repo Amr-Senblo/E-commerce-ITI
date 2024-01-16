@@ -19,9 +19,14 @@
     </div>
 
 
-    <div class="user-container ">
-      <a routerLink="Cart/{{currentUser?.id}}" class="cart-anchor">
-        <div class="cart ">
+    <div class="user-container">
+      <a [routerLink]="['Cart',currentUser?.id]" class="cart-anchor">
+        <div class="cart">
+         
+          <span class="cart-count badge text-bg-danger" >
+            {{counter}}
+          
+          </span> 
 
           <span class="cart-count badge text-bg-danger">
             {{counter}}
@@ -67,7 +72,7 @@
 
         <div class="dropdown-content" *ngIf="isDropdownOpen">
           <a routerLink="/myprofile"> <i class="fa-regular fa-user"></i>Profile</a>
-          <a><i class="fa-regular fa-heart"></i> Wishlist</a>
+          <a  routerLink="WishList"><i class="fa-regular fa-heart" ></i> Wishlist</a>
 
           <a> <i class="fa-regular fa-credit-card"></i> Orders</a>
 
