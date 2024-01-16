@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IUser } from '../models/iuser';
 import { environment } from '../environments/environment';
-import { JsonPipe } from '@angular/common';
 import { Observable } from 'rxjs';
+import { IOrder } from '../models/iorder';
 
 @Injectable({
   providedIn: 'root',
@@ -28,16 +28,11 @@ export class UserService {
   createUser(data: {}) {
     return this.http.post<IUser>(this.DB, data);
   }
-  updateWishlistForUser(userid: number, wishArray: number[]):Observable<IUser> {
-    let headers = new HttpHeaders();
-    headers = headers.set('Content-Type', 'application/json');
-    headers = headers.set('Access-Control-Allow-Origin', '*');
-    console.log(headers);
-    console.log(JSON.stringify({ whistlist: wishArray }));
-    // const x = this.http.
-    // console.log('ereen', await this.http.patch('http://localhost:3000/users/2',{}).subscribe());
-    // console.log('{"wishlist": [1]}');
-   return this.http.patch<IUser>(
+  updateWishlistForUser(
+    userid: number,
+    wishArray: number[]
+  ): Observable<IUser> {
+    return this.http.patch<IUser>(
       `${this.DB}/${userid}`,
       { wishlist: wishArray },
       this.options
@@ -46,6 +41,10 @@ export class UserService {
   updateUser(id: number, data: {}) {
     let url = `${this.DB}/${id}`;
     return this.http.put<IUser>(url, data);
+  }
+  updateUserOrders(id: number, orders: IOrder[]) {
+    let url = `${this.DB}/${id}`;
+    return this.http.patch<IUser>(url, { orders: orders });
   }
   deleteUser(id: number) {
     let url = `${this.DB}/${id}`;

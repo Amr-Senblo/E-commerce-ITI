@@ -43,5 +43,5 @@ export class FilterAPIService {
     .pipe(map((categories)=>categories.map(cat=>cat.name))
     )
   }
-  
+
 }

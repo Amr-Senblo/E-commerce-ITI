@@ -1,3 +1,5 @@
+import { IOrder } from "./iorder";
+
 export interface IUser {
   id: number;
   name: string;
@@ -11,4 +13,5 @@ export interface IUser {
   passward: string;
   confirmPassward: string;
   wishlist?: number[];
+  orders?: IOrder[]
 }

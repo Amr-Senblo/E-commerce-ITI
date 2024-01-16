@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './product-cart.component.css',
 })
 export class ProductCartComponent {
-  @Output() cartProductEvent = new EventEmitter<IproductBuyed>();
+  @Output() cartProductEvent = new EventEmitter<[IproductBuyed, number, number]>();
   @Input() product: IProduct = {} as IProduct;
 
   @Input() quantity: number = 0;
@@ -19,15 +19,15 @@ export class ProductCartComponent {
   onMinus(id: number, quantity: number) {
     if (this.quantity > 1) {
       this.quantity = quantity - 1;
-      this.cartProductEvent.emit({ id: id, quantity: quantity - 1 });
+      this.cartProductEvent.emit([{ id: id, quantity: quantity - 1 }, quantity, this.product.price]);
     }
   }
   onPlus(id: number, quantity: number) {
     if (this.quantity <= this.product.quantity) this.quantity = quantity + 1;
-    this.cartProductEvent.emit({ id: id, quantity: quantity + 1 });
+    this.cartProductEvent.emit([{ id: id, quantity: quantity + 1 }, quantity, this.product.price]);
   }
-  onRemove(id: number) {
-    this.cartProductEvent.emit({ id: id, quantity: 0 });
+  onRemove(id: number, quantity: number) {
+    this.cartProductEvent.emit([{ id: id, quantity: 0 }, quantity, this.product.price]);
     this.displayItem = 'none';
   }
 }

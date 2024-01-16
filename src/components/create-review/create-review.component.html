@@ -10,17 +10,21 @@
     <input class="col-8 d-flex flex-column card py-3 px-4">
   </div> -->
   <!-- <section style="background-color: #d94125;"> -->
+    @if (currentUser) {
   <form [formGroup]="myForm" (ngSubmit)="send()">
     <div class="container my-5 py-5 text-dark">
       <div class="row d-flex justify-content-center">
         <div class="col-md-10 col-lg-8 col-xl-6">
           <div class="card">
             <div class="card-body p-4">
+             
               <div class="d-flex flex-start w-100">
                 <img class="rounded-circle shadow-1-strong me-3"
-                  [src]="user.profilePic" alt="avatar" width="65" height="65" />
+                [src]="currentUser.profilePic" alt="avatar" width="65" height="65" />
                 <div class="w-100">
-                  <h3 class="fw-bold theme-color" style="color: var(--sec-color);">{{user.name}}</h3>
+
+                  <h3 class="fw-bold theme-color" style="color: var(--sec-color);">{{ currentUserName }}</h3>
+
                   <ul class="rating mb-3" data-mdb-toggle="rating">
                   </ul>
                   <ngb-rating [(rate)]="selectedRating" (rateChange)="onRatingChange($event)"  [max]="5" style="color:var(--rating-color) ;font-size: 30px;"></ngb-rating>
@@ -33,10 +37,12 @@
                   </div>
                 </div>
               </div>
+            
             </div>
           </div>
         </div>
       </div>
     </div>
   </form>
+}
   <!-- </section> -->
