@@ -749,7 +749,6 @@
         2,
         4
       ]
-
     },
     {
       "id": 181485683476,
@@ -837,16 +836,17 @@
     },
     {
       "id": 127351569297,
-      "name": "Omdaaaaaaa",
+      "name": "Emad",
       "email": "amrsenblo@gmail.com",
       "phone": "01012345678",
-      "profilePic": "",
+      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
       "Address": "Egypt, ElGarbiah, Tanta",
       "gender": "male",
       "passward": "A1234567",
       "confirmPassward": "A1234567",
-      "wishlist": []
-
+      "wishlist": [],
+      "address": "Egypt, ElGarbiah, Tanta",
+      "password": "A0001112"
     }
   ],
   "carts": [
