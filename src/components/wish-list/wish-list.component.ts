@@ -4,14 +4,16 @@ import { UserAuthService } from '../../services/user-auth.service';
 import { LocalStrogeService } from '../../services/local-stroge.service';
 import { IProduct } from '../../models/iproduct';
 import { ProductService } from '../../services/product.service';
-import { ProductsArrayComponent } from "../products-array/products-array.component";
+import { ProductsArrayComponent } from '../products-array/products-array.component';
+import { CommonModule, CurrencyPipe, JsonPipe } from '@angular/common';
+import { UserService } from '../../services/user.service';
 
 @Component({
-    selector: 'app-wish-list',
-    standalone: true,
-    templateUrl: './wish-list.component.html',
-    styleUrl: './wish-list.component.css',
-    imports: [ProductsArrayComponent]
+  selector: 'app-wish-list',
+  standalone: true,
+  templateUrl: './wish-list.component.html',
+  styleUrl: './wish-list.component.css',
+  imports: [ProductsArrayComponent, JsonPipe, CommonModule],
 })
 export class WishListComponent implements OnInit {
   logstate!: boolean;
@@ -21,7 +23,8 @@ export class WishListComponent implements OnInit {
   constructor(
     private userAuthService: UserAuthService,
     private storge: LocalStrogeService,
-    private prodAPi: ProductService
+    private prodAPi: ProductService,
+    private userService: UserService
   ) {
     this.logstate = this.userAuthService.LoggedState;
     //Marium
@@ -43,5 +46,21 @@ export class WishListComponent implements OnInit {
       console.log(this.whistlist);
       console.log(this.wishedProducts);
     });
+  }
+  removeFromWhishList(prdId: number) {
+    this.whistlist = this.whistlist?.filter((id) => id != prdId) || [];
+
+    this.userService
+      .updateWishlistForUser(this.currentUser!.id, this.whistlist)
+      .subscribe((data) => {
+        this.prodAPi.getProducts().subscribe((data) => {
+          this.wishedProducts = data.filter((p) =>
+            this.whistlist?.includes(p.id)
+          );
+        });
+      });
+  }
+  AddToCart() {
+    //To Be Implmented Later
   }
 }

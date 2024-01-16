@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { ErrorPageComponent } from '../components/error-page/error-page.component';
 import { CartComponent } from '../components/cart/cart.component';
 import { ProfileComponent } from '../components/profile/profile.component';
@@ -10,8 +11,11 @@ import { CreateProductComponent } from '../components/create-product/create-prod
 import { AboutUsComponent } from '../components/about-us/about-us.component';
 import { ProductDetailsContainerComponent } from '../components/product-details-container/product-details-container.component';
 import { ProductListComponent } from '../components/product-list/product-list.component';
+import { UserProfileComponent } from '../components/user-profile/user-profile.component';
 import { RegisterLayoutComponent } from '../layouts/register-layout/register-layout.component';
 import { LoginFormComponent } from '../components/login-form/login-form.component';
+import { PaymentComponent } from '../components/payment/payment.component';
+import { SuccessPaymentComponent } from '../components/success-payment/success-payment.component';
 import { loginGuard } from '../guards/login.guard';
 import { logoutGuard } from '../guards/logout.guard';
 import { WishListComponent } from '../components/wish-list/wish-list.component';
@@ -28,6 +32,9 @@ export const routes: Routes = [
         path: 'Category/:categoryId/:id',
         component: ProductDetailsContainerComponent,
       },
+
+      { path: 'myprofile', component: UserProfileComponent },
+
       {
         path: 'Cart/:id',
         component: CartComponent,
@@ -36,16 +43,21 @@ export const routes: Routes = [
       {
         path: 'WishList',
         component: WishListComponent,
-        canActivateChild: [loginGuard],
-      }, 
+        canActivate: [loginGuard],
+      },
       { path: 'Search/:word', component: FilterComponent },
       { path: 'AboutUs', component: AboutUsComponent },
+      { path: 'Payment', component: PaymentComponent },
+      { path: 'success', component: SuccessPaymentComponent },
     ],
   },
+
   {
     path: 'Login',
     component: RegisterLayoutComponent,
-    children: [{ path: '', component: LoginFormComponent,canActivate:[logoutGuard] }],
+    children: [
+      { path: '', component: LoginFormComponent, canActivate: [logoutGuard] },
+    ],
   },
   { path: 'CreateProduct', component: CreateProductComponent },
 

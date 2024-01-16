@@ -1,6 +1,6 @@
 /* header container */
 .header {
-    border-top: 5px solid #242424;
+    border-top: 5px solid #262626;
 }
 
 /* .dv{
@@ -50,8 +50,8 @@
     align-items: center;
 
     height: 4rem;
-    background-color: #242424;
-    border-bottom: 3px solid #242424;
+    background-color: #262626;
+    border-bottom: 3px solid #262626;
     width: 100%;
 }
 
@@ -79,8 +79,8 @@
     justify-content: center;
     width: 40%;
     height: 2.5rem;
-    border: 1px solid #ffffff;
-
+    border: 1px solid #535353;
+    color: white !important;
     border-radius: 0.5rem;
 }
 
@@ -89,7 +89,7 @@
     width: 100%;
     height: 100%;
     /* border: 1px solid #ffffff; */
-    background-color: #242424;
+    background-color: #262626;
     color: #ffffff;
     outline: none;
     font-size: 1rem;
@@ -157,7 +157,9 @@
     cursor: pointer;
 
 }
-
+.profile:hover{
+  cursor: pointer;
+}
 .signin-text {
     font-size: 1rem;
     font-weight: 500;
@@ -177,7 +179,7 @@
     top: 0rem;
     left: -1rem;
     background-color: #ffffff;
-    color: #242424;
+    color: #262626;
     border-radius: 30%;
     width: 1.5rem;
     height: 1.5rem;
@@ -188,9 +190,17 @@
     font-weight: 500;
 }
 
+.search-container[_ngcontent-ng-c642065583] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 2.5rem;
+  border: 1px solid #535353 !important;
+  border-radius: 0.5rem;
+}
 
-
-/* 
+/*
 .second-header-container {
     display: flex;
     justify-content: space-between;
@@ -294,7 +304,7 @@
 
 
 
-/* 
+/*
 .category-item {
     display: flex;
     align-items: center;
@@ -324,7 +334,7 @@
 @media screen and (max-width: 768px) {
     .header {
         width: 100%;
-        border: 5px solid #242424;
+        border: 5px solid #262626;
     }
 
     .about-us {

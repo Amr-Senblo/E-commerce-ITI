@@ -1,7 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { IProduct } from '../../models/iproduct';
 import { Router, RouterLink } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import { UserAuthService } from '../../services/user-auth.service';
 
 @Component({
   selector: 'app-product',
@@ -10,18 +18,48 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './product.component.html',
   styleUrl: './product.component.css',
 })
-export class ProductComponent {
+export class ProductComponent implements OnChanges {
   @Input() product: IProduct = <IProduct>{};
-  heart = 'fa-regular fa-heart '
-  constructor(private router: Router) { }
-  onWishList() {
-    if (this.heart === 'fa-regular fa-heart ')
-      this.heart = 'fa-solid fa-heart wish'
-    else
-      this.heart = 'fa-regular fa-heart '
+  @Input() userWishList: number[] = [];
+  wished: boolean = false;
+  heart = 'fa-regular fa-heart ';
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private userAuth: UserAuthService
+  ) {
+    console.log(this.userWishList);
   }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.userWishList = changes['userWishList'].currentValue;
+    this.wished = this.userWishList.includes(this.product.id);
+  }
+
+  onWishList() {
+    console.log(this.product.id, this.wished);
+    if (!this.wished) {
+      this.wished = true;
+      this.userWishList.push(this.product.id);
+    } else {
+      this.wished = false;
+      this.userWishList = this.userWishList.filter(
+        (id) => id != this.product.id
+      );
+    }
+    this.userAuth.getCurrentUser().subscribe((user) => {
+      if (user) {
+        this.userService
+          .updateWishlistForUser(user.id, this.userWishList)
+          .subscribe((user) => {
+            this.userWishList = user.wishlist || [];
+          });
+      }
+    });
+  }
+
   refreshRoute() {
-    const currentUrl = '/Category/' + this.product.category + '/' + this.product.id;
+    const currentUrl =
+      '/Category/' + this.product.category + '/' + this.product.id;
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.router.navigate([currentUrl]);
     });

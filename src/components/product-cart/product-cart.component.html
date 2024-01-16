@@ -9,6 +9,7 @@
       {{product.name}}
     </div>
     <div class="col-12 col-lg-2 my-2 text-center">
+      
       {{quantity*product.price| number:'1.2-2'}} $
     </div>
     <div class="col-12 col-lg-4 text-center d-flex ms-4 ms-lg-0 my-2 justify-content-center justify-content-lg-end">
@@ -16,7 +17,7 @@
       <input disabled type="text" class="form-control mx-1" [value]="quantity" />
       <button class="button m-1" (click)="onPlus(product.id,quantity)"><span>+</span></button>
       <div class="d-flex justify-conten-center align-items-center mx-3 fs-2">
-        <button (click)="onRemove(product.id)" class="removeBtn">
+        <button (click)="onRemove(product.id,quantity)" class="removeBtn">
           <i class="fa-solid fa-circle-minus remove"></i>
         </button>
       </div>

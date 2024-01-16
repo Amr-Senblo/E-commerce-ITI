@@ -26,13 +26,14 @@ export class RegisterComponent {
     name: '',
     email: '',
     phone: '',
-    profilePic: '',
+    profilePic:
+      'https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg',
     Address: '',
     gender: '',
     passward: '',
     confirmPassward: '',
     wishlist: [],
-    accessToken:''
+    accessToken: '',
   };
   constructor(
     private _registerService: RegisterService // private _ngForm: NgForm
