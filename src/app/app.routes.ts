@@ -33,7 +33,6 @@ export const routes: Routes = [
         component: ProductDetailsContainerComponent,
       },
 
-
       { path: 'myprofile', component: UserProfileComponent },
 
       {
@@ -45,19 +44,20 @@ export const routes: Routes = [
         path: 'WishList',
         component: WishListComponent,
         canActivate: [loginGuard],
-      }, 
+      },
       { path: 'Search/:word', component: FilterComponent },
       { path: 'AboutUs', component: AboutUsComponent },
       { path: 'Payment', component: PaymentComponent },
-      { path: 'success', component: SuccessPaymentComponent }
-
+      { path: 'success', component: SuccessPaymentComponent },
     ],
   },
 
   {
     path: 'Login',
     component: RegisterLayoutComponent,
-    children: [{ path: '', component: LoginFormComponent,canActivate:[logoutGuard] }],
+    children: [
+      { path: '', component: LoginFormComponent, canActivate: [logoutGuard] },
+    ],
   },
   { path: 'CreateProduct', component: CreateProductComponent },
 
@@ -68,7 +68,6 @@ export const routes: Routes = [
   },
 
   { path: 'Profile', component: ProfileComponent }, //Add Guard
-
 
   { path: '**', component: ErrorPageComponent },
 ];
