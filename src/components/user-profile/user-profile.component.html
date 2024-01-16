@@ -9,8 +9,23 @@
         </div>
         <div class="info-container col-md-8 border-right">
             <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h2 class="text-right">Main Info</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h2 class="text-right">Main Info</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <!-- user info updated successfully -->
+                        <div class="alert alert-success" *ngIf="userInfoUpdatedSuccess">
+                            <strong>Success!</strong> User info has been updated successfully.
+                        </div>
+
+                        <!-- user info updated failed -->
+                        <div class="alert alert-danger" *ngIf="userInfoUpdatedFailure">
+                            <strong>Failed!</strong> User info has not been updated.
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row mt-3">
@@ -86,9 +101,30 @@
 
 
             <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h2 class="text-right">Change Password</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h2 class="text-right">Change Password</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- password changed successfully -->
+                        <div class="alert alert-success" *ngIf="passwordChanged && !wrongPassword && !mismatchPassword">
+                            <strong>Success!</strong> Password has been changed successfully.
+                        </div>
+
+                        <!-- password changed failed -->
+                        <div class="alert alert-danger" *ngIf="wrongPassword">
+                            <strong>Failed!</strong> Wrong Password.
+                        </div>
+
+                        <!-- mismatch password -->
+                        <div class="alert alert-danger" *ngIf="mismatchPassword&&!wrongPassword">
+                            <strong>Failed!</strong> Passwords do not match.
+                        </div>
+                    </div>
                 </div>
+
 
                 <!-- Old Password -->
                 <div class="row mt-1">
