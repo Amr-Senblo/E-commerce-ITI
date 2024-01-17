@@ -15,11 +15,16 @@ import { UserAuthService } from '../../services/user-auth.service';
 import { IUser } from '../../models/iuser';
 import { LocalStrogeService } from '../../services/local-stroge.service';
 import { ToastComponent } from '../toast/toast.component';
+import { UserService } from '../../services/user.service';
+import { CartService } from '../../services/cart.service';
+import { CustomCartService } from '../../services/custom-cart-products.service';
+import { forkJoin } from 'rxjs';
+import { ICart } from '../../models/icart';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  providers: [CategoryService],
+  providers: [],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   imports: [CommonModule, RouterModule, FormsModule, ToastComponent],
@@ -55,7 +60,7 @@ this.itemClicked=true
   currentUser?: IUser;
   currentUserName?: string;
   @ViewChild(ToastComponent) toast!: ToastComponent;
-
+cart?:ICart
   searchKeyword: string = '';
 
   constructor(
@@ -63,7 +68,8 @@ this.itemClicked=true
     private route: Router,
     private filterApi: FilterAPIService,
     private userAuthService: UserAuthService,
-    private storge: LocalStrogeService
+    private storge: LocalStrogeService,
+    private CartCustomService:CustomCartService
   ) {
     this.logstate = this.userAuthService.LoggedState;
     this.userAuthService.getAllUsers().subscribe((alluser) => {
@@ -72,6 +78,11 @@ this.itemClicked=true
         this.storge.getItemFromSessionStorge('accesToken');
       this.currentUser = alluser.find((user) => user.accessToken == token);
       if (this.currentUser) {
+        this.CartCustomService.getCartContent(this.currentUser.id).subscribe({
+          next: (val) => {
+            this.cart = val
+          }
+        })
         this.userAuthService.setLoggedState = true;
         this.currentUserName = this.currentUser.name; // Store the current user's name
         console.log(this.currentUserName);
@@ -158,3 +169,4 @@ this.itemClicked=true
     }
   }
 }
+//cccc

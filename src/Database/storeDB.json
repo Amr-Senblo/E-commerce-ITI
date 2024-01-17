@@ -32,7 +32,7 @@
       "brand": "Apple",
       "description": "Pro-level smartphone with enhanced camera and performance.",
       "price": 1299.99,
-      "quantity": 2,
+      "quantity": 1,
       "imageCover": "https://m.media-amazon.com/images/I/71xb2xkN5qL.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/61d8XHJuE2L.AC_SL1500.jpg",
@@ -62,7 +62,7 @@
       "brand": "Xiaomi",
       "description": "Premium smartphone with a focus on photography and performance.",
       "price": 899.99,
-      "quantity": 59,
+      "quantity": 57,
       "imageCover": "https://techcart.com.au/wp-content/uploads/2021/10/61746-Xiaomi-Mi-11-Lite-5G-NE-256GB_8GB-Peach-Pink-Global-Version-550x550.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/61ejOV80CgL.AC_SL1500.jpg",
@@ -122,7 +122,7 @@
       "brand": "Samsung",
       "description": "Mid-range smartphone with a focus on performance and value.",
       "price": 499.99,
-      "quantity": 0,
+      "quantity": -5,
       "imageCover": "https://m.media-amazon.com/images/I/719Zb5jJA9L.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/719Zb5jJA9L.AC_SL1500.jpg",
@@ -629,17 +629,6 @@
   ],
   "users": [
     {
-      "0": {
-        "transactionID": "1N722060GV6596749",
-        "date": "2024-01-15T18:27:57.341Z",
-        "products": [
-          {
-            "id": 13,
-            "quantity": 1
-          }
-        ],
-        "totalPrice": "399.99"
-      },
       "id": 1,
       "name": "Jack Adam",
       "password": "123456Abcd",
@@ -667,6 +656,88 @@
             }
           ],
           "totalPrice": "3599.96"
+        },
+        {
+          "transactionID": "5SY169U1955000M",
+          "date": "2024-01-15T18:32:41.172Z",
+          "products": [
+            {
+              "id": 5,
+              "quantity": 2
+            },
+            {
+              "id": 8,
+              "quantity": 2
+            }
+          ],
+          "totalPrice": "3599.96"
+        },
+        {
+          "transactionID": "5SY869U1955000M",
+          "date": "2024-01-15T18:32:41.172Z",
+          "products": [
+            {
+              "id": 5,
+              "quantity": 2
+            },
+            {
+              "id": 8,
+              "quantity": 2
+            }
+          ],
+          "totalPrice": "3599.96"
+        },
+        {
+          "transactionID": "3AS48582LE687374Y",
+          "date": "2024-01-17T11:21:07.788Z",
+          "products": [
+            {
+              "id": 8,
+              "quantity": 1
+            },
+            {
+              "id": 5,
+              "quantity": 1
+            }
+          ],
+          "totalPrice": "1799.98"
+        },
+        {
+          "transactionID": "4VJ60949U5870371K",
+          "date": "2024-01-17T11:27:05.440Z",
+          "products": [
+            {
+              "id": 6,
+              "quantity": 2
+            },
+            {
+              "id": 8,
+              "quantity": 1
+            }
+          ],
+          "totalPrice": "2299.9700000000003"
+        },
+        {
+          "transactionID": "4LJ34978YS158781T",
+          "date": "2024-01-17T12:03:21.264Z",
+          "products": [
+            {
+              "id": 8,
+              "quantity": 2
+            }
+          ],
+          "totalPrice": "2999.9399999999996"
+        },
+        {
+          "transactionID": "8VY64436GN9632830",
+          "date": "2024-01-17T12:06:24.697Z",
+          "products": [
+            {
+              "id": 8,
+              "quantity": 1
+            }
+          ],
+          "totalPrice": "499.99"
         }
       ]
     },
@@ -856,13 +927,8 @@
     {
       "id": 1,
       "user": 1,
-      "products": [
-        {
-          "id": 5,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 4.547473508864641e-13,
+      "products": [],
+      "totalPrice": 499.99,
       "ordered": false,
       "createdAt": "2022-01-15T12:30:00.000Z",
       "updatedAt": "2022-01-15T12:30:00.000Z"
@@ -873,14 +939,14 @@
       "products": [
         {
           "id": 1,
-          "quantity": 9
+          "quantity": 1
         },
         {
           "id": 2,
           "quantity": 1
         }
       ],
-      "totalPrice": 1699.98,
+      "totalPrice": 2799.98,
       "ordered": true,
       "createdAt": "2022-02-02T10:45:00.000Z",
       "updatedAt": "2022-02-02T10:45:00.000Z"
