@@ -1,7 +1,48 @@
 /* header container */
 .header {
-    border-top: 5px solid #262626;
+    border-top: 5px solid #242424;
 }
+
+/* .dv{
+    z-index: 5 !important;
+ 
+    width: 55%;
+    margin-left: 11%;
+  
+    min-height: fit-content;
+    max-height:100px ;
+    
+} */
+
+
+/* .x{
+    
+    overflow-y: scroll;
+} */
+
+
+/* .list-group :hover{
+    background-color:#efefef ;
+} */
+
+
+
+
+  .search-results-overlay[_ngcontent-ng-c1706621954][_ngcontent-ng-c1706621954] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* background-color: rgba(255, 255, 255, 0.9); */
+    margin-top: 4%;
+    width: 55%;
+    margin-left: 27%;
+    z-index: 9999;
+}
+  
+  .search-results-overlay .list-group {
+    max-height: 150px; /* Set the desired height for the search results */
+    overflow-y: auto;
+  }
 
 .first-header-container {
     display: flex;
@@ -9,8 +50,8 @@
     align-items: center;
 
     height: 4rem;
-    background-color: #262626;
-    border-bottom: 3px solid #262626;
+    background-color: #242424;
+    border-bottom: 3px solid #242424;
     width: 100%;
 }
 
@@ -38,8 +79,8 @@
     justify-content: center;
     width: 40%;
     height: 2.5rem;
-    border: 1px solid #535353;
-    color: white !important;
+    border: 1px solid #ffffff;
+
     border-radius: 0.5rem;
 }
 
@@ -48,7 +89,7 @@
     width: 100%;
     height: 100%;
     /* border: 1px solid #ffffff; */
-    background-color: #262626;
+    background-color: #242424;
     color: #ffffff;
     outline: none;
     font-size: 1rem;
@@ -116,9 +157,7 @@
     cursor: pointer;
 
 }
-.profile:hover{
-  cursor: pointer;
-}
+
 .signin-text {
     font-size: 1rem;
     font-weight: 500;
@@ -138,7 +177,7 @@
     top: 0rem;
     left: -1rem;
     background-color: #ffffff;
-    color: #262626;
+    color: #242424;
     border-radius: 30%;
     width: 1.5rem;
     height: 1.5rem;
@@ -149,17 +188,9 @@
     font-weight: 500;
 }
 
-.search-container[_ngcontent-ng-c642065583] {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40%;
-  height: 2.5rem;
-  border: 1px solid #535353 !important;
-  border-radius: 0.5rem;
-}
 
-/*
+
+/* 
 .second-header-container {
     display: flex;
     justify-content: space-between;
@@ -263,7 +294,7 @@
 
 
 
-/*
+/* 
 .category-item {
     display: flex;
     align-items: center;
@@ -293,7 +324,7 @@
 @media screen and (max-width: 768px) {
     .header {
         width: 100%;
-        border: 5px solid #262626;
+        border: 5px solid #242424;
     }
 
     .about-us {
