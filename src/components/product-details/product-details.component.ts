@@ -45,7 +45,7 @@ export class ProductDetailsComponent implements OnChanges {
   counter: number = 0;
   @Input() product: IProduct = <IProduct>{};
   x: any;
-
+  @Input() avgRating!:number;
   constructor(
     private CartCustomService: CustomCartService,
     private cartService: CartService,

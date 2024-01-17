@@ -34,8 +34,7 @@ export const routes: Routes = [
         component: ProductDetailsContainerComponent,
       },
 
-
-      { path: 'myprofile', component: UserProfileComponent },
+      { path: 'Myprofile', component: UserProfileComponent,canActivate: [loginGuard] },
 
       {
         path: 'Cart/:id',
@@ -45,7 +44,7 @@ export const routes: Routes = [
       {
         path: 'WishList',
         component: WishListComponent,
-        /*canActivate: [logoutGuard] */
+        canActivate: [loginGuard],
       },
       { path: 'Search/:word', component: FilterComponent },
       { path: 'AboutUs', component: AboutUsComponent },
@@ -54,22 +53,19 @@ export const routes: Routes = [
       { path: 'Orders/:id', component: OrdersComponent, /*canActivate: [logoutGuard] */ }
     ],
   },
-
   {
     path: 'Login',
     component: RegisterLayoutComponent,
-    children: [{ path: '', component: LoginFormComponent, /*canActivate: [logoutGuard] */ }],
+    canActivateChild:[logoutGuard],
+    children: [
+      { path: '', component: LoginFormComponent,  },
+      {
+        path: 'Register',
+        component: RegisterComponent,
+      },
+    ],
   },
   { path: 'CreateProduct', component: CreateProductComponent },
-
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: { isRegister: true },
-  },
-
   { path: 'Profile', component: ProfileComponent }, //Add Guard
-
-
   { path: '**', component: ErrorPageComponent },
 ];
