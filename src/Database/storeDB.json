@@ -664,30 +664,6 @@
             {
               "id": 8,
               "quantity": 2
-            },
-            {
-              "id": 8,
-              "quantity": 2
-            },
-            {
-              "id": 8,
-              "quantity": 2
-            },
-            {
-              "id": 8,
-              "quantity": 2
-            },
-            {
-              "id": 8,
-              "quantity": 2
-            },
-            {
-              "id": 8,
-              "quantity": 2
-            },
-            {
-              "id": 8,
-              "quantity": 2
             }
           ],
           "totalPrice": "3599.96"
@@ -702,7 +678,12 @@
       "email": "user2@gmail.com",
       "phone": "01012345612",
       "profilePic": "https://images.unsplash.com/photo-1525186402429-b4ff38bedec6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "wishlist": [8, 7, 17, 18]
+      "wishlist": [
+        8,
+        7,
+        17,
+        18
+      ]
     },
     {
       "id": 3,
@@ -727,11 +708,15 @@
       "phone": "01012345614",
       "profilePic": "https://images.unsplash.com/photo-1506863530036-1efeddceb993?q=80&w=1488&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "Address": "101, Street, City, Country",
-      "wishlist": [1, 5, 4]
+      "wishlist": [
+        1,
+        5,
+        4
+      ]
     },
     {
       "id": 5,
-      "name": "Goerg Jacup",
+      "name": "Amr",
       "password": "123456Abcd",
       "accessToken": "5",
       "email": "user5@gmail.com",
@@ -742,7 +727,6 @@
         2,
         4
       ]
-
     },
     {
       "id": 181485683476,
@@ -830,16 +814,42 @@
     },
     {
       "id": 127351569297,
-      "name": "Omdaaaaaaa",
+      "name": "Emad",
       "email": "amrsenblo@gmail.com",
       "phone": "01012345678",
-      "profilePic": "",
+      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
       "Address": "Egypt, ElGarbiah, Tanta",
       "gender": "male",
       "passward": "A1234567",
       "confirmPassward": "A1234567",
+      "wishlist": [],
+      "address": "Egypt, ElGarbiah, Tanta"
+    },
+    {
+      "id": 546461492,
+      "accessToken": "546461492",
+      "name": "Amoor",
+      "email": "amr@gmail.com",
+      "phone": "01000000000",
+      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+      "Address": "Egypt, ElGarbiah, Tanta",
+      "gender": "male",
+      "password": "A1234567",
+      "confirmPassword": "A1234567",
       "wishlist": []
-
+    },
+    {
+      "id": 160545857,
+      "accessToken": "160545857",
+      "name": "Amoor Senblo",
+      "email": "amrsenblo@gmail.com",
+      "phone": "01222222222",
+      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+      "Address": "Egypt, ElGarbiah, Tanta",
+      "gender": "male",
+      "password": "A000000",
+      "confirmPassword": "A000000",
+      "wishlist": []
     }
   ],
   "carts": [
