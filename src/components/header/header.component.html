@@ -71,13 +71,13 @@
 
 
         <div class="dropdown-content" *ngIf="isDropdownOpen">
-          <a routerLink="/myprofile"> <i class="fa-regular fa-user"></i>Profile</a>
+          <a routerLink="Myprofile"> <i class="fa-regular fa-user"></i>Profile</a>
           <a  routerLink="WishList"><i class="fa-regular fa-heart" ></i> Wishlist</a>
 
           <a> <i class="fa-regular fa-credit-card"></i> Orders</a>
 
 
-          <a (click)="logOut()" routerLink="/Login"><i class="fa-solid fa-power-off"></i> Logout</a>
+          <a (click)="logOut()" ><i class="fa-solid fa-power-off"></i> Logout</a>
         </div>
       </div>
     </div>
@@ -93,5 +93,5 @@
 
 
 
-  <app-toast hidden></app-toast>
+  <app-toast hidden ></app-toast>
 </div>

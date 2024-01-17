@@ -10,8 +10,8 @@ export interface IUser {
   profilePic?: string;
   Address?: string;
   gender?: string;
-  passward: string;
-  confirmPassward: string;
+ 
+  confirmPassword:string
   wishlist?: number[];
   orders?: IOrder[]
 }
