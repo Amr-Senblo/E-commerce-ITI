@@ -33,6 +33,7 @@ export class CustomCartService {
       })
     )
   }
+  //Edit
   editCartTotalPrice(CartId: number, totalPrice: number) {
     return this.http.patch<ICart>(`${this.urlcart}/${CartId}`, { "totalPrice": totalPrice })
   }
