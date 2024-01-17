@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { IReview } from '../../models/ireview';
 import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
 import { IUser } from '../../models/iuser';
@@ -25,7 +25,7 @@ export class ReviewsComponent implements OnChanges{
   UsersInOrderReviews: IUser[] = [];
   usersIds: number[] = [];
   Ratings: number[] = [];
-  avgRating: number = 0;
+  @Input() avgRating!:number;
   reviewAndUser!:{"review":IReview,"user":any};
   ArrayOfReviewAndUser:{"review":IReview,"user":IUser}[]=[];
 
@@ -114,9 +114,10 @@ export class ReviewsComponent implements OnChanges{
     })
 
     this.avgRating = this.Ratings.reduce((accumulator, currentValue) => {
+
       return accumulator + currentValue;
     }, 0) / this.Ratings.length;
-    console.log("avg rate : " , this.avgRating)
+
   }
 
 }

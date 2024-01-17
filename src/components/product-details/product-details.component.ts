@@ -46,11 +46,15 @@ export class ProductDetailsComponent implements OnChanges ,OnInit {
 
   @Input() product: IProduct = <IProduct>{};
   x: any;
+
   @Input() rev :any;
   prodId :number =0;
 
-  avgRating: number = 0;
+  //avgRating: number = 0;
   Ratings: number[] = [];
+
+
+  @Input() avgRating!:number;
 
   constructor(
     private CartCustomService: CustomCartService,
@@ -94,6 +98,7 @@ export class ProductDetailsComponent implements OnChanges ,OnInit {
   }
 
 
+
   // ngOnInit(): void {
   //   this.revService.getReview(this.prodId).subscribe({
   //     next:(data)=>{
@@ -126,6 +131,7 @@ export class ProductDetailsComponent implements OnChanges ,OnInit {
       },
       error: (err) => console.log(err),
     });
+
     // this.cartService.getCart(this.UserId).subscribe({
     //   next: (value) => {
     //     this.productsInCart = value.products || [];
