@@ -8,7 +8,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductComponent } from '../product/product.component';
 import { IProduct } from '../../models/iproduct';
 import { CartService } from '../../services/cart.service';
@@ -17,125 +17,87 @@ import { IproductBuyed } from '../../models/iproduct-buyed';
 import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
 import { ICart } from '../../models/icart';
-import { UserAuthService } from '../../services/user-auth.service';
-import { LocalStrogeService } from '../../services/local-stroge.service';
-import { UserService } from '../../services/user.service';
-import { IUser } from '../../models/iuser';
+import { HttpClientModule } from '@angular/common/http';
+import { ReviewService } from '../../services/review.service';
 
 //import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [RouterLink, ProductComponent, NgbRating],
-  providers: [ProductService, CartService, CustomCartService,UserAuthService, UserService,LocalStrogeService],
+  imports: [RouterLink, ProductComponent, NgbRating , HttpClientModule],
+  providers: [ProductService, CartService, CustomCartService , ReviewService ],
   templateUrl: './product-details.component.html',
-  template: ` <button (click)="incrementCounter()">Increment Counter</button> `,
   styleUrl: './product-details.component.css',
 })
-export class ProductDetailsComponent implements OnChanges {
+export class ProductDetailsComponent implements OnChanges ,OnInit {
   private isFirstChange = true;
-  // cartId = 1;
+  cartId = 1;
   productsInCart: IproductBuyed[] = [];
   productId = 0;
-  logstate!: boolean;
-  currentUser?: IUser;
-  // currentUserName?:string;
-  UserId!:number;
-  counter:number = 0;
+  @Input() counter = 0;
   @Input() product: IProduct = <IProduct>{};
   x: any;
+  @Input() rev :any;
+  prodId :number =0;
+
+  avgRating: number = 0;
+  Ratings: number[] = [];
 
   constructor(
     private CartCustomService: CustomCartService,
     private cartService: CartService,
-    private productService: ProductService,
-    private userAuthService: UserAuthService,
-    private storge: LocalStrogeService,
-    private userService:UserService
+    private productService: ProductService ,
+    private revServices :ReviewService ,
+   private myActivated:ActivatedRoute
     ) {
-      this.logstate = this.userAuthService.LoggedState;
-      this.userAuthService.getAllUsers().subscribe((alluser) => {
-      let token = this.storge.getItemFromLocalStorge('accesToken') || this.storge.getItemFromSessionStorge('accesToken');
-      this.currentUser = alluser.find((user) => user.accessToken == token);
-      if (this.currentUser) {
-        this.userAuthService.setLoggedState = true ;
-        this.UserId = this.currentUser.id; // Store the current user's id
-        console.log(  this.UserId);
-
-      } else {
-        this.userAuthService.setLoggedState = false;
-        // this.UserId = ''; // Clear the current user's name if not logged in
-      }
-    });
+      this.prodId = myActivated.snapshot.params["id"];
+    console.log("ID of product : "+this.prodId);
     }
+
     ngOnChanges(changes: SimpleChanges): void {
       if (this.isFirstChange) {
         this.isFirstChange = false;
       return;
     }
     this.productId = this.product.id;
+
+    
+    
+
+    this.avgRating = this.Ratings.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue;
+    }, 0) / this.Ratings.length;
+    console.log("avg rate : " , this.avgRating)
   }
+
+
+  // ngOnInit(): void {
+  //   this.revService.getReview(this.prodId).subscribe({
+  //     next:(data)=>{
+  //        console.log(data)
+  //       this.rev = data;
+  //     },
+  //     error:()=>{console.log(" Error")}
+  //   })
+  // }
   AddToCart() {
-  this.cartService.getCart(this.UserId).subscribe({
-    next: (value) => {
-      this.productsInCart = value.products || [];
-
-      const existingProductIndex = this.productsInCart.findIndex(
-        product => product.id === this.productId
-      );
-
-      if (existingProductIndex !== -1) {
-        // Product exists, increment quantity
-        this.productsInCart[existingProductIndex].quantity++;
-      } else {
-        // Product not found, add it
+    this.cartService.getCart(this.cartId).subscribe({
+      next: (value) => {
+        this.productsInCart = value.products;
         this.productsInCart.push({ id: this.productId, quantity: 1 });
-      }
-
-      // Save the updated cart after checking or adding the product
-      this.CartCustomService.editCartProducts(this.UserId, this.productsInCart).subscribe();
-    },
-    error: (err) => console.log(err),
-  });
-    // this.cartService.getCart(this.UserId).subscribe({
-    //   next: (value) => {
-    //     this.productsInCart = value.products || [];
-    //     const existingProductIndex = this.productsInCart.findIndex(
-    //       product => product.id === this.productId
-    //     );
-    //     if(existingProductIndex !== -1){
-    //       this.productsInCart[existingProductIndex].quantity++;
-    //     }
-    //     else{
-    //       this.productsInCart = value.products;
-    //       this.productsInCart.push({ id: this.productId, quantity: 1 });
-    //       this.CartCustomService.editCartProducts(
-    //         this.UserId,
-    //         this.productsInCart
-    //       ).subscribe();
-    //     }
-
-    //   },
-    //   error: (err) => console.log(err),
-    // });
-
+        this.CartCustomService.editCartProducts(
+          this.cartId,
+          this.productsInCart
+        ).subscribe();
+      },
+      error: (err) => console.log(err),
+    });
     this.showMessage('Added to cart');
 
-    //TO increament counter
-    this.cartService.getCart(this.UserId).subscribe({
-      next: (cart) => {
-        let quantities = cart.products.map(product => product.quantity);
-        console.log(cart.products);
-
-        const totalQuantity = quantities.reduce((sum, quantity) => sum + quantity, 0);
-        this.counter = totalQuantity;
-      }
-  });
-
     // Increment the counter
-    // this.incrementCounter();
 
+    this.incrementCounter();
   }
 
   // @Output() counterChanged: EventEmitter<number> = new EventEmitter<number>();
@@ -162,19 +124,19 @@ export class ProductDetailsComponent implements OnChanges {
 
 
   showMessage(message: string): void {
-    this.x = setTimeout(() => {
+    this.x = setInterval(() => {
       Swal.fire({
         title: message,
 
         icon: 'success',
       });
       this.clearMessage();
-    }, 500);
+    }, 1000);
     console.log('interval work');
   }
 
   clearMessage(): void {
-    clearTimeout(this.x);
+    clearInterval(this.x);
     console.log('clear work');
   }
   prodct = {
@@ -205,4 +167,7 @@ export class ProductDetailsComponent implements OnChanges {
     zoomFactor: 3,
     container: 'container-element',
   };
+
+
+ 
 }
