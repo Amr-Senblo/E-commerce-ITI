@@ -45,7 +45,7 @@ export class ProductDetailsComponent implements OnChanges {
   counter:number = 0;
   @Input() product: IProduct = <IProduct>{};
   x: any;
-
+  @Input() avgRating!:number;
   constructor(
     private CartCustomService: CustomCartService,
     private cartService: CartService,
@@ -77,26 +77,27 @@ export class ProductDetailsComponent implements OnChanges {
     this.productId = this.product.id;
   }
   AddToCart() {
-  this.cartService.getCart(this.UserId).subscribe({
-    next: (value) => {
-      this.productsInCart = value.products || [];
+    this.cartService.getCart(this.UserId).subscribe({
+      next: (value) => {
+        this.productsInCart = value.products || [];
 
-      const existingProductIndex = this.productsInCart.findIndex(
-        product => product.id === this.productId
-      );
+        const existingProductIndex = this.productsInCart.findIndex(
+          product => product.id === this.productId
+        );
 
-      if (existingProductIndex !== -1) {
-        // Product exists, increment quantity
-        this.productsInCart[existingProductIndex].quantity++;
-      } else {
-        // Product not found, add it
-        this.productsInCart.push({ id: this.productId, quantity: 1 });
-      }
+        if (existingProductIndex !== -1) {
+          // Product exists, increment quantity
+          this.productsInCart[existingProductIndex].quantity++;
+        } else {
+          // Product not found
+          this.productsInCart.push({ id: this.productId, quantity: 1 });
+        }
 
-      // Save the updated cart after checking or adding the product
-      this.CartCustomService.editCartProducts(this.UserId, this.productsInCart).subscribe();
-    },
-    error: (err) => console.log(err),
+        // Save the updated cart after checking or adding the product
+        this.CartCustomService.editCartProducts(this.UserId, this.productsInCart).subscribe();
+      },
+      error: (err) => console.log(err),
+
   });
     // this.cartService.getCart(this.UserId).subscribe({
     //   next: (value) => {

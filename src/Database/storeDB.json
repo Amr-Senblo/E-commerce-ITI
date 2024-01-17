@@ -891,18 +891,22 @@
       "products": [
         {
           "id": 5,
-          "quantity": 6
+          "quantity": 4
+        },
+        {
+          "id": 6,
+          "quantity": 26
         },
         {
           "id": 11,
-          "quantity": 3
+          "quantity": 30
         },
         {
-          "id": 8,
-          "quantity": 4
+          "id": 12,
+          "quantity": 1
         }
       ],
-      "totalPrice": 10899.869999999999,
+      "totalPrice": 51149.24999999995,
       "ordered": false,
       "createdAt": "2022-03-20T15:00:00.000Z",
       "updatedAt": "2022-03-20T15:00:00.000Z"

@@ -4,7 +4,7 @@
   </div>
   <div>
     @if (currentProduct) {
-    <app-product-details  [product]="currentProduct"></app-product-details>
+    <app-product-details [avgRating]="avgRating"  [product]="currentProduct"></app-product-details>
     }
   </div>
   <div class="my-5">
@@ -26,7 +26,7 @@
         [productID]="productId"
         (reviewCreated)="handleReviewCreated($event)"
         ></app-create-review>
-      <app-reviews   [reviews]="reviews!"></app-reviews>
+      <app-reviews [reviews]="reviews!"></app-reviews>
     </div>
   </div>
 
