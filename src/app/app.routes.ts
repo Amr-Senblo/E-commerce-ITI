@@ -33,7 +33,7 @@ export const routes: Routes = [
         component: ProductDetailsContainerComponent,
       },
 
-      { path: 'myprofile', component: UserProfileComponent },
+      { path: 'Myprofile', component: UserProfileComponent,canActivate: [loginGuard] },
 
       {
         path: 'Cart/:id',
@@ -51,23 +51,19 @@ export const routes: Routes = [
       { path: 'success', component: SuccessPaymentComponent },
     ],
   },
-
   {
     path: 'Login',
     component: RegisterLayoutComponent,
+    canActivateChild:[logoutGuard],
     children: [
-      { path: '', component: LoginFormComponent, canActivate: [logoutGuard] },
+      { path: '', component: LoginFormComponent,  },
+      {
+        path: 'Register',
+        component: RegisterComponent,
+      },
     ],
   },
   { path: 'CreateProduct', component: CreateProductComponent },
-
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: { isRegister: true },
-  },
-
   { path: 'Profile', component: ProfileComponent }, //Add Guard
-
   { path: '**', component: ErrorPageComponent },
 ];
