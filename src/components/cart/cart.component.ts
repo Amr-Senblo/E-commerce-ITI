@@ -14,8 +14,8 @@ import { UserService } from '../../services/user.service';
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [ProductCartComponent, CommonModule,RouterLink],
-  providers: [CartService, CustomCartService,UserAuthService, UserService,LocalStrogeService],
+  imports: [ProductCartComponent, CommonModule, RouterLink],
+  providers: [],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
@@ -30,7 +30,7 @@ export class CartComponent {
   logstate!: boolean;
   currentUser?: IUser;
   // currentUserName?:string;
-  UserId!:number;
+  UserId!: number;
 
   constructor(
     private getProductsService: CustomCartService,
@@ -38,26 +38,25 @@ export class CartComponent {
     private route: ActivatedRoute,
     private userAuthService: UserAuthService,
     private storge: LocalStrogeService,
-    private userService:UserService
-    )
-    {
-          this.route.params.subscribe(params => {
-          this.cartId = params['id'];
-          })
-            this.logstate = this.userAuthService.LoggedState;
-            this.userAuthService.getAllUsers().subscribe((alluser) => {
-            let token = this.storge.getItemFromLocalStorge('accesToken') || this.storge.getItemFromSessionStorge('accesToken');
-            this.currentUser = alluser.find((user) => user.accessToken == token);
-            if (this.currentUser) {
-              this.userAuthService.setLoggedState = true ;
-              this.UserId = this.currentUser.id; // Store the current user's id
-              console.log(  this.UserId);
+    private userService: UserService
+  ) {
+    this.route.params.subscribe(params => {
+      this.cartId = params['id'];
+    })
+    this.logstate = this.userAuthService.LoggedState;
+    this.userAuthService.getAllUsers().subscribe((alluser) => {
+      let token = this.storge.getItemFromLocalStorge('accesToken') || this.storge.getItemFromSessionStorge('accesToken');
+      this.currentUser = alluser.find((user) => user.accessToken == token);
+      if (this.currentUser) {
+        this.userAuthService.setLoggedState = true;
+        this.UserId = this.currentUser.id; // Store the current user's id
+        console.log(this.UserId);
 
-            } else {
-              this.userAuthService.setLoggedState = false;
-              // this.UserId = ''; // Clear the current user's name if not logged in
-            }
-          });
+      } else {
+        this.userAuthService.setLoggedState = false;
+        // this.UserId = ''; // Clear the current user's name if not logged in
+      }
+    });
   }
   ngOnInit(): void {
     this.products = [];

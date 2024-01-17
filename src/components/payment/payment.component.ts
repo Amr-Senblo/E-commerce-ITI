@@ -7,6 +7,7 @@ import { IproductBuyed } from '../../models/iproduct-buyed';
 import { ProductService } from '../../services/product.service';
 import { UserService } from '../../services/user.service';
 import { IOrder } from '../../models/iorder';
+import { CustomCartService } from '../../services/custom-cart-products.service';
 
 @Component({
   selector: 'app-payment',
@@ -21,7 +22,7 @@ export class PaymentComponent implements OnInit {
   productsBuyedArray: IproductBuyed[] = []
   Orders: IOrder[] = []
   @ViewChild('payment', { static: true }) payment!: ElementRef;
-  constructor(private route: ActivatedRoute, private router: Router, private cartService: CartService, private productService: ProductService, private userService: UserService) {
+  constructor(private route: ActivatedRoute, private router: Router, private cartService: CartService, private productService: ProductService, private userService: UserService, private customCartService: CustomCartService) {
     this.route.queryParams.subscribe(params => {
       this.price = params['totalPrice'];
       this.cartID = params['ID'];
@@ -79,6 +80,7 @@ export class PaymentComponent implements OnInit {
                       this.userService.updateUserOrders(this.cartID, this.Orders).subscribe();
                     }
                   })
+                  this.customCartService.editCartProducts(data.id, []).subscribe();
                 },
                 error: (err) => console.log(err)
               })
