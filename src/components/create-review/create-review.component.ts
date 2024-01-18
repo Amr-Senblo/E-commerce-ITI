@@ -25,7 +25,7 @@ import { LocalStrogeService } from '../../services/local-stroge.service';
     ReactiveFormsModule,
     NgbRatingModule,
   ],
-  providers: [UserService , UserAuthService],
+  providers: [UserService, UserAuthService],
   templateUrl: './create-review.component.html',
   styleUrl: './create-review.component.css',
 })
@@ -33,7 +33,9 @@ export class CreateReviewComponent implements OnInit {
   // @Input() userID!:number;
   userID: number = 1; //static until the guard finish
   @Input() productID!: number;
-  @Output() reviewCreated: EventEmitter<IReview[]> = new EventEmitter<IReview[]>();
+  @Output() reviewCreated: EventEmitter<IReview[]> = new EventEmitter<
+    IReview[]
+  >();
 
   user!: IUser;
   myForm: FormGroup;
@@ -43,12 +45,12 @@ export class CreateReviewComponent implements OnInit {
   reviewsOfProduct: IReview[] = [];
   logstate!: boolean;
   currentUser?: IUser;
-  currentUserName?:string;
+  currentUserName?: string;
 
   constructor(
     private userService: UserService,
     private reviewService: ReviewService,
-    private route: ActivatedRoute ,
+    private route: ActivatedRoute,
     private userAuthService: UserAuthService,
     private storge: LocalStrogeService
   ) {
@@ -58,19 +60,19 @@ export class CreateReviewComponent implements OnInit {
 
       this.logstate = this.userAuthService.LoggedState;
       this.userAuthService.getAllUsers().subscribe((alluser) => {
-        let token = this.storge.getItemFromLocalStorge('accesToken') || this.storge.getItemFromSessionStorge('accesToken');
+        let token =
+          this.storge.getItemFromLocalStorge('accessToken') ||
+          this.storge.getItemFromSessionStorge('accessToken');
         this.currentUser = alluser.find((user) => user.accessToken == token);
         if (this.currentUser) {
-          this.userAuthService.setLoggedState = true ;
+          this.userAuthService.setLoggedState = true;
           this.currentUserName = this.currentUser.name; // Store the current user's name
-          console.log(  this.currentUserName);
-
+          console.log(this.currentUserName);
         } else {
           this.userAuthService.setLoggedState = false;
           this.currentUserName = ''; // Clear the current user's name if not logged in
         }
-          });
-
+      });
     });
     this.myForm = new FormGroup({
       comment: new FormControl(null, Validators.required),
