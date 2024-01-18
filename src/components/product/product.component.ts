@@ -10,11 +10,14 @@ import { IProduct } from '../../models/iproduct';
 import { Router, RouterLink } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { UserAuthService } from '../../services/user-auth.service';
+import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
+import { ReviewService } from '../../services/review.service';
+import { IReview } from '../../models/ireview';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, NgbRating],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css',
 })
@@ -23,10 +26,11 @@ export class ProductComponent implements OnChanges {
   @Input() userWishList: number[] = [];
   wished: boolean = false;
   heart = 'fa-regular fa-heart ';
+
   constructor(
     private router: Router,
     private userService: UserService,
-    private userAuth: UserAuthService
+    private userAuth: UserAuthService,
   ) {
     console.log(this.userWishList);
   }

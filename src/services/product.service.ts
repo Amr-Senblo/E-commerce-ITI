@@ -17,7 +17,7 @@ export class ProductService {
     let url = `${this.DB}/${id}?_embed=reviews`;
     return this.http.get<IProduct>(url);
   }
-  
+
 
   createProduct(data: {}) {
     return this.http.post<IProduct>(this.DB, data);
@@ -25,6 +25,9 @@ export class ProductService {
   updateProduct(id: number, data: {}) {
     let url = `${this.DB}/${id}`;
     return this.http.put<IProduct>(url, data);
+  }
+  UpdateProductRatingAverage(id: number, ratingAverage: number) {
+    return this.http.patch<IProduct>(`${this.DB}/${id}`, { "ratingAverage": ratingAverage })
   }
   updateProductQuantity(id: number, newQuantity: number) {
     let url = `${this.DB}/${id}`;

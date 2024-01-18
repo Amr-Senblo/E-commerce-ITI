@@ -31,13 +31,10 @@ import { ICart } from '../../models/icart';
 })
 export class HeaderComponent implements OnInit, OnChanges {
   onItemBlur() {
-    this.itemClicked = false
-    console.log(this.itemClicked)
+    this.itemClicked = false;
   }
   onItemFoucs() {
-    this.itemClicked = true
-
-    console.log(this.itemClicked)
+    this.itemClicked = true;
   }
 
   counter: number = 0;
@@ -60,7 +57,7 @@ export class HeaderComponent implements OnInit, OnChanges {
   currentUser?: IUser;
   currentUserName?: string;
   @ViewChild(ToastComponent) toast!: ToastComponent;
-  cart?: ICart
+  cart?: ICart;
   searchKeyword: string = '';
 
   constructor(
@@ -74,15 +71,15 @@ export class HeaderComponent implements OnInit, OnChanges {
     this.logstate = this.userAuthService.LoggedState;
     this.userAuthService.getAllUsers().subscribe((alluser) => {
       let token =
-        this.storge.getItemFromLocalStorge('accesToken') ||
-        this.storge.getItemFromSessionStorge('accesToken');
+        this.storge.getItemFromLocalStorge('accessToken') ||
+        this.storge.getItemFromSessionStorge('accessToken');
       this.currentUser = alluser.find((user) => user.accessToken == token);
       if (this.currentUser) {
         this.CartCustomService.getCartContent(this.currentUser.id).subscribe({
           next: (val) => {
-            this.cart = val
-          }
-        })
+            this.cart = val;
+          },
+        });
         this.userAuthService.setLoggedState = true;
         this.currentUserName = this.currentUser.name; // Store the current user's name
         console.log(this.currentUserName);
@@ -98,6 +95,7 @@ export class HeaderComponent implements OnInit, OnChanges {
       this.getNames(this.searchKeyword);
     }
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     this.names = changes['names'].currentValue;
   }
@@ -109,8 +107,8 @@ export class HeaderComponent implements OnInit, OnChanges {
     CustomCartService.cartCounter$.subscribe({
       next: (val) => {
         this.counter = val;
-      }
-    })
+      },
+    });
   }
   toggleCategoriesDropdown() {
     this.categoriesDropdown = !this.categoriesDropdown;
@@ -144,10 +142,10 @@ export class HeaderComponent implements OnInit, OnChanges {
   }
 
   userNavigated: boolean = false;
-  itemClicked: boolean = true;
+  itemClicked: boolean = false;
 
   navigateToResult(result: string) {
-
+    this.userNavigated = true;
     this.itemClicked = true;
     // Navigate to the same page with the selected result
     this.route.navigate(['/Search', result]);

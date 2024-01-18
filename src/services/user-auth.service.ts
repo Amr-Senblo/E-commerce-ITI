@@ -40,13 +40,13 @@ export class UserAuthService {
   //       }
   //       if (remmberMe)
   //         this.userLocalStorge.setItemAtLocalStorge(
-  //           'accesToken',
+  //           'accessToken',
   //           userExists.accessToken,
   //           2629800000
   //         );
   //       else
   //         this.userLocalStorge.setItemAtSessionStorge(
-  //           'accesToken',
+  //           'accessToken',
   //           userExists.accessToken
   //         );
   //       this.loc.back();
@@ -56,26 +56,24 @@ export class UserAuthService {
   //     }
   //   });
   // }
-   getCurrentUser():Observable<IUser | undefined>{
-    
+  getCurrentUser(): Observable<IUser | undefined> {
     return this.getAllUsers().pipe(
-      map(allUsers => {
-          const token = this.userLocalStorge.getItemFromLocalStorge('accessToken') ||
-                        this.userLocalStorge.getItemFromSessionStorge('accessToken');
-          const currentUser = allUsers.find(user => user.accessToken === token);
-          this.setLoggedState = !!currentUser;
-          return currentUser;
+      map((allUsers) => {
+        const token =
+          this.userLocalStorge.getItemFromLocalStorge('accessToken') ||
+          this.userLocalStorge.getItemFromSessionStorge('accessToken');
+        const currentUser = allUsers.find((user) => user.accessToken === token);
+        this.setLoggedState = !!currentUser;
+        return currentUser;
       })
-  );
-  
-
+    );
   }
   logOut() {
     if (this.isLogged) {
       this.isLogged = false;
       this.loggSubject.next(false);
-      this.userLocalStorge.removeItemFromLocalStorage('accesToken');
-      this.userLocalStorge.removerItemFromSessionStorage('accesToken');
+      this.userLocalStorge.removeItemFromLocalStorage('accessToken');
+      this.userLocalStorge.removerItemFromSessionStorage('accessToken');
       this.router.navigateByUrl('Home');
     }
   }
