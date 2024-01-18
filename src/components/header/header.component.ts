@@ -32,12 +32,11 @@ import { ICart } from '../../models/icart';
 export class HeaderComponent implements OnInit, OnChanges {
 onItemBlur() {
 this.itemClicked=false
-console.log(this.itemClicked)
+
 }
 onItemFoucs() {
 this.itemClicked=true
 
-  console.log(this.itemClicked)
 }
 
   counter: number = 0;
@@ -74,8 +73,8 @@ cart?:ICart
     this.logstate = this.userAuthService.LoggedState;
     this.userAuthService.getAllUsers().subscribe((alluser) => {
       let token =
-        this.storge.getItemFromLocalStorge('accesToken') ||
-        this.storge.getItemFromSessionStorge('accesToken');
+        this.storge.getItemFromLocalStorge('accessToken') ||
+        this.storge.getItemFromSessionStorge('accessToken');
       this.currentUser = alluser.find((user) => user.accessToken == token);
       if (this.currentUser) {
         this.CartCustomService.getCartContent(this.currentUser.id).subscribe({
