@@ -30,15 +30,14 @@ import { ICart } from '../../models/icart';
   imports: [CommonModule, RouterModule, FormsModule, ToastComponent],
 })
 export class HeaderComponent implements OnInit, OnChanges {
-  onItemBlur() {
-    this.itemClicked = false
-    console.log(this.itemClicked)
-  }
-  onItemFoucs() {
-    this.itemClicked = true
+onItemBlur() {
+this.itemClicked=false
 
-    console.log(this.itemClicked)
-  }
+}
+onItemFoucs() {
+this.itemClicked=true
+
+}
 
   counter: number = 0;
   logOut() {
@@ -74,8 +73,8 @@ export class HeaderComponent implements OnInit, OnChanges {
     this.logstate = this.userAuthService.LoggedState;
     this.userAuthService.getAllUsers().subscribe((alluser) => {
       let token =
-        this.storge.getItemFromLocalStorge('accesToken') ||
-        this.storge.getItemFromSessionStorge('accesToken');
+        this.storge.getItemFromLocalStorge('accessToken') ||
+        this.storge.getItemFromSessionStorge('accessToken');
       this.currentUser = alluser.find((user) => user.accessToken == token);
       if (this.currentUser) {
         this.CartCustomService.getCartContent(this.currentUser.id).subscribe({
