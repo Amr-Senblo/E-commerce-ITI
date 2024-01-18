@@ -922,60 +922,21 @@
       "gender": "male",
       "password": "A1234567",
       "confirmPassword": "A1234567",
-      "wishlist": [],
-      "orders": []
+
+      "wishlist": []
     },
     {
-      "id": 744606614,
-      "accessToken": "744606614",
-      "name": "zzz",
-      "email": "zzzzz@zzz.com",
-      "phone": "11111111111",
+      "id": 341024590,
+      "accessToken": "341024590",
+      "name": "amr",
+      "email": "amr1@gmail.com",
+      "phone": "01099341206",
       "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
-      "Address": "zzzzzzzzzzzzzzz",
+      "Address": "ABC",
       "gender": "male",
-      "password": "1234567A",
-      "confirmPassword": "1234567A",
-      "wishlist": [],
-      "orders": [
-        {
-          "transactionID": "5UL040953U045032J",
-          "date": "2024-01-18T16:44:32.601Z",
-          "products": [
-            {
-              "id": 6,
-              "quantity": 1
-            }
-          ],
-          "totalPrice": "899.99"
-        }
-      ]
-    },
-    {
-      "id": 928599317,
-      "accessToken": "928599317",
-      "name": "fffffff",
-      "email": "ffffffff@fff.com",
-      "phone": "11111111111",
-      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
-      "Address": "fffffffffffffffffffffffffffffff",
-      "gender": "male",
-      "password": "1234567A",
-      "confirmPassword": "1234567A",
-      "wishlist": [],
-      "orders": [
-        {
-          "transactionID": "5K868801VD3249337",
-          "date": "2024-01-18T18:07:33.328Z",
-          "products": [
-            {
-              "id": 7,
-              "quantity": 1
-            }
-          ],
-          "totalPrice": "1199.99"
-        }
-      ]
+      "password": "A1234567",
+      "confirmPassword": "A1234567",
+      "wishlist": []
 
     }
   ],
@@ -1121,7 +1082,6 @@
       "products": [],
       "totalPrice": 1199.99,
       "ordered": false
-
     }
   ],
   "reviews": [

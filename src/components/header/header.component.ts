@@ -6,6 +6,9 @@ import {
   OnInit,
   SimpleChanges,
   ViewChild,
+  ElementRef,
+  Renderer2,
+  HostListener,
 } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
 import { Router, RouterModule } from '@angular/router';
@@ -32,9 +35,11 @@ import { ICart } from '../../models/icart';
 export class HeaderComponent implements OnInit, OnChanges {
   onItemBlur() {
     this.itemClicked = false;
+    this.isDropdownOpen = false;
   }
   onItemFoucs() {
     this.itemClicked = true;
+    this.isDropdownOpen = true;
   }
 
   counter: number = 0;
@@ -66,7 +71,9 @@ export class HeaderComponent implements OnInit, OnChanges {
     private filterApi: FilterAPIService,
     private userAuthService: UserAuthService,
     private storge: LocalStrogeService,
-    private CartCustomService: CustomCartService
+    private CartCustomService: CustomCartService,
+    private renderer: Renderer2,
+    private el: ElementRef
   ) {
     this.logstate = this.userAuthService.LoggedState;
     this.userAuthService.getAllUsers().subscribe((alluser) => {
@@ -108,6 +115,14 @@ export class HeaderComponent implements OnInit, OnChanges {
       next: (val) => {
         this.counter = val;
       },
+    });
+
+    //Add global click event listener
+    this.renderer.listen('document', 'click', (event: any) => {
+      if (!this.el.nativeElement.contains(event.target)) {
+        // Click occurred outside the dropdown, close it
+        this.isDropdownOpen = false;
+      }
     });
   }
   toggleCategoriesDropdown() {
