@@ -811,6 +811,19 @@
       "password": "A1234567",
       "confirmPassword": "A1234567",
       "wishlist": []
+    },
+    {
+      "id": 341024590,
+      "accessToken": "341024590",
+      "name": "amr",
+      "email": "amr1@gmail.com",
+      "phone": "01099341206",
+      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+      "Address": "ABC",
+      "gender": "male",
+      "password": "A1234567",
+      "confirmPassword": "A1234567",
+      "wishlist": []
     }
   ],
   "carts": [
@@ -898,6 +911,13 @@
     {
       "id": 621418695,
       "user": 621418695,
+      "products": [],
+      "totalPrice": 0,
+      "ordered": false
+    },
+    {
+      "id": 341024590,
+      "user": 341024590,
       "products": [],
       "totalPrice": 0,
       "ordered": false
