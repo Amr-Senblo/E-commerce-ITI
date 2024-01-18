@@ -86,18 +86,8 @@
 
 <!-- to handle item list to show matching results -->
 
-<!-- <div *ngIf="names.length > 0 && !itemClicked" class="my-0  d-flex align-items-center justify-content-center bg-light">
-  <div class=" dv x list-group w-75 ">
-    <a [routerLink]="['/Search', searchkeyword]" class="dv list-group-item list-group-item-action text-primary" 
-    *ngFor="let name of names" (click)="navigateToResult(searchInput.value); itemClicked = true;">{{name}}</a>
-  </div>
-</div>
 
-<div *ngIf="searchkeyword && names.length === 0  && !itemClicked" class="text-center">
-  <h2 class="text-danger">{{noResult}}</h2>
-</div> -->
-
-<div class="search-results-overlay" *ngIf="names.length > 0 && !itemClicked">
+<div class="search-results-overlay" *ngIf=" !itemClicked">
   <div class="dv x list-group w-75">
     <a [routerLink]="['/Search', searchkeyword]" class="dv list-group-item list-group-item-action text-primary" 
       *ngFor="let name of names" (click)="navigateToResult(searchInput.value); itemClicked = true;">{{name}}</a>
