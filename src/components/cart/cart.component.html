@@ -2,7 +2,7 @@
   <div *ngFor="let product of products;let i= index">
     <app-product-cart (cartProductEvent)="onAction($event)" [product]="product"
       [quantity]="productsQuantity[i]"></app-product-cart>
-    <hr>
   </div>
-  <button class="btn my-3">Check Out</button>
+  <button class="btn my-3" routerLink="/Payment" [queryParams]="{ 'ID': cartId, 'totalPrice' : totalPrice }"
+    queryParamsHandling="merge">Check Out</button>
 </div>

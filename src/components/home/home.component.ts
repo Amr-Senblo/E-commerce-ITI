@@ -8,7 +8,8 @@ import { ICategory } from '../../models/icategory';
 import { CategoryService } from '../../services/category.service';
 import { ProductService } from '../../services/product.service';
 import { ProductComponent } from '../product/product.component';
-
+import { UserAuthService } from '../../services/user-auth.service';
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ import { ProductComponent } from '../product/product.component';
     CarouselComponent,
     CategoriesComponent,
     ProductsArrayComponent,
-    ProductComponent
+    ProductComponent,
+    SpinnerComponent
   ],
   providers: [ProductService, CategoryService],
 })
@@ -35,11 +37,19 @@ export class HomeComponent implements OnInit {
   mobileCatg4: IProduct[] = [];
   smartWatch4: IProduct[] = [];
   laptops4: IProduct[] = [];
+  wishList: number[] = []
 
   constructor(
     public productService: ProductService,
-    public categoryServise: CategoryService
-  ) {}
+    public categoryServise: CategoryService,
+    private userAuth: UserAuthService
+  ) {
+    this.userAuth.getCurrentUser().subscribe(user => {
+      this.wishList = user?.wishlist || []
+      console.log(this.wishList)
+    }
+    )
+  }
 
   ngOnInit(): void {
     this.productService.getProduct4(1).subscribe({

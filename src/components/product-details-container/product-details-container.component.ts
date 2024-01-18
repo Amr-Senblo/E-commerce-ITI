@@ -27,7 +27,8 @@ import { CartService } from '../../services/cart.service';
     ProductsArrayComponent,
     ReviewsComponent,
     ProductComponent,
-    CreateReviewComponent
+    CreateReviewComponent,
+    ProductDetailsComponent,
   ],
 
   providers: [ProductService],
@@ -42,12 +43,16 @@ export class ProductDetailsContainerComponent implements OnInit {
   breadCrumbTitles: string[] = [];
   breadCrumbLinks: string[] = [];
   @Input() reviews: IReview[] = [];
+  avgRating:number=0;
+  Ratings: number[] = [];
+
+  // avgRating!:number;
 
   constructor(private reviewService:ReviewService,
     private route: ActivatedRoute,
     private productService: ProductService,
     private changeDetectorRef: ChangeDetectorRef ,
-  
+
     ) {
     this.route.params.subscribe(params => {
       this.productId = +params['id'];
@@ -70,15 +75,35 @@ export class ProductDetailsContainerComponent implements OnInit {
         })
       }
     })
+    this.reviewService.getReviews().subscribe({
+      next:(data)=>{
+        // this.reviews=data
+        let reviews: IReview[] = data;
+        console.log(reviews);
+
+        for (let review of this.reviews) {
+          reviews.filter( (product)=> product.productId == this.productId);
+          this.Ratings.push(review.rating);
+        }
+        console.log(this.Ratings);
+        // this.avgRating = Math.round(this.Ratings.reduce((sum, rating) => sum + rating, 0) / this.Ratings.length);
+        this.avgRating = this.Ratings.reduce((sum, rating) => sum + rating, 0) / this.Ratings.length;
+
+        console.log("Average Rating:", this.avgRating);
+
+      }
+
+    });
   }
 
-  handleReviewCreated(createdReview: IReview[]) 
+  handleReviewCreated(createdReview: IReview[])
   {
     // Check if reviews are available
       this.reviews=createdReview;
       // this.changeDetectorRef.detectChanges(); // Trigger change detection
-   
+
   }
+
 
 
 }
