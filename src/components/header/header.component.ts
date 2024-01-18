@@ -74,9 +74,10 @@ export class HeaderComponent implements OnInit, OnChanges {
     this.logstate = this.userAuthService.LoggedState;
     this.userAuthService.getAllUsers().subscribe((alluser) => {
       let token =
-        this.storge.getItemFromLocalStorge('accesToken') ||
-        this.storge.getItemFromSessionStorge('accesToken');
+        this.storge.getItemFromLocalStorge('accessToken') ||
+        this.storge.getItemFromSessionStorge('accessToken');
       this.currentUser = alluser.find((user) => user.accessToken == token);
+      console.log(this.currentUser)
       if (this.currentUser) {
         this.CartCustomService.getCartContent(this.currentUser.id).subscribe({
           next: (val) => {
