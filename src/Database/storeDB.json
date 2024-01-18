@@ -212,7 +212,7 @@
       "brand": "Apple",
       "description": "High-performance smartphone with advanced features.",
       "price": 799.99,
-      "quantity": 100,
+      "quantity": 99,
       "imageCover": "https://m.media-amazon.com/images/I/71i2XhHU3pL._AC_SX569_.jpg",
       "images": [
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51S-6V4UOLL._AC_SL1100_.jpg",
@@ -242,7 +242,7 @@
       "brand": "Samsung",
       "description": "Foldable smartphone with a large immersive display.",
       "price": 1999.99,
-      "quantity": 50,
+      "quantity": 49,
       "imageCover": "https://m.media-amazon.com/images/I/619T9-5afsL._AC_SX569_.jpg",
       "images": [
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61f3V3m9xnL._AC_SL1500_.jpg",
@@ -921,6 +921,58 @@
       "password": "A000000",
       "confirmPassword": "A000000",
       "wishlist": []
+    },
+    {
+      "id": 29247791,
+      "accessToken": "29247791",
+      "name": "Ahmed",
+      "email": "AHMED@GMAIL.COM",
+      "phone": "01234567891",
+      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+      "Address": "xxx",
+      "gender": "male",
+      "password": "1234567A",
+      "confirmPassword": "1234567A",
+      "wishlist": []
+    },
+    {
+      "id": 665707001,
+      "accessToken": "665707001",
+      "name": "xxxxxxxxxxx",
+      "email": "xxxxx@xx.com",
+      "phone": "11111111111",
+      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+      "Address": "xxx",
+      "gender": "male",
+      "password": "1234567A",
+      "confirmPassword": "1234567A",
+      "wishlist": []
+    },
+    {
+      "id": 600180705,
+      "accessToken": "600180705",
+      "name": "aaaaaaaa",
+      "email": "aaaaaaa@aaa.com",
+      "phone": "11111111111",
+      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+      "Address": "aaaaaaa",
+      "gender": "male",
+      "password": "A1234567",
+      "confirmPassword": "A1234567",
+      "wishlist": []
+    },
+    {
+      "id": 744606614,
+      "accessToken": "744606614",
+      "name": "zzz",
+      "email": "zzzzz@zzz.com",
+      "phone": "11111111111",
+      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+      "Address": "zzzzzzzzzzzzzzz",
+      "gender": "male",
+      "password": "1234567A",
+      "confirmPassword": "1234567A",
+      "wishlist": []
     }
   ],
   "carts": [
@@ -928,7 +980,7 @@
       "id": 1,
       "user": 1,
       "products": [],
-      "totalPrice": 499.99,
+      "totalPrice": 0,
       "ordered": false,
       "createdAt": "2022-01-15T12:30:00.000Z",
       "updatedAt": "2022-01-15T12:30:00.000Z"
@@ -936,16 +988,7 @@
     {
       "id": 2,
       "user": 2,
-      "products": [
-        {
-          "id": 1,
-          "quantity": 1
-        },
-        {
-          "id": 2,
-          "quantity": 1
-        }
-      ],
+      "products": [],
       "totalPrice": 2799.98,
       "ordered": true,
       "createdAt": "2022-02-02T10:45:00.000Z",
@@ -1008,6 +1051,50 @@
       "ordered": false,
       "createdAt": "2022-04-10T11:30:00.000Z",
       "updatedAt": "2022-04-10T11:30:00.000Z"
+    },
+    {
+      "id": 29247791,
+      "user": 29247791,
+      "products": [
+        {
+          "id": 7,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 2.2737367544323206e-13,
+      "ordered": false,
+      "createdAt": "2022-04-10T11:30:00.000Z",
+      "updatedAt": "2022-04-10T11:30:00.000Z"
+    },
+    {
+      "id": 29247791,
+      "user": 29247791,
+      "products": [],
+      "totalPrice": 0,
+      "ordered": false,
+      "createdAt": "2022-04-10T11:30:00.000Z",
+      "updatedAt": "2022-04-10T11:30:00.000Z"
+    },
+    {
+      "id": 600180705,
+      "user": 600180705,
+      "products": [],
+      "totalPrice": 0,
+      "ordered": false,
+      "createdAt": "2022-04-10T11:30:00.000Z",
+      "updatedAt": "2022-04-10T11:30:00.000Z"
+    },
+    {
+      "id": 744606614,
+      "user": 744606614,
+      "products": [
+        {
+          "id": 6,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 899.99,
+      "ordered": false
     }
   ],
   "reviews": [

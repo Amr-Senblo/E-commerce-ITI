@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {  FormsModule, NgForm } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 import { IUser } from '../../models/iuser';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,7 +13,7 @@ import { LocalStrogeService } from '../../services/local-stroge.service';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ FormsModule, CommonModule, HttpClientModule],
+  imports: [FormsModule, CommonModule, HttpClientModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
@@ -38,12 +38,19 @@ export class RegisterComponent {
     confirmPassword: '',
     wishlist: [],
   };
+  cartModel = {
+    id: this.userIdCounter,
+    user: this.userIdCounter,
+    products: [],
+    totalPrice: 0,
+    ordered: false,
+  };
   constructor(
-    private _registerService: RegisterService 
-    ,private router:Router // private _ngForm: NgForm
-    ,private userAuth:UserAuthService,
-    private storge:LocalStrogeService
-  ) {}
+    private _registerService: RegisterService
+    , private router: Router // private _ngForm: NgForm
+    , private userAuth: UserAuthService,
+    private storge: LocalStrogeService
+  ) { }
 
   passowrdMatch() {
     this.matched = this.userModel.password === this.userModel.confirmPassword;
@@ -52,11 +59,14 @@ export class RegisterComponent {
     this.submitted = true;
 
     this._registerService.register(this.userModel).subscribe((data) => {
-      
+
 
       this.router.navigateByUrl('Login')
 
-      
+
+    });
+    this._registerService.addCart(this.cartModel).subscribe((data) => {
+      console.log(data);
     });
   }
 }
