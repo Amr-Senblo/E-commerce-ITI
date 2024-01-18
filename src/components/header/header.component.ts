@@ -30,14 +30,12 @@ import { ICart } from '../../models/icart';
   imports: [CommonModule, RouterModule, FormsModule, ToastComponent],
 })
 export class HeaderComponent implements OnInit, OnChanges {
-onItemBlur() {
-this.itemClicked=false
-
-}
-onItemFoucs() {
-this.itemClicked=true
-
-}
+  onItemBlur() {
+    this.itemClicked = false;
+  }
+  onItemFoucs() {
+    this.itemClicked = true;
+  }
 
   counter: number = 0;
   logOut() {
@@ -59,7 +57,7 @@ this.itemClicked=true
   currentUser?: IUser;
   currentUserName?: string;
   @ViewChild(ToastComponent) toast!: ToastComponent;
-  cart?: ICart
+  cart?: ICart;
   searchKeyword: string = '';
 
   constructor(
@@ -79,9 +77,9 @@ this.itemClicked=true
       if (this.currentUser) {
         this.CartCustomService.getCartContent(this.currentUser.id).subscribe({
           next: (val) => {
-            this.cart = val
-          }
-        })
+            this.cart = val;
+          },
+        });
         this.userAuthService.setLoggedState = true;
         this.currentUserName = this.currentUser.name; // Store the current user's name
         console.log(this.currentUserName);
@@ -97,6 +95,7 @@ this.itemClicked=true
       this.getNames(this.searchKeyword);
     }
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     this.names = changes['names'].currentValue;
   }
@@ -108,8 +107,8 @@ this.itemClicked=true
     CustomCartService.cartCounter$.subscribe({
       next: (val) => {
         this.counter = val;
-      }
-    })
+      },
+    });
   }
   toggleCategoriesDropdown() {
     this.categoriesDropdown = !this.categoriesDropdown;
@@ -124,25 +123,24 @@ this.itemClicked=true
     this.route.navigateByUrl(`Search/${searchword}`);
     this.onSearch();
   }
-  noResult :string ='';
+  noResult: string = '';
 
   getNames(word: string) {
     // console.log("fdfdf")
     this.filterApi.getProductNameFromShearch(word).subscribe((data) => {
       this.names = data;
-      console.log( "items in search ", this.names);
-      if (this.names.length==0){
-        console.log("no result found");
-       this.noResult = "No results found";
+      console.log('items in search ', this.names);
+      if (this.names.length == 0) {
+        console.log('no result found');
+        this.noResult = 'No results found';
       }
-      
     });
     //   .subscribe((data) => {this.names = data
     //     console.log(this.names)});
 
     console.log(word);
   }
-   
+
   userNavigated: boolean = false;
   itemClicked: boolean = false;
 
@@ -153,9 +151,6 @@ this.itemClicked=true
     this.route.navigate(['/Search', result]);
   }
 
-
-
-  
   onSearch() {
     localStorage.setItem('searchKeyword', this.searchKeyword);
     this.getNames(this.searchKeyword);
