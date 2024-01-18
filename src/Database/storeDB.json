@@ -936,13 +936,8 @@
     {
       "id": 2,
       "user": 2,
-      "products": [
-        {
-          "id": 5,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 1299.99,
+      "products": [],
+      "totalPrice": 4.547473508864641e-13,
       "ordered": true,
       "createdAt": "2022-02-02T10:45:00.000Z",
       "updatedAt": "2022-02-02T10:45:00.000Z"
@@ -1477,6 +1472,13 @@
       "productId": 5,
       "rating": 1,
       "id": 56
+    },
+    {
+      "comment": "aa",
+      "user": 1,
+      "productId": 8,
+      "rating": 1,
+      "id": 57
     }
   ]
 }
