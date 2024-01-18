@@ -62,7 +62,9 @@
       "brand": "Xiaomi",
       "description": "Premium smartphone with a focus on photography and performance.",
       "price": 899.99,
+
       "quantity": 59,
+
       "imageCover": "https://techcart.com.au/wp-content/uploads/2021/10/61746-Xiaomi-Mi-11-Lite-5G-NE-256GB_8GB-Peach-Pink-Global-Version-550x550.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/61ejOV80CgL.AC_SL1500.jpg",
@@ -92,7 +94,7 @@
       "brand": "Samsung",
       "description": "Flagship smartphone with a focus on multimedia and photography.",
       "price": 1199.99,
-      "quantity": 1,
+      "quantity": 0,
       "imageCover": "https://m.media-amazon.com/images/I/8125fkrkQDL.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/71qMManR5bL.AC_SL1500.jpg",
@@ -122,7 +124,8 @@
       "brand": "Samsung",
       "description": "Mid-range smartphone with a focus on performance and value.",
       "price": 499.99,
-      "quantity": 0,
+      "quantity": 10,
+
       "imageCover": "https://m.media-amazon.com/images/I/719Zb5jJA9L.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/719Zb5jJA9L.AC_SL1500.jpg",
@@ -152,7 +155,7 @@
       "brand": "Huawei",
       "description": "Premium smartphone with a focus on camera innovation.",
       "price": 1099.99,
-      "quantity": 40,
+      "quantity": 39,
       "imageCover": "https://m.media-amazon.com/images/I/51tNBbfB4DL.AC_SX679.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/51tNBbfB4DL.AC_SX679.jpg",
@@ -654,19 +657,32 @@
       ],
       "orders": [
         {
-          "transactionID": "5SY17869U1955000M",
-          "date": "2024-01-15T18:32:41.172Z",
+
+          "transactionID": "6UH419594B341362G",
+          "date": "2024-01-18T16:36:09.585Z",
           "products": [
             {
-              "id": 5,
-              "quantity": 2
-            },
-            {
               "id": 8,
-              "quantity": 2
+              "quantity": 1
             }
           ],
-          "totalPrice": "3599.96"
+          "totalPrice": "499.99"
+        },
+        {
+          "transactionID": "4A640514HP423824S",
+          "date": "2024-01-18T16:40:32.064Z",
+          "products": [
+            {
+              "id": 6,
+              "quantity": 1
+            },
+            {
+              "id": 9,
+              "quantity": 1
+            }
+          ],
+          "totalPrice": "1999.98"
+
         }
       ]
     },
@@ -683,7 +699,8 @@
         7,
         17,
         18
-      ]
+      ],
+      "orders": []
     },
     {
       "id": 3,
@@ -695,12 +712,12 @@
       "profilePic": "https://media.istockphoto.com/id/1170286252/photo/positive-human-facial-expressions-and-emotions-portrait-of-handsome-young-male-in-his-20s.jpg?s=1024x1024&w=is&k=20&c=trvPL1PKSZQNc_ZVAhx4JzD0tHtub4PE0znx22fc7-k=",
       "Address": "789, Street, City, Country",
       "wishlist": [
-        12,
-        14,
-        17,
-        11,
-        16
-      ]
+
+        2,
+        3
+      ],
+      "orders": []
+
     },
     {
       "id": 4,
@@ -715,7 +732,8 @@
         1,
         5,
         4
-      ]
+      ],
+      "orders": []
     },
     {
       "id": 5,
@@ -729,7 +747,8 @@
       "wishlist": [
         2,
         4
-      ]
+      ],
+      "orders": []
     },
     {
       "id": 181485683476,
@@ -741,7 +760,8 @@
       "gender": "male",
       "passward": "A1234567",
       "confirmPassward": "A1234657",
-      "wishlist": []
+      "wishlist": [],
+      "orders": []
     },
     {
       "id": 181200270995,
@@ -753,7 +773,8 @@
       "gender": "male",
       "passward": "A123456789",
       "confirmPassward": "A123456789",
-      "wishlist": []
+      "wishlist": [],
+      "orders": []
     },
     {
       "id": 594568255104,
@@ -765,7 +786,8 @@
       "gender": "male",
       "passward": "A123456789",
       "confirmPassward": "A123456789",
-      "wishlist": []
+      "wishlist": [],
+      "orders": []
     },
     {
       "id": 97515223822,
@@ -777,7 +799,8 @@
       "gender": "male",
       "passward": "A123456789",
       "confirmPassward": "A123456789",
-      "wishlist": []
+      "wishlist": [],
+      "orders": []
     },
     {
       "id": 452134863510,
@@ -789,7 +812,8 @@
       "gender": "male",
       "passward": "D0000000",
       "confirmPassward": "D0000000",
-      "wishlist": []
+      "wishlist": [],
+      "orders": []
     },
     {
       "id": 895680185110,
@@ -801,7 +825,8 @@
       "gender": "male",
       "passward": "A1234567",
       "confirmPassward": "A1234567",
-      "wishlist": []
+      "wishlist": [],
+      "orders": []
     },
     {
       "id": 294112532346,
@@ -813,7 +838,8 @@
       "gender": "male",
       "passward": "A145214521",
       "confirmPassward": "A145214521",
-      "wishlist": []
+      "wishlist": [],
+      "orders": []
     },
     {
       "id": 127351569297,
@@ -826,7 +852,7 @@
       "passward": "A1234567",
       "confirmPassward": "A1234567",
       "wishlist": [],
-      "address": "Egypt, ElGarbiah, Tanta"
+      "orders": []
     },
     {
       "id": 546461492,
@@ -839,7 +865,8 @@
       "gender": "male",
       "password": "A1234567",
       "confirmPassword": "A1234567",
-      "wishlist": []
+      "wishlist": [],
+      "orders": []
     },
     {
       "id": 160545857,
@@ -852,20 +879,114 @@
       "gender": "male",
       "password": "A000000",
       "confirmPassword": "A000000",
-      "wishlist": []
+
+      "wishlist": [],
+      "orders": []
+    },
+    {
+      "id": 29247791,
+      "accessToken": "29247791",
+      "name": "Ahmed",
+      "email": "AHMED@GMAIL.COM",
+      "phone": "01234567891",
+      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+      "Address": "xxx",
+      "gender": "male",
+      "password": "1234567A",
+      "confirmPassword": "1234567A",
+      "wishlist": [],
+      "orders": []
+    },
+    {
+      "id": 665707001,
+      "accessToken": "665707001",
+      "name": "xxxxxxxxxxx",
+      "email": "xxxxx@xx.com",
+      "phone": "11111111111",
+      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+      "Address": "xxx",
+      "gender": "male",
+      "password": "1234567A",
+      "confirmPassword": "1234567A",
+      "wishlist": [],
+      "orders": []
+    },
+    {
+      "id": 600180705,
+      "accessToken": "600180705",
+      "name": "aaaaaaaa",
+      "email": "aaaaaaa@aaa.com",
+      "phone": "11111111111",
+      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+      "Address": "aaaaaaa",
+      "gender": "male",
+      "password": "A1234567",
+      "confirmPassword": "A1234567",
+      "wishlist": [],
+      "orders": []
+    },
+    {
+      "id": 744606614,
+      "accessToken": "744606614",
+      "name": "zzz",
+      "email": "zzzzz@zzz.com",
+      "phone": "11111111111",
+      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+      "Address": "zzzzzzzzzzzzzzz",
+      "gender": "male",
+      "password": "1234567A",
+      "confirmPassword": "1234567A",
+      "wishlist": [],
+      "orders": [
+        {
+          "transactionID": "5UL040953U045032J",
+          "date": "2024-01-18T16:44:32.601Z",
+          "products": [
+            {
+              "id": 6,
+              "quantity": 1
+            }
+          ],
+          "totalPrice": "899.99"
+        }
+      ]
+    },
+    {
+      "id": 928599317,
+      "accessToken": "928599317",
+      "name": "fffffff",
+      "email": "ffffffff@fff.com",
+      "phone": "11111111111",
+      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+      "Address": "fffffffffffffffffffffffffffffff",
+      "gender": "male",
+      "password": "1234567A",
+      "confirmPassword": "1234567A",
+      "wishlist": [],
+      "orders": [
+        {
+          "transactionID": "5K868801VD3249337",
+          "date": "2024-01-18T18:07:33.328Z",
+          "products": [
+            {
+              "id": 7,
+              "quantity": 1
+            }
+          ],
+          "totalPrice": "1199.99"
+        }
+      ]
+
     }
   ],
   "carts": [
     {
       "id": 1,
       "user": 1,
-      "products": [
-        {
-          "id": 5,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 4.547473508864641e-13,
+
+      "products": [],
+      "totalPrice": 1999.98,
+
       "ordered": false,
       "createdAt": "2022-01-15T12:30:00.000Z",
       "updatedAt": "2022-01-15T12:30:00.000Z"
@@ -953,6 +1074,54 @@
       "ordered": false,
       "createdAt": "2022-04-10T11:30:00.000Z",
       "updatedAt": "2022-04-10T11:30:00.000Z"
+
+    },
+    {
+      "id": 29247791,
+      "user": 29247791,
+      "products": [
+        {
+          "id": 7,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 2.2737367544323206e-13,
+      "ordered": false,
+      "createdAt": "2022-04-10T11:30:00.000Z",
+      "updatedAt": "2022-04-10T11:30:00.000Z"
+    },
+    {
+      "id": 29247791,
+      "user": 29247791,
+      "products": [],
+      "totalPrice": 0,
+      "ordered": false,
+      "createdAt": "2022-04-10T11:30:00.000Z",
+      "updatedAt": "2022-04-10T11:30:00.000Z"
+    },
+    {
+      "id": 600180705,
+      "user": 600180705,
+      "products": [],
+      "totalPrice": 0,
+      "ordered": false,
+      "createdAt": "2022-04-10T11:30:00.000Z",
+      "updatedAt": "2022-04-10T11:30:00.000Z"
+    },
+    {
+      "id": 744606614,
+      "user": 744606614,
+      "products": [],
+      "totalPrice": 899.99,
+      "ordered": false
+    },
+    {
+      "id": 928599317,
+      "user": 928599317,
+      "products": [],
+      "totalPrice": 1199.99,
+      "ordered": false
+
     }
   ],
   "reviews": [
