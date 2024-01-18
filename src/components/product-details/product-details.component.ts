@@ -45,7 +45,7 @@ export class ProductDetailsComponent implements OnChanges {
   counter: number = 0;
   @Input() product: IProduct = <IProduct>{};
   x: any;
-  @Input() avgRating!:number;
+  @Input() avgRating!: number;
   constructor(
     private CartCustomService: CustomCartService,
     private cartService: CartService,
@@ -56,13 +56,14 @@ export class ProductDetailsComponent implements OnChanges {
   ) {
     this.logstate = this.userAuthService.LoggedState;
     this.userAuthService.getAllUsers().subscribe((alluser) => {
-      let token = this.storge.getItemFromLocalStorge('accesToken') || this.storge.getItemFromSessionStorge('accesToken');
+      let token =
+        this.storge.getItemFromLocalStorge('accessToken') ||
+        this.storge.getItemFromSessionStorge('accessToken');
       this.currentUser = alluser.find((user) => user.accessToken == token);
       if (this.currentUser) {
         this.userAuthService.setLoggedState = true;
         this.UserId = this.currentUser.id; // Store the current user's id
         console.log(this.UserId);
-
       } else {
         this.userAuthService.setLoggedState = false;
         // this.UserId = ''; // Clear the current user's name if not logged in
@@ -82,7 +83,7 @@ export class ProductDetailsComponent implements OnChanges {
         this.productsInCart = value.products || [];
 
         const existingProductIndex = this.productsInCart.findIndex(
-          product => product.id === this.productId
+          (product) => product.id === this.productId
         );
 
         if (existingProductIndex !== -1) {
@@ -94,7 +95,10 @@ export class ProductDetailsComponent implements OnChanges {
         }
 
         // Save the updated cart after checking or adding the product
-        this.CartCustomService.editCartProducts(this.UserId, this.productsInCart).subscribe();
+        this.CartCustomService.editCartProducts(
+          this.UserId,
+          this.productsInCart
+        ).subscribe();
       },
       error: (err) => console.log(err),
     });
@@ -135,7 +139,6 @@ export class ProductDetailsComponent implements OnChanges {
 
     // Increment the counter
     // this.incrementCounter();
-
   }
 
   // @Output() counterChanged: EventEmitter<number> = new EventEmitter<number>();
@@ -159,7 +162,6 @@ export class ProductDetailsComponent implements OnChanges {
 
   //   console.log('counter1: ', this.counter);
   // }
-
 
   showMessage(message: string): void {
     this.x = setTimeout(() => {

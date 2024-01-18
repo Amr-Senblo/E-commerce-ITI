@@ -30,8 +30,8 @@ export class WishListComponent implements OnInit {
     //Marium
     this.userAuthService.getAllUsers().subscribe((alluser) => {
       let token =
-        this.storge.getItemFromLocalStorge('accesToken') ||
-        this.storge.getItemFromSessionStorge('accesToken');
+        this.storge.getItemFromLocalStorge('accessToken') ||
+        this.storge.getItemFromSessionStorge('accessToken');
       this.currentUser = alluser.find((user) => user.accessToken == token);
       this.whistlist = this.currentUser?.wishlist;
 
