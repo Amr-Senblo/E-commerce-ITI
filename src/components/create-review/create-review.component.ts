@@ -71,6 +71,8 @@ export class CreateReviewComponent implements OnInit {
         } else {
           this.userAuthService.setLoggedState = false;
           this.currentUserName = ''; // Clear the current user's name if not logged in
+          console.log("no create revirew");
+          
         }
       });
     });

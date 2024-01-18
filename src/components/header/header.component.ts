@@ -142,9 +142,10 @@ export class HeaderComponent implements OnInit, OnChanges {
   }
 
   userNavigated: boolean = false;
-  itemClicked: boolean = true;
+  itemClicked: boolean = false;
 
   navigateToResult(result: string) {
+    this.userNavigated = true;
     this.itemClicked = true;
     // Navigate to the same page with the selected result
     this.route.navigate(['/Search', result]);
