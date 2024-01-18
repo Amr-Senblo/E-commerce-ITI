@@ -32,7 +32,9 @@
       "brand": "Apple",
       "description": "Pro-level smartphone with enhanced camera and performance.",
       "price": 1299.99,
-      "quantity": 0,
+
+      "quantity": 2,
+
       "imageCover": "https://m.media-amazon.com/images/I/71xb2xkN5qL.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/61d8XHJuE2L.AC_SL1500.jpg",
@@ -40,7 +42,7 @@
         "https://m.media-amazon.com/images/I/817WqZsxjWL.AC_SL1500.jpg"
       ],
       "category": 1,
-      "ratingAverage": 4.8,
+      "ratingAverage": 3.2,
       "ratingQuantity": 30,
       "createdAt": "2022-07-10T12:00:00.000Z",
       "updatedAt": "2022-07-10T12:00:00.000Z",
@@ -62,7 +64,9 @@
       "brand": "Xiaomi",
       "description": "Premium smartphone with a focus on photography and performance.",
       "price": 899.99,
-      "quantity": 52,
+
+      "quantity": 59,
+
       "imageCover": "https://techcart.com.au/wp-content/uploads/2021/10/61746-Xiaomi-Mi-11-Lite-5G-NE-256GB_8GB-Peach-Pink-Global-Version-550x550.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/61ejOV80CgL.AC_SL1500.jpg",
@@ -70,7 +74,7 @@
         "https://techcart.com.au/wp-content/uploads/2021/10/61746-Xiaomi-Mi-11-Lite-5G-NE-256GB_8GB-Peach-Pink-Global-Version-550x550.jpg"
       ],
       "category": 1,
-      "ratingAverage": 4.7,
+      "ratingAverage": 2.2,
       "ratingQuantity": 25,
       "createdAt": "2022-09-05T14:45:00.000Z",
       "updatedAt": "2022-09-05T14:45:00.000Z",
@@ -100,7 +104,7 @@
         "https://m.media-amazon.com/images/I/8125fkrkQDL.AC_SL1500.jpg"
       ],
       "category": 1,
-      "ratingAverage": 4.8,
+      "ratingAverage": 2,
       "ratingQuantity": 22,
       "createdAt": "2022-11-15T13:20:00.000Z",
       "updatedAt": "2022-11-15T13:20:00.000Z",
@@ -123,6 +127,7 @@
       "description": "Mid-range smartphone with a focus on performance and value.",
       "price": 499.99,
       "quantity": 10,
+
       "imageCover": "https://m.media-amazon.com/images/I/719Zb5jJA9L.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/719Zb5jJA9L.AC_SL1500.jpg",
@@ -130,7 +135,7 @@
         "https://m.media-amazon.com/images/I/719Zb5jJA9L.AC_SL1500.jpg"
       ],
       "category": 1,
-      "ratingAverage": 4.5,
+      "ratingAverage": 3,
       "ratingQuantity": 18,
       "createdAt": "2023-02-10T10:00:00.000Z",
       "updatedAt": "2023-02-10T10:00:00.000Z",
@@ -160,7 +165,7 @@
         "https://m.media-amazon.com/images/I/61NOG1JF3BL._AC_SX522_.jpg"
       ],
       "category": 1,
-      "ratingAverage": 4.7,
+      "ratingAverage": null,
       "ratingQuantity": 28,
       "createdAt": "2023-04-25T11:45:00.000Z",
       "updatedAt": "2023-04-25T11:45:00.000Z",
@@ -190,7 +195,7 @@
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/51hTIoLNcnL.AC_SX679.jpg"
       ],
       "category": 1,
-      "ratingAverage": 4.6,
+      "ratingAverage": 2,
       "ratingQuantity": 20,
       "createdAt": "2023-08-15T14:30:00.000Z",
       "updatedAt": "2023-08-15T14:30:00.000Z",
@@ -212,7 +217,7 @@
       "brand": "Apple",
       "description": "High-performance smartphone with advanced features.",
       "price": 799.99,
-      "quantity": 99,
+      "quantity": 100,
       "imageCover": "https://m.media-amazon.com/images/I/71i2XhHU3pL._AC_SX569_.jpg",
       "images": [
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51S-6V4UOLL._AC_SL1100_.jpg",
@@ -220,7 +225,7 @@
         "https://m.media-amazon.com/images/I/71i2XhHU3pL._AC_SX569_.jpg"
       ],
       "category": 1,
-      "ratingAverage": 4.8,
+      "ratingAverage": 3.5,
       "ratingQuantity": 25,
       "createdAt": "2022-01-15T12:30:00.000Z",
       "updatedAt": "2022-01-15T12:30:00.000Z",
@@ -242,7 +247,7 @@
       "brand": "Samsung",
       "description": "Foldable smartphone with a large immersive display.",
       "price": 1999.99,
-      "quantity": 49,
+      "quantity": 50,
       "imageCover": "https://m.media-amazon.com/images/I/619T9-5afsL._AC_SX569_.jpg",
       "images": [
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61f3V3m9xnL._AC_SL1500_.jpg",
@@ -250,7 +255,7 @@
         "https://m.media-amazon.com/images/I/619T9-5afsL._AC_SX569_.jpg"
       ],
       "category": 1,
-      "ratingAverage": 4.7,
+      "ratingAverage": 3.25,
       "ratingQuantity": 30,
       "createdAt": "2022-02-02T10:45:00.000Z",
       "updatedAt": "2022-02-02T10:45:00.000Z",
@@ -280,7 +285,7 @@
         "https://m.media-amazon.com/images/I/712H7eI9Y6L.__AC_SX300_SY300_QL70_ML2_.jpg"
       ],
       "category": 1,
-      "ratingAverage": 4.6,
+      "ratingAverage": 3.875,
       "ratingQuantity": 35,
       "createdAt": "2022-03-20T15:00:00.000Z",
       "updatedAt": "2022-03-20T15:00:00.000Z",
@@ -310,7 +315,7 @@
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/81fRAoUL-fL._AC_SL1500_.jpg"
       ],
       "category": 1,
-      "ratingAverage": 4.5,
+      "ratingAverage": 2,
       "ratingQuantity": 28,
       "createdAt": "2022-04-10T11:30:00.000Z",
       "updatedAt": "2022-04-10T11:30:00.000Z",
@@ -340,7 +345,7 @@
         "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71p1EMtYnvL._AC_SY445_SX342_QL70_FMwebp.jpg"
       ],
       "category": 2,
-      "ratingAverage": 4.9,
+      "ratingAverage": 2,
       "ratingQuantity": 40,
       "createdAt": "2023-09-30T12:15:00.000Z",
       "updatedAt": "2023-09-30T12:15:00.000Z",
@@ -370,7 +375,7 @@
         "https://m.media-amazon.com/images/I/61Qg38+wXIL._AC_SX300_SY300_.jpg"
       ],
       "category": 2,
-      "ratingAverage": 4.8,
+      "ratingAverage": 2,
       "ratingQuantity": 30,
       "createdAt": "2023-10-15T11:30:00.000Z",
       "updatedAt": "2023-10-15T11:30:00.000Z",
@@ -400,7 +405,7 @@
         "https://m.media-amazon.com/images/I/51i6UseuG1L.AC_SX679.jpg"
       ],
       "category": 2,
-      "ratingAverage": 4.7,
+      "ratingAverage": 3.3333333333333335,
       "ratingQuantity": 25,
       "createdAt": "2023-11-20T10:45:00.000Z",
       "updatedAt": "2023-11-20T10:45:00.000Z",
@@ -430,7 +435,7 @@
         "https://m.media-amazon.com/images/I/41TMmWY0MeL.AC_SX522.jpg"
       ],
       "category": 2,
-      "ratingAverage": 4.6,
+      "ratingAverage": 2,
       "ratingQuantity": 20,
       "createdAt": "2024-01-05T12:00:00.000Z",
       "updatedAt": "2024-01-05T12:00:00.000Z",
@@ -460,7 +465,7 @@
         "https://m.media-amazon.com/images/I/615XFQdvsxL._AC_SX300_SY300_QL70_ML2.jpg"
       ],
       "category": 2,
-      "ratingAverage": 4.5,
+      "ratingAverage": 2,
       "ratingQuantity": 18,
       "createdAt": "2024-02-20T13:15:00.000Z",
       "updatedAt": "2024-02-20T13:15:00.000Z",
@@ -490,7 +495,7 @@
         "https://m.media-amazon.com/images/I/51feQ7mwboL.AC_SX679.jpg"
       ],
       "category": 3,
-      "ratingAverage": 4.8,
+      "ratingAverage": 3,
       "ratingQuantity": 15,
       "createdAt": "2024-03-15T14:30:00.000Z",
       "updatedAt": "2024-03-15T14:30:00.000Z",
@@ -520,7 +525,7 @@
         "https://m.media-amazon.com/images/I/61kojk8MkkL.AC_SL1488.jpg"
       ],
       "category": 3,
-      "ratingAverage": 4.7,
+      "ratingAverage": 4.333333333333333,
       "ratingQuantity": 18,
       "createdAt": "2024-04-05T12:45:00.000Z",
       "updatedAt": "2024-04-05T12:45:00.000Z",
@@ -550,7 +555,7 @@
         "https://m.media-amazon.com/images/I/51WHI1KTGhL.AC_SL1000.jpg"
       ],
       "category": 3,
-      "ratingAverage": 4.9,
+      "ratingAverage": 2.6666666666666665,
       "ratingQuantity": 22,
       "createdAt": "2024-04-20T15:00:00.000Z",
       "updatedAt": "2024-04-20T15:00:00.000Z",
@@ -580,7 +585,7 @@
         "https://m.media-amazon.com/images/I/7114JUk91ML.AC_SL1500.jpg"
       ],
       "category": 3,
-      "ratingAverage": 4.6,
+      "ratingAverage": null,
       "ratingQuantity": 15,
       "createdAt": "2024-05-10T11:30:00.000Z",
       "updatedAt": "2024-05-10T11:30:00.000Z",
@@ -610,7 +615,7 @@
         "https://m.media-amazon.com/images/I/71+U-WoUrWL.AC_SL1500.jpg"
       ],
       "category": 3,
-      "ratingAverage": 4.8,
+      "ratingAverage": 4,
       "ratingQuantity": 20,
       "createdAt": "2024-06-01T14:00:00.000Z",
       "updatedAt": "2024-06-01T14:00:00.000Z",
@@ -629,6 +634,17 @@
   ],
   "users": [
     {
+      "0": {
+        "transactionID": "1N722060GV6596749",
+        "date": "2024-01-15T18:27:57.341Z",
+        "products": [
+          {
+            "id": 13,
+            "quantity": 1
+          }
+        ],
+        "totalPrice": "399.99"
+      },
       "id": 1,
       "name": "Jack Adam",
       "password": "123456Abcd",
@@ -643,6 +659,7 @@
       ],
       "orders": [
         {
+
           "transactionID": "6UH419594B341362G",
           "date": "2024-01-18T16:36:09.585Z",
           "products": [
@@ -667,6 +684,7 @@
             }
           ],
           "totalPrice": "1999.98"
+
         }
       ]
     },
@@ -696,10 +714,12 @@
       "profilePic": "https://media.istockphoto.com/id/1170286252/photo/positive-human-facial-expressions-and-emotions-portrait-of-handsome-young-male-in-his-20s.jpg?s=1024x1024&w=is&k=20&c=trvPL1PKSZQNc_ZVAhx4JzD0tHtub4PE0znx22fc7-k=",
       "Address": "789, Street, City, Country",
       "wishlist": [
+
         2,
         3
       ],
       "orders": []
+
     },
     {
       "id": 4,
@@ -861,6 +881,7 @@
       "gender": "male",
       "password": "A000000",
       "confirmPassword": "A000000",
+
       "wishlist": [],
       "orders": []
     },
@@ -903,44 +924,19 @@
       "gender": "male",
       "password": "A1234567",
       "confirmPassword": "A1234567",
-      "wishlist": [],
-      "orders": []
+
+      "wishlist": []
     },
     {
-      "id": 744606614,
-      "accessToken": "744606614",
-      "name": "zzz",
-      "email": "zzzzz@zzz.com",
-      "phone": "11111111111",
+      "id": 341024590,
+      "accessToken": "341024590",
+      "name": "amr",
+      "email": "amr1@gmail.com",
+      "phone": "01099341206",
       "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
-      "Address": "zzzzzzzzzzzzzzz",
+      "Address": "ABC",
       "gender": "male",
-      "password": "1234567A",
-      "confirmPassword": "1234567A",
-      "wishlist": [],
-      "orders": [
-        {
-          "transactionID": "5UL040953U045032J",
-          "date": "2024-01-18T16:44:32.601Z",
-          "products": [
-            {
-              "id": 6,
-              "quantity": 1
-            }
-          ],
-          "totalPrice": "899.99"
-        }
-      ]
-    },
-    {
-      "id": 928599317,
-      "accessToken": "928599317",
-      "name": "fffffff",
-      "email": "ffffffff@fff.com",
-      "phone": "11111111111",
-      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
-      "Address": "fffffffffffffffffffffffffffffff",
-      "gender": "male",
+
       "password": "1234567A",
       "confirmPassword": "1234567A",
       "wishlist": [],
@@ -979,14 +975,17 @@
           "totalPrice": "1299.99"
         }
       ]
+
     }
   ],
   "carts": [
     {
       "id": 1,
       "user": 1,
+
       "products": [],
       "totalPrice": 1999.98,
+
       "ordered": false,
       "createdAt": "2022-01-15T12:30:00.000Z",
       "updatedAt": "2022-01-15T12:30:00.000Z"
@@ -994,8 +993,17 @@
     {
       "id": 2,
       "user": 2,
-      "products": [],
-      "totalPrice": 2799.98,
+      "products": [
+        {
+          "id": 1,
+          "quantity": 9
+        },
+        {
+          "id": 2,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 1699.98,
       "ordered": true,
       "createdAt": "2022-02-02T10:45:00.000Z",
       "updatedAt": "2022-02-02T10:45:00.000Z"
@@ -1006,18 +1014,26 @@
       "products": [
         {
           "id": 5,
-          "quantity": 6
+          "quantity": 5
         },
         {
-          "id": 11,
+          "id": 1,
+          "quantity": 2
+        },
+        {
+          "id": 17,
+          "quantity": 2
+        },
+        {
+          "id": 2,
           "quantity": 3
         },
         {
-          "id": 8,
-          "quantity": 4
+          "id": 9,
+          "quantity": 2
         }
       ],
-      "totalPrice": 10899.869999999999,
+      "totalPrice": 19899.86,
       "ordered": false,
       "createdAt": "2022-03-20T15:00:00.000Z",
       "updatedAt": "2022-03-20T15:00:00.000Z"
@@ -1057,6 +1073,7 @@
       "ordered": false,
       "createdAt": "2022-04-10T11:30:00.000Z",
       "updatedAt": "2022-04-10T11:30:00.000Z"
+
     },
     {
       "id": 29247791,
@@ -1574,6 +1591,48 @@
       "productId": 6,
       "rating": 1,
       "id": 55
+    },
+    {
+      "comment": "ee",
+      "user": 1,
+      "productId": 5,
+      "rating": 5,
+      "id": 56
+    },
+    {
+      "comment": "Good",
+      "user": 1,
+      "productId": 13,
+      "rating": 1,
+      "id": 57
+    },
+    {
+      "comment": "High quality",
+      "user": 1,
+      "productId": 13,
+      "rating": 5,
+      "id": 58
+    },
+    {
+      "comment": "Poor",
+      "user": 1,
+      "productId": 1,
+      "rating": 2,
+      "id": 59
+    },
+    {
+      "comment": "High quality",
+      "user": 1,
+      "productId": 1,
+      "rating": 5,
+      "id": 60
+    },
+    {
+      "comment": "High Quality",
+      "user": 3,
+      "productId": 1,
+      "rating": 5,
+      "id": 61
     }
   ]
 }

@@ -6,6 +6,9 @@ import {
   OnInit,
   SimpleChanges,
   ViewChild,
+  ElementRef,
+  Renderer2,
+  HostListener,
 } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
 import { Router, RouterModule } from '@angular/router';
@@ -31,13 +34,12 @@ import { ICart } from '../../models/icart';
 })
 export class HeaderComponent implements OnInit, OnChanges {
   onItemBlur() {
-    this.itemClicked = false
-    console.log(this.itemClicked)
+    this.itemClicked = false;
+    this.isDropdownOpen = false;
   }
   onItemFoucs() {
-    this.itemClicked = true
-
-    console.log(this.itemClicked)
+    this.itemClicked = true;
+    this.isDropdownOpen = true;
   }
 
   counter: number = 0;
@@ -61,7 +63,7 @@ export class HeaderComponent implements OnInit, OnChanges {
   currentUser?: IUser;
   currentUserName?: string;
   @ViewChild(ToastComponent) toast!: ToastComponent;
-  cart?: ICart
+  cart?: ICart;
   searchKeyword: string = '';
 
   constructor(
@@ -70,20 +72,22 @@ export class HeaderComponent implements OnInit, OnChanges {
     private filterApi: FilterAPIService,
     private userAuthService: UserAuthService,
     private storge: LocalStrogeService,
-    private CartCustomService: CustomCartService
+    private CartCustomService: CustomCartService,
+    private renderer: Renderer2,
+    private el: ElementRef
   ) {
     this.logstate = this.userAuthService.LoggedState;
     this.userAuthService.getAllUsers().subscribe((alluser) => {
       let token =
-        this.storge.getItemFromLocalStorge('accesToken') ||
-        this.storge.getItemFromSessionStorge('accesToken');
+        this.storge.getItemFromLocalStorge('accessToken') ||
+        this.storge.getItemFromSessionStorge('accessToken');
       this.currentUser = alluser.find((user) => user.accessToken == token);
       if (this.currentUser) {
         this.CartCustomService.getCartContent(this.currentUser.id).subscribe({
           next: (val) => {
-            this.cart = val
-          }
-        })
+            this.cart = val;
+          },
+        });
         this.userAuthService.setLoggedState = true;
         this.currentUserName = this.currentUser.name; // Store the current user's name
         console.log(this.currentUserName);
@@ -99,6 +103,7 @@ export class HeaderComponent implements OnInit, OnChanges {
       this.getNames(this.searchKeyword);
     }
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     this.names = changes['names'].currentValue;
   }
@@ -110,8 +115,16 @@ export class HeaderComponent implements OnInit, OnChanges {
     CustomCartService.cartCounter$.subscribe({
       next: (val) => {
         this.counter = val;
+      },
+    });
+
+    //Add global click event listener
+    this.renderer.listen('document', 'click', (event: any) => {
+      if (!this.el.nativeElement.contains(event.target)) {
+        // Click occurred outside the dropdown, close it
+        this.isDropdownOpen = false;
       }
-    })
+    });
   }
   toggleCategoriesDropdown() {
     this.categoriesDropdown = !this.categoriesDropdown;
@@ -145,10 +158,10 @@ export class HeaderComponent implements OnInit, OnChanges {
   }
 
   userNavigated: boolean = false;
-  itemClicked: boolean = true;
+  itemClicked: boolean = false;
 
   navigateToResult(result: string) {
-
+    this.userNavigated = true;
     this.itemClicked = true;
     // Navigate to the same page with the selected result
     this.route.navigate(['/Search', result]);

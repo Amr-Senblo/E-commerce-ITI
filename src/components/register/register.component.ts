@@ -3,12 +3,13 @@ import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 
 import { IUser } from '../../models/iuser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RegisterService } from '../../services/register.service';
 import { ViewChild } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { UserAuthService } from '../../services/user-auth.service';
 import { LocalStrogeService } from '../../services/local-stroge.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -18,6 +19,8 @@ import { LocalStrogeService } from '../../services/local-stroge.service';
   styleUrl: './register.component.css',
 })
 export class RegisterComponent {
+  private jsonServerUrl = `${environment.apiUrl}/users`;
+
   @ViewChild('userForm', { static: false })
   userForm!: NgForm;
 
@@ -47,27 +50,32 @@ export class RegisterComponent {
     ordered: false,
   };
   constructor(
-    private _registerService: RegisterService
-    , private router: Router // private _ngForm: NgForm
-    , private userAuth: UserAuthService,
-    private storge: LocalStrogeService
-  ) { }
+    private _registerService: RegisterService,
+    private router: Router, // private _ngForm: NgForm
+    private userAuth: UserAuthService,
+    private storge: LocalStrogeService,
+    private http: HttpClient
+  ) {}
 
   passowrdMatch() {
     this.matched = this.userModel.password === this.userModel.confirmPassword;
   }
   onSubmit() {
-    this.submitted = true;
-
-    this._registerService.register(this.userModel).subscribe((data) => {
-
-
-      this.router.navigateByUrl('Login')
-
-
-    });
-    this._registerService.addCart(this.cartModel).subscribe((data) => {
-      console.log(data);
-    });
+    // Check if the email already exists in the server
+    this.http
+      .get(`${this.jsonServerUrl}?email=${this.userModel.email}`)
+      .subscribe((result: any) => {
+        if (result.length > 0) {
+          alert('Email is already registered. Please use a different email.');
+        } else {
+          this.submitted = true;
+          this._registerService.register(this.userModel).subscribe((data) => {
+            this.router.navigateByUrl('Login');
+          });
+          this._registerService.addCart(this.cartModel).subscribe((data) => {
+            console.log(data);
+          });
+        }
+      });
   }
 }

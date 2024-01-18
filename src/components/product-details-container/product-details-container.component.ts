@@ -15,6 +15,7 @@ import { IReview } from '../../models/ireview';
 import { ReviewService } from '../../services/review.service';
 import { Observable, catchError, map, of, switchMap } from 'rxjs';
 import { CartService } from '../../services/cart.service';
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 
 @Component({
@@ -29,6 +30,7 @@ import { CartService } from '../../services/cart.service';
     ProductComponent,
     CreateReviewComponent,
     ProductDetailsComponent,
+    SpinnerComponent
   ],
 
   providers: [ProductService],
@@ -40,14 +42,13 @@ export class ProductDetailsContainerComponent implements OnInit {
   productId!: number;
   currentProduct: IProduct = <IProduct>{};
   categoryProducts: IProduct[] = [];
+  Products: IProduct[] = [];
   breadCrumbTitles: string[] = [];
   breadCrumbLinks: string[] = [];
-  @Input() reviews: IReview[] = [];
+  reviews: IReview[] = [];
   avgRating:number=0;
   Ratings: number[] = [];
-
-  // avgRating!:number;
-
+  product!:IProduct;
   constructor(private reviewService:ReviewService,
     private route: ActivatedRoute,
     private productService: ProductService,
@@ -75,9 +76,9 @@ export class ProductDetailsContainerComponent implements OnInit {
         })
       }
     })
+
     this.reviewService.getReviews().subscribe({
       next:(data)=>{
-        // this.reviews=data
         let reviews: IReview[] = data;
         console.log(reviews);
 
@@ -85,16 +86,48 @@ export class ProductDetailsContainerComponent implements OnInit {
           reviews.filter( (product)=> product.productId == this.productId);
           this.Ratings.push(review.rating);
         }
-        console.log(this.Ratings);
-        // this.avgRating = Math.round(this.Ratings.reduce((sum, rating) => sum + rating, 0) / this.Ratings.length);
+        console.log(this.Ratings)
         this.avgRating = this.Ratings.reduce((sum, rating) => sum + rating, 0) / this.Ratings.length;
-
         console.log("Average Rating:", this.avgRating);
+      }
+    });
+
+    this.productService.getProducts().subscribe({
+      next:(value)=>{
+        this.Products = value;
+        for (let review of this.Products) {
+
+        }
+        // this.product.ratingAverage= this.avgRating;
+        // console.log("Average Rating in json:", this.product.ratingAverage);
+        this.productService.UpdateProductRatingAverage(this.productId,this.avgRating).subscribe({
+          next:(value)=>{
+            this.product = value;
+            // this.product.ratingAverage= this.avgRating;
+            // console.log("Average Rating in json:", this.product.ratingAverage);
+            console.log(value);
+
+
+          }
+        })
 
       }
-
-    });
+    })
   }
+  // this.productService.getProducts().subscribe({
+  //   next:(value)=>{
+  //     this.Products = value;
+  //     for (let Prod of this.Products) {
+  //       this.productService.UpdateProductRatingAverage(Prod.id,this.avgRating).subscribe({
+  //         next:(value)=>{
+  //           this.product = value;
+  //           // this.product.ratingAverage= this.avgRating;
+  //           console.log("Average Rating in json:", this.product.ratingAverage);
+
+  //         }
+  //       })
+  // }
+
 
   handleReviewCreated(createdReview: IReview[])
   {
