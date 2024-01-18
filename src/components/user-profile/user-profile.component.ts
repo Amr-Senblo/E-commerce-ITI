@@ -147,4 +147,28 @@ export class UserProfileComponent {
       console.log('Passwords do not match');
     }
   }
+
+  onFileSelected(event: any): void {
+    const file: File = event.target.files[0];
+    if (file) {
+      console.log('file', file);
+      this.uploadProfilePicture(file);
+    }
+  }
+
+  uploadProfilePicture(file: File): void {
+    const formData = new FormData();
+    formData.append('file', file, `${this.loggedUser.id}.jpg`);
+    this.userService
+      .updateUserProfilePicture(this.loggedUser.id, formData)
+      .subscribe({
+        next: (data) => {
+          console.log('data', data);
+          this.loggedUser = data;
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
+  }
 }

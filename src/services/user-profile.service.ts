@@ -17,6 +17,11 @@ export class UserProfileService {
     return this.http.patch<IUser>(url, data);
   }
 
+  updateUserProfilePicture(id: number, data: {}): Observable<IUser> {
+    let url = `${this.DB}/${id}`;
+    return this.http.patch<IUser>(url, data);
+  }
+
   changePassword(id: number, data: {}): Observable<any> {
     let url = `${this.DB}/${id}`;
     return this.http.patch(url, data);

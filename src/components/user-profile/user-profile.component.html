@@ -5,7 +5,13 @@
                     width="150px" src="{{loggedUser.profilePic}}"><span
                     class="font-weight-bold">{{loggedUser.name}}</span><span
                     class="text-white-50">{{loggedUser.email}}</span><span>
-                </span></div>
+                </span>
+
+                <input (change)="onFileSelected($event)" type="file" class="form-control bg-transparent text-white mt-2"
+                    style="font-size: 13px; width: 60%" />
+            </div>
+
+
         </div>
         <div class="info-container col-md-8 border-right">
             <div class="p-3 py-5">
