@@ -8,7 +8,7 @@
 
     <div class="search-container">
 
-      <input type="text" class="search-input" (input)="gitNames(searchInput.value)"
+      <input type="text" class="search-input" (focus)="onItemFoucs()" (blur)="onItemBlur()" (input)="getNames(searchInput.value)"
         (keyup.enter)="onSearchEnter(searchInput.value)" #searchInput placeholder="Search for anything..."
         [(ngModel)]="searchkeyword">
 
@@ -22,17 +22,11 @@
     <div class="user-container">
       <a [routerLink]="['Cart',currentUser?.id]" class="cart-anchor">
         <div class="cart">
-         
-          <span class="cart-count badge text-bg-danger" >
-            {{counter}}
-          
-          </span> 
 
           <span class="cart-count badge text-bg-danger">
             {{counter}}
 
           </span>
-
 
           <img src="assets/images/cart.png" alt="cart" class="cart-icon">
           <span class="cart-text">Cart</span>
@@ -43,10 +37,10 @@
       <div class="profile" (click)="toggleDropdown()">
         @if (currentUser)
         {
-          <!-- <img [src]="currentUser.profilePic" alt="profile picture" class="profile-icon"> -->
-          <img class="rounded-circle shadow-1-strong mx-4"
-          [src]="currentUser.profilePic" alt="avatar" width="35" height="30" />
-          <div class="username" style="color: white;">{{ currentUserName }}</div> <!-- Display the current user's name -->
+        <!-- <img [src]="currentUser.profilePic" alt="profile picture" class="profile-icon"> -->
+        <img class="rounded-circle shadow-1-strong mx-4" [src]="currentUser.profilePic" alt="avatar" width="35"
+          height="30" />
+        <div class="username" style="color: white;">{{ currentUserName }}</div> <!-- Display the current user's name -->
         }
         @else
         {
@@ -71,13 +65,13 @@
 
 
         <div class="dropdown-content" *ngIf="isDropdownOpen">
-          <a routerLink="/myprofile"> <i class="fa-regular fa-user"></i>Profile</a>
+          <a routerLink="Myprofile"> <i class="fa-regular fa-user"></i>Profile</a>
           <a  routerLink="WishList"><i class="fa-regular fa-heart" ></i> Wishlist</a>
 
-          <a> <i class="fa-regular fa-credit-card"></i> Orders</a>
+          <a routerLink="/Orders/{{currentUser?.id}}"> <i class="fa-regular fa-credit-card"></i> Orders</a>
 
 
-          <a (click)="logOut()" routerLink="/Login"><i class="fa-solid fa-power-off"></i> Logout</a>
+          <a (click)="logOut()" ><i class="fa-solid fa-power-off"></i> Logout</a>
         </div>
       </div>
     </div>
@@ -86,12 +80,23 @@
   </div>
   <!-- <button mat-stroked-button (click)="openSnackBar()">Show snack-bar</button> -->
 
-  <!-- <button (click)="showstate()">Test</button> -->
+
+<!-- <div class="search-results-overlay" *ngIf="names.length > 0 && itemClicked">
+    <div class="dv x list-group w-75">
+      <a  class="dv list-group-item list-group-item-action text-primary" 
+        *ngFor="let name of names" (click)="navigateToResult(searchInput.value); itemClicked = true;">{{name}}</a>
+    </div>
+  </div>
+  
+  <div *ngIf="searchkeyword && names.length === 0 && !itemClicked" class="text-center">
+    <h2 class="text-danger">{{noResult}}</h2>
+ </div> -->
 
 
 
 
 
-
-  <app-toast hidden></app-toast>
+  <app-toast hidden ></app-toast>
 </div>
+
+<!-- ccm  -->

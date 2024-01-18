@@ -1,25 +1,18 @@
-<div class="main-container">
-    <div class="registration-container">
-        <h1>Enter Your Information</h1>
-
-        <!-- registered successfully -->
+<div class=" card shadow-2-strong shadow-lg bg-body-tertiary    m-auto p-2 " style="border-radius: 1rem; ">
+    <div class="card-body ">
+        <div class="text-center">
+            <h1>Enter Your Information</h1>
+        </div>
         <div class="alert alert-success" *ngIf="submitted">
             <strong>Success!</strong> You have been registered successfully.
         </div>
-
-
-
         <form #userFrom="ngForm" (ngSubmit)="onSubmit()" novalidate>
-
             <div class="form-group">
                 <label for="name">Name</label>
                 <input class="form-control" type="text" placeholder="Enter your name" name="name" required
                     #name="ngModel" [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="userModel.name">
                 <small class="text-danger" [class.d-none]="name.untouched || name.valid">Name is required</small>
             </div>
-
-
-
             <div class="form-group">
                 <label for="email">Email</label>
                 <input class="form-control" type="email" placeholder="Enter your email" name="email" required
@@ -34,7 +27,6 @@
             </div>
 
             <div class="row">
-
 
                 <div class="form-group col-md-6">
                     <label for="phone">Phone</label>
@@ -87,7 +79,6 @@
                         characters and one uppercase letter</small>
                     }
                 </div>
-
                 <div class="form-group col-md-6">
                     <label for="confirm-password">Confirm Password</label>
                     <input (input)="passowrdMatch()" class="form-control" type="password"
@@ -105,30 +96,10 @@
             </div>
 
             <div class="btn-container">
-                <button type="submit" #register [class.disabled]="!userFrom.valid||!matched" class="register-btn">Get In
+                <button type="submit" #register [class.disabled]="!userFrom.valid || !matched" class="register-btn">Get In
                     Now!</button>
             </div>
         </form>
-
-    </div>
-
-    <div class="signIn-container">
-        <div routerLink="/Home" class="logo-container">
-            <img src="assets\images\logo-white1__2.png" alt="">
-        </div>
-
-
-        <div class="welcome">
-            <h1>Welcome!</h1>
-        </div>
-
-        <div class="q-text">
-            <p>Already have an account?</p>
-        </div>
-
-        <div routerLink="/Login" class="signIn-btn">
-            <button class="signIn-btn">Sign In</button>
-        </div>
 
     </div>
 </div>

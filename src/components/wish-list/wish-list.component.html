@@ -1,4 +1,4 @@
-<div class="table-responsive">
+<div class="table-responsive align-items-center ">
     <table class="table">
         <thead>
             <tr>
@@ -12,9 +12,9 @@
         </thead>
         <tbody>
             @for (product of wishedProducts; track $index) {
-            <tr>
-                <td class=" img"><img [src]="product.imageCover" alt="product1"></td>
-                <td><a class=" link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+            <tr class=" ">
+                <td class="align-items-center img"><img [src]="product.imageCover" alt="product1"></td>
+                <td class=" align-items-center"><a class=" link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
                         href="#">{{product.name}}</a></td>
                 <td data-title="Price">{{product.price| currency}}</td>
                 <td data-title="Stock Status">

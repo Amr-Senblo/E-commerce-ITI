@@ -19,6 +19,7 @@ import { SuccessPaymentComponent } from '../components/success-payment/success-p
 import { loginGuard } from '../guards/login.guard';
 import { logoutGuard } from '../guards/logout.guard';
 import { WishListComponent } from '../components/wish-list/wish-list.component';
+import { OrdersComponent } from '../components/orders/orders.component';
 export const routes: Routes = [
   {
     path: '',
@@ -33,12 +34,12 @@ export const routes: Routes = [
         component: ProductDetailsContainerComponent,
       },
 
-      { path: 'myprofile', component: UserProfileComponent },
+      { path: 'Myprofile', component: UserProfileComponent,canActivate: [loginGuard] },
 
       {
         path: 'Cart/:id',
         component: CartComponent,
-        canActivate: [loginGuard],
+        /*canActivate: [logoutGuard] */
       },
       {
         path: 'WishList',
@@ -49,25 +50,22 @@ export const routes: Routes = [
       { path: 'AboutUs', component: AboutUsComponent },
       { path: 'Payment', component: PaymentComponent },
       { path: 'success', component: SuccessPaymentComponent },
+      { path: 'Orders/:id', component: OrdersComponent, /*canActivate: [logoutGuard] */ }
     ],
   },
-
   {
     path: 'Login',
     component: RegisterLayoutComponent,
+    canActivateChild:[logoutGuard],
     children: [
-      { path: '', component: LoginFormComponent, canActivate: [logoutGuard] },
+      { path: '', component: LoginFormComponent,  },
+      {
+        path: 'Register',
+        component: RegisterComponent,
+      },
     ],
   },
   { path: 'CreateProduct', component: CreateProductComponent },
-
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: { isRegister: true },
-  },
-
   { path: 'Profile', component: ProfileComponent }, //Add Guard
-
   { path: '**', component: ErrorPageComponent },
 ];
