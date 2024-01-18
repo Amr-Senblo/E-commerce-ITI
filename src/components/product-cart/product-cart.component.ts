@@ -23,8 +23,10 @@ export class ProductCartComponent {
     }
   }
   onPlus(id: number) {
-    if (this.quantity <= this.product.quantity) this.quantity = this.quantity + 1;
-    this.cartProductEvent.emit([{ id: id, quantity: this.quantity }, 'plus', this.product.price]);
+    if (this.quantity < this.product.quantity) {
+      this.quantity = this.quantity + 1;
+      this.cartProductEvent.emit([{ id: id, quantity: this.quantity }, 'plus', this.product.price]);
+    }
   }
   onRemove(id: number) {
     // console.log([{ id: id, quantity: 0 }, this.quantity, this.product.price])
