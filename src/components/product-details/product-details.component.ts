@@ -1,5 +1,6 @@
 import {
   Component,
+  DoCheck,
   EventEmitter,
   Input,
   OnChanges,
@@ -33,7 +34,7 @@ import { IUser } from '../../models/iuser';
   template: ` <button (click)="incrementCounter()">Increment Counter</button> `,
   styleUrl: './product-details.component.css',
 })
-export class ProductDetailsComponent implements OnChanges {
+export class ProductDetailsComponent implements OnChanges, DoCheck {
   private isFirstChange = true;
   // cartId = 1;
   productsInCart: IproductBuyed[] = [];
@@ -70,6 +71,10 @@ export class ProductDetailsComponent implements OnChanges {
       }
     });
   }
+  ngDoCheck(): void {
+    // throw new Error('Method not implemented.');
+    // this.product=
+  }
   ngOnChanges(changes: SimpleChanges): void {
     if (this.isFirstChange) {
       this.isFirstChange = false;
@@ -90,7 +95,7 @@ export class ProductDetailsComponent implements OnChanges {
           // Product exists, increment quantity
           this.productsInCart[existingProductIndex].quantity++;
         } else {
-          // Product not found, add it
+          // Product not found
           this.productsInCart.push({ id: this.productId, quantity: 1 });
         }
 
@@ -101,7 +106,8 @@ export class ProductDetailsComponent implements OnChanges {
         ).subscribe();
       },
       error: (err) => console.log(err),
-    });
+
+  });
     // this.cartService.getCart(this.UserId).subscribe({
     //   next: (value) => {
     //     this.productsInCart = value.products || [];

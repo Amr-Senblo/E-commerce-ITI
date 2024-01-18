@@ -31,7 +31,7 @@ import { LocalStrogeService } from '../../services/local-stroge.service';
 })
 export class CreateReviewComponent implements OnInit {
   // @Input() userID!:number;
-  userID: number = 1; //static until the guard finish
+  userID!:number ; //static until the guard finish
   @Input() productID!: number;
   @Output() reviewCreated: EventEmitter<IReview[]> = new EventEmitter<
     IReview[]
@@ -67,12 +67,12 @@ export class CreateReviewComponent implements OnInit {
         if (this.currentUser) {
           this.userAuthService.setLoggedState = true;
           this.currentUserName = this.currentUser.name; // Store the current user's name
-          console.log(this.currentUserName);
+          this.userID= this.currentUser.id;
         } else {
           this.userAuthService.setLoggedState = false;
           this.currentUserName = ''; // Clear the current user's name if not logged in
           console.log("no create revirew");
-          
+
         }
       });
     });
@@ -93,6 +93,7 @@ export class CreateReviewComponent implements OnInit {
     if (this.user === null) return;
   }
   send() {
+
     let comment = this.myForm.controls['comment'].value;
     let user = +this.userID;
     let productId = +this.productID;
@@ -113,6 +114,8 @@ export class CreateReviewComponent implements OnInit {
         this.selectedRating = 1;
       },
     });
+
+    window.location.reload();
   }
 
   onRatingChange(newRating: number) {

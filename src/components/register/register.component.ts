@@ -40,6 +40,7 @@ export class RegisterComponent {
     password: '',
     confirmPassword: '',
     wishlist: [],
+    orders: []
   };
   cartModel = {
     id: this.userIdCounter,
