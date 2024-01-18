@@ -115,7 +115,7 @@ export class CreateReviewComponent implements OnInit {
       },
     });
 
-    window.location.reload();
+    // window.location.reload();
   }
 
   onRatingChange(newRating: number) {

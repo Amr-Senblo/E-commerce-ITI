@@ -32,9 +32,7 @@
       "brand": "Apple",
       "description": "Pro-level smartphone with enhanced camera and performance.",
       "price": 1299.99,
-
       "quantity": 2,
-
       "imageCover": "https://m.media-amazon.com/images/I/71xb2xkN5qL.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/61d8XHJuE2L.AC_SL1500.jpg",
@@ -42,7 +40,7 @@
         "https://m.media-amazon.com/images/I/817WqZsxjWL.AC_SL1500.jpg"
       ],
       "category": 1,
-      "ratingAverage": 3.2,
+      "ratingAverage": 3.7142857142857144,
       "ratingQuantity": 30,
       "createdAt": "2022-07-10T12:00:00.000Z",
       "updatedAt": "2022-07-10T12:00:00.000Z",
@@ -64,9 +62,7 @@
       "brand": "Xiaomi",
       "description": "Premium smartphone with a focus on photography and performance.",
       "price": 899.99,
-
       "quantity": 59,
-
       "imageCover": "https://techcart.com.au/wp-content/uploads/2021/10/61746-Xiaomi-Mi-11-Lite-5G-NE-256GB_8GB-Peach-Pink-Global-Version-550x550.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/61ejOV80CgL.AC_SL1500.jpg",
@@ -96,7 +92,7 @@
       "brand": "Samsung",
       "description": "Flagship smartphone with a focus on multimedia and photography.",
       "price": 1199.99,
-      "quantity": 0,
+      "quantity": 1,
       "imageCover": "https://m.media-amazon.com/images/I/8125fkrkQDL.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/71qMManR5bL.AC_SL1500.jpg",
@@ -126,8 +122,7 @@
       "brand": "Samsung",
       "description": "Mid-range smartphone with a focus on performance and value.",
       "price": 499.99,
-      "quantity": 10,
-
+      "quantity": 0,
       "imageCover": "https://m.media-amazon.com/images/I/719Zb5jJA9L.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/719Zb5jJA9L.AC_SL1500.jpg",
@@ -157,7 +152,7 @@
       "brand": "Huawei",
       "description": "Premium smartphone with a focus on camera innovation.",
       "price": 1099.99,
-      "quantity": 39,
+      "quantity": 40,
       "imageCover": "https://m.media-amazon.com/images/I/51tNBbfB4DL.AC_SX679.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/51tNBbfB4DL.AC_SX679.jpg",
@@ -165,7 +160,7 @@
         "https://m.media-amazon.com/images/I/61NOG1JF3BL._AC_SX522_.jpg"
       ],
       "category": 1,
-      "ratingAverage": null,
+      "ratingAverage": 4,
       "ratingQuantity": 28,
       "createdAt": "2023-04-25T11:45:00.000Z",
       "updatedAt": "2023-04-25T11:45:00.000Z",
@@ -585,7 +580,7 @@
         "https://m.media-amazon.com/images/I/7114JUk91ML.AC_SL1500.jpg"
       ],
       "category": 3,
-      "ratingAverage": null,
+      "ratingAverage": 5,
       "ratingQuantity": 15,
       "createdAt": "2024-05-10T11:30:00.000Z",
       "updatedAt": "2024-05-10T11:30:00.000Z",
@@ -659,32 +654,19 @@
       ],
       "orders": [
         {
-
-          "transactionID": "6UH419594B341362G",
-          "date": "2024-01-18T16:36:09.585Z",
+          "transactionID": "5SY17869U1955000M",
+          "date": "2024-01-15T18:32:41.172Z",
           "products": [
             {
-              "id": 8,
-              "quantity": 1
-            }
-          ],
-          "totalPrice": "499.99"
-        },
-        {
-          "transactionID": "4A640514HP423824S",
-          "date": "2024-01-18T16:40:32.064Z",
-          "products": [
-            {
-              "id": 6,
-              "quantity": 1
+              "id": 5,
+              "quantity": 2
             },
             {
-              "id": 9,
-              "quantity": 1
+              "id": 8,
+              "quantity": 2
             }
           ],
-          "totalPrice": "1999.98"
-
+          "totalPrice": "3599.96"
         }
       ]
     },
@@ -701,8 +683,7 @@
         7,
         17,
         18
-      ],
-      "orders": []
+      ]
     },
     {
       "id": 3,
@@ -713,13 +694,7 @@
       "phone": "01012345613",
       "profilePic": "https://media.istockphoto.com/id/1170286252/photo/positive-human-facial-expressions-and-emotions-portrait-of-handsome-young-male-in-his-20s.jpg?s=1024x1024&w=is&k=20&c=trvPL1PKSZQNc_ZVAhx4JzD0tHtub4PE0znx22fc7-k=",
       "Address": "789, Street, City, Country",
-      "wishlist": [
-
-        2,
-        3
-      ],
-      "orders": []
-
+      "wishlist": []
     },
     {
       "id": 4,
@@ -734,8 +709,7 @@
         1,
         5,
         4
-      ],
-      "orders": []
+      ]
     },
     {
       "id": 5,
@@ -749,8 +723,7 @@
       "wishlist": [
         2,
         4
-      ],
-      "orders": []
+      ]
     },
     {
       "id": 181485683476,
@@ -762,8 +735,7 @@
       "gender": "male",
       "passward": "A1234567",
       "confirmPassward": "A1234657",
-      "wishlist": [],
-      "orders": []
+      "wishlist": []
     },
     {
       "id": 181200270995,
@@ -775,8 +747,7 @@
       "gender": "male",
       "passward": "A123456789",
       "confirmPassward": "A123456789",
-      "wishlist": [],
-      "orders": []
+      "wishlist": []
     },
     {
       "id": 594568255104,
@@ -788,8 +759,7 @@
       "gender": "male",
       "passward": "A123456789",
       "confirmPassward": "A123456789",
-      "wishlist": [],
-      "orders": []
+      "wishlist": []
     },
     {
       "id": 97515223822,
@@ -801,8 +771,7 @@
       "gender": "male",
       "passward": "A123456789",
       "confirmPassward": "A123456789",
-      "wishlist": [],
-      "orders": []
+      "wishlist": []
     },
     {
       "id": 452134863510,
@@ -814,8 +783,7 @@
       "gender": "male",
       "passward": "D0000000",
       "confirmPassward": "D0000000",
-      "wishlist": [],
-      "orders": []
+      "wishlist": []
     },
     {
       "id": 895680185110,
@@ -827,8 +795,7 @@
       "gender": "male",
       "passward": "A1234567",
       "confirmPassward": "A1234567",
-      "wishlist": [],
-      "orders": []
+      "wishlist": []
     },
     {
       "id": 294112532346,
@@ -840,8 +807,7 @@
       "gender": "male",
       "passward": "A145214521",
       "confirmPassward": "A145214521",
-      "wishlist": [],
-      "orders": []
+      "wishlist": []
     },
     {
       "id": 127351569297,
@@ -854,7 +820,7 @@
       "passward": "A1234567",
       "confirmPassward": "A1234567",
       "wishlist": [],
-      "orders": []
+      "address": "Egypt, ElGarbiah, Tanta"
     },
     {
       "id": 546461492,
@@ -867,8 +833,7 @@
       "gender": "male",
       "password": "A1234567",
       "confirmPassword": "A1234567",
-      "wishlist": [],
-      "orders": []
+      "wishlist": []
     },
     {
       "id": 160545857,
@@ -881,111 +846,20 @@
       "gender": "male",
       "password": "A000000",
       "confirmPassword": "A000000",
-
-      "wishlist": [],
-      "orders": []
-    },
-    {
-      "id": 29247791,
-      "accessToken": "29247791",
-      "name": "Ahmed",
-      "email": "AHMED@GMAIL.COM",
-      "phone": "01234567891",
-      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
-      "Address": "xxx",
-      "gender": "male",
-      "password": "1234567A",
-      "confirmPassword": "1234567A",
-      "wishlist": [],
-      "orders": []
-    },
-    {
-      "id": 665707001,
-      "accessToken": "665707001",
-      "name": "xxxxxxxxxxx",
-      "email": "xxxxx@xx.com",
-      "phone": "11111111111",
-      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
-      "Address": "xxx",
-      "gender": "male",
-      "password": "1234567A",
-      "confirmPassword": "1234567A",
-      "wishlist": [],
-      "orders": []
-    },
-    {
-      "id": 600180705,
-      "accessToken": "600180705",
-      "name": "aaaaaaaa",
-      "email": "aaaaaaa@aaa.com",
-      "phone": "11111111111",
-      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
-      "Address": "aaaaaaa",
-      "gender": "male",
-      "password": "A1234567",
-      "confirmPassword": "A1234567",
-
       "wishlist": []
-    },
-    {
-      "id": 341024590,
-      "accessToken": "341024590",
-      "name": "amr",
-      "email": "amr1@gmail.com",
-      "phone": "01099341206",
-      "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
-      "Address": "ABC",
-      "gender": "male",
-
-      "password": "1234567A",
-      "confirmPassword": "1234567A",
-      "wishlist": [],
-      "orders": [
-        {
-          "transactionID": "5K868801VD3249337",
-          "date": "2024-01-18T18:07:33.328Z",
-          "products": [
-            {
-              "id": 7,
-              "quantity": 1
-            }
-          ],
-          "totalPrice": "1199.99"
-        },
-        {
-          "transactionID": "1K7721226L120441H",
-          "date": "2024-01-18T20:17:47.342Z",
-          "products": [
-            {
-              "id": 6,
-              "quantity": 1
-            }
-          ],
-          "totalPrice": "899.99"
-        },
-        {
-          "transactionID": "8EM611187X390062M",
-          "date": "2024-01-18T21:44:04.676Z",
-          "products": [
-            {
-              "id": 5,
-              "quantity": 1
-            }
-          ],
-          "totalPrice": "1299.99"
-        }
-      ]
-
     }
   ],
   "carts": [
     {
       "id": 1,
       "user": 1,
-
-      "products": [],
-      "totalPrice": 1999.98,
-
+      "products": [
+        {
+          "id": 5,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 4.547473508864641e-13,
       "ordered": false,
       "createdAt": "2022-01-15T12:30:00.000Z",
       "updatedAt": "2022-01-15T12:30:00.000Z"
@@ -1013,27 +887,19 @@
       "user": 3,
       "products": [
         {
-          "id": 5,
-          "quantity": 5
-        },
-        {
-          "id": 1,
-          "quantity": 2
-        },
-        {
           "id": 17,
           "quantity": 2
         },
         {
-          "id": 2,
-          "quantity": 3
-        },
-        {
           "id": 9,
           "quantity": 2
+        },
+        {
+          "id": 5,
+          "quantity": 1
         }
       ],
-      "totalPrice": 19899.86,
+      "totalPrice": 5799.96,
       "ordered": false,
       "createdAt": "2022-03-20T15:00:00.000Z",
       "updatedAt": "2022-03-20T15:00:00.000Z"
@@ -1073,58 +939,6 @@
       "ordered": false,
       "createdAt": "2022-04-10T11:30:00.000Z",
       "updatedAt": "2022-04-10T11:30:00.000Z"
-
-    },
-    {
-      "id": 29247791,
-      "user": 29247791,
-      "products": [
-        {
-          "id": 7,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 2.2737367544323206e-13,
-      "ordered": false,
-      "createdAt": "2022-04-10T11:30:00.000Z",
-      "updatedAt": "2022-04-10T11:30:00.000Z"
-    },
-    {
-      "id": 29247791,
-      "user": 29247791,
-      "products": [],
-      "totalPrice": 0,
-      "ordered": false,
-      "createdAt": "2022-04-10T11:30:00.000Z",
-      "updatedAt": "2022-04-10T11:30:00.000Z"
-    },
-    {
-      "id": 600180705,
-      "user": 600180705,
-      "products": [],
-      "totalPrice": 0,
-      "ordered": false,
-      "createdAt": "2022-04-10T11:30:00.000Z",
-      "updatedAt": "2022-04-10T11:30:00.000Z"
-    },
-    {
-      "id": 744606614,
-      "user": 744606614,
-      "products": [],
-      "totalPrice": 899.99,
-      "ordered": false
-    },
-    {
-      "id": 928599317,
-      "user": 928599317,
-      "products": [
-        {
-          "id": 6,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 1299.99,
-      "ordered": false
     }
   ],
   "reviews": [
@@ -1633,6 +1447,41 @@
       "productId": 1,
       "rating": 5,
       "id": 61
+    },
+    {
+      "comment": "High Quality",
+      "user": 3,
+      "productId": 5,
+      "rating": 5,
+      "id": 62
+    },
+    {
+      "comment": "Like This",
+      "user": 3,
+      "productId": 5,
+      "rating": 5,
+      "id": 63
+    },
+    {
+      "comment": "High quality",
+      "user": 3,
+      "productId": 9,
+      "rating": 5,
+      "id": 64
+    },
+    {
+      "comment": "Love It",
+      "user": 3,
+      "productId": 5,
+      "rating": 5,
+      "id": 65
+    },
+    {
+      "comment": "Like it",
+      "user": 3,
+      "productId": 19,
+      "rating": 5,
+      "id": 66
     }
   ]
 }

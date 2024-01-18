@@ -10,10 +10,17 @@
 
   <div class="my-5">
     <h2 class="my-5 text-center fw-bold theme-color">You May Like</h2>
+    <div class="row">
     @if (categoryProducts) {
-        <div class="row">
+      @for (product of categoryProducts; track product.id)
+      {
+          <div class="col-12 col-md-6 col-lg-3 product">
+            <app-product [product]="product" [userWishList]="wishList"></app-product>
+          </div>
+      }
+        <!-- <div class="row">
             <app-products-array [products]="categoryProducts"></app-products-array>
-        </div>
+        </div> -->
     }
     @else{
       <div class="d-flex justify-content-center align-items-center my-5">
@@ -21,6 +28,8 @@
       </div>
     }
   </div>
+</div>
+
 
 
 

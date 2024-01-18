@@ -26,9 +26,6 @@
 }
 
 
-
-
-
 .first-header-container {
     display: flex;
     justify-content: space-between;
@@ -175,7 +172,7 @@
 
 
 
-/* 
+/*
 .second-header-container {
     display: flex;
     justify-content: space-between;
@@ -279,7 +276,7 @@
 
 
 
-/* 
+/*
 .category-item {
     display: flex;
     align-items: center;
@@ -429,4 +426,13 @@
 
 
 
+}
+.search-container[_ngcontent-ng-c1646304939] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 2.5rem;
+  border: 1px solid #858585;
+  border-radius: 0.5rem;
 }
