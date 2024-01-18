@@ -27,7 +27,7 @@ export class WishListComponent implements OnInit {
     private userService: UserService
   ) {
     this.logstate = this.userAuthService.LoggedState;
-    //Marium
+
     this.userAuthService.getAllUsers().subscribe((alluser) => {
       let token =
         this.storge.getItemFromLocalStorge('accessToken') ||
@@ -37,15 +37,15 @@ export class WishListComponent implements OnInit {
 
       if (this.currentUser) {
         this.userAuthService.setLoggedState = true;
+        this.prodAPi.getProducts().subscribe((data) => {
+          this.wishedProducts = data.filter((p) => this.whistlist?.includes(p.id));
+          console.log(this.whistlist);
+          console.log(this.wishedProducts);
+        });
       } else this.userAuthService.setLoggedState = false;
     });
   }
   ngOnInit(): void {
-    this.prodAPi.getProducts().subscribe((data) => {
-      this.wishedProducts = data.filter((p) => this.whistlist?.includes(p.id));
-      console.log(this.whistlist);
-      console.log(this.wishedProducts);
-    });
   }
   removeFromWhishList(prdId: number) {
     this.whistlist = this.whistlist?.filter((id) => id != prdId) || [];

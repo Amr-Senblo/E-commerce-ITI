@@ -22,7 +22,7 @@
 
 
     <div class="user-container ">
-      <a routerLink="Cart/{{currentUser?.id}}" class="cart-anchor">
+      <a routerLink="Cart/{{currentUser?.id||0}}" class="cart-anchor">
         <div class="cart ">
 
           <span class="cart-count badge text-bg-danger">
