@@ -94,12 +94,13 @@ export class CartComponent {
       error: error => console.log(error)
     })
   }
-  onAction(value: [IproductBuyed, number, number]) {
-    if (value[0].quantity === 0) {
+  onAction(value: [IproductBuyed, string, number]) {
+    if (value[1] === 'delete') {
+      console.log(value);
       this.productsBuyedArray = this.productsBuyedArray.filter(item => item.id !== value[0].id);
       this.getProductsService.editCartProducts(this.cartId, this.productsBuyedArray).subscribe();
-      this.totalPrice = this.totalPrice - value[1] * value[2];
-      //console.log(this.totalPrice);
+      this.totalPrice = this.totalPrice - value[0].quantity * value[2];
+      console.log(this.totalPrice);
       this.getProductsService.editCartTotalPrice(this.cartId, this.totalPrice).subscribe();
     } else {
       this.productsBuyedArray = this.productsBuyedArray.map(item => {
@@ -108,13 +109,13 @@ export class CartComponent {
         return item
       });
 
-      if (value[0].quantity > value[1]) {
+      if (value[1] === 'plus') {
         this.totalPrice = this.totalPrice + value[2];
       }
       else {
         this.totalPrice = this.totalPrice - value[2]
       }
-      // console.log(this.totalPrice);
+      //console.log(this.totalPrice);
       this.getProductsService.editCartProducts(this.cartId, this.productsBuyedArray).subscribe();
       this.getProductsService.editCartTotalPrice(this.cartId, this.totalPrice).subscribe();
     }

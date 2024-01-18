@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { IUser } from '../models/iuser';
 import { HttpClient } from '@angular/common/http';
+import { ICart } from '../models/icart';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RegisterService {
   _url = 'http://localhost:3000/users';
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient) { }
 
   register(user: IUser) {
     return this._http.post<any>(this._url, user);
+  }
+  addCart(cart: ICart) {
+    return this._http.post<any>('http://localhost:3000/carts', cart);
   }
 }
