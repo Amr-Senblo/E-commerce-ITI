@@ -21,15 +21,22 @@ export class CustomCartService {
     let url = `${this.urlcart}/${id}`;
     return this.http.get<ICart>(url).pipe(
       tap((value) => {
-        CustomCartService.cartCounter$.next(value.products.length);
-        console.log(CustomCartService.cartCounter$)
+        let sum = 0;
+        for (let product of value.products) {
+          sum += product.quantity
+        }
+        CustomCartService.cartCounter$.next(sum);
       })
     );
   }
   editCartProducts(CartId: number, productsArray: IproductBuyed[]) {
     return this.http.patch<ICart>(`${this.urlcart}/${CartId}`, { "products": productsArray }).pipe(
       tap((value) => {
-        CustomCartService.cartCounter$.next(value.products.length);
+        let sum = 0;
+        for (let product of value.products) {
+          sum += product.quantity
+        }
+        CustomCartService.cartCounter$.next(sum);
       })
     )
   }
