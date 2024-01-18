@@ -46,6 +46,7 @@ export class HeaderComponent implements OnInit, OnChanges {
     this.toast.openSnackBar('Logged Out', '');
     this.logstate = this.userAuthService.LoggedState;
     this.currentUser = undefined;
+    this.counter = 0
   }
   showstate() {
     console.log(this.userAuthService.LoggedState);

@@ -45,7 +45,9 @@ export class ProductDetailsComponent implements OnChanges {
   counter: number = 0;
   @Input() product: IProduct = <IProduct>{};
   x: any;
-  @Input() avgRating!:number;
+  @Input() avgRating!: number;
+  quantity!: number
+  buttonContent = "Add to Cart"
   constructor(
     private CartCustomService: CustomCartService,
     private cartService: CartService,
@@ -75,6 +77,7 @@ export class ProductDetailsComponent implements OnChanges {
       return;
     }
     this.productId = this.product.id;
+    this.quantity = this.product.quantity;
   }
   AddToCart() {
     this.cartService.getCart(this.UserId).subscribe({
@@ -86,11 +89,17 @@ export class ProductDetailsComponent implements OnChanges {
         );
 
         if (existingProductIndex !== -1) {
-          // Product exists, increment quantity
-          this.productsInCart[existingProductIndex].quantity++;
+          // Product exists, remove it
+          this.productsInCart = this.productsInCart.filter(productBuyed => {
+            return productBuyed.id != this.productId
+          })
+          this.buttonContent = "Add to Cart";
+          this.showMessage('Removed from Cart');
         } else {
           // Product not found, add it
           this.productsInCart.push({ id: this.productId, quantity: 1 });
+          this.buttonContent = "Remove from Cart"
+          this.showMessage('Added to cart');
         }
 
         // Save the updated cart after checking or adding the product
@@ -98,68 +107,9 @@ export class ProductDetailsComponent implements OnChanges {
       },
       error: (err) => console.log(err),
     });
-    // this.cartService.getCart(this.UserId).subscribe({
-    //   next: (value) => {
-    //     this.productsInCart = value.products || [];
-    //     const existingProductIndex = this.productsInCart.findIndex(
-    //       product => product.id === this.productId
-    //     );
-    //     if(existingProductIndex !== -1){
-    //       this.productsInCart[existingProductIndex].quantity++;
-    //     }
-    //     else{
-    //       this.productsInCart = value.products;
-    //       this.productsInCart.push({ id: this.productId, quantity: 1 });
-    //       this.CartCustomService.editCartProducts(
-    //         this.UserId,
-    //         this.productsInCart
-    //       ).subscribe();
-    //     }
 
-    //   },
-    //   error: (err) => console.log(err),
-    // });
-
-    this.showMessage('Added to cart');
-
-    //TO increament counter
-    //   this.cartService.getCart(this.UserId).subscribe({
-    //     next: (cart) => {
-    //       let quantities = cart.products.map(product => product.quantity);
-    //       console.log(cart.products);
-
-    //       const totalQuantity = quantities.reduce((sum, quantity) => sum + quantity, 0);
-    //       this.counter = totalQuantity;
-    //     }
-    // });
-
-    // Increment the counter
-    // this.incrementCounter();
 
   }
-
-  // @Output() counterChanged: EventEmitter<number> = new EventEmitter<number>();
-
-  // incrementCounter() {
-  //   this.counterChanged.emit(this.counter);
-  //   this.counter++;
-  // }
-
-  // incrementCounter() {
-  //   // this.cartService.incrementCounter();
-  //   // console.log("counter2 : ",this.cartService.incrementCounter());
-
-  //   let counter = localStorage.getItem('counter');
-  //   if (counter) {
-  //     this.counter = parseInt(counter) + 1;
-  //   } else {
-  //     this.counter = 1;
-  //   }
-  //   localStorage.setItem('counter', this.counter.toString());
-
-  //   console.log('counter1: ', this.counter);
-  // }
-
 
   showMessage(message: string): void {
     this.x = setTimeout(() => {
@@ -170,12 +120,12 @@ export class ProductDetailsComponent implements OnChanges {
       });
       this.clearMessage();
     }, 500);
-    console.log('interval work');
+    // console.log('interval work');
   }
 
   clearMessage(): void {
     clearTimeout(this.x);
-    console.log('clear work');
+    // console.log('clear work');
   }
   prodct = {
     imageCover: '',

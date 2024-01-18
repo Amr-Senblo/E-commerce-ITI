@@ -32,7 +32,7 @@
       "brand": "Apple",
       "description": "Pro-level smartphone with enhanced camera and performance.",
       "price": 1299.99,
-      "quantity": 1,
+      "quantity": 0,
       "imageCover": "https://m.media-amazon.com/images/I/71xb2xkN5qL.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/61d8XHJuE2L.AC_SL1500.jpg",
@@ -62,7 +62,7 @@
       "brand": "Xiaomi",
       "description": "Premium smartphone with a focus on photography and performance.",
       "price": 899.99,
-      "quantity": 53,
+      "quantity": 52,
       "imageCover": "https://techcart.com.au/wp-content/uploads/2021/10/61746-Xiaomi-Mi-11-Lite-5G-NE-256GB_8GB-Peach-Pink-Global-Version-550x550.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/61ejOV80CgL.AC_SL1500.jpg",
@@ -955,6 +955,28 @@
             }
           ],
           "totalPrice": "1199.99"
+        },
+        {
+          "transactionID": "1K7721226L120441H",
+          "date": "2024-01-18T20:17:47.342Z",
+          "products": [
+            {
+              "id": 6,
+              "quantity": 1
+            }
+          ],
+          "totalPrice": "899.99"
+        },
+        {
+          "transactionID": "8EM611187X390062M",
+          "date": "2024-01-18T21:44:04.676Z",
+          "products": [
+            {
+              "id": 5,
+              "quantity": 1
+            }
+          ],
+          "totalPrice": "1299.99"
         }
       ]
     }
@@ -1078,8 +1100,13 @@
     {
       "id": 928599317,
       "user": 928599317,
-      "products": [],
-      "totalPrice": 1199.99,
+      "products": [
+        {
+          "id": 6,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 1299.99,
       "ordered": false
     }
   ],
