@@ -124,34 +124,38 @@ this.itemClicked=true
     this.route.navigateByUrl(`Search/${searchword}`);
     this.onSearch();
   }
-  noResult: string = '';
+  noResult :string ='';
 
   getNames(word: string) {
     // console.log("fdfdf")
     this.filterApi.getProductNameFromShearch(word).subscribe((data) => {
       this.names = data;
-      console.log('items in search ', this.names);
-      if (this.names.length == 0) {
-        console.log('no result found');
-        this.noResult = 'No results found';
+      console.log( "items in search ", this.names);
+      if (this.names.length==0){
+        console.log("no result found");
+       this.noResult = "No results found";
       }
+      
     });
     //   .subscribe((data) => {this.names = data
     //     console.log(this.names)});
 
     console.log(word);
   }
-
+   
   userNavigated: boolean = false;
-  itemClicked: boolean = true;
+  itemClicked: boolean = false;
 
   navigateToResult(result: string) {
-
+    this.userNavigated = true;
     this.itemClicked = true;
     // Navigate to the same page with the selected result
     this.route.navigate(['/Search', result]);
   }
 
+
+
+  
   onSearch() {
     localStorage.setItem('searchKeyword', this.searchKeyword);
     this.getNames(this.searchKeyword);
