@@ -63,11 +63,13 @@ export class CreateReviewComponent implements OnInit {
         if (this.currentUser) {
           this.userAuthService.setLoggedState = true ;
           this.currentUserName = this.currentUser.name; // Store the current user's name
-          console.log(  this.currentUserName);
+          console.log( "create review :", this.currentUserName);
 
         } else {
           this.userAuthService.setLoggedState = false;
           this.currentUserName = ''; // Clear the current user's name if not logged in
+          console.log("no create revirew");
+          
         }
           });
 
