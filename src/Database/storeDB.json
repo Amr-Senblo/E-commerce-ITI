@@ -32,7 +32,9 @@
       "brand": "Apple",
       "description": "Pro-level smartphone with enhanced camera and performance.",
       "price": 1299.99,
+
       "quantity": 2,
+
       "imageCover": "https://m.media-amazon.com/images/I/71xb2xkN5qL.AC_SL1500.jpg",
       "images": [
         "https://m.media-amazon.com/images/I/61d8XHJuE2L.AC_SL1500.jpg",
@@ -934,9 +936,45 @@
       "profilePic": "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
       "Address": "ABC",
       "gender": "male",
-      "password": "A1234567",
-      "confirmPassword": "A1234567",
-      "wishlist": []
+
+      "password": "1234567A",
+      "confirmPassword": "1234567A",
+      "wishlist": [],
+      "orders": [
+        {
+          "transactionID": "5K868801VD3249337",
+          "date": "2024-01-18T18:07:33.328Z",
+          "products": [
+            {
+              "id": 7,
+              "quantity": 1
+            }
+          ],
+          "totalPrice": "1199.99"
+        },
+        {
+          "transactionID": "1K7721226L120441H",
+          "date": "2024-01-18T20:17:47.342Z",
+          "products": [
+            {
+              "id": 6,
+              "quantity": 1
+            }
+          ],
+          "totalPrice": "899.99"
+        },
+        {
+          "transactionID": "8EM611187X390062M",
+          "date": "2024-01-18T21:44:04.676Z",
+          "products": [
+            {
+              "id": 5,
+              "quantity": 1
+            }
+          ],
+          "totalPrice": "1299.99"
+        }
+      ]
 
     }
   ],
@@ -1079,8 +1117,13 @@
     {
       "id": 928599317,
       "user": 928599317,
-      "products": [],
-      "totalPrice": 1199.99,
+      "products": [
+        {
+          "id": 6,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 1299.99,
       "ordered": false
     }
   ],
