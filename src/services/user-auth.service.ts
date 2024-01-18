@@ -74,8 +74,8 @@ export class UserAuthService {
     if (this.isLogged) {
       this.isLogged = false;
       this.loggSubject.next(false);
-      this.userLocalStorge.removeItemFromLocalStorage('accesToken');
-      this.userLocalStorge.removerItemFromSessionStorage('accesToken');
+      this.userLocalStorge.removeItemFromLocalStorage('accessToken');
+      this.userLocalStorge.removerItemFromSessionStorage('accessToken');
       this.router.navigateByUrl('Home');
     }
   }

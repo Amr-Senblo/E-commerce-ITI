@@ -65,13 +65,13 @@ export class LoginFormComponent {
           }
           if (this.formRemmberMe.value)
             this.storge.setItemAtLocalStorge(
-              'accesToken',
+              'accessToken',
               userExists.accessToken,
               2629800000
             );
           else
             this.storge.setItemAtSessionStorge(
-              'accesToken',
+              'accessToken',
               userExists.accessToken
             );
           this.loc.back();
