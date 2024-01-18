@@ -31,8 +31,9 @@
                 <div class="form-group col-md-6">
                     <label for="phone">Phone</label>
                     <input class="form-control" type="tel" placeholder="Enter your phone number" name="phone" required
-                        #phone="ngModel" pattern="[0-9]{11}" [class.is-invalid]="phone.invalid && phone.touched"
-                        [(ngModel)]="userModel.phone">
+                        #phone="ngModel" pattern="01[0-9]{11}" [class.is-invalid]="phone.invalid && phone.touched"
+                        minlength="11" maxlength="11" [(ngModel)]="userModel.phone">
+
 
                     @if (phone.errors&&(phone.invalid || phone.touched)) {
                     <small class="text-danger" *ngIf="phone.errors['required'] && phone.touched">Phone number is
@@ -96,7 +97,8 @@
             </div>
 
             <div class="btn-container">
-                <button type="submit" #register [class.disabled]="!userFrom.valid || !matched" class="register-btn">Get In
+                <button type="submit" #register [class.disabled]="!userFrom.valid || !matched" class="register-btn">Get
+                    In
                     Now!</button>
             </div>
         </form>

@@ -30,14 +30,12 @@ import { ICart } from '../../models/icart';
   imports: [CommonModule, RouterModule, FormsModule, ToastComponent],
 })
 export class HeaderComponent implements OnInit, OnChanges {
-onItemBlur() {
-this.itemClicked=false
-
-}
-onItemFoucs() {
-this.itemClicked=true
-
-}
+  onItemBlur() {
+    this.itemClicked = false;
+  }
+  onItemFoucs() {
+    this.itemClicked = true;
+  }
 
   counter: number = 0;
   logOut() {
@@ -59,7 +57,7 @@ this.itemClicked=true
   currentUser?: IUser;
   currentUserName?: string;
   @ViewChild(ToastComponent) toast!: ToastComponent;
-  cart?: ICart
+  cart?: ICart;
   searchKeyword: string = '';
 
   constructor(
@@ -79,9 +77,9 @@ this.itemClicked=true
       if (this.currentUser) {
         this.CartCustomService.getCartContent(this.currentUser.id).subscribe({
           next: (val) => {
-            this.cart = val
-          }
-        })
+            this.cart = val;
+          },
+        });
         this.userAuthService.setLoggedState = true;
         this.currentUserName = this.currentUser.name; // Store the current user's name
         console.log(this.currentUserName);
@@ -97,6 +95,7 @@ this.itemClicked=true
       this.getNames(this.searchKeyword);
     }
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     this.names = changes['names'].currentValue;
   }
@@ -108,8 +107,8 @@ this.itemClicked=true
     CustomCartService.cartCounter$.subscribe({
       next: (val) => {
         this.counter = val;
-      }
-    })
+      },
+    });
   }
   toggleCategoriesDropdown() {
     this.categoriesDropdown = !this.categoriesDropdown;
@@ -146,7 +145,6 @@ this.itemClicked=true
   itemClicked: boolean = true;
 
   navigateToResult(result: string) {
-
     this.itemClicked = true;
     // Navigate to the same page with the selected result
     this.route.navigate(['/Search', result]);

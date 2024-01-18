@@ -106,6 +106,11 @@ export class UserProfileComponent {
         this.userInfoUpdatedFailure = true;
       },
     });
+    this.refreshRoute();
+  }
+
+  refreshRoute() {
+    window.location.reload();
   }
 
   changePassword() {
