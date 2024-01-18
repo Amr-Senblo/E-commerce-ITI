@@ -110,7 +110,7 @@ export class UserProfileComponent {
   }
 
   refreshRoute() {
-    window.location.reload();
+    .location.reload();
   }
 
   changePassword() {
