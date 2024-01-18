@@ -31,7 +31,7 @@
                 <div class="form-group col-md-6">
                     <label for="phone">Phone</label>
                     <input class="form-control" type="tel" placeholder="Enter your phone number" name="phone" required
-                        #phone="ngModel" pattern="01[0-9]{11}" [class.is-invalid]="phone.invalid && phone.touched"
+                        #phone="ngModel" pattern="01[0-9]{9}" [class.is-invalid]="phone.invalid && phone.touched"
                         minlength="11" maxlength="11" [(ngModel)]="userModel.phone">
 
 
