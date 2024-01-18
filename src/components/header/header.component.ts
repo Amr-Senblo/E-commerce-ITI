@@ -30,15 +30,15 @@ import { ICart } from '../../models/icart';
   imports: [CommonModule, RouterModule, FormsModule, ToastComponent],
 })
 export class HeaderComponent implements OnInit, OnChanges {
-onItemBlur() {
-this.itemClicked=false
-console.log(this.itemClicked)
-}
-onItemFoucs() {
-this.itemClicked=true
+  onItemBlur() {
+    this.itemClicked = false
+    console.log(this.itemClicked)
+  }
+  onItemFoucs() {
+    this.itemClicked = true
 
-  console.log(this.itemClicked)
-}
+    console.log(this.itemClicked)
+  }
 
   counter: number = 0;
   logOut() {
@@ -60,7 +60,7 @@ this.itemClicked=true
   currentUser?: IUser;
   currentUserName?: string;
   @ViewChild(ToastComponent) toast!: ToastComponent;
-cart?:ICart
+  cart?: ICart
   searchKeyword: string = '';
 
   constructor(
@@ -69,7 +69,7 @@ cart?:ICart
     private filterApi: FilterAPIService,
     private userAuthService: UserAuthService,
     private storge: LocalStrogeService,
-    private CartCustomService:CustomCartService
+    private CartCustomService: CustomCartService
   ) {
     this.logstate = this.userAuthService.LoggedState;
     this.userAuthService.getAllUsers().subscribe((alluser) => {
@@ -106,6 +106,11 @@ cart?:ICart
     this.categoryService.getCategories().subscribe((data) => {
       this.categories = data;
     });
+    CustomCartService.cartCounter$.subscribe({
+      next: (val) => {
+        this.counter = val;
+      }
+    })
   }
   toggleCategoriesDropdown() {
     this.categoriesDropdown = !this.categoriesDropdown;
@@ -142,7 +147,7 @@ cart?:ICart
   itemClicked: boolean = true;
 
   navigateToResult(result: string) {
-   
+
     this.itemClicked = true;
     // Navigate to the same page with the selected result
     this.route.navigate(['/Search', result]);
