@@ -10,42 +10,53 @@
                 <th class="product-remove">Remove</th>
             </tr>
         </thead>
-        <tbody>
-            @for (product of wishedProducts; track $index) {
-            <tr class=" ">
-                <td class="align-items-center img"><img [src]="product.imageCover" alt="product1"></td>
-                <td class=" align-items-center"><a class=" link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
-                        href="#">{{product.name}}</a></td>
-                <td data-title="Price">{{product.price| currency}}</td>
-                <td data-title="Stock Status">
+        <tbody style="height: 45vh;">
+            @if (wishedProducts.length!=0) {
 
+                @for (product of wishedProducts; track $index) {
+                    <tr class=" ">
+                        <td class="align-items-center img"><img [src]="product.imageCover" alt="product1"></td>
+                        <td class=" align-items-center"><a class=" link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+                            href="#">{{product.name}}</a></td>
+                            <td data-title="Price">{{product.price| currency}}</td>
+                            <td data-title="Stock Status">
+                                
 
                     @switch (product.quantity) {
                     @case (0) {
                     <span class="badge rounded-pill text-bg-danger">Out OF Stock</span>
                     }
                     @case (1) {
-
-                    <span class="badge rounded-pill text-bg-warning">Last Item</span>
+                        
+                        <span class="badge rounded-pill text-bg-warning">Last Item</span>
                     }
                     @case (2) {
-                    <span class="badge rounded-pill text-bg-info">Last Two Items</span>
+                        <span class="badge rounded-pill text-bg-info">Last Two Items</span>
                     }
                     @default {
-
-                    <span class=" badge rounded-pill text-bg-success">In Stock</span>
-
+                        
+                        <span class=" badge rounded-pill text-bg-success">In Stock</span>
+                        
                     }
-                    }
-                </td>
-                <td> <button (click)="AddToCart()" class="btn btn-success p-3 buttonX"><i class="icon-basket-loaded"></i>Add to Cart</button>
-
-            
+                }
+            </td>
+            <td> <button (click)="AddToCart()" class="btn btn-success p-3 buttonX"><i class="icon-basket-loaded"></i>Add to Cart</button>
+                
+                
                 <td data-title="Remove"><button type="button" class=" btn btn-success   buttonClose "(click)="removeFromWhishList(product.id)" ><i class="bi bi-x"></i></button>
                 </td>
             </tr>
-            }
+        }
+        
+    }
+    @else {
+    <tr>
+        
+        
+<td  colspan="5" class="text-center fs-1 theme-color p-5"> There are no items in cart</td>
+    </tr>
 
-        </tbody>
+    }
+    </tbody>
     </table>
 </div>
