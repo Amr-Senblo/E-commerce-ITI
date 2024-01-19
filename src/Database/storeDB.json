@@ -40,7 +40,7 @@
         "https://m.media-amazon.com/images/I/817WqZsxjWL.AC_SL1500.jpg"
       ],
       "category": 1,
-      "ratingAverage": 3.5,
+      "ratingAverage": 3.7142857142857144,
       "ratingQuantity": 30,
       "createdAt": "2022-07-10T12:00:00.000Z",
       "updatedAt": "2022-07-10T12:00:00.000Z",
@@ -580,7 +580,7 @@
         "https://m.media-amazon.com/images/I/7114JUk91ML.AC_SL1500.jpg"
       ],
       "category": 3,
-      "ratingAverage": null,
+      "ratingAverage": 5,
       "ratingQuantity": 15,
       "createdAt": "2024-05-10T11:30:00.000Z",
       "updatedAt": "2024-05-10T11:30:00.000Z",
@@ -694,13 +694,7 @@
       "phone": "01012345613",
       "profilePic": "https://media.istockphoto.com/id/1170286252/photo/positive-human-facial-expressions-and-emotions-portrait-of-handsome-young-male-in-his-20s.jpg?s=1024x1024&w=is&k=20&c=trvPL1PKSZQNc_ZVAhx4JzD0tHtub4PE0znx22fc7-k=",
       "Address": "789, Street, City, Country",
-      "wishlist": [
-        12,
-        14,
-        17,
-        11,
-        16
-      ]
+      "wishlist": []
     },
     {
       "id": 4,
@@ -893,19 +887,19 @@
       "user": 3,
       "products": [
         {
-          "id": 5,
-          "quantity": 3
-        },
-        {
           "id": 17,
           "quantity": 2
         },
         {
           "id": 9,
           "quantity": 2
+        },
+        {
+          "id": 5,
+          "quantity": 1
         }
       ],
-      "totalPrice": 9699.93,
+      "totalPrice": 5799.96,
       "ordered": false,
       "createdAt": "2022-03-20T15:00:00.000Z",
       "updatedAt": "2022-03-20T15:00:00.000Z"
@@ -1474,6 +1468,20 @@
       "productId": 9,
       "rating": 5,
       "id": 64
+    },
+    {
+      "comment": "Love It",
+      "user": 3,
+      "productId": 5,
+      "rating": 5,
+      "id": 65
+    },
+    {
+      "comment": "Like it",
+      "user": 3,
+      "productId": 19,
+      "rating": 5,
+      "id": 66
     }
   ]
 }
