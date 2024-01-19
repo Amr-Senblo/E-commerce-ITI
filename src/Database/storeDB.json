@@ -40,7 +40,7 @@
         "https://m.media-amazon.com/images/I/817WqZsxjWL.AC_SL1500.jpg"
       ],
       "category": 1,
-      "ratingAverage": 3.2,
+      "ratingAverage": 3.5,
       "ratingQuantity": 30,
       "createdAt": "2022-07-10T12:00:00.000Z",
       "updatedAt": "2022-07-10T12:00:00.000Z",
@@ -160,7 +160,7 @@
         "https://m.media-amazon.com/images/I/61NOG1JF3BL._AC_SX522_.jpg"
       ],
       "category": 1,
-      "ratingAverage": null,
+      "ratingAverage": 3.5,
       "ratingQuantity": 28,
       "createdAt": "2023-04-25T11:45:00.000Z",
       "updatedAt": "2023-04-25T11:45:00.000Z",
@@ -1453,6 +1453,27 @@
       "productId": 1,
       "rating": 5,
       "id": 61
+    },
+    {
+      "comment": "High Quality",
+      "user": 3,
+      "productId": 5,
+      "rating": 5,
+      "id": 62
+    },
+    {
+      "comment": "Like This",
+      "user": 3,
+      "productId": 5,
+      "rating": 5,
+      "id": 63
+    },
+    {
+      "comment": "High quality",
+      "user": 3,
+      "productId": 9,
+      "rating": 5,
+      "id": 64
     }
   ]
 }
