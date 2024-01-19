@@ -89,6 +89,7 @@ export class CreateReviewComponent implements OnInit {
     if (this.user === null) return;
   }
   send() {
+
     let comment = this.myForm.controls['comment'].value;
     let user = +this.userID;
     let productId = +this.productID;
@@ -109,6 +110,8 @@ export class CreateReviewComponent implements OnInit {
         this.selectedRating = 1;
       },
     });
+
+    window.location.reload();
   }
 
   onRatingChange(newRating: number) {

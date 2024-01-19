@@ -1,5 +1,6 @@
 import {
   Component,
+  DoCheck,
   EventEmitter,
   Input,
   OnChanges,
@@ -33,7 +34,7 @@ import { IUser } from '../../models/iuser';
   template: ` <button (click)="incrementCounter()">Increment Counter</button> `,
   styleUrl: './product-details.component.css',
 })
-export class ProductDetailsComponent implements OnChanges {
+export class ProductDetailsComponent implements OnChanges, DoCheck {
   private isFirstChange = true;
   // cartId = 1;
   productsInCart: IproductBuyed[] = [];
@@ -68,6 +69,10 @@ export class ProductDetailsComponent implements OnChanges {
         // this.UserId = ''; // Clear the current user's name if not logged in
       }
     });
+  }
+  ngDoCheck(): void {
+    // throw new Error('Method not implemented.');
+    // this.product=
   }
   ngOnChanges(changes: SimpleChanges): void {
     if (this.isFirstChange) {
