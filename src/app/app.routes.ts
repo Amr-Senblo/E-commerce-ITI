@@ -33,13 +33,14 @@ export const routes: Routes = [
         path: 'Category/:categoryId/:id',
         component: ProductDetailsContainerComponent,
       },
+      { path: 'Profile', component: ProfileComponent }, //Add Guard
 
       { path: 'Myprofile', component: UserProfileComponent,canActivate: [loginGuard] },
 
       {
         path: 'Cart/:id',
         component: CartComponent,
-        canActivate: [loginGuard] 
+        canActivate: [loginGuard]
       },
       {
         path: 'WishList',
@@ -66,6 +67,6 @@ export const routes: Routes = [
     ],
   },
   { path: 'CreateProduct', component: CreateProductComponent },
-  { path: 'Profile', component: ProfileComponent }, //Add Guard
+  // { path: 'Profile', component: ProfileComponent }, //Add Guard
   { path: '**', component: ErrorPageComponent },
 ];

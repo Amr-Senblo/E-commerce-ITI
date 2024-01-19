@@ -16,6 +16,7 @@ import { ReviewService } from '../../services/review.service';
 import { Observable, catchError, map, of, switchMap } from 'rxjs';
 import { CartService } from '../../services/cart.service';
 import { SpinnerComponent } from '../spinner/spinner.component';
+import { UserAuthService } from '../../services/user-auth.service';
 
 
 @Component({
@@ -49,15 +50,23 @@ export class ProductDetailsContainerComponent implements OnInit {
   avgRating:number=0;
   Ratings: number[] = [];
   product!:IProduct;
+  wishList:number[]=[];
   constructor(private reviewService:ReviewService,
     private route: ActivatedRoute,
     private productService: ProductService,
     private changeDetectorRef: ChangeDetectorRef ,
-
+    private userAuth: UserAuthService
     ) {
     this.route.params.subscribe(params => {
       this.productId = +params['id'];
     })
+
+    this.userAuth.getCurrentUser().subscribe(
+      user=>{
+              this.wishList=user?.wishlist||[]
+            }
+     )
+
 
   }
   ngOnInit(): void {
@@ -69,11 +78,19 @@ export class ProductDetailsContainerComponent implements OnInit {
         this.currentProduct = value;
         this.breadCrumbTitles = ['Home', value.name];
         this.breadCrumbLinks = ["/Home", `/Category/${this.currentProduct.category}/${this.currentProduct.id}`]
+        // this.productService.getProductsOfCategory(value.category).subscribe({
+        //   next: (products) => {
+        //     this.categoryProducts = products.filter(product => product.id !== this.currentProduct.id)
+        //   }
+        // })
         this.productService.getProductsOfCategory(value.category).subscribe({
           next: (products) => {
-            this.categoryProducts = products.filter(product => product.id !== this.currentProduct.id)
+            // Filter out the current product and take only the first 4
+            this.categoryProducts = products
+              .filter((product) => product.id !== this.currentProduct.id)
+              .slice(0, 4); // Get the first 4 products
           }
-        })
+        });
       }
     })
 
