@@ -17,14 +17,14 @@ import { UserService } from '../../services/user.service';
   imports: [ProductCartComponent, CommonModule, RouterLink],
   providers: [],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrl: './cart.component.css',
 })
 export class CartComponent {
   cartId: number = 0;
-  productsBuyedArray: IproductBuyed[] = []
-  productsIds: number[] = []
-  productsQuantity: number[] = []
-  products: IProduct[] = []
+  productsBuyedArray: IproductBuyed[] = [];
+  productsIds: number[] = [];
+  productsQuantity: number[] = [];
+  products: IProduct[] = [];
   totalPrice = 0;
   productsString!: string;
   logstate!: boolean;
@@ -40,18 +40,19 @@ export class CartComponent {
     private storge: LocalStrogeService,
     private userService: UserService
   ) {
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       this.cartId = params['id'];
-    })
+    });
     this.logstate = this.userAuthService.LoggedState;
     this.userAuthService.getAllUsers().subscribe((alluser) => {
-      let token = this.storge.getItemFromLocalStorge('accesToken') || this.storge.getItemFromSessionStorge('accesToken');
+      let token =
+        this.storge.getItemFromLocalStorge('accessToken') ||
+        this.storge.getItemFromSessionStorge('accessToken');
       this.currentUser = alluser.find((user) => user.accessToken == token);
       if (this.currentUser) {
         this.userAuthService.setLoggedState = true;
         this.UserId = this.currentUser.id; // Store the current user's id
         console.log(this.UserId);
-
       } else {
         this.userAuthService.setLoggedState = false;
         // this.UserId = ''; // Clear the current user's name if not logged in
@@ -67,15 +68,14 @@ export class CartComponent {
         this.productsBuyedArray = data.products;
         for (let product of data.products) {
           this.productsIds.push(product.id);
-          this.productsQuantity.push(product.quantity)
+          this.productsQuantity.push(product.quantity);
         }
         if (this.productsIds.length == 0) {
           this.productsIds.push(-1);
-          let productss = this.productsIds.map(value => `id=${value}`);
+          let productss = this.productsIds.map((value) => `id=${value}`);
           this.productsString = productss.join('&');
-        }
-        else {
-          let productss = this.productsIds.map(value => `id=${value}`);
+        } else {
+          let productss = this.productsIds.map((value) => `id=${value}`);
           this.productsString = productss.join('&');
         }
         this.getProductsService.getCartProducts(this.productsString).subscribe({
@@ -83,41 +83,52 @@ export class CartComponent {
             this.totalPrice = 0;
             this.products = value;
             for (let i = 0; i < this.products.length; i++) {
-              this.totalPrice += +this.products[i].price * +this.productsQuantity[i];
+              this.totalPrice +=
+                +this.products[i].price * +this.productsQuantity[i];
             }
-            this.getProductsService.editCartTotalPrice(this.cartId, this.totalPrice).subscribe();
+            this.getProductsService
+              .editCartTotalPrice(this.cartId, this.totalPrice)
+              .subscribe();
             // console.log(this.totalPrice);
           },
-          error: error => console.log(error)
-        })
+          error: (error) => console.log(error),
+        });
       },
-      error: error => console.log(error)
-    })
+      error: (error) => console.log(error),
+    });
   }
-  onAction(value: [IproductBuyed, number, number]) {
-    if (value[0].quantity === 0) {
-      this.productsBuyedArray = this.productsBuyedArray.filter(item => item.id !== value[0].id);
-      this.getProductsService.editCartProducts(this.cartId, this.productsBuyedArray).subscribe();
-      this.totalPrice = this.totalPrice - value[1] * value[2];
-      //console.log(this.totalPrice);
-      this.getProductsService.editCartTotalPrice(this.cartId, this.totalPrice).subscribe();
+  onAction(value: [IproductBuyed, string, number]) {
+    if (value[1] === 'delete') {
+      console.log(value);
+      this.productsBuyedArray = this.productsBuyedArray.filter(
+        (item) => item.id !== value[0].id
+      );
+      this.getProductsService
+        .editCartProducts(this.cartId, this.productsBuyedArray)
+        .subscribe();
+      this.totalPrice = this.totalPrice - value[0].quantity * value[2];
+      console.log(this.totalPrice);
+      this.getProductsService
+        .editCartTotalPrice(this.cartId, this.totalPrice)
+        .subscribe();
     } else {
-      this.productsBuyedArray = this.productsBuyedArray.map(item => {
-        if (item.id === value[0].id)
-          item.quantity = value[0].quantity;
-        return item
+      this.productsBuyedArray = this.productsBuyedArray.map((item) => {
+        if (item.id === value[0].id) item.quantity = value[0].quantity;
+        return item;
       });
 
-      if (value[0].quantity > value[1]) {
+      if (value[1] === 'plus') {
         this.totalPrice = this.totalPrice + value[2];
+      } else {
+        this.totalPrice = this.totalPrice - value[2];
       }
-      else {
-        this.totalPrice = this.totalPrice - value[2]
-      }
-      // console.log(this.totalPrice);
-      this.getProductsService.editCartProducts(this.cartId, this.productsBuyedArray).subscribe();
-      this.getProductsService.editCartTotalPrice(this.cartId, this.totalPrice).subscribe();
+      //console.log(this.totalPrice);
+      this.getProductsService
+        .editCartProducts(this.cartId, this.productsBuyedArray)
+        .subscribe();
+      this.getProductsService
+        .editCartTotalPrice(this.cartId, this.totalPrice)
+        .subscribe();
     }
   }
-
 }

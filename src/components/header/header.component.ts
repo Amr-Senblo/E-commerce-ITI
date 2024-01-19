@@ -30,15 +30,12 @@ import { ICart } from '../../models/icart';
   imports: [CommonModule, RouterModule, FormsModule, ToastComponent],
 })
 export class HeaderComponent implements OnInit, OnChanges {
-onItemBlur() {
-this.itemClicked=false
-console.log(this.itemClicked)
-}
-onItemFoucs() {
-this.itemClicked=true
-
-  console.log(this.itemClicked)
-}
+  onItemBlur() {
+    this.itemClicked = false;
+  }
+  onItemFoucs() {
+    this.itemClicked = true;
+  }
 
   counter: number = 0;
   logOut() {
@@ -60,7 +57,7 @@ this.itemClicked=true
   currentUser?: IUser;
   currentUserName?: string;
   @ViewChild(ToastComponent) toast!: ToastComponent;
-cart?:ICart
+  cart?: ICart;
   searchKeyword: string = '';
 
   constructor(
@@ -69,20 +66,20 @@ cart?:ICart
     private filterApi: FilterAPIService,
     private userAuthService: UserAuthService,
     private storge: LocalStrogeService,
-    private CartCustomService:CustomCartService
+    private CartCustomService: CustomCartService
   ) {
     this.logstate = this.userAuthService.LoggedState;
     this.userAuthService.getAllUsers().subscribe((alluser) => {
       let token =
-        this.storge.getItemFromLocalStorge('accesToken') ||
-        this.storge.getItemFromSessionStorge('accesToken');
+        this.storge.getItemFromLocalStorge('accessToken') ||
+        this.storge.getItemFromSessionStorge('accessToken');
       this.currentUser = alluser.find((user) => user.accessToken == token);
       if (this.currentUser) {
         this.CartCustomService.getCartContent(this.currentUser.id).subscribe({
           next: (val) => {
-            this.cart = val
-          }
-        })
+            this.cart = val;
+          },
+        });
         this.userAuthService.setLoggedState = true;
         this.currentUserName = this.currentUser.name; // Store the current user's name
         console.log(this.currentUserName);
@@ -98,6 +95,7 @@ cart?:ICart
       this.getNames(this.searchKeyword);
     }
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     this.names = changes['names'].currentValue;
   }
@@ -105,6 +103,11 @@ cart?:ICart
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe((data) => {
       this.categories = data;
+    });
+    CustomCartService.cartCounter$.subscribe({
+      next: (val) => {
+        this.counter = val;
+      },
     });
   }
   toggleCategoriesDropdown() {
@@ -139,10 +142,10 @@ cart?:ICart
   }
 
   userNavigated: boolean = false;
-  itemClicked: boolean = true;
+  itemClicked: boolean = false;
 
   navigateToResult(result: string) {
-   
+    this.userNavigated = true;
     this.itemClicked = true;
     // Navigate to the same page with the selected result
     this.route.navigate(['/Search', result]);

@@ -39,7 +39,7 @@ export const routes: Routes = [
       {
         path: 'Cart/:id',
         component: CartComponent,
-        /*canActivate: [logoutGuard] */
+        canActivate: [loginGuard] 
       },
       {
         path: 'WishList',
