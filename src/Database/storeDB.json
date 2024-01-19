@@ -160,7 +160,7 @@
         "https://m.media-amazon.com/images/I/61NOG1JF3BL._AC_SX522_.jpg"
       ],
       "category": 1,
-      "ratingAverage": 2,
+      "ratingAverage": null,
       "ratingQuantity": 28,
       "createdAt": "2023-04-25T11:45:00.000Z",
       "updatedAt": "2023-04-25T11:45:00.000Z",
@@ -220,7 +220,7 @@
         "https://m.media-amazon.com/images/I/71i2XhHU3pL._AC_SX569_.jpg"
       ],
       "category": 1,
-      "ratingAverage": 3,
+      "ratingAverage": 3.5,
       "ratingQuantity": 25,
       "createdAt": "2022-01-15T12:30:00.000Z",
       "updatedAt": "2022-01-15T12:30:00.000Z",
@@ -250,7 +250,7 @@
         "https://m.media-amazon.com/images/I/619T9-5afsL._AC_SX569_.jpg"
       ],
       "category": 1,
-      "ratingAverage": 2,
+      "ratingAverage": 3.25,
       "ratingQuantity": 30,
       "createdAt": "2022-02-02T10:45:00.000Z",
       "updatedAt": "2022-02-02T10:45:00.000Z",
@@ -695,11 +695,11 @@
       "profilePic": "https://media.istockphoto.com/id/1170286252/photo/positive-human-facial-expressions-and-emotions-portrait-of-handsome-young-male-in-his-20s.jpg?s=1024x1024&w=is&k=20&c=trvPL1PKSZQNc_ZVAhx4JzD0tHtub4PE0znx22fc7-k=",
       "Address": "789, Street, City, Country",
       "wishlist": [
-        2,
-        3,
         12,
         14,
-        17
+        17,
+        11,
+        16
       ]
     },
     {
@@ -903,9 +903,17 @@
         {
           "id": 17,
           "quantity": 2
+        },
+        {
+          "id": 2,
+          "quantity": 3
+        },
+        {
+          "id": 9,
+          "quantity": 2
         }
       ],
-      "totalPrice": 11699.91,
+      "totalPrice": 19899.86,
       "ordered": false,
       "createdAt": "2022-03-20T15:00:00.000Z",
       "updatedAt": "2022-03-20T15:00:00.000Z"
@@ -1432,6 +1440,27 @@
       "productId": 13,
       "rating": 5,
       "id": 58
+    },
+    {
+      "comment": "Poor",
+      "user": 1,
+      "productId": 1,
+      "rating": 2,
+      "id": 59
+    },
+    {
+      "comment": "High quality",
+      "user": 1,
+      "productId": 1,
+      "rating": 5,
+      "id": 60
+    },
+    {
+      "comment": "High Quality",
+      "user": 3,
+      "productId": 1,
+      "rating": 5,
+      "id": 61
     }
   ]
 }
