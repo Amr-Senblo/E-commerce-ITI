@@ -67,7 +67,12 @@ export class PaymentComponent implements OnInit {
                     this.productService.getProduct(product.id).subscribe({
                       next: (val) => {
                         let quantity = val.quantity;
-                        quantity = quantity - product.quantity
+                        if (quantity <= 0) {
+                          quantity = 0;
+                        }
+                        else {
+                          quantity = quantity - product.quantity
+                        }
                         this.productService.updateProductQuantity(product.id, quantity).subscribe();
                       },
                       error: (err) => console.log(err)
